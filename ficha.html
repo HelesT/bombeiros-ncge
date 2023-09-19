@@ -337,18 +337,19 @@
         </div><!-- Fim do cabeçalho da pagina "" -->
 
         <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+          <form method="post">
             <div class="linha circulo centro" style="background-color: #0667E8; border-radius: 5px; width: 250px; height: 90px;justify-content: space-evenly; ">
               <div class="coluna centro" style="color: white;">
                 <span style="font-size: 13px;">DEITADA</span>
-                <input type="checkbox" class="checkbox-quadrado-azul">
+                <input id="deitada_conducao" value="deitada" type="radio" class="checkbox-quadrado-azul" onclick="Deitada()">
                </div>
                <div class="coluna centro" style="color: white;">
                 <span style="font-size: 13px;">SEMI-DEITADA</span>
-                <input type="checkbox" class="checkbox-quadrado-azul">
+                <input id="semi_deitada_conducao" value="semi_deitada" type="radio" class="checkbox-quadrado-azul"onclick="Semi_Deitada()">
                </div>
                <div class="coluna centro" style="color: white;">
                 <span style="font-size: 13px;">SENTADA</span>
-                <input type="checkbox" class="checkbox-quadrado-azul">
+                <input id="sentada_conducao" value="sentada" type="radio" class="checkbox-quadrado-azul"onclick="Sentada()">
                </div>   
             </div>
 
@@ -365,13 +366,13 @@
               </div>
                   <div class="linha centro" style="justify-content: space-around;width: 100%;">
                         <div class="coluna centro" style="color: white;">
-                          <input type="checkbox" class="checkbox-quadrado-azul">
+                          <input id="fc_ciclista" value="ciclista" type="checkbox" class="checkbox-quadrado-azul">
                         </div>
                         <div class="coluna centro" style="color: white;">                       
-                          <input type="checkbox" class="checkbox-quadrado-azul">
+                          <input id="fc_condutor_moto"value="condutor_moto" type="checkbox" class="checkbox-quadrado-azul">
                         </div>
                           <div class="coluna centro" style="color: white;">
-                            <input type="checkbox" class="checkbox-quadrado-azul">
+                            <input id="fc_gestante"value="gestante" type="checkbox" class="checkbox-quadrado-azul">
                           </div>  
                   </div>
             </div>
@@ -383,13 +384,13 @@
               </div>
                   <div class="linha centro" style="justify-content: space-around;width: 100%;">
                         <div class="coluna centro" style="color: white;">
-                          <input type="checkbox" class="checkbox-quadrado-azul">
+                          <input id="fc_pass_ban_frente"value="pass_ban_frente" type="checkbox" class="checkbox-quadrado-azul">
                         </div>
                         <div class="coluna centro" style="color: white;">                       
-                          <input type="checkbox" class="checkbox-quadrado-azul">
+                          <input id="fc_pass_moto"value="pass_moto" type="checkbox" class="checkbox-quadrado-azul">
                         </div>
                           <div class="coluna centro" style="color: white;">
-                            <input type="checkbox" class="checkbox-quadrado-azul">
+                            <input id="fc_condutor_carro"value="condutor_carro" type="checkbox" class="checkbox-quadrado-azul">
                           </div>  
                   </div>
             </div>
@@ -401,13 +402,13 @@
               </div>
                   <div class="linha centro" style="justify-content: space-around;width: 100%;">
                         <div class="coluna centro" style="color: white;">
-                          <input type="checkbox" class="checkbox-quadrado-azul">
+                          <input id="fc_clinico"value="clinico" type="checkbox" class="checkbox-quadrado-azul">
                         </div>
                         <div class="coluna centro" style="color: white;">                       
-                          <input type="checkbox" class="checkbox-quadrado-azul">
+                          <input id="fc_trauma"value="trauma" type="checkbox" class="checkbox-quadrado-azul">
                         </div>
                           <div class="coluna centro" style="color: white;">
-                            <input type="checkbox" class="checkbox-quadrado-azul">
+                            <input id="fc_pass_ban_tras"value="pass_ban_tras" type="checkbox" class="checkbox-quadrado-azul">
                           </div>  
                   </div>
             </div>
@@ -417,11 +418,14 @@
               </div>
                   <div class="linha centro" style="justify-content: space-around;width: 100%;">
                         <div class="coluna centro" style="color: white;">
-                          <input type="checkbox" class="checkbox-quadrado-azul">
+                          <input id="fc_pedestre"value="pedestre" type="checkbox" class="checkbox-quadrado-azul">
                         </div> 
                   </div>
             </div>           
           </div>
+
+          <button type="button" onclick="FormaDeConducao()"></button>
+        </form>
       </div>
         </div><!--Fim do corpo da página de ""-->
 
@@ -1051,23 +1055,28 @@
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tomada Decisão</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tratamento de Choque</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Cânula</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Colar</span>TAM<textarea class="quadrado" style="width: 20px; height: 20px; border-radius: 5px;border-style: solid;"></textarea></div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Colar</span>TAM <input type="text" class="input-linha" style="width: 35px; "> </div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso KED</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso TTF</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Ventilação Suporte</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Oxigenoterapia</span><textarea class="quadrado" style="width: 20px; height: 20px; border-radius: 5px;border-style: solid;"></textarea>LPM</div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Reanimador</span><textarea class="quadrado" style="width: 20px; height: 20px; border-radius: 5px;border-style: solid;"></textarea>LPM</div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Oxigenoterapia</span> <input type="text" class="input-linha" style="width: 35px; "> LPM</div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Reanimador</span> <input type="text" class="input-linha" style="width: 35px; "> LPM</div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Meios Auxiliares</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Celesc</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia Civil</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia Militar</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia PRE</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia PRF</span></div>
+            <div class="linha justify">
+              <input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia</span>
+              <div class="coluna" style="display: f;">
+                <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia Civil</span></div>
+                <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia Militar</span></div>
+                <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia PRE</span></div>
+                <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia PRF</span></div>
+              </div>
+            </div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">DEF.Civil</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">IPG/PC</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Samu</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cit</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"><textarea class="quadrado" style="width: 300px; height: 20px; border-radius: 5px;border-style: solid;"></textarea></div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" style="width: 25px; height: 25px;"> <input type="text" class="input-linha" ></div>
           
         </div><!--Fim do corpo da página de ""-->
 
@@ -1668,8 +1677,8 @@
             <div class="divul">
               Divulgar para imprensa?
               <form>
-                Sim<INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op1"> 
-                <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="op2"> Não
+                Sim<INPUT TYPE="RADIO"  VALUE="op1"> 
+                <INPUT TYPE="RADIO"  VALUE="op2"> Não
               </form>
             </div>
           </div>

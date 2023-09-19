@@ -110,5 +110,102 @@ function TermoDeRecusa(){
     });
     
 };
+function FormaDeConducao(){
 
+    var Conducao = "";/*Input type radio*/
+    if (document.getElementById("deitada_conducao").checked) {
+        Conducao = document.getElementById("deitada_conducao").value;
+    } else if (document.getElementById("semi_deitada_conducao").checked) {
+        Conducao = document.getElementById("semi_deitada_conducao").value;
+    }
+    else if (document.getElementById("sentada_conducao").checked) {
+        Conducao = document.getElementById("sentada_conducao").value;/*Input type radio*/
+    }
 
+    if (document.getElementById("fc_ciclista").checked) {
+        FcCiclista = document.getElementById("fc_ciclista").value;
+    
+    }
+
+    if (document.getElementById("fc_condutor_moto").checked) {
+        FcCondutor = document.getElementById("fc_condutor_moto").value;
+    
+    }
+
+    if (document.getElementById("fc_gestante").checked) {
+        FcGestante = document.getElementById("fc_gestante").value;
+    
+    }
+
+    if (document.getElementById("fc_pass_ban_frente").checked) {
+        FcPassBanFrente = document.getElementById("fc_pass_ban_frente").value;
+    
+    }
+
+    if (document.getElementById("fc_pass_moto").checked) {
+        FcPassMoto = document.getElementById("fc_pass_moto").value;
+    
+    }
+
+    if (document.getElementById("fc_condutor_carro").checked) {
+        FcCondutorCarro = document.getElementById("fc_condutor_carro").value;
+    
+    }
+
+    if (document.getElementById("fc_clinico").checked) {
+        FcClinico = document.getElementById("fc_clinico").value;
+    
+    }
+
+    if (document.getElementById("fc_trauma").checked) {
+        FcTrauma = document.getElementById("fc_trauma").value;
+    
+    }
+
+    if (document.getElementById("fc_pass_ban_tras").checked) {
+        FcPassBanTras = document.getElementById("fc_pass_ban_tras").value;
+    
+    }
+
+    if (document.getElementById("fc_pedestre").checked) {
+        FcPedestre = document.getElementById("fc_pedestre").value;
+
+    }
+
+    var FormaConducao = FcCiclista + ", " + FcCondutor + ", " + FcGestante + ", " + FcPassBanFrente + ", " + FcPassMoto + ", " + FcCondutorCarro + ", " + FcClinico + ", " + FcTrauma + ", " + FcPassBanTras + ", " + FcPedestre;
+    console.log(FormaConducao);
+
+    $.ajax({
+        url: 'PHP/forma_de_conducao.php',
+        method: 'POST',
+        data: {
+           Conducao: Conducao,
+           FormaConducao: FormaConducao
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+}
+
+function Deitada() {/*Input type radio*/
+    var semi_deitada_conducao = document.getElementById("semi_deitada_conducao"); 
+    semi_deitada_conducao.checked = false;
+
+    var sentada_conducao = document.getElementById("sentada_conducao"); 
+    sentada_conducao.checked = false;
+} 
+function Semi_Deitada() {/*Input type radio*/
+    var deitada_conducao = document.getElementById("deitada_conducao"); 
+    deitada_conducao.checked = false;
+
+    var sentada_conduo = document.getElementById("sentada_conducao"); 
+    sentada_conduo.checked = false;
+} 
+function Sentada() {/*Input type radio*/
+    var deitada_conducao = document.getElementById("deitada_conducao"); 
+    deitada_conducao.checked = false;
+
+    var semi_deitada_conducao = document.getElementById("semi_deitada_conducao"); 
+    semi_deitada_conducao.checked = false;
+}
