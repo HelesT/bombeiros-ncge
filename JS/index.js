@@ -127,55 +127,45 @@ function FormaDeConducao(){
 
     if (document.getElementById("fc_ciclista").checked) {
         FcCiclista = document.getElementById("fc_ciclista").value;
-    
-    }
+    }else(FcCiclista = "")
 
     if (document.getElementById("fc_condutor_moto").checked) {
         FcCondutor = document.getElementById("fc_condutor_moto").value;
-    
-    }
+    }else(FcCondutor = "")
 
     if (document.getElementById("fc_gestante").checked) {
         FcGestante = document.getElementById("fc_gestante").value;
-    
-    }
+    }else(FcGestante = "")
 
     if (document.getElementById("fc_pass_ban_frente").checked) {
         FcPassBanFrente = document.getElementById("fc_pass_ban_frente").value;
-    
-    }
+    }else(FcPassBanFrente = "")
 
     if (document.getElementById("fc_pass_moto").checked) {
         FcPassMoto = document.getElementById("fc_pass_moto").value;
-    
-    }
+    }else(FcPassMoto = "")
 
     if (document.getElementById("fc_condutor_carro").checked) {
         FcCondutorCarro = document.getElementById("fc_condutor_carro").value;
-    
-    }
+    }else(FcCondutorCarro = "")
 
     if (document.getElementById("fc_clinico").checked) {
         FcClinico = document.getElementById("fc_clinico").value;
-    
-    }
+    }else(FcClinico = "")
 
     if (document.getElementById("fc_trauma").checked) {
         FcTrauma = document.getElementById("fc_trauma").value;
-    
-    }
+    }else( FcTrauma = "")
 
     if (document.getElementById("fc_pass_ban_tras").checked) {
         FcPassBanTras = document.getElementById("fc_pass_ban_tras").value;
-    
-    }
+    }else(FcPassBanTras = "")
 
     if (document.getElementById("fc_pedestre").checked) {
         FcPedestre = document.getElementById("fc_pedestre").value;
+    }else(FcPedestre = "")
 
-    }
-
-    var FormaConducao = FcCiclista + ", " + FcCondutor + ", " + FcGestante + ", " + FcPassBanFrente + ", " + FcPassMoto + ", " + FcCondutorCarro + ", " + FcClinico + ", " + FcTrauma + ", " + FcPassBanTras + ", " + FcPedestre;
+    var FormaConducao = FcCiclista + " " + FcCondutor + " " + FcGestante + " " + FcPassBanFrente + " " + FcPassMoto + " " + FcCondutorCarro + " " + FcClinico + " " + FcTrauma + " " + FcPassBanTras + " " + FcPedestre;
     console.log(FormaConducao);
 
     $.ajax({
