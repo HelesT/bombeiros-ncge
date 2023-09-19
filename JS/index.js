@@ -1,4 +1,4 @@
-function PacienteRegistro(){
+function PacienteRegistro(){    
 
     var Data = $('#data_paciente').val();/*Input type text*/
     var NomeHospitalPaciente = $('#nome_hospital_paciente').val();
@@ -75,7 +75,10 @@ function SexoMasculino() {/*Input type radio*/
 function SexoFeminino() {/*Input type radio*/
     var sexo_paciente_m = document.getElementById("sexo_paciente_m"); 
     sexo_paciente_m.checked = false;
-} 
+}
+function EmergenciaRegistro(){
+
+};
 function TermoDeRecusa(){
 
     var NomeTermoRecusa = $('#Nome_Recusa').val();
