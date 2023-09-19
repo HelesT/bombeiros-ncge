@@ -487,22 +487,42 @@ html {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 16px;
-  height: 16px;
   border: 2px solid #0667E8;
   outline: none;
   cursor: pointer;
+  width: 120px; 
+  height: 80px; 
+  margin: 0px; 
+  z-index: 0; 
+  border-radius: 10px;
+  background-repeat: no-repeat; 
+  background-position: center;
 }
 .checkbox-emergencia:checked{
-  background-color: #000000;
+  background-color: greenyellow;
   appearance: none;
+  background-blend-mode: multiply;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #0667E8;
+  border: 2px solid green;
   outline: none;
   cursor: pointer;
+  width: 120px; 
+  height: 80px; 
+  margin: 0px; 
+  z-index: 0; 
+  border-radius: 10px; 
+  background-repeat: no-repeat; 
+  background-position: center;
+}
+.span_emergencia{
+  background-color: #0667E8;
+  width: 100px;
+  height: 30px;
+  color: white;
+  text-align: center;
+  margin-bottom: -10px;
+  z-index: 1;
 }
 .square {
   width: 150px;
