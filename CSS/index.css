@@ -148,6 +148,14 @@ html {
 .radio:checked{
   background-color: #0667E8;
 }
+.matainput{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
 /*------------------------------------------CSS-PAGINAS------------------------------------------*/
 .slide1 {
   margin: 0;
@@ -475,6 +483,27 @@ html {
   align-content: center;
 }
 /*------------------------------------------CSS-GERAL------------------------------------------*/
+.checkbox-emergencia{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0667E8;
+  outline: none;
+  cursor: pointer;
+}
+.checkbox-emergencia:checked{
+  background-color: #000000;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0667E8;
+  outline: none;
+  cursor: pointer;
+}
 .square {
   width: 150px;
   height: 90px;
