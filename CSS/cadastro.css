@@ -9,26 +9,98 @@ body{
   align-content: center;
   background-color: #0667E8;
 }
-.fundo{
-  width: 100%;
-  height: 100%;
+.centro{
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   justify-items: center;
   align-items: center;
   align-content: center;
-  justify-content: center;
-  background-image: url("../IMAGENS/backgroud.png");
-  background-size: 120%;
-  background-repeat: no-repeat; 
-  background-position: center; 
 }
-.logintext{
-  color: white; 
-  font-size: 35px; 
-  font-family: 'Roboto', sans-serif; 
-  margin-top: 25px; 
-  margin-bottom: 10px;
+.justify{
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.linha{
+  display: flex;
+  flex-direction: row;
+}
+.coluna{
+  display: flex;
+  flex-direction: column;
+}
+.quadrado{
+  display: flex;
+  border: 1px 1px 1px;
+  border-style: solid;
+  border-color: #0667E8;
+}
+.circulo {
+  display: flex;
+  border: 1px 1px 1px;
+  border-style: solid;
+  border-color: #0667E8;
+  border-radius: 50px;
+}
+.checkbox{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0667E8;
+  outline: none;
+  cursor: pointer;
+}
+.checkbox:checked {
+  background-color: #0667E8 ;
+}
+.checkbox:focus {
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.checkbox-quadrado-azul{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000;
+  outline: none;
+  cursor: pointer;
+  
+}
+.checkbox-quadrado-azul:checked {
+  background-color: #000000 ;
+}
+.checkbox-quadrado-azul:focus {
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+.input-linha{
+  border: none;
+  border-bottom: 1px solid #0667E8;
+  outline: none;
+}
+.radio{
+  border-radius: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0667E8;
+  outline: none;
+  cursor: pointer;
+}
+.radio:checked{
+  background-color: #0667E8;
+}
+.matainput{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
 }
 .inputtextlogin{
   border: none;
@@ -38,25 +110,23 @@ body{
   font-family: 'Roboto', sans-serif;
   padding-left: 10px;
   font-size: 15px;
+  margin-top: 10px;
 }
 .inputtextlogin:focus{
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
 }
-.botaoentrarlogin{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  justify-items: center;
-  width: 150px;
-  height: 40px;
-  color: red;
-  border-style: solid;
-  border-width: 1px;
-  border-color: red;
-  background-color: white;
-  border-radius: 10px;
-  font-size: 15px;
+.botao_pisca_pisca{
+  margin-top: 25px; 
+  background-color: #00BF63;
+  border-style: solid;border-radius: 10px;
+  border-color: rgb(255, 255, 255); 
+  width: 120px;
+  height: 30px;
+  color: white;
+}
+.botao_pisca_pisca:hover{
+  background-color: rgb(46, 172, 7);
+  border-color: rgb(194, 194, 194); 
 }

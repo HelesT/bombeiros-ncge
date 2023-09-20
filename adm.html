@@ -1,85 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adm</title>
-    <style>
-        body {
-    background-image: url('c.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-}
-.fundo{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  background-image: url("../IMAGENS/backgroud.png");
-  background-size: 120%;
-  background-repeat: no-repeat; 
-  background-position: center; 
-}
-.logintext{
-  color: white; 
-  font-size: 35px; 
-  font-family: 'Roboto', sans-serif; 
-  margin-top: 20px; 
-  margin-bottom: 10px;
-  margin-left: 435px;
-}
-.inputtextlogin
-{
-margin-top: 80px;    
-margin-left: 0px;
-border: none;
-width: 190px;
-height: 30px;
-border-radius: 10px;
-font-family: 'Roboto', sans-serif;
-padding-left: 10px;
-font-size: 15px;
-}
-.inputtextlogin:focus{
-  box-shadow: 0 0 0 0;
-  border: 0 none;
-  outline: 0;
-}
-.botaoentrarlogin{
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  justify-items: center;
-  width: 150px;
-  height: 40px;
-  color: red;
-  border-style: solid;
-  border-width: 1px;
-  border-color: red;
-  background-color: white;
-  border-radius: 10px;
-  font-size: 15px;
-}
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/cadastro.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+  <title>ADM</title>
 </head>
-<body>
-    <form id="formlogin" class="fundo">
-        <img src="logo c.png" width="216px">
-        <span class="logintext">Cadastro ADM</span> <br>
-        <input class="inputtextlogin" id="nome_bombeiro" placeholder="nome" type="text"><br>
-        <input class="inputtextlogin" id="email_bombeiro" placeholder="email" style="margin-top: 20px;" type="email"><br>
-        <input class="inputtextlogin" id="senha_bombeiro" placeholder="senha" style="margin-top: 20px;" type="password"><br>
-        <input class="inputtextlogin" id="telefone_bombeiro" placeholder="telefone" style="margin-top: 20px;" type="tel"><br>
-        <input type="submit" class="botaoentrarlogin" form="formlogin" style="margin-top: 20px;" value="Entrar">  
-    </form>
+<body class="centro" style="background-image: url(IMAGENS/backgroudADM.png);">
+  <div class="coluna centro">
+    <img src="IMAGENS/logo.png" width="250px" >
+    <span style="color: white; font-size: 50px;">Cadastro ADM</span>
+    <input type="text" class="inputtextlogin"placeholder="Nome:">
+    <input type="text" class="inputtextlogin"placeholder="Telefone:">
+    <input type="text" class="inputtextlogin"placeholder="E-mail:">
+    <input type="text" class="inputtextlogin"placeholder="Senha:">
+  </div>
+  <button  type="submit" class="botao_pisca_pisca" > <span style="font-size: 20px;">Cadastrar</span> </button>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="JS/login.js"></script>
