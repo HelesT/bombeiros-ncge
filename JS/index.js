@@ -205,6 +205,43 @@ function Sentada() {/*Input type radio*/
 function AvaliacaoPaciente(){
 
 }
-function Espontanea() {/*Input type radio*/
+function AberturaOcular() {/*Input type radio*/
     var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
-    EspontaneaPaciente.checked = false;}
+    EspontaneaPaciente.checked = false;
+
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+}
+function RespostaVerbal() {/*Input type radio*/
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+    
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+}
+function RespostaMotora() {/*Input type radio*/
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+    
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+
+    var EspontaneaPaciente = document.getElementById("sexo_paciente_f"); 
+    EspontaneaPaciente.checked = false;
+}
+    
