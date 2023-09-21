@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18/09/2023 às 22:36
+-- Tempo de geração: 21/09/2023 às 22:49
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `ncmcerge_bombeiros`
+-- Banco de dados: `ncge_bombeiros`
 --
 
 -- --------------------------------------------------------
@@ -108,8 +108,16 @@ CREATE TABLE `decisao_transporte` (
 --
 
 CREATE TABLE `emergencias` (
-  `id_emergencias` int(11) NOT NULL
+  `id_emergencias` int(11) NOT NULL,
+  `tipo_emergencia` varchar(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `emergencias`
+--
+
+INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
+(1, 'Emergencia medica,,,,,,,,,,,,,,,,,,,,,');
 
 -- --------------------------------------------------------
 
@@ -194,7 +202,11 @@ CREATE TABLE `paciente` (
 --
 
 INSERT INTO `paciente` (`id_paciente`, `nome_hospital_paciente`, `data_paciente`, `sexo_paciente`, `nome_paciente`, `idade_paciente`, `rg_cpf_paciente`, `fone_paciente`, `acompanhante_paciente`, `idade_acompanhante_paciente`, `local_ocorrencia_paciente`, `n_usb_paciente`, `cod_ur_paciente`, `n_ocorr_paciente`, `cod_ps_paciente`, `desp_paciente`, `h_ch_paciente`, `km_final_paciente`, `cod_sia_sus_paciente`) VALUES
-(24, 'São José', '2023-09-20', 'm', 'Nylton Eduardo Constâncio', 18, '14833715902', '989130277', 'Gabriel Elesbao', 18, 'Senai Sul joinville', '21856', 's', '4891231', 'n', 'Sim', 'aasda', 'asdwasd', 0);
+(24, 'São José', '2023-09-20', 'm', 'Nylton Eduardo Constâncio', 18, '14833715902', '989130277', 'Gabriel Elesbao', 18, 'Senai Sul joinville', '21856', 's', '4891231', 'n', 'Sim', 'aasda', 'asdwasd', 0),
+(25, '', '0000-00-00', 'f', 'baaaaaaaa', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0),
+(26, '', '0000-00-00', 'm', '', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0),
+(27, '', '0000-00-00', 'm', '', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0),
+(28, '', '0000-00-00', 'm', 'aaaaaaaaaaaa', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -247,6 +259,12 @@ ALTER TABLE `cadastro`
   ADD PRIMARY KEY (`cod_cadastro`);
 
 --
+-- Índices de tabela `emergencias`
+--
+ALTER TABLE `emergencias`
+  ADD PRIMARY KEY (`id_emergencias`);
+
+--
 -- Índices de tabela `paciente`
 --
 ALTER TABLE `paciente`
@@ -257,10 +275,16 @@ ALTER TABLE `paciente`
 --
 
 --
+-- AUTO_INCREMENT de tabela `emergencias`
+--
+ALTER TABLE `emergencias`
+  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
