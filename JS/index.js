@@ -3,6 +3,8 @@
     PacienteRegistro()
     EmergenciaRegistro()
     AvaliacaoPaciente()
+    TermoDeRecusa()
+    FormaDeConducao()
 */
 
 function PacienteRegistro(){    
