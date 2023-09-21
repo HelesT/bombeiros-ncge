@@ -825,7 +825,7 @@ function ObedeceComandosMe(){
 
 function LocalizaDorEstimuloTatilMe(){
      
-   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+   var ObedeceComandosMe = document.getElementById("obedece_comando_paciente_me"); 
     ObedeceComandosMe.checked = false;
 
 
@@ -842,7 +842,7 @@ function LocalizaDorEstimuloTatilMe(){
     AusenciaMe.checked = false;
 }
 function RetiradaDoSegmentoEstimuladoMe(){
-   var ObedeceComandosMe = document.getElementById("obedece_comando_paciente_me"); 
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
     ObedeceComandosMe.checked = false;
 
     var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
@@ -858,7 +858,7 @@ function RetiradaDoSegmentoEstimuladoMe(){
     AusenciaMe.checked = false;
 }
 function FlexaoAnormal(){
-   var ObedeceComandosMe = document.getElementById("obedece_comando_paciente_me"); 
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
     ObedeceComandosMe.checked = false;
 
     var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
@@ -875,7 +875,7 @@ function FlexaoAnormal(){
     AusenciaMe.checked = false;
 }
 function ExtensaoAnormal(){
-   var ObedeceComandosMe = document.getElementById("obedece_comando_paciente_me"); 
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
     ObedeceComandosMe.checked = false;
 
     var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
@@ -892,7 +892,7 @@ function ExtensaoAnormal(){
 
 }
 function AusenciaMe(){
-   var ObedeceComandosMe = document.getElementById("obedece_comando_paciente_me"); 
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
     ObedeceComandosMe.checked = false;
 
     var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
