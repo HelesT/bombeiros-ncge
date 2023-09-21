@@ -1,3 +1,10 @@
+/*
+    Paginas:
+    PacienteRegistro()
+    EmergenciaRegistro()
+    AvaliacaoPaciente()
+*/
+
 function PacienteRegistro(){    
 
     var Data = $('#data_paciente').val();/*Input type text*/
@@ -78,6 +85,127 @@ function SexoFeminino() {/*Input type radio*/
 }
 function EmergenciaRegistro(){
 
+    if (document.getElementById("emergencia_medica_er").checked) {
+        EmergenciaMedicaEr = document.getElementById("emergencia_medica_er").value;
+    }else(EmergenciaMedicaEr = "")
+
+    if (document.getElementById("com_meio_de_transporte_er").checked) {
+        ComMeioTransporteEr = document.getElementById("com_meio_de_transporte_er").value;
+    }else(ComMeioTransporteEr = "")
+
+    if (document.getElementById("causado_por_animais_er").checked) {
+        CausadoPorAnimaisEr = document.getElementById("causado_por_animais_er").value;
+    }else(CausadoPorAnimaisEr = "")
+    
+    if (document.getElementById("incendio_er").checked) {
+        IncendioEr = document.getElementById("incendio_er").value;
+    }else(IncendioEr = "")
+
+    if (document.getElementById("afogamento_er").checked) {
+        AfogamentoEr = document.getElementById("afogamento_er").value;
+    }else(AfogamentoEr = "")
+
+    if (document.getElementById("deslizamento_desmoronamento_er").checked) {
+        DeslizamentoDesmoronamentoEr = document.getElementById("deslizamento_desmoronamento_er").value;
+    }else(DeslizamentoDesmoronamentoEr = "")
+
+    if (document.getElementById("agressao_er").checked) {
+        AgressaoEr = document.getElementById("agressao_er").value;
+    }else(AgressaoEr = "")
+
+    if (document.getElementById("queda_aluta_2m_er").checked) {
+        QuedaAltura2mEr = document.getElementById("queda_aluta_2m_er").value;
+    }else(QuedaAltura2mEr = "")
+
+    if (document.getElementById("tentativa_suicidio_er").checked) {
+        SuicidioEr = document.getElementById("tentativa_suicidio_er").value;
+    }else(SuicidioEr = "")
+
+    if (document.getElementById("queda_propria_altura_er").checked) {
+        QuedaPropriaAlturaEr = document.getElementById("queda_propria_altura_er").value;
+    }else(QuedaPropriaAlturaEr = "")
+
+    if (document.getElementById("Atropelamento_er").checked) {
+        AtropelamentoEr = document.getElementById("Atropelamento_er").value;
+    }else(AtropelamentoEr = "")
+
+    if (document.getElementById("choque_eletrico_er").checked) {
+        ChoqueEletricoEr = document.getElementById("choque_eletrico_er").value;
+    }else(ChoqueEletricoEr = "")
+
+    if (document.getElementById("desabamento_er").checked) {
+        DesabamentoEr = document.getElementById("desabamento_er").value;
+    }else(DesabamentoEr = "")
+
+    if (document.getElementById("domestico_er").checked) {
+        DomesticoEr = document.getElementById("domestico_er").value;
+    }else(DomesticoEr = "")
+
+    if (document.getElementById("esportivo_er").checked) {
+        EsportivoEr = document.getElementById("esportivo_er").value;
+    }else(EsportivoEr = "")
+
+    if (document.getElementById("intoxicacao_er").checked) {
+        IntoxicacaoEr = document.getElementById("intoxicacao_er").value;
+    }else(IntoxicacaoEr = "")
+
+    if (document.getElementById("queda_bicicleta_er").checked) {
+        QuedaBicicletaEr = document.getElementById("queda_bicicleta_er").value;
+    }else(QuedaBicicletaEr = "")
+
+    if (document.getElementById("queda_moto_er").checked) {
+        QuedaMotoEr = document.getElementById("queda_moto_er").value;
+    }else(QuedaMotoEr = "")
+
+    if (document.getElementById("queda_er").checked) {
+        QuedaEr = document.getElementById("queda_er").value;
+    }else(QuedaEr = "")
+
+    if (document.getElementById("trabalho_er").checked) {
+        TrabalhoEr = document.getElementById("trabalho_er").value;
+    }else(TrabalhoEr = "")
+
+    if (document.getElementById("transferencia_er").checked) {
+        TransferenciaEr = document.getElementById("transferencia_er").value;
+    }else(TransferenciaEr = "")
+
+    if (document.getElementById("outro_er").checked) {
+        OutroEr = document.getElementById("outro_er").value;
+    }else(OutroEr = "")
+
+console.log(EmergenciaMedicaEr)
+console.log(ComMeioTransporteEr)
+console.log(CausadoPorAnimaisEr)
+console.log(IncendioEr)
+console.log(AfogamentoEr)
+console.log(DeslizamentoDesmoronamentoEr)
+console.log(AgressaoEr)
+console.log(QuedaAltura2mEr)
+console.log(SuicidioEr)
+console.log(QuedaPropriaAlturaEr)
+console.log(AtropelamentoEr)
+console.log(ChoqueEletricoEr)
+console.log(DesabamentoEr)
+console.log(DomesticoEr)
+console.log(EsportivoEr)
+console.log(IntoxicacaoEr)
+console.log(QuedaBicicletaEr)
+console.log(QuedaMotoEr)
+console.log(QuedaEr)
+console.log(TrabalhoEr)
+console.log(TransferenciaEr)
+console.log(OutroEr)
+
+    $.ajax({
+        url: 'PHP/tabela-emergencia.php',
+        method: 'POST',
+        data: {
+            Exemplo: Exemplo,
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
 };
 function TermoDeRecusa(){
 
