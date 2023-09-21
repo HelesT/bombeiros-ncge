@@ -175,34 +175,18 @@ function EmergenciaRegistro(){
         OutroEr = document.getElementById("outro_er").value;
     }else(OutroEr = "")
 
-console.log(EmergenciaMedicaEr)
-console.log(ComMeioTransporteEr)
-console.log(CausadoPorAnimaisEr)
-console.log(IncendioEr)
-console.log(AfogamentoEr)
-console.log(DeslizamentoDesmoronamentoEr)
-console.log(AgressaoEr)
-console.log(QuedaAltura2mEr)
-console.log(SuicidioEr)
-console.log(QuedaPropriaAlturaEr)
-console.log(AtropelamentoEr)
-console.log(ChoqueEletricoEr)
-console.log(DesabamentoEr)
-console.log(DomesticoEr)
-console.log(EsportivoEr)
-console.log(IntoxicacaoEr)
-console.log(QuedaBicicletaEr)
-console.log(QuedaMotoEr)
-console.log(QuedaEr)
-console.log(TrabalhoEr)
-console.log(TransferenciaEr)
-console.log(OutroEr)
+    var EmergenciaRegistro = EmergenciaMedicaEr + "," + ComMeioTransporteEr + "," + CausadoPorAnimaisEr + "," + IncendioEr + "," + AfogamentoEr
+     + "," + DeslizamentoDesmoronamentoEr + "," + AgressaoEr + "," + QuedaAltura2mEr + "," + SuicidioEr + "," + QuedaPropriaAlturaEr 
+     + "," + AtropelamentoEr + "," + ChoqueEletricoEr + "," + DesabamentoEr + "," + DomesticoEr + "," + EsportivoEr + "," + IntoxicacaoEr 
+     + "," + QuedaBicicletaEr + "," + QuedaMotoEr + "," + QuedaEr + "," + TrabalhoEr + "," + TransferenciaEr + "," + OutroEr;
+
+    console.log(EmergenciaRegistro);
 
     $.ajax({
         url: 'PHP/tabela-emergencia.php',
         method: 'POST',
         data: {
-            Exemplo: Exemplo,
+            EmergenciaRegistro:EmergenciaRegistro
         },
         dataType: 'json'
     }).done(function() {
