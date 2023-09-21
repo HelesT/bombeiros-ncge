@@ -651,56 +651,56 @@ function RespostaMotoraMa() {/*Input type radio*/
 }
 /*Menor 5*/
 function AvaliacaoPacienteMe() {/*Input type radio*/
-var AberturaOcular = "";/*Input type radio*/
-if (document.getElementById("espontanea_paciente_ma").checked) {
-    AberturaOcular = document.getElementById("espontanea_paciente_ma").value;
-}  else if (document.getElementById("comando_verbal_paciente_ma").checked) {
-    AberturaOcular = document.getElementById("comando_verbal_paciente_ma").value;
-} else if (document.getElementById("estimulo_doloroso_paciente_ma").checked) {
-    AberturaOcular = document.getElementById("estimulo_doloroso_paciente_ma").value;
-} else if (document.getElementById("nenhuma_paciente_ma_ao").checked) {
-    AberturaOcular = document.getElementById("nenhuma_paciente_ma_ao").value;
+var AberturaOcularMe = "";/*Input type radio*/
+if (document.getElementById("espontanea_paciente_me").checked) {
+    AberturaOcularMe = document.getElementById("espontanea_paciente_me").value;
+}  else if (document.getElementById("comando_verbal_paciente_me").checked) {
+    AberturaOcularMe = document.getElementById("comando_verbal_paciente_me").value;
+} else if (document.getElementById("estimulo_doloroso_paciente_me").checked) {
+    AberturaOcularMe = document.getElementById("estimulo_doloroso_paciente_me").value;
+} else if (document.getElementById("nenhuma_paciente_me_ao").checked) {
+    AberturaOcularMe = document.getElementById("nenhuma_paciente_me_ao").value;
 }
-console.log(AberturaOcular)
+console.log(AberturaOcularMe)
 
 /*RespostaVerbal*/
-var RespostaVerbal = "";/*Input type radio*/
-if (document.getElementById("orientado_paciente_ma").checked) {
-    RespostaVerbal = document.getElementById("orientado_paciente_ma").value;
-}  else if (document.getElementById("confuso_paciente_ma").checked) {
-    RespostaVerbal = document.getElementById("confuso_paciente_ma").value;
-} else if (document.getElementById("palavras_inapropriadas_paciente_ma").checked) {
-    RespostaVerbal = document.getElementById("palavras_inapropriadas_paciente_ma").value;
-} else if (document.getElementById("palavras_incompreensiveis_paciente_ma").checked) {
-    RespostaVerbal = document.getElementById("palavras_incompreensiveis_paciente_ma").value;
-}else if (document.getElementById("nenhuma_paciente_ma_rv").checked) {
-    RespostaVerbal = document.getElementById("nenhuma_paciente_ma_rv").value;
+var RespostaVerbalMe = "";/*Input type radio*/
+if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").checked) {
+    RespostaVerbalMe = document.getElementById("palavras_e_frases_inapropriadas_paciente_me").value;
+}  else if (document.getElementById("palavras_inapropriadas_paciente_me").checked) {
+    RespostaVerbalMe = document.getElementById("palavras_inapropriadas_paciente_me").value;
+} else if (document.getElementById("choro_persistentes_ou_gritos_paciente_me").checked) {
+    RespostaVerbalMe = document.getElementById("choro_persistentes_ou_gritos_paciente_me").value;
+} else if (document.getElementById("sons_incompreensíveis_paciente_me").checked) {
+    RespostaVerbalMe = document.getElementById("sons_incompreensíveis_paciente_me").value;
+}else if (document.getElementById("nenhuma_paciente_me_rv").checked) {
+    RespostaVerbalMe = document.getElementById("nenhuma_paciente_me_rv").value;
 } 
-console.log(RespostaVerbal)
+console.log(RespostaVerbalMe)
 
-var RespostaMotora = "";/*Input type radio*/
-if (document.getElementById("obedece_comandos_paciente_ma").checked) {
-    RespostaMotora = document.getElementById("obedece_comandos_paciente_ma").value;
-} else if (document.getElementById("localiza_dor_paciente_ma").checked) {
-    RespostaMotora = document.getElementById("localiza_dor_paciente_ma").value;
-}  else if (document.getElementById("movimento_retirada_paciente_ma").checked) {
-    RespostaMotora = document.getElementById("movimento_retirada_paciente_ma").value;
-} else if (document.getElementById("flexao_anormal_paciente_ma").checked) {
-    RespostaMotora = document.getElementById("flexao_anormal_paciente_ma").value;
-} else if (document.getElementById("extensao_anormal_paciente_ma").checked) {
-    RespostaMotora = document.getElementById("extensao_anormal_paciente_ma").value;
-}else if (document.getElementById("nenhuma_paciente_ma_rm").checked) {
-    RespostaMotora = document.getElementById("nenhuma_paciente_ma_rm").value;
+var RespostaMotoraMe = "";/*Input type radio*/
+if (document.getElementById("obedece_comando_paciente_me").checked) {
+    RespostaMotoraMe = document.getElementById("obedece_comando_paciente_me").value;
+} else if (document.getElementById("localiza_dor_estimulo_tatil_paciente_me").checked) {
+    RespostaMotoraMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me").value;
+}  else if (document.getElementById("retirada_do_segmento_estimulado_paciente").checked) {
+    RespostaMotoraMe = document.getElementById("retirada_do_segmento_estimulado_paciente").value;
+} else if (document.getElementById("flexao_anormal_paciente_me").checked) {
+    RespostaMotoraMe = document.getElementById("flexao_anormal_paciente_me").value;
+} else if (document.getElementById("extensao_anormal_paciente_me").checked) {
+    RespostaMotoraMe = document.getElementById("extensao_anormal_paciente_me").value;
+}else if (document.getElementById("ausencia_paciente").checked) {
+    RespostaMotoraMe = document.getElementById("ausencia_paciente").value;
 } 
 
-console.log(RespostaMotora)
+console.log(RespostaMotoraMe)
 $.ajax({
     url: 'PHP/Avaliacao_paciente.php',
     method: 'POST',
     data: {
-        AberturaOcular: AberturaOcular,
-        RespostaVerbal: RespostaVerbal,
-        RespostaMotora: RespostaMotora,
+        AberturaOcularMe: AberturaOcularMe,
+        RespostaVerbalMe: RespostaVerbalMe,
+        RespostaMotoraMe: RespostaMotoraMe,
     },
     dataType: 'json'
 }).done(function() {
