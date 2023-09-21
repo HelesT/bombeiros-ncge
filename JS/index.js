@@ -326,7 +326,8 @@ function AvaliacaoPaciente(){
         AberturaOcular = document.getElementById("estimulo_doloroso_paciente_ma").value;
     } else if (document.getElementById("nenhuma_paciente_ma_ao").checked) {
         AberturaOcular = document.getElementById("nenhuma_paciente_ma_ao").value;
-    } 
+    }
+    console.log(AberturaOcular)
     
     /*RespostaVerbal*/
     var RespostaVerbal = "";/*Input type radio*/
@@ -340,8 +341,37 @@ function AvaliacaoPaciente(){
         RespostaVerbal = document.getElementById("palavras_incompreensiveis_paciente_ma").value;
     }else if (document.getElementById("nenhuma_paciente_ma_rv").checked) {
         RespostaVerbal = document.getElementById("nenhuma_paciente_ma_rv").value;
-    } console.log(RespostaVerbal)
-    
+    } 
+    console.log(RespostaVerbal)
+
+    var RespostaMotora = "";/*Input type radio*/
+    if (document.getElementById("obedece_comandos_paciente_ma").checked) {
+        RespostaMotora = document.getElementById("obedece_comandos_paciente_ma").value;
+    } else if (document.getElementById("localiza_dor_paciente_ma").checked) {
+        RespostaMotora = document.getElementById("localiza_dor_paciente_ma").value;
+    }  else if (document.getElementById("movimento_retirada_paciente_ma").checked) {
+        RespostaMotora = document.getElementById("movimento_retirada_paciente_ma").value;
+    } else if (document.getElementById("flexao_anormal_paciente_ma").checked) {
+        RespostaMotora = document.getElementById("flexao_anormal_paciente_ma").value;
+    } else if (document.getElementById("extensao_anormal_paciente_ma").checked) {
+        RespostaMotora = document.getElementById("extensao_anormal_paciente_ma").value;
+    }else if (document.getElementById("nenhuma_paciente_ma_rm").checked) {
+        RespostaMotora = document.getElementById("nenhuma_paciente_ma_rm").value;
+    } 
+   
+    console.log(RespostaMotora)
+    $.ajax({
+        url: 'PHP/Avaliacao_paciente.php',
+        method: 'POST',
+        data: {
+            AberturaOcular: AberturaOcular,
+            RespostaVerbal: RespostaVerbal,
+            RespostaMotora: RespostaMotora,
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
 }
 
 function Espontanea(){/*Input type radio*/
@@ -604,8 +634,98 @@ function RespostaMotoraMa() {/*Input type radio*/
     AusenciaPacienteMa.checked = false;
 }
 /*Menor 5*/
-function AberturaOcularMe() {/*Input type radio*/
-    var EspontaneaPacienteMe = document.getElementById("espontanea_paciente_me"); 
+function AvaliacaoPacienteMe() {/*Input type radio*/
+var AberturaOcular = "";/*Input type radio*/
+if (document.getElementById("espontanea_paciente_ma").checked) {
+    AberturaOcular = document.getElementById("espontanea_paciente_ma").value;
+}  else if (document.getElementById("comando_verbal_paciente_ma").checked) {
+    AberturaOcular = document.getElementById("comando_verbal_paciente_ma").value;
+} else if (document.getElementById("estimulo_doloroso_paciente_ma").checked) {
+    AberturaOcular = document.getElementById("estimulo_doloroso_paciente_ma").value;
+} else if (document.getElementById("nenhuma_paciente_ma_ao").checked) {
+    AberturaOcular = document.getElementById("nenhuma_paciente_ma_ao").value;
+}
+console.log(AberturaOcular)
+
+/*RespostaVerbal*/
+var RespostaVerbal = "";/*Input type radio*/
+if (document.getElementById("orientado_paciente_ma").checked) {
+    RespostaVerbal = document.getElementById("orientado_paciente_ma").value;
+}  else if (document.getElementById("confuso_paciente_ma").checked) {
+    RespostaVerbal = document.getElementById("confuso_paciente_ma").value;
+} else if (document.getElementById("palavras_inapropriadas_paciente_ma").checked) {
+    RespostaVerbal = document.getElementById("palavras_inapropriadas_paciente_ma").value;
+} else if (document.getElementById("palavras_incompreensiveis_paciente_ma").checked) {
+    RespostaVerbal = document.getElementById("palavras_incompreensiveis_paciente_ma").value;
+}else if (document.getElementById("nenhuma_paciente_ma_rv").checked) {
+    RespostaVerbal = document.getElementById("nenhuma_paciente_ma_rv").value;
+} 
+console.log(RespostaVerbal)
+
+var RespostaMotora = "";/*Input type radio*/
+if (document.getElementById("obedece_comandos_paciente_ma").checked) {
+    RespostaMotora = document.getElementById("obedece_comandos_paciente_ma").value;
+} else if (document.getElementById("localiza_dor_paciente_ma").checked) {
+    RespostaMotora = document.getElementById("localiza_dor_paciente_ma").value;
+}  else if (document.getElementById("movimento_retirada_paciente_ma").checked) {
+    RespostaMotora = document.getElementById("movimento_retirada_paciente_ma").value;
+} else if (document.getElementById("flexao_anormal_paciente_ma").checked) {
+    RespostaMotora = document.getElementById("flexao_anormal_paciente_ma").value;
+} else if (document.getElementById("extensao_anormal_paciente_ma").checked) {
+    RespostaMotora = document.getElementById("extensao_anormal_paciente_ma").value;
+}else if (document.getElementById("nenhuma_paciente_ma_rm").checked) {
+    RespostaMotora = document.getElementById("nenhuma_paciente_ma_rm").value;
+} 
+
+console.log(RespostaMotora)
+$.ajax({
+    url: 'PHP/Avaliacao_paciente.php',
+    method: 'POST',
+    data: {
+        AberturaOcular: AberturaOcular,
+        RespostaVerbal: RespostaVerbal,
+        RespostaMotora: RespostaMotora,
+    },
+    dataType: 'json'
+}).done(function() {
+    alert("alguma coisa deu!!");
+});
+}
+/*Abertura Ocular*/
+function EspontaneaMe(){/*Input type radio*/
+        var ComandoVerbalPacienteMe = document.getElementById("comando_verbal_paciente_me"); 
+        ComandoVerbalPacienteMe.checked = false;
+
+        var EstimuloDolorosoPacienteMe = document.getElementById("estimulo_doloroso_paciente_me"); 
+        EstimuloDolorosoPacienteMe.checked = false;
+
+        var NenhumaAoPacienteMe = document.getElementById("nenhuma_paciente_me_ao"); 
+        NenhumaAoPacienteMe.checked = false;
+    
+}
+function ComandoVerbalMe(){/*Input type radio*/
+     var EspontaneaPacienteMe = document.getElementById("espontanea_paciente_me"); 
+    EspontaneaPacienteMe.checked = false;
+    
+
+    var EstimuloDolorosoPacienteMe = document.getElementById("estimulo_doloroso_paciente_me"); 
+    EstimuloDolorosoPacienteMe.checked = false;
+
+    var NenhumaAoPacienteMe = document.getElementById("nenhuma_paciente_me_ao"); 
+    NenhumaAoPacienteMe.checked = false;
+}
+function EstimuloDolorosoMe(){/*Input type radio*/
+     var EspontaneaPacienteMe = document.getElementById("espontanea_paciente_me"); 
+    EspontaneaPacienteMe.checked = false;
+    
+    var ComandoVerbalPacienteMe = document.getElementById("comando_verbal_paciente_me"); 
+    ComandoVerbalPacienteMe.checked = false;
+
+    var NenhumaAoPacienteMe = document.getElementById("nenhuma_paciente_me_ao"); 
+    NenhumaAoPacienteMe.checked = false;
+}
+function NenhumaAoMe(){/*Input type radio*/
+     var EspontaneaPacienteMe = document.getElementById("espontanea_paciente_me"); 
     EspontaneaPacienteMe.checked = false;
     
     var ComandoVerbalPacienteMe = document.getElementById("comando_verbal_paciente_me"); 
@@ -613,9 +733,180 @@ function AberturaOcularMe() {/*Input type radio*/
 
     var EstimuloDolorosoPacienteMe = document.getElementById("estimulo_doloroso_paciente_me"); 
     EstimuloDolorosoPacienteMe.checked = false;
+}
+/*Resposta Verbal*/
+function PalavrasEFrasesInapropriadasMe(){
 
-    var NenhumaAoPacienteMe = document.getElementById("nenhuma_paciente_me_ao"); 
-    NenhumaAoPacienteMe.checked = false;
+    var ChoroPersistentesOuGritosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    ChoroPersistentesOuGritosMe.checked = false;
+
+    var EstimuloDolorosoPacienteMe = document.getElementById("choro_persistentes_ou_gritos_paciente_me"); 
+    EstimuloDolorosoPacienteMe.checked = false;
+
+    var SonsIncompreensiveisMe = document.getElementById("sons_incompreensíveis_paciente_me"); 
+    SonsIncompreensiveisMe.checked = false;
+
+    var NenhumaRvMe = document.getElementById("nenhuma_paciente_me_rv"); 
+    NenhumaRvMe.checked = false;
+}
+function PalavrasInapropriadasMe(){
+     
+    var PalavrasEFrasesInapropriadasMe = document.getElementById("palavras_e_frases_inapropriadas_paciente_me"); 
+    PalavrasEFrasesInapropriadasMe.checked = false; 
+
+    var ChoroPersistentesOuGritosMe = document.getElementById("choro_persistentes_ou_gritos_paciente_me"); 
+    ChoroPersistentesOuGritosMe.checked = false;
+
+    var SonsIncompreensiveisMe = document.getElementById("sons_incompreensíveis_paciente_me"); 
+    SonsIncompreensiveisMe.checked = false;
+
+    var NenhumaRvMe = document.getElementById("nenhuma_paciente_me_rv"); 
+    NenhumaRvMe.checked = false;
+}
+function ChoroPersistentesOuGritosMe(){
+     var PalavrasEFrasesInapropriadasMe = document.getElementById("palavras_e_frases_inapropriadas_paciente_me"); 
+    PalavrasEFrasesInapropriadasMe.checked = false;
+    
+    var PalavrasInapropriadasMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    PalavrasInapropriadasMe.checked = false;
+
+    var SonsIncompreensiveisMe = document.getElementById("sons_incompreensíveis_paciente_me"); 
+    SonsIncompreensiveisMe.checked = false;
+
+    var NenhumaRvMe = document.getElementById("nenhuma_paciente_me_rv"); 
+    NenhumaRvMe.checked = false;
+}
+function SonsIncompreensiveisMe(){
+    var PalavrasEFrasesInapropriadasMe = document.getElementById("palavras_e_frases_inapropriadas_paciente_me"); 
+    PalavrasEFrasesInapropriadasMe.checked = false;
+    
+    var PalavrasInapropriadasMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    PalavrasInapropriadasMe.checked = false;
+
+    var ChoroPersistentesOuGritosMe = document.getElementById("choro_persistentes_ou_gritos_paciente_me"); 
+    ChoroPersistentesOuGritosMe.checked = false;
+
+    var NenhumaRvMe = document.getElementById("nenhuma_paciente_me_rv"); 
+    NenhumaRvMe.checked = false;
+}
+function NenhumaRvMe(){
+    var PalavrasEFrasesInapropriadasMe = document.getElementById("palavras_e_frases_inapropriadas_paciente_me"); 
+    PalavrasEFrasesInapropriadasMe.checked = false;
+    
+    var PalavrasInapropriadasMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    PalavrasInapropriadasMe.checked = false;
+
+    var ChoroPersistentesOuGritosMe = document.getElementById("choro_persistentes_ou_gritos_paciente_me"); 
+    ChoroPersistentesOuGritosMe.checked = false;
+
+    var SonsIncompreensiveisMe = document.getElementById("sons_incompreensíveis_paciente_me"); 
+    SonsIncompreensiveisMe.checked = false;
+
+}
+/*Resposta Motora*/
+
+function ObedeceComandosMe(){
+     
+    var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
+    LocalizaDorEstimuloTatilMe.checked = false;
+ 
+     var RetiradaDoSegmentoEstimuladoMe = document.getElementById("retirada_do_segmento_estimulado_paciente"); 
+     RetiradaDoSegmentoEstimuladoMe.checked = false;
+ 
+     var FlexaoAnormal = document.getElementById("flexao_anormal_paciente_me"); 
+     FlexaoAnormal.checked = false;
+ 
+     var ExtensaoAnormal = document.getElementById("extensao_anormal_paciente_me"); 
+     ExtensaoAnormal.checked = false;
+ 
+     var AusenciaMe = document.getElementById("ausencia_paciente"); 
+     AusenciaMe.checked = false;
+ }
+
+function LocalizaDorEstimuloTatilMe(){
+     
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    ObedeceComandosMe.checked = false;
+
+
+    var RetiradaDoSegmentoEstimuladoMe = document.getElementById("retirada_do_segmento_estimulado_paciente"); 
+    RetiradaDoSegmentoEstimuladoMe.checked = false;
+
+    var FlexaoAnormal = document.getElementById("flexao_anormal_paciente_me"); 
+    FlexaoAnormal.checked = false;
+
+    var ExtensaoAnormal = document.getElementById("extensao_anormal_paciente_me"); 
+    ExtensaoAnormal.checked = false;
+
+    var AusenciaMe = document.getElementById("ausencia_paciente"); 
+    AusenciaMe.checked = false;
+}
+function RetiradaDoSegmentoEstimuladoMe(){
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    ObedeceComandosMe.checked = false;
+
+    var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
+    LocalizaDorEstimuloTatilMe.checked = false;
+
+    var FlexaoAnormal = document.getElementById("flexao_anormal_paciente_me"); 
+    FlexaoAnormal.checked = false;
+
+    var ExtensaoAnormal = document.getElementById("extensao_anormal_paciente_me"); 
+    ExtensaoAnormal.checked = false;
+
+    var AusenciaMe = document.getElementById("ausencia_paciente"); 
+    AusenciaMe.checked = false;
+}
+function FlexaoAnormal(){
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    ObedeceComandosMe.checked = false;
+
+    var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
+    LocalizaDorEstimuloTatilMe.checked = false;
+
+    var RetiradaDoSegmentoEstimuladoMe = document.getElementById("retirada_do_segmento_estimulado_paciente"); 
+    RetiradaDoSegmentoEstimuladoMe.checked = false;
+
+
+    var ExtensaoAnormal = document.getElementById("extensao_anormal_paciente_me"); 
+    ExtensaoAnormal.checked = false;
+
+    var AusenciaMe = document.getElementById("ausencia_paciente"); 
+    AusenciaMe.checked = false;
+}
+function ExtensaoAnormal(){
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    ObedeceComandosMe.checked = false;
+
+    var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
+    LocalizaDorEstimuloTatilMe.checked = false;
+
+    var RetiradaDoSegmentoEstimuladoMe = document.getElementById("retirada_do_segmento_estimulado_paciente"); 
+    RetiradaDoSegmentoEstimuladoMe.checked = false;
+
+    var FlexaoAnormal = document.getElementById("flexao_anormal_paciente_me"); 
+    FlexaoAnormal.checked = false;
+
+    var AusenciaMe = document.getElementById("ausencia_paciente"); 
+    AusenciaMe.checked = false;
+
+}
+function AusenciaMe(){
+   var ObedeceComandosMe = document.getElementById("palavras_inapropriadas_paciente_me"); 
+    ObedeceComandosMe.checked = false;
+
+    var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
+    LocalizaDorEstimuloTatilMe.checked = false;
+
+    var RetiradaDoSegmentoEstimuladoMe = document.getElementById("retirada_do_segmento_estimulado_paciente"); 
+    RetiradaDoSegmentoEstimuladoMe.checked = false;
+
+    var FlexaoAnormal = document.getElementById("flexao_anormal_paciente_me"); 
+    FlexaoAnormal.checked = false;
+
+    var ExtensaoAnormal = document.getElementById("extensao_anormal_paciente_me"); 
+    ExtensaoAnormal.checked = false;
+
 }
 
 function ocultarDivMe() {
@@ -629,5 +920,4 @@ function ocultarDivMa() {
     var menorque5paciente = document.getElementById("menorque5paciente");
     menorque5paciente.style.display = "flex";
     maiorque5paciente.style.display = "none";
-}
-    
+}    
