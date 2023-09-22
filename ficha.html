@@ -525,7 +525,7 @@
           <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
         </div><!-- Fim do cabeçalho da pagina "" -->
 
-        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+        <form class="slide-body centro"><!--inicio do corpo da página de ""-->
           <div class="coluna centro" style= "background-color: #0667E8;  width: 340px; height: 200px; ">
             <div style="width:100%;">
               <div class="linha centro" style="justify-content: space-around; width:100%;"> 
@@ -535,15 +535,16 @@
               </div>
                   <div class="linha centro" style="justify-content: space-around;width: 100%;">
                         <div class="coluna centro" style="color: white;">
-                          <input type="checkbox" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
+                          <input id="critico_dt" name="radio_botao" value="Critico" type="radio" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
                         </div>
                         <div class="coluna centro" style="color: white;">                       
-                          <input type="checkbox" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
+                          <input id="instavel_dt" name="radio_botao" value="Instavel" type="radio" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
                         </div>
                           <div class="coluna centro" style="color: white;">
-                            <input type="checkbox" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
-                          </div>  
+                            <input id="estavel_dt" name="radio_botao" value="Estavel" type="radio" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
+                          </div>
                   </div>
+
             </div>
             <div style="width:100%;">
               <div class="linha centro" style="justify-content: space-around; width:100%;"> 
@@ -552,7 +553,7 @@
               </div>
                   <div class="linha centro" style="justify-content: space-around;width: 100%;">
                         <div class="coluna centro" style="color: white;">
-                          <input type="checkbox" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
+                          <input id="potencial_mente_instavel_dt" name="radio_botao" value="PotencialmenteInstavel" type="radio" style="width: 24px; height: 24px;" class="checkbox-quadrado-azul">
                         </div>
                   </div>
             </div>
@@ -562,23 +563,24 @@
           </div>
             <div class="coluna centro" style="justify-content: space-around; height: 365px;">
                 <div class="linha centro" >
-                  <span>M:</span> <input type="text" class="circulo" style="width: 300px;height: 46px;">
+                  <span>M:</span> <input type="text" id="m_dt" class="circulo" style="width: 300px;height: 46px;">
                 </div>
                 <div class="linha centro">
-                  <span>S1:</span> <input type="text" class="circulo" style="width: 300px;height: 46px;">
+                  <span>S1:</span> <input type="text" id="s1_dt" class="circulo" style="width: 300px;height: 46px;">
                 </div>
                 <div class="linha centro">
-                  <span>S2:</span> <input type="text" class="circulo" style="width: 300px;height: 46px;">
+                  <span>S2:</span> <input type="text" id="s2_dt" class="circulo" style="width: 300px;height: 46px;">
                 </div>
                 <div class="linha centro">
-                  <span>S3:</span> <input type="text" class="circulo" style="width: 300px;height: 46px;">
+                  <span>S3:</span> <input type="text" id="s3_dr" class="circulo" style="width: 300px;height: 46px;">
                 </div>
                 <div class="linha centro">
-                  <span>Demante:</span> <input type="text" class="circulo" style="width: 250px;height: 46px;">
+                  <span>Demante:</span> <input type="text" id="demante_dt" class="circulo" style="width: 250px;height: 46px;">
                 </div>
+                <input onclick="DecisaoDeTransporte()" type="button" style="background-color: black;">
             </div>
         </div>
-        </div><!--Fim do corpo da página de ""-->
+      </form><!--Fim do corpo da página de ""-->
 
       
       <div class="swiper-slide slide6"><!---------------------------------------------------------Inicio da página de Problemas Suspeitos --------------------------------------------------------->
@@ -1187,7 +1189,7 @@
               <th>Quant</th>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Ataduras 8 <input type="checkbox"> 12<input type="checkbox">  20<input type="checkbox"> </td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Ataduras 8 <input  type="radio"> 12<input type="radio">  20<input type="radio"> </td>
               <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1199,7 +1201,7 @@
             <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
         </tr> 
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Kit's H <input type="checkbox"> P<input type="checkbox">  Q<input type="checkbox"> </td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Kit's H <input type="radio"> P<input type="radio">  Q<input type="radio"> </td>
           <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1227,11 +1229,11 @@
       <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Talas PAP. <input type="checkbox">P <input type="checkbox">G </td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Talas PAP. <input type="radio">P <input type="radio">G </td>
       <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> <input class="input-linha" style="width: 50px; height: 25px;" type="text" > </td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> <input class="input-linha" style="width: 80px; height: 25px;" type="text" > </td>
           <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
           </table>
@@ -1263,11 +1265,11 @@
               <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Colar  N <input type="checkbox"> PP<input type="checkbox">  P<input type="checkbox"> </td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Colar  N <input type="radio"> PP<input type="radio">  P<input type="radio"> </td>
               <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
           </tr>
           <tr style="border-style:solid; border-color: #0667E8;" >
-            <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Colar  M <input type="checkbox"> G <input type="checkbox"><input class="input-linha" style="width: 25px; height: 25px;" type="text" ></td>
+            <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Colar  M <input type="radio"> G <input type="radio"><input class="input-linha" style="width: 25px; height: 25px;" type="text" ></td>
             <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
         </tr> 
         <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1275,7 +1277,7 @@
           <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> KED <input type="checkbox">Adul. <input type="checkbox">Infa. </td>
+        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> KED <input type="radio">Adul. <input type="radio">Infa. </td>
         <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
     </tr>
     <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1324,7 +1326,7 @@
         <div class="slide-body"><!--inicio do corpo da página de ""-->
           <div class="coluna centro" style="width: 100%;" >
             <span style="font-size: 20px; margin-top: 10px;">O que aconteceu(sinais e sintomas)</span>
-            <input type="text" style="border-style:solid; border-color: #0667E8;width: 300px; height: 40px; ">
+            <input type="text" id="oa_anamnese"   style="border-style:solid; border-color: #0667E8;width: 300px; height: 40px; ">
               
             <div class="coluna centro"> 
               <div class="linha centro"> 
@@ -1333,14 +1335,14 @@
               <div class="coluna centro"> 
                   <div class="linha centro"> 
                     <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                    <input type="checkbox" class="checkbox" style="width: 20px; height: 20px;"> 
-                    <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                    <input type="radio" id="s_av" value="s" name="botao1_anamnese" class="checkbox" style="width: 20px; height: 20px;"> 
+                    <input  type="radio" id="n_av" value="n" name="botao1_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
                     <span style="font-size: 20px;">não</span>
                   </div>
                 </div>
               </div>
               <span style="font-size: 20px; margin-top: 10px;">A quanto tempo isso aconteceu?</span>
-              <input type="text" style="border-style:solid; border-color: #0667E8;width: 300px; height: 40px; ">
+              <input type="text" id="ac_anamnese"  style="border-style:solid; border-color: #0667E8;width: 300px; height: 40px; ">
                 
               <div class="coluna centro"> 
                 <div class="coluna centro"> 
@@ -1350,8 +1352,8 @@
                   <div class="coluna centro"> 
                       <div class="linha centro"> 
                         <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                        <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                        <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                        <input type="radio" id="s_ps" value="s" name="botao2_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
+                        <input  type="radio" id="n_ps" value="n" name="botao2_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
                         <span style="font-size: 20px;">não</span>
                       </div>
                     </div>
@@ -1360,7 +1362,7 @@
                    <div class=" linha centro" style="display: none;">
                           <div class="coluna centro"> 
                             <span style="font-size: 20px; margin-top: 10px;" >Quais?</span>
-                            <input type="text" style="border-style:solid; border-color: #0667E8;width: 300px; height: 40px; ">
+                            <input type="text" id="qs_anamnese"  style="border-style:solid; border-color: #0667E8;width: 300px; height: 40px; ">
                           </div>
                    </div>
                 </div>
@@ -1373,8 +1375,8 @@
                     <div class="coluna centro"> 
                         <div class="linha centro"> 
                           <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                          <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                          <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                          <input type="radio" id="s_fm" value="s" name="botao3_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
+                          <input  type="radio" id="n_fm" value="n" name="botao3_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
                           <span style="font-size: 20px;">não</span>
                         </div>
                       </div>
@@ -1384,13 +1386,13 @@
                           <div class="linha centro">
                               <div class="coluna centro">
                                 <span style="font-size: 20px; margin-top: 10px;" >Horário da ultima <br>medicação?</span> 
-                                <input type="text" style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
+                                <input type="text" id="hu_anamnese"  style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
                             </div>
                           </div>
                           <div class=" linha centro" style=" margin-top: 5px;">
                               <div class="coluna centro">
                                   <span  >Quais?</span>
-                                  <input type="text" style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
+                                  <input type="text" id="qis_anamnese"  style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
                             </div>
                           </div> 
                      </div>
@@ -1404,8 +1406,8 @@
                       <div class="coluna centro"> 
                           <div class="linha centro"> 
                             <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                            <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                            <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                            <input type="radio" id="s_al" value="s" name="botao4_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
+                            <input  type="radio" id="n_al" value="n" name="botao4_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
                             <span style="font-size: 20px;">não</span>
                           </div>
                         </div>
@@ -1414,7 +1416,7 @@
                        <div class=" linha centro" style="display: none;">
                               <div class=" coluna centro"> 
                                 <span style="font-size: 20px; margin-top: 10px;" >Especifique</span>
-                                <input type="text" style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
+                                <input type="text" id="eq_anamnese"  style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
                               </div>
                        </div>
                     </div>
@@ -1426,8 +1428,8 @@
                         <div class="coluna centro"> 
                             <div class="linha centro"> 
                               <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                              <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                              <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                              <input type="radio" id="s_il" value="s" name="botao5_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
+                              <input  type="radio" id="n_il" value="n" name="botao5_anamnese" class="checkbox"style="width: 20px; height: 20px;"> 
                               <span style="font-size: 20px;">não</span>
                             </div>
                           </div>
@@ -1435,7 +1437,7 @@
                          <div class=" linha centro" style="display: none;">
                                 <div class="coluna centro"> 
                                   <span style="margin-top: 10px; font-size: 20px;" >Que horas?</span>
-                                  <input type="text" style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
+                                  <input type="text" id="qr_anamnese"  style="border-style:solid; border-color: #0667E8; width: 300px; height: 40px; ">
                               </div>
                          </div>
                       </div> 
@@ -1456,7 +1458,7 @@
         
         <div class="slide-body"><!--inicio do corpo da página de ""-->
           <div class="coluna centro" style="width: 100%;" >
-            <span style="font-size: 20px; margin-top: 10px;">Periodo de gestação <input type="text" class="input-linha" style="width: 125px;"></span>
+            <span style="font-size: 20px; margin-top: 10px;">Periodo de gestação <input type="text" id="pg_anamnese_gestacional"  class="input-linha" style="width: 125px;"></span>
           
             <div class="coluna centro"> 
               <div class="linha centro"> 
@@ -1465,13 +1467,13 @@
               <div class="coluna centro"> 
                   <div class="linha centro"> 
                     <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                    <input type="checkbox" class="checkbox" style="width: 20px; height: 20px;"> 
-                    <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                    <input type="radio" id="s_fp" value="s" name="botao1_anamnese_gestacional" class="checkbox" style="width: 20px; height: 20px;"> 
+                    <input  type="radio" id="n_fp" value="n" name="botao1_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                     <span style="font-size: 20px;">não</span>
                   </div>
                 </div>
               </div>
-              <span style="font-size: 20px; margin-top: 10px;">Nome do médico <input type="text"class="input-linha"style="width: 125px;"></span>
+              <span style="font-size: 20px; margin-top: 10px;">Nome do médico <input type="text" id="nm_anamnese_gestacional" class="input-linha"style="width: 125px;"></span>
                 
               <div class="coluna centro"> 
                 <div class="coluna centro"> 
@@ -1481,8 +1483,8 @@
                   <div class="coluna centro"> 
                       <div class="linha centro"> 
                         <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                        <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                        <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                        <input type="radio" id="s_ec" value="s" name="botao2_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
+                        <input  type="radio" id="n_ec" value="n" name="botao2_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                         <span style="font-size: 20px;">não</span>
                       </div>
                     </div>
@@ -1494,8 +1496,8 @@
                     <div class="coluna centro"> 
                         <div class="linha centro"> 
                           <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                          <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                          <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                          <input type="radio" id="s_ef" value="s" name="botao3_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
+                          <input  type="radio" id="n_ef" value="n" name="botao3_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                           <span style="font-size: 20px;">não</span>
                         </div>
                       </div>
@@ -1503,7 +1505,7 @@
                    <div class=" linha centro" style="display:none ;">
                           <div class="coluna centro"> 
                             <span style="font-size: 20px; margin-top: 10px;" >Quantos?</span>
-                            <input type="text" style="width: 225px; "class="input-linha">
+                            <input type="text" id="qs_anamnese_gestacional"  style="width: 225px; "class="input-linha">
                           </div>
                    </div>
               </div>
@@ -1514,10 +1516,10 @@
                 <div class="coluna centro"> 
                     <div class="linha centro"> 
                       <span style="font-size: 20px; margin-left: 5px; "> Duração:</span> 
-                      <input type="text" style="width: 45px;" class="input-linha" > 
+                      <input type="text" id="tc_anamnese_gestacional"  style="width: 45px;" class="input-linha" > 
                       
                       <span style="font-size: 20px;">Intervalo:</span>
-                      <input type="text" style="width: 45px;" class="input-linha" > 
+                      <input type="text" id="io_anamnese_gestacional"  style="width: 45px;" class="input-linha" > 
                     </div>
                   </div>
                 </div>
@@ -1530,8 +1532,8 @@
                     <div class="coluna centro"> 
                         <div class="linha centro"> 
                           <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                          <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                          <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                          <input type="radio" id="s_sq" value="s" name="botao4_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
+                          <input  type="radio" id="n_sq" value="n" name="botao4_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                           <span style="font-size: 20px;">não</span>
                         </div>
                       </div>
@@ -1548,8 +1550,8 @@
                       <div class="coluna centro"> 
                           <div class="linha centro"> 
                             <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                            <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                            <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                            <input type="radio" id="s_jb" value="s" name="botao5_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
+                            <input  type="radio" id="n_jb" value="n" name="botao5_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                             <span style="font-size: 20px;">não</span>
                           </div>
                         </div>
@@ -1563,8 +1565,8 @@
                         <div class="coluna centro"> 
                             <div class="linha centro"> 
                               <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                              <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                              <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                              <input type="radio" id="s_fv" value="s" name="botao6_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
+                              <input  type="radio" id="n_fv" value="n" name="botao6_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                               <span style="font-size: 20px;">não</span>
                             </div>
                           </div>
@@ -1579,14 +1581,14 @@
                           <div class="coluna centro"> 
                               <div class="linha centro"> 
                                 <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                                <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                                <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                                <input type="radio" id="s_pr" value="s" name="botao7_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
+                                <input  type="radio" id="n_pr" value="n" name="botao7_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                                 <span style="font-size: 20px;">não</span>
                               </div>
                             </div>
                           </div>
                         </div> 
-                        <span style="font-size: 20px; margin-top: 10px;">Hora do nascimento <input type="text"class="input-linha"style="width: 125px;"></span>
+                        <span style="font-size: 20px; margin-top: 10px;">Hora do nascimento <input type="text" id="hn_anamnese_gestacional" class="input-linha"style="width: 125px;"></span>
 
                         <div class="coluna centro"> 
                           <div class="coluna centro"> 
@@ -1596,15 +1598,15 @@
                             <div class="coluna centro"> 
                                 <div class="linha centro"> 
                                   <span style="font-size: 20px; margin-left: 5px; "> Fem</span> 
-                                  <input type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
-                                  <input  type="checkbox" class="checkbox"style="width: 20px; height: 20px;"> 
+                                  <input type="radio" id="fem" value="s" name="botao8_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
+                                  <input  type="radio" id="mas" value="n" name="botao8_anamnese_gestacional" class="checkbox"style="width: 20px; height: 20px;"> 
                                   <span style="font-size: 20px;">Mas</span>
                                 </div>
                               </div>
                             </div>
                             
                         </div> 
-                        <span style="font-size: 20px; margin-top: 10px;">Nome do bebê <input type="text"class="input-linha"style="width: 125px;"></span>
+                        <span style="font-size: 20px; margin-top: 10px;">Nome do bebê <input type="text" id="nb_anamnese_gestacional" class="input-linha"style="width: 125px;"></span>
 
           </div>
         </div><!--Fim do corpo da página de ""-->
