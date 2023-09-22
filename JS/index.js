@@ -195,17 +195,14 @@ function EmergenciaRegistro(){
 };
 function TermoDeRecusa(){
 
-    var NomeTermoRecusa = $('#Nome_Recusa').val();
-    var IdentidadeRecusa = $('#Identidade_Recusa').val();
-    var CpfRescusa = $('#Cpf_Recusa').val();
-    var AssinaturaRecusa = $('#Assinatura_Recusa').val();
-    var TestemunhaRecusa = $('#Testemunha_Recusa').val();
-    var DocRecusa = $('#Doc_Recusa').val();
-    var TestemunhaRecusa2 = $('#Testemunha_Recusa_2').val();
-    var DocRecusa2 = $('#Doc_Recusa_2').val();
-    
-    
-    console.log(Data);
+    var NomeTermoRecusa = $('#nome_Recusa').val();
+    var IdentidadeRecusa = $('#identidade_Recusa').val();
+    var CpfRescusa = $('#cpf_Recusa').val();
+    var AssinaturaRecusa = $('#assinatura_Recusa').val();
+    var TestemunhaRecusa = $('#testemunha_Recusa').val();
+    var DocRecusa = $('#doc_Recusa').val();
+    var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
+    var DocRecusa2 = $('#doc_Recusa_2').val();
 
      $.ajax({
         url: 'PHP/Termo_de_recusa.php',

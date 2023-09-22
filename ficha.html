@@ -1622,19 +1622,19 @@
           <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
         </div><!-- Fim do cabeçalho da pagina "" -->
 
-        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+        <form class="slide-body centro" method="post"><!--inicio do corpo da página de ""-->
           <div class="coluna centro">
-            <div class="linha centro" style="margin-top: 15px;"><span style="margin-right: 5px;" >Eu</span><input type="text" class="quadrado"></div>
+            <div class="linha centro" style="margin-top: 15px;"><span style="margin-right: 5px;" >Eu</span><input id="nome_Recusa" type="text" class="quadrado"></div>
             <div class="linha centro"  style="margin-top: 15px;">
               <div class="coluna centro"> 
                 <span style="font-size: 15px;">PORTADOR DA CARTEIRA DE IDENTIDADE RG Nº</span>
-                <input  type="number" class="quadrado " style="width: 250px; height: 25px;">
+                <input  type="number" id="identidade_Recusa" class="quadrado " style="width: 250px; height: 25px;">
               </div>
             </div>
             <div class="linha centro"  style="margin-top: 15px;">
               <div class="coluna centro"> 
                 <span style="font-size: 15px;">INSCRITO NO CPF SOB Nº</span>
-                <input  type="number" class="quadrado " style="width: 250px; height: 25px;">
+                <input  type="number" id="cpf_Recusa" class="quadrado " style="width: 250px; height: 25px;">
               </div>
             </div>
             <div class=""> 
@@ -1649,13 +1649,14 @@
               
             </div>
             
-            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">ASS:</span><input type="text" class="quadrado"></div>
-            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Testemunha</span><input type="text" class="quadrado"></div>
-            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Doc:</span><input type="text" class="quadrado"></div>
-            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Testemunha</span><input type="text" class="quadrado"></div>
-            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Doc:</span><input type="text" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">ASS:</span><input id="assinatura_Recusa" type="text" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Testemunha</span><input id="testemunha_Recusa" type="text" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Doc:</span><input id="doc_Recusa" type="text" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Testemunha</span><input id="testemunha_Recusa_2" type="text" class="quadrado"></div>
+            <div class="linha centro"  style="margin-top: 15px;"><span style="margin-right: 5px;">Doc:</span><input id="doc_Recusa_2" type="text" class="quadrado"></div>
           </div>
-        </div><!--Fim do corpo da página de ""-->
+          <input type="button" onclick="TermoDeRecusa()">
+        </form><!--Fim do corpo da página de ""-->
 
       </div>
 
