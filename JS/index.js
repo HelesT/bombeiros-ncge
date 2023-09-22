@@ -5,6 +5,7 @@
     AvaliacaoPaciente()
     TermoDeRecusa()
     FormaDeConducao()
+    DecisaoDeTransporte()
 */
 
 function PacienteRegistro(){    
@@ -195,17 +196,14 @@ function EmergenciaRegistro(){
 };
 function TermoDeRecusa(){
 
-    var NomeTermoRecusa = $('#Nome_Recusa').val();
-    var IdentidadeRecusa = $('#Identidade_Recusa').val();
-    var CpfRescusa = $('#Cpf_Recusa').val();
-    var AssinaturaRecusa = $('#Assinatura_Recusa').val();
-    var TestemunhaRecusa = $('#Testemunha_Recusa').val();
-    var DocRecusa = $('#Doc_Recusa').val();
-    var TestemunhaRecusa2 = $('#Testemunha_Recusa_2').val();
-    var DocRecusa2 = $('#Doc_Recusa_2').val();
-    
-    
-    console.log(Data);
+    var NomeTermoRecusa = $('#nome_Recusa').val();
+    var IdentidadeRecusa = $('#identidade_Recusa').val();
+    var CpfRescusa = $('#cpf_Recusa').val();
+    var AssinaturaRecusa = $('#assinatura_Recusa').val();
+    var TestemunhaRecusa = $('#testemunha_Recusa').val();
+    var DocRecusa = $('#doc_Recusa').val();
+    var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
+    var DocRecusa2 = $('#doc_Recusa_2').val();
 
      $.ajax({
         url: 'PHP/Termo_de_recusa.php',
@@ -920,4 +918,108 @@ function ocultarDivMa() {
     var menorque5paciente = document.getElementById("menorque5paciente");
     menorque5paciente.style.display = "flex";
     maiorque5paciente.style.display = "none";
-}    
+} 
+function DecisaoDeTransporte(){
+    var MDT = $('#m_dt').val();
+    var S1DT = $('#s1_dt').val();
+    var S2DT = $('#s2_dt').val();
+    var S3DT = $('#s3_dr').val();
+    var DemanteDT = $('#demante_dt').val();
+    
+    var DecisaoDeTransporteDt = "";/*Input type radio*/
+    if (document.getElementById("critico_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("critico_dt").value;
+    }  else if (document.getElementById("instavel_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("instavel_dt").value;
+    } else if (document.getElementById("estavel_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("estavel_dt").value;
+    } else if (document.getElementById("potencial_mente_instavel_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("potencial_mente_instavel_dt").value;
+    }
+
+     $.ajax({
+        url: 'PHP/Decisao_De_Transporte.php',
+        method: 'POST',
+        data: {
+            DecisaoDeTransporteDt: DecisaoDeTransporteDt,
+            MDT: MDT,
+            S1DT: S1DT,
+            S2DT: S2DT,
+            S3DT: S3DT,
+            DemanteDT: DemanteDT
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
+
+}   
+function Anamnese(){
+    var AcAnamnese = $('#oa_anamnese').val();
+    var QsAnamnese = $('#qs_anamnese').val();
+    var HuAnamnese = $('#hu_anamnese').val();
+    var QisAnamnese = $('#qis_anamnese').val();
+    var EqAnamnese = $('#eq_anamnese').val();
+    var QrAnamnese = $('#qr_anamnese').val();
+
+    
+
+    var OaAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_av").checked) {
+        OaAnamnese  = document.getElementById("s_av").value;
+    } else if (document.getElementById("n_av").checked) {
+        OaAnamnese  = document.getElementById("n_av").value;
+    }
+    var PsAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_ps").checked) {
+        PsAnamnese  = document.getElementById("s_ps").value;
+    } else if (document.getElementById("n_ps").checked) {
+        PsAnamnese  = document.getElementById("n_ps").value;
+    }
+    var FmAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_fm").checked) {
+        FmAnamnese  = document.getElementById("s_fm").value;
+    } else if (document.getElementById("n_fm").checked) {
+        FmAnamnese  = document.getElementById("n_fm").value;
+    }
+    var AlAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_al").checked) {
+        AlAnamnese  = document.getElementById("s_al").value;
+    } else if (document.getElementById("n_al").checked) {
+        AlAnamnese  = document.getElementById("n_al").value;
+    }
+    var IlAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_il").checked) {
+        IlAnamnese  = document.getElementById("s_il").value;
+    } else if (document.getElementById("n_il").checked) {
+        IlAnamnese  = document.getElementById("n_il").value;
+    }
+    console.log(AcAnamnese);
+    console.log(OaAnamnese);
+    console.log(QsAnamnese);
+    console.log(HuAnamnese);
+    console.log(QisAnamnese);
+    console.log(EqAnamnese);
+    console.log(QrAnamnese);
+ $.ajax({
+        url: 'PHP/Decisao_De_Transporte.php',
+        method: 'POST',
+        data: {
+            Acnamnese: AcAnamnese,
+            QsAnamnese: QsAnamnese,
+            HuAnamnese: HuAnamnese,
+            QisAnamnese: QisAnamnese,
+            EqAnamnese: EqAnamnese,
+            QrAnamnese: QrAnamnese,
+           
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
+}
+function AnamneseGestacional(){
+
+}
