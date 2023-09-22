@@ -5,6 +5,7 @@
     AvaliacaoPaciente()
     TermoDeRecusa()
     FormaDeConducao()
+    DecisaoDeTransporte()
 */
 
 function PacienteRegistro(){    
@@ -920,4 +921,46 @@ function ocultarDivMa() {
     var menorque5paciente = document.getElementById("menorque5paciente");
     menorque5paciente.style.display = "flex";
     maiorque5paciente.style.display = "none";
-}    
+} 
+function DecisaoDeTransporte(){
+    var MDT = $('#m_dt').val();
+    var S1DT = $('#s1_dt').val();
+    var S2DT = $('#s2_dt').val();
+    var S3DT = $('#s3_dr').val();
+    var DemanteDT = $('#demante_dt').val();
+    
+    var DecisaoDeTransporteDt = "";/*Input type radio*/
+    if (document.getElementById("critico_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("critico_dt").value;
+    }  else if (document.getElementById("instavel_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("instavel_dt").value;
+    } else if (document.getElementById("estavel_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("estavel_dt").value;
+    } else if (document.getElementById("potencial_mente_instavel_dt").checked) {
+        DecisaoDeTransporteDt = document.getElementById("potencial_mente_instavel_dt").value;
+    }
+
+     $.ajax({
+        url: 'PHP/Decisao_De_Transporte.php',
+        method: 'POST',
+        data: {
+            DecisaoDeTransporteDt: DecisaoDeTransporteDt,
+            MDT: MDT,
+            S1DT: S1DT,
+            S2DT: S2DT,
+            S3DT: S3DT,
+            DemanteDT: DemanteDT
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
+
+}   
+function Anamnese(){
+
+}
+function AnamneseGestacional(){
+
+}
