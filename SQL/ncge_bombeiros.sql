@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/09/2023 às 22:49
+-- Tempo de geração: 22-Set-2023 às 14:27
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `admin`
+-- Estrutura da tabela `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese`
+-- Estrutura da tabela `anamnese`
 --
 
 CREATE TABLE `anamnese` (
@@ -44,7 +44,7 @@ CREATE TABLE `anamnese` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese_gestacional`
+-- Estrutura da tabela `anamnese_gestacional`
 --
 
 CREATE TABLE `anamnese_gestacional` (
@@ -54,7 +54,7 @@ CREATE TABLE `anamnese_gestacional` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_paciente_maior`
+-- Estrutura da tabela `avaliacao_paciente_maior`
 --
 
 CREATE TABLE `avaliacao_paciente_maior` (
@@ -64,7 +64,7 @@ CREATE TABLE `avaliacao_paciente_maior` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_paciente_menor`
+-- Estrutura da tabela `avaliacao_paciente_menor`
 --
 
 CREATE TABLE `avaliacao_paciente_menor` (
@@ -74,7 +74,7 @@ CREATE TABLE `avaliacao_paciente_menor` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadastro`
+-- Estrutura da tabela `cadastro`
 --
 
 CREATE TABLE `cadastro` (
@@ -85,7 +85,7 @@ CREATE TABLE `cadastro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `cadastro`
+-- Extraindo dados da tabela `cadastro`
 --
 
 INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Acesso_cadastro`) VALUES
@@ -94,7 +94,7 @@ INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Aces
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `decisao_transporte`
+-- Estrutura da tabela `decisao_transporte`
 --
 
 CREATE TABLE `decisao_transporte` (
@@ -104,7 +104,7 @@ CREATE TABLE `decisao_transporte` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `emergencias`
+-- Estrutura da tabela `emergencias`
 --
 
 CREATE TABLE `emergencias` (
@@ -113,7 +113,7 @@ CREATE TABLE `emergencias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `emergencias`
+-- Extraindo dados da tabela `emergencias`
 --
 
 INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
@@ -122,7 +122,7 @@ INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `forma_conducao`
+-- Estrutura da tabela `forma_conducao`
 --
 
 CREATE TABLE `forma_conducao` (
@@ -132,7 +132,7 @@ CREATE TABLE `forma_conducao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `localizacao_traumas_maior`
+-- Estrutura da tabela `localizacao_traumas_maior`
 --
 
 CREATE TABLE `localizacao_traumas_maior` (
@@ -142,7 +142,7 @@ CREATE TABLE `localizacao_traumas_maior` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `localizacao_traumas_menor`
+-- Estrutura da tabela `localizacao_traumas_menor`
 --
 
 CREATE TABLE `localizacao_traumas_menor` (
@@ -152,7 +152,7 @@ CREATE TABLE `localizacao_traumas_menor` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `materiais_utilizados`
+-- Estrutura da tabela `materiais_utilizados`
 --
 
 CREATE TABLE `materiais_utilizados` (
@@ -162,7 +162,7 @@ CREATE TABLE `materiais_utilizados` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_recolhidos`
+-- Estrutura da tabela `objetos_recolhidos`
 --
 
 CREATE TABLE `objetos_recolhidos` (
@@ -172,7 +172,7 @@ CREATE TABLE `objetos_recolhidos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `paciente`
+-- Estrutura da tabela `paciente`
 --
 
 CREATE TABLE `paciente` (
@@ -198,7 +198,7 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `paciente`
+-- Extraindo dados da tabela `paciente`
 --
 
 INSERT INTO `paciente` (`id_paciente`, `nome_hospital_paciente`, `data_paciente`, `sexo_paciente`, `nome_paciente`, `idade_paciente`, `rg_cpf_paciente`, `fone_paciente`, `acompanhante_paciente`, `idade_acompanhante_paciente`, `local_ocorrencia_paciente`, `n_usb_paciente`, `cod_ur_paciente`, `n_ocorr_paciente`, `cod_ps_paciente`, `desp_paciente`, `h_ch_paciente`, `km_final_paciente`, `cod_sia_sus_paciente`) VALUES
@@ -211,7 +211,7 @@ INSERT INTO `paciente` (`id_paciente`, `nome_hospital_paciente`, `data_paciente`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `problemas_suspeitos`
+-- Estrutura da tabela `problemas_suspeitos`
 --
 
 CREATE TABLE `problemas_suspeitos` (
@@ -221,7 +221,7 @@ CREATE TABLE `problemas_suspeitos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `procedimentos_efetuados`
+-- Estrutura da tabela `procedimentos_efetuados`
 --
 
 CREATE TABLE `procedimentos_efetuados` (
@@ -231,7 +231,7 @@ CREATE TABLE `procedimentos_efetuados` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinais_e_sintomas`
+-- Estrutura da tabela `sinais_e_sintomas`
 --
 
 CREATE TABLE `sinais_e_sintomas` (
@@ -241,37 +241,68 @@ CREATE TABLE `sinais_e_sintomas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinais_vitais`
+-- Estrutura da tabela `sinais_vitais`
 --
 
 CREATE TABLE `sinais_vitais` (
   `id_sinais_vitais` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `termo_recusa`
+--
+
+CREATE TABLE `termo_recusa` (
+  `id_termo_recusa` int(11) NOT NULL,
+  `nome_recusa` varchar(120) NOT NULL,
+  `identidade_recusa` int(20) NOT NULL,
+  `cpf_recusa` int(20) NOT NULL,
+  `assinatura_recusa` int(120) NOT NULL,
+  `testemunha_recusa` int(120) NOT NULL,
+  `doc_recusa` int(120) NOT NULL,
+  `testemunha_recusa2` int(120) NOT NULL,
+  `doc_recusa2` int(120) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `termo_recusa`
+--
+
+INSERT INTO `termo_recusa` (`id_termo_recusa`, `nome_recusa`, `identidade_recusa`, `cpf_recusa`, `assinatura_recusa`, `testemunha_recusa`, `doc_recusa`, `testemunha_recusa2`, `doc_recusa2`) VALUES
+(1, '12321', 323214, 2147483647, 1231231241, 4343, 2234, 54353, 24234);
+
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `cadastro`
+-- Índices para tabela `cadastro`
 --
 ALTER TABLE `cadastro`
   ADD PRIMARY KEY (`cod_cadastro`);
 
 --
--- Índices de tabela `emergencias`
+-- Índices para tabela `emergencias`
 --
 ALTER TABLE `emergencias`
   ADD PRIMARY KEY (`id_emergencias`);
 
 --
--- Índices de tabela `paciente`
+-- Índices para tabela `paciente`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`id_paciente`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- Índices para tabela `termo_recusa`
+--
+ALTER TABLE `termo_recusa`
+  ADD PRIMARY KEY (`id_termo_recusa`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -285,6 +316,12 @@ ALTER TABLE `emergencias`
 --
 ALTER TABLE `paciente`
   MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT de tabela `termo_recusa`
+--
+ALTER TABLE `termo_recusa`
+  MODIFY `id_termo_recusa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
