@@ -314,7 +314,7 @@ function Sentada() {/*Input type radio*/
     var semi_deitada_conducao = document.getElementById("semi_deitada_conducao"); 
     semi_deitada_conducao.checked = false;
 }
-function AvaliacaoPaciente(){
+function AvaliacaoPacienteMa(){
     var AberturaOcular = "";/*Input type radio*/
     if (document.getElementById("espontanea_paciente_ma").checked) {
         AberturaOcular = document.getElementById("espontanea_paciente_ma").value;
@@ -634,48 +634,66 @@ function RespostaMotoraMa() {/*Input type radio*/
 /*Menor 5*/
 function AvaliacaoPacienteMe() {/*Input type radio*/
 var AberturaOcularMe = "";/*Input type radio*/
+var ValorAberturaOcularMe = "";/*Valor numerico da avaliação*/
 if (document.getElementById("espontanea_paciente_me").checked) {
     AberturaOcularMe = document.getElementById("espontanea_paciente_me").value;
+    ValorAberturaOcularMe = 1
 }  else if (document.getElementById("comando_verbal_paciente_me").checked) {
     AberturaOcularMe = document.getElementById("comando_verbal_paciente_me").value;
+    ValorAberturaOcularMe = 2
 } else if (document.getElementById("estimulo_doloroso_paciente_me").checked) {
     AberturaOcularMe = document.getElementById("estimulo_doloroso_paciente_me").value;
+    ValorAberturaOcularMe = 3
 } else if (document.getElementById("nenhuma_paciente_me_ao").checked) {
     AberturaOcularMe = document.getElementById("nenhuma_paciente_me_ao").value;
+    ValorAberturaOcularMe = 4
 }
-console.log(AberturaOcularMe)
+console.log(AberturaOcularMe);
+console.log(ValorAberturaOcularMe);
 
 /*RespostaVerbal*/
 var RespostaVerbalMe = "";/*Input type radio*/
 if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").checked) {
     RespostaVerbalMe = document.getElementById("palavras_e_frases_inapropriadas_paciente_me").value;
+    ValorRespostaVerbalMe = 1
 }  else if (document.getElementById("palavras_inapropriadas_paciente_me").checked) {
     RespostaVerbalMe = document.getElementById("palavras_inapropriadas_paciente_me").value;
+    ValorRespostaVerbalMe = 2
 } else if (document.getElementById("choro_persistentes_ou_gritos_paciente_me").checked) {
     RespostaVerbalMe = document.getElementById("choro_persistentes_ou_gritos_paciente_me").value;
+    ValorRespostaVerbalMe = 3
 } else if (document.getElementById("sons_incompreensíveis_paciente_me").checked) {
     RespostaVerbalMe = document.getElementById("sons_incompreensíveis_paciente_me").value;
+    ValorRespostaVerbalMe = 4
 }else if (document.getElementById("nenhuma_paciente_me_rv").checked) {
     RespostaVerbalMe = document.getElementById("nenhuma_paciente_me_rv").value;
+    ValorRespostaVerbalMe = 5
 } 
 console.log(RespostaVerbalMe)
+console.log(ValorRespostaVerbalMe)
 
 var RespostaMotoraMe = "";/*Input type radio*/
 if (document.getElementById("obedece_comando_paciente_me").checked) {
     RespostaMotoraMe = document.getElementById("obedece_comando_paciente_me").value;
+    ValorRespostaMotoraMe = 1
 } else if (document.getElementById("localiza_dor_estimulo_tatil_paciente_me").checked) {
     RespostaMotoraMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me").value;
+    ValorRespostaMotoraMe = 2
 }  else if (document.getElementById("retirada_do_segmento_estimulado_paciente").checked) {
     RespostaMotoraMe = document.getElementById("retirada_do_segmento_estimulado_paciente").value;
+    ValorRespostaMotoraMe = 3
 } else if (document.getElementById("flexao_anormal_paciente_me").checked) {
     RespostaMotoraMe = document.getElementById("flexao_anormal_paciente_me").value;
+    ValorRespostaMotoraMe = 4
 } else if (document.getElementById("extensao_anormal_paciente_me").checked) {
     RespostaMotoraMe = document.getElementById("extensao_anormal_paciente_me").value;
+    ValorRespostaMotoraMe = 5
 }else if (document.getElementById("ausencia_paciente").checked) {
     RespostaMotoraMe = document.getElementById("ausencia_paciente").value;
+    ValorRespostaMotoraMe = 6
 } 
-
 console.log(RespostaMotoraMe)
+console.log(ValorRespostaMotoraMe)
 $.ajax({
     url: 'PHP/Avaliacao_paciente.php',
     method: 'POST',
@@ -910,14 +928,65 @@ function AusenciaMe(){
 function ocultarDivMe() {
     var maiorque5paciente = document.getElementById("maiorque5paciente");
     var menorque5paciente = document.getElementById("menorque5paciente");
+    var ocultardivma = document.getElementById("ocultar_div_ma");
+    var ocultardivme = document.getElementById("ocultar_div_me");
+    /*Trocar a tela a ser exibida*/
     menorque5paciente.style.display = "none";
     maiorque5paciente.style.display = "flex";
+    /*Alterar a cor do botão selecionado*/
+    ocultardivme.style.backgroundColor = "#0667E8";
+    ocultardivme.style.color = "white";
+    /*Alterar a cor do botão não selecionado*/
+    ocultardivma.style.backgroundColor = "white";
+    ocultardivma.style.color = "black";
+    /*Desselecionar os radios do menor*/
+    espontanea_paciente_me.checked = false;
+    comando_verbal_paciente_me.checked = false;
+    estimulo_doloroso_paciente_me.checked = false;
+    nenhuma_paciente_me_ao.checked = false;
+    palavras_e_frases_inapropriadas_paciente_me.checked = false;
+    palavras_inapropriadas_paciente_me.checked = false;
+    choro_persistentes_ou_gritos_paciente_me.checked = false;
+    sons_incompreensíveis_paciente_me.checked = false;
+    nenhuma_paciente_me_rv.checked = false;
+    obedece_comando_paciente_me.checked = false;
+    localiza_dor_estimulo_tatil_paciente_me.checked = false;
+    retirada_do_segmento_estimulado_paciente.checked = false;
+    flexao_anormal_paciente_me.checked = false;
+    extensao_anormal_paciente_me.checked = false;
+    ausencia_paciente.checked = false;
+
 }
 function ocultarDivMa() {
     var maiorque5paciente = document.getElementById("maiorque5paciente");
     var menorque5paciente = document.getElementById("menorque5paciente");
+    var ocultardivma = document.getElementById("ocultar_div_ma");
+    var ocultardivme = document.getElementById("ocultar_div_me");
+    /*Trocar a tela a ser exibida*/
     menorque5paciente.style.display = "flex";
     maiorque5paciente.style.display = "none";
+    /*Alterar a cor do botão selecionado*/
+    ocultardivme.style.backgroundColor = "white";
+    ocultardivme.style.color = "black";
+    /*Alterar a cor do botão não selecionado*/
+    ocultardivma.style.backgroundColor = "#0667E8";
+    ocultardivma.style.color = "white";
+    /*Desselecionar os radios do menor*/
+    espontanea_paciente_ma.checked = false;
+    comando_verbal_paciente_ma.checked = false;
+    estimulo_doloroso_paciente_ma.checked = false;
+    nenhuma_paciente_ma_ao.checked = false;
+    orientado_paciente_ma.checked = false;
+    confuso_paciente_ma.checked = false;
+    palavras_inapropriadas_paciente_ma.checked = false;
+    palavras_incompreensiveis_paciente_ma.checked = false;
+    nenhuma_paciente_ma_rv.checked = false;
+    obedece_comandos_paciente_ma.checked = false;
+    localiza_dor_paciente_ma.checked = false;
+    movimento_retirada_paciente_ma.checked = false;
+    flexao_anormal_paciente_ma.checked = false;
+    extensao_anormal_paciente_ma.checked = false;
+    nenhuma_paciente_ma_rm.checked = false;
 } 
 function DecisaoDeTransporte(){
     var MDT = $('#m_dt').val();
@@ -1007,7 +1076,7 @@ function Anamnese(){
         method: 'POST',
         data: {
             Acnamnese: AcAnamnese,
-            QsAnamnese: QsAnamnese,
+            OaAnamnese:OaAnamnese,
             HuAnamnese: HuAnamnese,
             QisAnamnese: QisAnamnese,
             EqAnamnese: EqAnamnese,

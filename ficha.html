@@ -325,14 +325,14 @@
 
         <div class="slide-body centro" style="padding-top: 40px;"><!--inicio do corpo da página de ""-->
           <div class="quadrado linha centro" style="width: 80%;height: 30px;justify-content: space-evenly;">
-            <span onclick="ocultarDivMa()" class="centro" style="width: 49%;height: 100%;">Menor de 5</span>
-            <div style="width: 2px;height: 100%;background-color: #0667E8;"></div>
-            <span onclick="ocultarDivMe()" class="centro" style="width: 49%;height: 100%;">Maior de 5</span>
+            <span onclick="ocultarDivMa()" id="ocultar_div_ma" class="centro" style="width: 49.5%;height: 100%; background-color: #0667E8; color: white;">Menor de 5</span>
+            <div style="width: 1%;height: 100%;background-color: #0667E8;"></div>
+            <span onclick="ocultarDivMe()" id="ocultar_div_me" class="centro" style="width: 49.5%;height: 100%;">Maior de 5</span>
           </div>
 
         <div id="maiorque5paciente" style="display: none;" class="coluna">
           <div class="linha centro" style="width: 100%;margin-top: 20px;">
-            <div class="circulo centro" style="width: 80px;height: 100%;background-color: #0667E8;border-radius: 10px;color: white;"><span class="centro" style="width: 60px;text-align: center;">Abertura Ocular</span></div><!-- ma=maior de 5 me menor de 5-->
+            <div class="circulo centro" style="width: 80px;height: 115px;background-color: #0667E8;border-radius: 10px;color: white;"><span class="centro" style="width: 60px;text-align: center;">Abertura Ocular</span></div><!-- ma=maior de 5 me menor de 5-->
             <div class="coluna" style="margin-left: 3px;">
               <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Espontânea</span></div><input onclick="Espontanea()" id="espontanea_paciente_ma"  value="Espontanea " type="radio" class="radio">1</div>
               <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Comando Verbal</span></div><input onclick="ComandoVerbal()" id="comando_verbal_paciente_ma"  value="Comando Verbal " type="radio" class="radio">2</div>
@@ -342,7 +342,7 @@
           </div>
 
           <div class="linha centro" style="width: 100%;margin-top: 20px;">
-            <div class="circulo centro" style="width: 80px;height: 100%;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Verbal</span></div> 
+            <div class="circulo centro" style="width: 80px;height: 150px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Verbal</span></div> 
             <div class="coluna" style="margin-left: 3px;">
               <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Orientado</span></div><input onclick="Orientado()" id="orientado_paciente_ma" value="Orientado" type="radio" class="radio">1</div>
               <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Confuso</span></div><input onclick="Confuso()" id="confuso_paciente_ma" value="Confuso" type="radio" class="radio">2</div>
@@ -353,7 +353,7 @@
           </div>
 
           <div class="linha centro" style="width: 100%;margin-top: 20px;">
-            <div class="circulo centro" style="width: 80px;height: 100%;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Motora</span></div>
+            <div class="circulo centro" style="width: 80px;height: 180px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Motora</span></div>
             <div class="coluna" style="margin-left: 3px;">
               <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Obedece Comandos</span></div><input onclick="ObedeceComandos()" id="obedece_comandos_paciente_ma" value="Obedece Comandos" type="radio" class="radio">1</div>
               <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Localiza dor</span></div><input onclick="LocalizaDor()" id="localiza_dor_paciente_ma" value="Localiza dor" type="radio" class="radio">2</div>
@@ -363,11 +363,12 @@
               <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Nenhuma</span></div><input onclick="NenhumaRm()" id="nenhuma_paciente_ma_rm" value="Nenhuma" type="radio" class="radio">6</div>
             </div>
           </div>
-          <input type="button" onclick="AvaliacaoPaciente()"> </div>
+          <input type="button" onclick="AvaliacaoPacienteMa()"> 
+        </div>
 
-          <div id="menorque5paciente" style="display: flex;" class="coluna">
+          <div id="menorque5paciente" style="display: flex; text-align: center" class="coluna">
             <div class="linha centro" style="width: 100%;margin-top: 20px;">
-              <div class="circulo centro" style="width: 80px;height: 100%;background-color: #0667E8;border-radius: 10px;color: white;"><span class="centro" style="width: 60px;">Abertura Ocular</span></div>
+              <div class="circulo centro" style="width: 80px;height: 120px;background-color: #0667E8;border-radius: 10px;color: white;"><span class="centro" style="width: 60px; text-align: center;">Abertura Ocular</span></div>
               <div class="coluna" style="margin-left: 3px;">
                 <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Espontânea</span></div><input onclick="EspontaneaMe()" id="espontanea_paciente_me" value="Espontânea" type="radio" class="radio">1</div>
                 <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Comando Verbal</span></div><input onclick="ComandoVerbalMe()" id="comando_verbal_paciente_me" value="Comando Verbal" type="radio" class="radio">2</div>
@@ -377,7 +378,7 @@
             </div>
   
             <div class="linha centro" style="width: 100%;margin-top: 20px;">
-              <div class="circulo centro" style="width: 80px;height: 100%;background-color: #0667E8;border-radius: 10px;color: white;"><span style="margin-left: 20%;">Resposta Verbal</span></div>
+              <div class="circulo centro" style="width: 80px;height: 150px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center">Resposta Verbal</span></div>
               <div class="coluna" style="margin-left: 3px;">
                 <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Palavras e Frases Inapropriadas</span></div><input onclick="PalavrasEFrasesInapropriadasMe()" id="palavras_e_frases_inapropriadas_paciente_me" value="Palavras e Frases Inapropriadas" type="radio" class="radio">1</div>
                 <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Palavras Inapropriadas</span></div><input onclick="PalavrasInapropriadasMe()" id="palavras_inapropriadas_paciente_me" value="Palavras Inapropriadas" type="radio" class="radio">2</div>
@@ -388,16 +389,17 @@
             </div>
   
             <div class="linha centro" style="width: 100%;margin-top: 20px;">
-              <div class="circulo centro" style="width: 80px;height: 100%;background-color: #0667E8;border-radius: 10px;color: white;"><span style="margin-left: 20%;">Resposta Motora</span></div>
+              <div class="circulo centro" style="width: 80px;height: 181px;background-color: #0667E8;border-radius: 10px;color: white;"><span style="text-align: center;">Resposta Motora</span></div>
               <div class="coluna" style="margin-left: 3px;">
                 <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Obedece Comandos</span></div><input onclick="ObedeceComandosMe()" id="obedece_comando_paciente_me" value="Obedece Comandos" type="radio" class="radio">1</div>
                 <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Localiza dor/Estímulo Tatil</span></div><input onclick="LocalizaDorEstimuloTatilMe()" id="localiza_dor_estimulo_tatil_paciente_me" value="Localiza dor/Estímulo Tatil" type="radio" class="radio">2</div>
                 <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Retirada do Segmento Estimulado</span></div><input onclick="RetiradaDoSegmentoEstimuladoMe()" id="retirada_do_segmento_estimulado_paciente" value="Retirada do Segmento Estimulado" type="radio" class="radio">3</div>
-                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Flexão Anormal(Decorticação)</span></div><input onclick="FlexaoAnormal()" id="flexao_anormal_paciente_me" value="Flexão Anormal(Decorticação)" type="radio" class="radio">4</div>
-                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Extensão Anormal(Decerebração)</span></div><input onclick="ExtensaoAnormal()" id="extensao_anormal_paciente_me" value="Extensão Anormal(Decerebração)" type="radio" class="radio">5</div>
-                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Ausência(Paralisia Falecida, Hipônia)</span></div><input onclick="AusenciaMe()" id="ausencia_paciente" value="Ausência(Paralisia Falecida, Hipônia)" type="radio" class="radio">6</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Flexão Anormal (Decorticação)</span></div><input onclick="FlexaoAnormal()" id="flexao_anormal_paciente_me" value="Flexão Anormal(Decorticação)" type="radio" class="radio">4</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;margin-bottom: 5px;"><span style="color: white;font-size: 12px;">Extensão Anormal (Decerebração)</span></div><input onclick="ExtensaoAnormal()" id="extensao_anormal_paciente_me" value="Extensão Anormal(Decerebração)" type="radio" class="radio">5</div>
+                <div class="linha"><div class="circulo centro" style="background-color: #0667E8;border-radius: 5px;width: 160px;height: 20px;"><span style="color: white;font-size: 12px;">Ausência (Paralisia Falecida, Hipônia)</span></div><input onclick="AusenciaMe()" id="ausencia_paciente" value="Ausência(Paralisia Falecida, Hipônia)" type="radio" class="radio">6</div>
               </div>
             </div>
+            <input type="button" onclick="AvaliacaoPacienteMe()"> 
           </div>
 
           <div class="linha" style="margin-left: -5px;">
