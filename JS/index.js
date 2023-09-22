@@ -1098,13 +1098,17 @@ function Anamnese(){
         url: 'PHP/Decisao_De_Transporte.php',
         method: 'POST',
         data: {
-            Acnamnese: AcAnamnese,
-            OaAnamnese:OaAnamnese,
+            AcAnamnese: AcAnamnese,
+            QsAnamnese: QsAnamnese,
             HuAnamnese: HuAnamnese,
             QisAnamnese: QisAnamnese,
             EqAnamnese: EqAnamnese,
             QrAnamnese: QrAnamnese,
-           
+            OaAnamnese: OaAnamnese,
+            PsAnamnese: PsAnamnese,
+            FmAnamnese: FmAnamnese,
+            AlAnamnese: AlAnamnese,
+            IlAnamnese: IlAnamnese
         },
         dataType: 'json'
     }).done(function() {
