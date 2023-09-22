@@ -316,48 +316,71 @@ function Sentada() {/*Input type radio*/
 }
 function AvaliacaoPacienteMa(){
     var AberturaOcular = "";/*Input type radio*/
+    var ValorAberturaOcularMa = ""
     if (document.getElementById("espontanea_paciente_ma").checked) {
         AberturaOcular = document.getElementById("espontanea_paciente_ma").value;
+        ValorAberturaOcularMa = 1
     }  else if (document.getElementById("comando_verbal_paciente_ma").checked) {
         AberturaOcular = document.getElementById("comando_verbal_paciente_ma").value;
+        ValorAberturaOcularMa = 2
     } else if (document.getElementById("estimulo_doloroso_paciente_ma").checked) {
         AberturaOcular = document.getElementById("estimulo_doloroso_paciente_ma").value;
+        ValorAberturaOcularMa = 3
     } else if (document.getElementById("nenhuma_paciente_ma_ao").checked) {
         AberturaOcular = document.getElementById("nenhuma_paciente_ma_ao").value;
+        ValorAberturaOcularMa = 4
     }
     console.log(AberturaOcular)
+    console.log(ValorAberturaOcularMa)
     
     /*RespostaVerbal*/
     var RespostaVerbal = "";/*Input type radio*/
+    var ValorRespostaVerbalMa = "";
     if (document.getElementById("orientado_paciente_ma").checked) {
         RespostaVerbal = document.getElementById("orientado_paciente_ma").value;
+        ValorRespostaVerbalMa = 1
     }  else if (document.getElementById("confuso_paciente_ma").checked) {
         RespostaVerbal = document.getElementById("confuso_paciente_ma").value;
+        ValorRespostaVerbalMa = 2
     } else if (document.getElementById("palavras_inapropriadas_paciente_ma").checked) {
         RespostaVerbal = document.getElementById("palavras_inapropriadas_paciente_ma").value;
+        ValorRespostaVerbalMa = 3
     } else if (document.getElementById("palavras_incompreensiveis_paciente_ma").checked) {
         RespostaVerbal = document.getElementById("palavras_incompreensiveis_paciente_ma").value;
+        ValorRespostaVerbalMa = 4
     }else if (document.getElementById("nenhuma_paciente_ma_rv").checked) {
         RespostaVerbal = document.getElementById("nenhuma_paciente_ma_rv").value;
-    } 
+        ValorRespostaVerbalMa = 5
+    }
+
     console.log(RespostaVerbal)
+    console.log(ValorRespostaVerbalMa)
 
     var RespostaMotora = "";/*Input type radio*/
+    var ValorRespostaMotoraMa = "";
     if (document.getElementById("obedece_comandos_paciente_ma").checked) {
         RespostaMotora = document.getElementById("obedece_comandos_paciente_ma").value;
+        ValorRespostaMotoraMa = 1
     } else if (document.getElementById("localiza_dor_paciente_ma").checked) {
         RespostaMotora = document.getElementById("localiza_dor_paciente_ma").value;
+        ValorRespostaMotoraMa = 2
     }  else if (document.getElementById("movimento_retirada_paciente_ma").checked) {
         RespostaMotora = document.getElementById("movimento_retirada_paciente_ma").value;
+        ValorRespostaMotoraMa = 3
     } else if (document.getElementById("flexao_anormal_paciente_ma").checked) {
         RespostaMotora = document.getElementById("flexao_anormal_paciente_ma").value;
+        ValorRespostaMotoraMa = 4
     } else if (document.getElementById("extensao_anormal_paciente_ma").checked) {
         RespostaMotora = document.getElementById("extensao_anormal_paciente_ma").value;
+        ValorRespostaMotoraMa = 5
     }else if (document.getElementById("nenhuma_paciente_ma_rm").checked) {
         RespostaMotora = document.getElementById("nenhuma_paciente_ma_rm").value;
+        ValorRespostaMotoraMa = 6
     } 
    
     console.log(RespostaMotora)
+    console.log(ValorRespostaMotoraMa)
+
     $.ajax({
         url: 'PHP/Avaliacao_paciente.php',
         method: 'POST',
