@@ -956,7 +956,69 @@ function DecisaoDeTransporte(){
 
 }   
 function Anamnese(){
+    var AcAnamnese = $('#oa_anamnese').val();
+    var QsAnamnese = $('#qs_anamnese').val();
+    var HuAnamnese = $('#hu_anamnese').val();
+    var QisAnamnese = $('#qis_anamnese').val();
+    var EqAnamnese = $('#eq_anamnese').val();
+    var QrAnamnese = $('#qr_anamnese').val();
 
+    
+
+    var OaAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_av").checked) {
+        OaAnamnese  = document.getElementById("s_av").value;
+    } else if (document.getElementById("n_av").checked) {
+        OaAnamnese  = document.getElementById("n_av").value;
+    }
+    var PsAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_ps").checked) {
+        PsAnamnese  = document.getElementById("s_ps").value;
+    } else if (document.getElementById("n_ps").checked) {
+        PsAnamnese  = document.getElementById("n_ps").value;
+    }
+    var FmAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_fm").checked) {
+        FmAnamnese  = document.getElementById("s_fm").value;
+    } else if (document.getElementById("n_fm").checked) {
+        FmAnamnese  = document.getElementById("n_fm").value;
+    }
+    var AlAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_al").checked) {
+        AlAnamnese  = document.getElementById("s_al").value;
+    } else if (document.getElementById("n_al").checked) {
+        AlAnamnese  = document.getElementById("n_al").value;
+    }
+    var IlAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_il").checked) {
+        IlAnamnese  = document.getElementById("s_il").value;
+    } else if (document.getElementById("n_il").checked) {
+        IlAnamnese  = document.getElementById("n_il").value;
+    }
+    console.log(AcAnamnese);
+    console.log(QsAnamnese);
+    console.log(HuAnamnese);
+    console.log(QisAnamnese);
+    console.log(EqAnamnese);
+    console.log(QrAnamnese);
+    console.log(OaAnamnese);
+ $.ajax({
+        url: 'PHP/Decisao_De_Transporte.php',
+        method: 'POST',
+        data: {
+            Acnamnese: AcAnamnese,
+            QsAnamnese: QsAnamnese,
+            HuAnamnese: HuAnamnese,
+            QisAnamnese: QisAnamnese,
+            EqAnamnese: EqAnamnese,
+            QrAnamnese: QrAnamnese,
+           
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
 }
 function AnamneseGestacional(){
 
