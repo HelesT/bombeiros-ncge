@@ -996,12 +996,12 @@ function Anamnese(){
         IlAnamnese  = document.getElementById("n_il").value;
     }
     console.log(AcAnamnese);
+    console.log(OaAnamnese);
     console.log(QsAnamnese);
     console.log(HuAnamnese);
     console.log(QisAnamnese);
     console.log(EqAnamnese);
     console.log(QrAnamnese);
-    console.log(OaAnamnese);
  $.ajax({
         url: 'PHP/Decisao_De_Transporte.php',
         method: 'POST',
