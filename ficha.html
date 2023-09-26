@@ -405,7 +405,7 @@
           <div class="linha centro" style="margin-left: -5px;">
             <div class="linha centro" style="margin-top: 10px;">
               <span style="font-size: 14px;">Total(GCS)(3-15): </span>
-              <span class="centro" id="total_gcs_paciente" style="font-size: 14px; width: 30px;"></span>
+              <span class="centro" id="total_gcs_paciente" style="font-size: 14px; width: 30px;">0</span>
             </div>
             <div style="width: 190px;"></div>
           </div>
@@ -595,98 +595,106 @@
           <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
         </div><!-- Fim do cabeçalho da pagina "" -->
 
-        <div class="slide-body centro" style="padding: 0px;"><!--inicio do corpo da página de ""-->
+        <form class="slide-body centro" style="padding: 0px;" method="post"><!--inicio do corpo da página de ""-->
           <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" id="psiquiatrico_ps" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Psiquiatrico</span></div>
           </div>
           <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input id="respiratorio_ps_checkbox" type="checkbox" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Respiratório</span></div>
           </div>
           <div class="justify centro coluna">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input name="problema_respiratorio_ps" id="respiratorio_dpoc_ps" value="DPOC" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">DPOC</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input name="problema_respiratorio_ps" id="respiratorio_fumaca_ps" value="Inalação de Fumaça" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Inalação de fumaça</span></div>
             </div>
           </div>
           <div class="circulo justify centro  linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input id="diabetes_ps" type="checkbox" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Diabetes</span></div>
           </div>
           <div class="justify centro coluna">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="diabete_hiperglicemia_ps" value="Hiperglicemia" name="problema_diabete_ps" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hiperglicemia</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="diabete_hipoglicemia_ps" value="Hipoglicemia" name="problema_diabete_ps" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hipoglicemia</span></div>
             </div>
           </div>
           <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" id="obsterico_ps" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Obstétricos</span></div>
           </div>
           <div class="justify centro coluna">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input type="radio" id="obsterico_parto_emergencial_ps" value="Parto Emergêncial" name="problema_obsterico_ps" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Parto Emergêncial</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input type="radio" id="obsterico_gestante_ps" value="Gestante" name="problema_obsterico_ps" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Gestante</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
-              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hemor.exceciva</span></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input type="radio" id="obsterico_hemor_ps" value="Hemor Excessiva" name="problema_obsterico_ps" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hemor.excessiva</span></div>
             </div>
           </div>
           <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_ps" type="checkbox" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Transporte</span></div>
           </div>
           <div class="justify centro coluna">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_aereo_ps" name="transporte_ps" value="Aéreo" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Aéreo</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_clinico_ps" name="transporte_ps" value="Clinico" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Clinico</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_emergencial_ps" type="radio" name="transporte_ps" value="Emergêncial" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Emergêncial</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_pos_trauma_ps" type="radio" name="transporte_ps" value="Pós-Trauma" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Pós-Trauma</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_samu_ps" type="radio" name="transporte_ps" value="Samu" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Samu</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_outros_ps" type="radio" name="transporte_ps" value="Outros" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Outros</span></div>
             </div>
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
-              <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" class="checkbox-quadrado-azul"></div>
+              <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_sem_remocao_ps" type="radio" name="transporte_ps" value="Sem Remoção" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Sem remoção</span></div>
             </div>
           </div>
           <div class="circulo justify centro coluna" style="width: 308px; height: 70px; border: none; background-color: #0667E8; margin-top: 30px;">
             <div class="centro" style="width: 200px; height: 35px;"><span style="color: aliceblue;font-size: 20px;">Outro</span></div>
-            <input type="text">
+            <input id="transporte_outro_texto_ps" value="" placeholder="Digite Aqui" type="text">
           </div>
           
+          <!--Cute button -->
+          <input type="button" onclick="ProblemasSuspeitos()" value="Clica em mim :3"
+          style="width: 100px; 
+          height: 30px; 
+          border: 1px solid black; 
+          border-radius: 10px; 
+          margin-top: 10px;">
+          <!--Cute button-->
           
-        </div><!--Fim do corpo da página de ""-->
+        </form><!--Fim do corpo da página de Problemas Suspeitos-->
 
       </div><!-- Fim da página de "" -->
 
