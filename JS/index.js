@@ -2,7 +2,8 @@
     Paginas:
     PacienteRegistro()
     EmergenciaRegistro()
-    AvaliacaoPaciente()
+    AvaliacaoPacienteMa()
+    AvaliacaoPacienteMe()
     TermoDeRecusa()
     FormaDeConducao()
     DecisaoDeTransporte()
@@ -384,6 +385,13 @@ function AvaliacaoPacienteMa(){
     console.log(RespostaMotora)
     console.log(ValorRespostaMotoraMa)
 
+    //var SpanGCS = document.getElementById("total_gcs_paciente");
+    var ValorGCS = ValorRespostaMotoraMa + ValorAberturaOcularMa + ValorRespostaVerbalMa;
+    var SpanGCS = document.getElementById("total_gcs_paciente")
+    SpanGCS.textContent = " " + ValorGCS;
+
+console.log(ValorGCS);
+
     $.ajax({
         url: 'PHP/Avaliacao_paciente.php',
         method: 'POST',
@@ -673,6 +681,8 @@ if (document.getElementById("espontanea_paciente_me").checked) {
 } else if (document.getElementById("nenhuma_paciente_me_ao").checked) {
     AberturaOcularMe = document.getElementById("nenhuma_paciente_me_ao").value;
     ValorAberturaOcularMe = 4
+} else {
+    ValorAberturaOcularMe = 4
 }
 console.log(AberturaOcularMe);
 console.log(ValorAberturaOcularMe);
@@ -694,7 +704,9 @@ if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").check
 }else if (document.getElementById("nenhuma_paciente_me_rv").checked) {
     RespostaVerbalMe = document.getElementById("nenhuma_paciente_me_rv").value;
     ValorRespostaVerbalMe = 5
-} 
+}  else{
+    ValorRespostaVerbalMe = 5
+}
 console.log(RespostaVerbalMe)
 console.log(ValorRespostaVerbalMe)
 
@@ -717,9 +729,18 @@ if (document.getElementById("obedece_comando_paciente_me").checked) {
 }else if (document.getElementById("ausencia_paciente").checked) {
     RespostaMotoraMe = document.getElementById("ausencia_paciente").value;
     ValorRespostaMotoraMe = 6
-} 
+} else{
+    ValorRespostaMotoraMe = 6
+}
 console.log(RespostaMotoraMe)
 console.log(ValorRespostaMotoraMe)
+
+var SpanGCS = document.getElementById("total_gcs_paciente");
+var ValorGCS = ValorRespostaMotoraMe + ValorAberturaOcularMe + ValorRespostaVerbalMe;
+SpanGCS.textContent = " " + ValorGCS;
+
+console.log(ValorGCS);
+
 $.ajax({
     url: 'PHP/Avaliacao_paciente.php',
     method: 'POST',
