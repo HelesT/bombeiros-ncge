@@ -10,6 +10,7 @@
     SinaisVitai()
     Anamnese()
     AnamneseGestacional()
+    ProblemasSuspeitos()
 */
 
 function PacienteRegistro(){    
@@ -970,6 +971,7 @@ function ocultarDivMe() {
     var menorque5paciente = document.getElementById("menorque5paciente");
     var ocultardivma = document.getElementById("ocultar_div_ma");
     var ocultardivme = document.getElementById("ocultar_div_me");
+    var conteudoGCSspan = document.getElementById("total_gcs_paciente");
     /*Trocar a tela a ser exibida*/
     menorque5paciente.style.display = "none";
     maiorque5paciente.style.display = "flex";
@@ -995,6 +997,9 @@ function ocultarDivMe() {
     flexao_anormal_paciente_me.checked = false;
     extensao_anormal_paciente_me.checked = false;
     ausencia_paciente.checked = false;
+    /*Limpar Span Total GCS*/
+    conteudoGCSspan.textContent = 0
+
 
 }
 function ocultarDivMa() {
@@ -1002,6 +1007,7 @@ function ocultarDivMa() {
     var menorque5paciente = document.getElementById("menorque5paciente");
     var ocultardivma = document.getElementById("ocultar_div_ma");
     var ocultardivme = document.getElementById("ocultar_div_me");
+    var conteudoGCSspan = document.getElementById("total_gcs_paciente");
     /*Trocar a tela a ser exibida*/
     menorque5paciente.style.display = "flex";
     maiorque5paciente.style.display = "none";
@@ -1027,6 +1033,7 @@ function ocultarDivMa() {
     flexao_anormal_paciente_ma.checked = false;
     extensao_anormal_paciente_ma.checked = false;
     nenhuma_paciente_ma_rm.checked = false;
+    conteudoGCSspan.textContent = 0
 } 
 function DecisaoDeTransporte(){
     var MDT = $('#m_dt').val();
@@ -1262,6 +1269,79 @@ function AnamneseGestacional(){
     
 }
 function SinaisESintomas(){
-    
+}
+function ProblemasSuspeitos(){
 
+    console.log("")
+    console.log("Estou funcionando!! ~senpai.. (>//<");
+
+    var psiqcheckboxps = document.getElementById("psiquiatrico_ps");/*Input type Checkbox*/
+    var confirmapsiqcheck = psiqcheckboxps.checked;
+    if (confirmapsiqcheck) {
+        var Psiquiatricops = 'sim';
+    } else {
+        var Psiquiatricops = 'nda';
+    }console.log("Psiquiatrico: " + Psiquiatricops);
+
+    var respradioboxps = "nda";/*Input type radio*/
+    if (document.getElementById("respiratorio_dpoc_ps").checked) {
+        respradioboxps = document.getElementById("respiratorio_dpoc_ps").value;
+    } else if (document.getElementById("respiratorio_fumaca_ps").checked) {
+        respradioboxps = document.getElementById("respiratorio_fumaca_ps").value;
+    }console.log("Respiratorio: " + respradioboxps);
+
+    var diabradioboxps = "nda";/*Input type radio*/
+    if (document.getElementById("diabete_hiperglicemia_ps").checked) {
+        diabradioboxps = document.getElementById("diabete_hiperglicemia_ps").value;
+    } else if (document.getElementById("diabete_hipoglicemia_ps").checked) {
+        diabradioboxps = document.getElementById("diabete_hipoglicemia_ps").value;
+    }console.log("Diabetes: " + diabradioboxps);
+
+    var obsterradioboxps = "nda";/*Input type radio*/
+    if (document.getElementById("obsterico_parto_emergencial_ps").checked) {
+        obsterradioboxps = document.getElementById("obsterico_parto_emergencial_ps").value;
+    } else if (document.getElementById("obsterico_gestante_ps").checked) {
+        obsterradioboxps = document.getElementById("obsterico_gestante_ps").value;
+    } else if (document.getElementById("obsterico_hemor_ps").checked) {
+        obsterradioboxps = document.getElementById("obsterico_hemor_ps").value;
+    }console.log("Obsterico: " + obsterradioboxps);
+
+    var transpradiobox = "nda";/*Input type radio*/
+    if (document.getElementById("transporte_aereo_ps").checked) {
+        transpradiobox = document.getElementById("transporte_aereo_ps").value;
+    } else if (document.getElementById("transporte_clinico_ps").checked) {
+        transpradiobox = document.getElementById("transporte_clinico_ps").value;
+    } else if (document.getElementById("transporte_emergencial_ps").checked) {
+        transpradiobox = document.getElementById("transporte_emergencial_ps").value;
+    } else if (document.getElementById("transporte_pos_trauma_ps").checked) {
+        transpradiobox = document.getElementById("transporte_pos_trauma_ps").value;
+    } else if (document.getElementById("transporte_samu_ps").checked) {
+        transpradiobox = document.getElementById("transporte_samu_ps").value;
+    } else if (document.getElementById("transporte_outros_ps").checked) {
+        transpradiobox = document.getElementById("transporte_outros_ps").value;
+    } else if (document.getElementById("transporte_sem_remocao_ps").checked) {
+        transpradiobox = document.getElementById("transporte_sem_remocao_ps").value;
+    } console.log("Transporte: " + transpradiobox);
+
+    if (document.getElementById("transporte_outro_texto_ps").value === ""){
+        var OutroTextoPs = "nda";
+    } else{
+        var OutroTextoPs = document.getElementById("transporte_outro_texto_ps").value;
+    }console.log("Outro: " + OutroTextoPs);
+    
+    $.ajax({
+        url: 'PHP/tabela-problemas-suspeitos.php',
+        method: 'POST',
+        data: {
+            Psiquiatrico: Psiquiatricops,
+            Respiratorio: respradioboxps,
+            Diabete: diabradioboxps,
+            Obsterico: obsterradioboxps,
+            Transporte: transpradiobox,
+            Outro: OutroTextoPs
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
 }
