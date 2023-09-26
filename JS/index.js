@@ -185,7 +185,6 @@ function EmergenciaRegistro(){
      + "," + AtropelamentoEr + "," + ChoqueEletricoEr + "," + DesabamentoEr + "," + DomesticoEr + "," + EsportivoEr + "," + IntoxicacaoEr 
      + "," + QuedaBicicletaEr + "," + QuedaMotoEr + "," + QuedaEr + "," + TrabalhoEr + "," + TransferenciaEr + "," + OutroEr;
 
-    console.log(EmergenciaRegistro);
 
     $.ajax({
         url: 'PHP/tabela-emergencia.php',
@@ -282,7 +281,6 @@ function FormaDeConducao(){
     }else(FcPedestre = "")
 
     var FormaConducao = FcCiclista + " " + FcCondutor + " " + FcGestante + " " + FcPassBanFrente + " " + FcPassMoto + " " + FcCondutorCarro + " " + FcClinico + " " + FcTrauma + " " + FcPassBanTras + " " + FcPedestre;
-    console.log(FormaConducao);
 
     $.ajax({
         url: 'PHP/forma_de_conducao.php',
@@ -1094,13 +1092,7 @@ function SinaisVitai(){
     } else if (document.getElementById("maior_2_seg_sv").checked) {
         Maior2SegSv  = document.getElementById("maior_2_seg_sv").value;
     } 
-console.log(Maior2SegSv)
-console.log(PressaoArterial)
-console.log(mmhg)
-console.log(Pulso)
-console.log(Respiracao)
-console.log(Temperatura)
-console.log(Anormal)
+
 
     
 $.ajax({
@@ -1161,13 +1153,7 @@ function Anamnese(){
     } else if (document.getElementById("n_il").checked) {
         IlAnamnese  = document.getElementById("n_il").value;
     }
-    console.log(AcAnamnese);
-    console.log(OaAnamnese);
-    console.log(QsAnamnese);
-    console.log(HuAnamnese);
-    console.log(QisAnamnese);
-    console.log(EqAnamnese);
-    console.log(QrAnamnese);
+    
  $.ajax({
         url: 'PHP/Anamnese.php',
         method: 'POST',
@@ -1254,19 +1240,7 @@ function AnamneseGestacional(){
     } else if (document.getElementById("mas").checked) {
         SexoAnamneseGestacional  = document.getElementById("mas").value;
     }
-    console.log(FpAnamneseGestacional);
-    console.log(EcAnamneseGestacional);
-    console.log(EfAnamneseGestacional);
-    console.log(SqAnamneseGestacional);
-    console.log(FvAnamneseGestacional);
-    console.log(PrAnamneseGestacional);
-    console.log(SexoAnamneseGestacional);
-    console.log(JbAnamneseGestacional);
-    console.log(Duracao);
-    console.log(Quantos);
-    console.log(Intervalo);
-    console.log(NomeDoBebe);
-    console.log(HoraDoNascimento);
+    
  $.ajax({
         url: 'PHP/AnamneseGestacional.php',
         method: 'POST',
