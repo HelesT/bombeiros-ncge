@@ -6,6 +6,9 @@
     TermoDeRecusa()
     FormaDeConducao()
     DecisaoDeTransporte()
+    SinaisVitai()
+    Anamnese()
+    AnamneseGestacional()
 */
 
 function PacienteRegistro(){    
@@ -1047,6 +1050,56 @@ function DecisaoDeTransporte(){
     
 
 }   
+function SinaisVitai(){
+    var PressaoArterial = $('#pressao_arterial_sv').val();
+    var mmhg = $('#mmhg_sv').val();
+    var Pulso = $('#pulso_sv').val();
+    var Respiracao = $('#respiracao_sv').val();
+    var Temperatura = $('#temperatura_sv').val();
+
+    var AnormalCheckbox = document.getElementById("anormal_sv");/*Input type Checkbox*/
+    var AnormalCheck = AnormalCheckbox.checked;
+    if (AnormalCheck) {
+        var Anormal = 's';
+    } else {
+        var Anormal = 'n';
+    }
+
+    var Maior2SegSv = "";/*Input type radio*/
+    if (document.getElementById("menor_2_seg_sv").checked) {
+        Maior2SegSv  = document.getElementById("menor_2_seg_sv").value;
+    } else if (document.getElementById("normal_sv").checked) {
+        Maior2SegSv  = document.getElementById("normal_sv").value;
+    } else if (document.getElementById("maior_2_seg_sv").checked) {
+        Maior2SegSv  = document.getElementById("maior_2_seg_sv").value;
+    } 
+console.log(Maior2SegSv)
+console.log(PressaoArterial)
+console.log(mmhg)
+console.log(Pulso)
+console.log(Respiracao)
+console.log(Temperatura)
+console.log(Anormal)
+
+    
+$.ajax({
+    url: 'PHP/SinaisVitai.php',
+    method: 'POST',
+    data: {
+        PressaoArterial: PressaoArterial,
+        mmhg: mmhg,
+        Pulso: Pulso,
+        Respiracao: Respiracao,
+        Temperatura: Temperatura,
+        Anormal: Anormal
+    },
+    dataType: 'json'
+}).done(function() {
+    alert("alguma coisa deu!!");
+});
+
+}
+
 function Anamnese(){
     var AcAnamnese = $('#oa_anamnese').val();
     var QsAnamnese = $('#qs_anamnese').val();
@@ -1095,7 +1148,7 @@ function Anamnese(){
     console.log(EqAnamnese);
     console.log(QrAnamnese);
  $.ajax({
-        url: 'PHP/Decisao_De_Transporte.php',
+        url: 'PHP/Anamnese.php',
         method: 'POST',
         data: {
             AcAnamnese: AcAnamnese,
@@ -1117,5 +1170,104 @@ function Anamnese(){
     
 }
 function AnamneseGestacional(){
+    var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val();
+    var NomeDoMedico = $('#nm_anamnese_gestacional').val();
+    var Quantos = $('#qs_anamnese_gestacional').val();
+    var Duracao = $('#tc_anamnese_gestacional').val();
+    var Intervalo = $('#io_anamnese_gestacional').val();
+    var HoraDoNascimento = $('#hn_anamnese_gestacional').val();
+    var NomeDoBebe = $('#nb_anamnese_gestacional').val();
 
+    
+
+    var FpAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("s_fp").checked) {
+        FpAnamneseGestacional  = document.getElementById("s_fp").value;
+    } else if (document.getElementById("n_fp").checked) {
+        FpAnamneseGestacional  = document.getElementById("n_fp").value;
+    }
+    var EcAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("s_ec").checked) {
+        EcAnamneseGestacional  = document.getElementById("s_ec").value;
+    } else if (document.getElementById("n_ec").checked) {
+       EcAnamneseGestacional  = document.getElementById("n_ec").value;
+    }
+    var EfAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("s_ef").checked) {
+        EfAnamneseGestacional  = document.getElementById("s_ef").value;
+    } else if (document.getElementById("n_ef").checked) {
+        EfAnamneseGestacional  = document.getElementById("n_ef").value;
+    }
+    var SqAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("s_sq").checked) {
+        SqAnamneseGestacional  = document.getElementById("s_sq").value;
+    } else if (document.getElementById("n_sq").checked) {
+        SqAnamneseGestacional  = document.getElementById("n_sq").value;
+    }
+
+    var JbAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("s_jb").checked) {
+        JbAnamneseGestacional  = document.getElementById("s_jb").value;
+    } else if (document.getElementById("n_jb").checked) {
+        JbAnamneseGestacional  = document.getElementById("n_jb").value;
+    }
+
+
+
+    var FvAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("s_fv").checked) {
+        FvAnamneseGestacional  = document.getElementById("s_fv").value;
+    } else if (document.getElementById("n_fv").checked) {
+        FvAnamneseGestacional  = document.getElementById("n_fv").value;
+    }
+    var PrAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("s_pr").checked) {
+        PrAnamneseGestacional  = document.getElementById("s_pr").value;
+    } else if (document.getElementById("n_pr").checked) {
+        PrAnamneseGestacional  = document.getElementById("n_pr").value;
+    }
+
+    var SexoAnamneseGestacional = "";/*Input type radio*/
+    if (document.getElementById("fem").checked) {
+        SexoAnamneseGestacional  = document.getElementById("fem").value;
+    } else if (document.getElementById("mas").checked) {
+        SexoAnamneseGestacional  = document.getElementById("mas").value;
+    }
+    console.log(FpAnamneseGestacional);
+    console.log(EcAnamneseGestacional);
+    console.log(EfAnamneseGestacional);
+    console.log(SqAnamneseGestacional);
+    console.log(FvAnamneseGestacional);
+    console.log(PrAnamneseGestacional);
+    console.log(SexoAnamneseGestacional);
+    console.log(JbAnamneseGestacional);
+    console.log(Duracao);
+    console.log(Quantos);
+    console.log(Intervalo);
+    console.log(NomeDoBebe);
+    console.log(HoraDoNascimento);
+ $.ajax({
+        url: 'PHP/AnamneseGestacional.php',
+        method: 'POST',
+        data: {
+            FpAnamneseGestacional: FpAnamneseGestacional,
+            EfAnamneseGestacional: EfAnamneseGestacional,
+            SqAnamneseGestacional: SqAnamneseGestacional,
+            JbAnamneseGestacional: JbAnamneseGestacional,
+            FvAnamneseGestacional: FvAnamneseGestacional,
+            PrAnamneseGestacional: PrAnamneseGestacional,
+            SexoAnamneseGestacional: SexoAnamneseGestacional,
+            PeriodoDeGestacao: PeriodoDeGestacao,
+            NomeDoMedico: NomeDoMedico,
+            Duracao: Duracao,
+            Quantos: Quantos,
+            Intervalo: Intervalo,
+            NomeDoBebe: NomeDoBebe,
+            HoraDoNascimento: HoraDoNascimento
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
 }
