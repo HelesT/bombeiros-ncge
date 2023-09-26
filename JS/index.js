@@ -1266,3 +1266,7 @@ function AnamneseGestacional(){
     });
     
 }
+function SinaisESintomas(){
+    
+
+}
