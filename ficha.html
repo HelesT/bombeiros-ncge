@@ -1095,7 +1095,7 @@
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_Taquipnéia" value="Taquipnéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Taquipnéia</span></div>
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_Taquicardia" value="Taquicardia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Taquicardia</span></div>
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_Tontura" value="Tontura" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tontura</span></div>
-          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_txt" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;"> <input style="display: none;"  type="text" id="sinais_e_sintomas_input_txt" class="input-linha"></span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_txt" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;"> <input style="display: none;"  type="text" value="" id="sinais_e_sintomas_input_txt" class="input-linha"></span></div>
           
           <!--Cute button -->
           <input type="button" onclick="SinaisESintomas()" value="Clica em mim :3"
@@ -1201,52 +1201,52 @@
               <th>Quant</th>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Ataduras 8 <input  type="radio"> 12<input type="radio">  20<input type="radio"> </td>
-              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_ataduras"> Ataduras 8 <input value="Ataduras 8"  type="radio" name="Ataduras"> 12<input value="Ataduras 12" type="radio" name="Ataduras">  20<input value="Ataduras 20"type="radio" name="Ataduras"> </td>
+              <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_ataduras_txt" style="width: 50px; height: 25px;" type="text" ></td>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Catéter TP. óculos </td>
-              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_"> Catéter TP. óculos </td>
+              <td style="width: 100px; height: 25px;"><input class="input-linha" value="" style="width: 50px; height: 25px;" type="text" ></td>
           </tr>
           <tr style="border-style:solid; border-color: #0667E8;" >
-            <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Compressa Comum </td>
-            <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+            <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_compressa_comum ">Compressa Comum </td>
+            <td style="width: 100px; height: 25px;"><input class="input-linha" value=""  id="materiais_utilizadosA_compressa_comum_txt" style="width: 50px; height: 25px;" type="text" ></td>
         </tr> 
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Kit's H <input type="radio"> P<input type="radio">  Q<input type="radio"> </td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_kit">Kit's H <input type="radio" value="Kit H"name="Kit"> P<input value="Kit P" type="radio"name="Kit">  Q<input value="Kit Q" type="radio"name="Kit"> </td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_kit_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Luvas descartaveis (Pares) </td>
-        <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_luvas_descartaveis"> Luvas descartaveis (Pares) </td>
+        <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_luvas_descartaveis_txt" style="width: 50px; height: 25px;" type="text" ></td>
     </tr>
     <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Mascaras Desc. </td>
-              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_mascaras_desc"> Mascaras Desc. </td>
+              <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_mascaras_desc_txt" style="width: 50px; height: 25px;" type="text" ></td>
   </tr>
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Manta Alumiada </td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_manta_alumiada"> Manta Alumiada </td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_manta_alumiada_txt" style="width: 50px; height: 25px;" type="text" ></td>
         </tr>
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Pás do DEA </td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_pas_do_dea"> Pás do DEA </td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_pas_do_dea_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Sonda de Aspiração </td>
-        <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_sonda_de_aspiracao">Sonda de Aspiração </td>
+        <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_sonda_de_aspiracao_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr> 
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Soro Fisiológico</td>
-      <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_soro_fisiologico">Soro Fisiológico</td>
+      <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_soro_fisiologico_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Talas PAP. <input type="radio">P <input type="radio">G </td>
-      <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_talas"> Talas PAP. <input type="radio"  value="Talas P"name="Talas">P <input value="Talas " type="radio"name="Talas">G </td>
+      <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_talas_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> <input class="input-linha" style="width: 80px; height: 25px;" type="text" > </td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="materiais_utilizadosA_input_txt"> <input class="input-linha" style="width: 80px; height: 25px;" type="text" > </td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" id="materiais_utilizadosA_txt" value="" style="width: 80px; height: 25px;" type="text" ></td>
       </tr>
           </table>
         </div><!--Fim do corpo da página de ""-->
@@ -1273,52 +1273,52 @@
               <th>Quant</th>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Base do Estabiliza. </td>
-              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_"> Base do Estabiliza. </td>
+              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Colar  N <input type="radio"> PP<input type="radio">  P<input type="radio"> </td>
-              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_"> Colar  N <input type="radio "id="matereai_utulizadosB_" class="radio" style="width: 10px; height: 10px;"> PP<input type="radio "id="matereai_utulizadosB_" class="radio" style="width: 10px; height: 10px;">  P<input type="radio "id="matereai_utulizadosB_" class="radio" style="width: 10px; height: 10px;"> </td>
+              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
           </tr>
           <tr style="border-style:solid; border-color: #0667E8;" >
-            <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Colar  M <input type="radio"> G <input type="radio"><input class="input-linha" style="width: 25px; height: 25px;" type="text" ></td>
-            <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+            <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_">Colar  M <input type="radio "id="matereai_utulizadosB_" class="radio" style="width: 10px; height: 10px;"> G <input type="radio "id="matereai_utulizadosB_" class="radio" style="width: 10px; height: 10px;"><input class="input-linha" style="width: 25px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
+            <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
         </tr> 
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Coxins Estabiliza.</td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_">Coxins Estabiliza.</td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> KED <input type="radio">Adul. <input type="radio">Infa. </td>
-        <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_"> KED <input type="radio "id="matereai_utulizadosB_" class="radio" style="width: 10px; height: 10px;">Adul. <input type="radio "id="matereai_utulizadosB_" class="radio" style="width: 10px; height: 10px;">Infa. </td>
+        <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
     </tr>
     <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Maca Rígida </td>
-              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_"> Maca Rígida </td>
+              <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
   </tr>
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> Tirante aranha </td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_"> Tirante aranha </td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
         </tr>
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Tirante de cabeça </td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_">Tirante de cabeça </td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Sonda de Aspiração </td>
-        <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+        <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_">Sonda de Aspiração </td>
+        <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
       </tr> 
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox">Cânula</td>
-      <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_">Cânula</td>
+      <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> <input class="input-linha" style="width: 50px; height: 25px;" type="text" >  </td>
-      <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_"> <input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" >  </td>
+      <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"> <input class="input-linha" style="width: 50px; height: 25px;" type="text" > </td>
-          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" type="text" ></td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="matereai_utulizadosB_"> <input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" > </td>
+          <td style="width: 100px; height: 25px;"><input class="input-linha" style="width: 50px; height: 25px;" id="matereai_utulizadosB_" type="text" ></td>
       </tr>
           </table>
         </div><!--Fim do corpo da página de ""-->
