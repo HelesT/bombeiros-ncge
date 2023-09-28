@@ -601,10 +601,10 @@
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Psiquiatrico</span></div>
           </div>
           <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input id="respiratorio_ps_checkbox" type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input onclick="MostrarRespiratorioPS()" id="respiratorio_ps_checkbox" type="checkbox" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Respiratório</span></div>
           </div>
-          <div class="justify centro coluna">
+          <div class="justify centro coluna" id="div_respiratorio_ps" style="display: none;">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
               <div class="centro" style="width: 24px; height: 100%;"><input name="problema_respiratorio_ps" id="respiratorio_dpoc_ps" value="DPOC" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">DPOC</span></div>
@@ -615,10 +615,10 @@
             </div>
           </div>
           <div class="circulo justify centro  linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input id="diabetes_ps" type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input id="diabetes_ps" onclick="MostrarDiabetesPS()" type="checkbox" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Diabetes</span></div>
           </div>
-          <div class="justify centro coluna">
+          <div class="justify centro coluna" id="div_diabetes_ps" style="display: none;">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
               <div class="centro" style="width: 24px; height: 100%;"><input id="diabete_hiperglicemia_ps" value="Hiperglicemia" name="problema_diabete_ps" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Hiperglicemia</span></div>
@@ -629,10 +629,10 @@
             </div>
           </div>
           <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" id="obsterico_ps" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input type="checkbox" onclick="MostrarObstericosPS()" id="obsterico_ps" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Obstétricos</span></div>
           </div>
-          <div class="justify centro coluna">
+          <div class="justify centro coluna" id="div_obsterico_ps" style="display: none;">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
               <div class="centro" style="width: 24px; height: 100%;"><input type="radio" id="obsterico_parto_emergencial_ps" value="Parto Emergêncial" name="problema_obsterico_ps" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Parto Emergêncial</span></div>
@@ -647,10 +647,10 @@
             </div>
           </div>
           <div class="circulo justify centro linha" style="width: 308px; height: 46px; border: none; background-color: #0667E8; margin-top: 30px;">
-            <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_ps" type="checkbox" class="checkbox-quadrado-azul"></div>
+            <div class="centro" style="width: 24px; height: 100%;"><input onclick="MostrarTransportePS()" id="transporte_ps" type="checkbox" class="checkbox-quadrado-azul"></div>
             <div class="centro" style="width: 200px; height: 100%;"><span style="color: aliceblue;font-size: 20px;">Transporte</span></div>
           </div>
-          <div class="justify centro coluna">
+          <div class="justify centro coluna" id="div_transporte_ps" style="display: none;">
             <div class="circulo justify centro linha" style="width: 280px; height: 36px; border-color:black ; background-color: #CDCECB; margin-top: 2px;">
               <div class="centro" style="width: 24px; height: 100%;"><input id="transporte_aereo_ps" name="transporte_ps" value="Aéreo" type="radio" class="checkbox-quadrado-azul"></div>
               <div class="centro" style="width: 200px; height: 100%;"><span style="color: black;font-size: 18px;">Aéreo</span></div>
@@ -684,6 +684,10 @@
             <div class="centro" style="width: 200px; height: 35px;"><span style="color: aliceblue;font-size: 20px;">Outro</span></div>
             <input id="transporte_outro_texto_ps" value="" placeholder="Digite Aqui" type="text">
           </div>
+          <div class="centro justify" style="width: 250px;margin-top: 15px;">
+            <input type="button" onclick="LimparRadioPS()" class="circulo centro" style="width: 100px; height: 30px; border: 1px solid green; background-color: greenyellow;" value="Limpar">
+          </div>
+          
           
           <!--Cute button -->
           <input type="button" onclick="ProblemasSuspeitos()" value="Clica em mim :3"

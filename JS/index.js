@@ -1348,3 +1348,101 @@ function ProblemasSuspeitos(){
         alert("alguma coisa deu!!");
     });
 }
+function MostrarRespiratorioPS(){
+    
+    var MostrarDivRespiratorio = document.getElementById("respiratorio_ps_checkbox");
+    var DivRespiratorioPS = document.getElementById("div_respiratorio_ps");
+
+    if(MostrarDivRespiratorio.checked){
+        DivRespiratorioPS.style.display = "flex";
+    }else{
+        DivRespiratorioPS.style.display = "none";
+    };
+}
+function MostrarDiabetesPS(){
+
+    var MostrarDivDiabestes = document.getElementById("diabetes_ps");
+    var DivDiabetesPS = document.getElementById("div_diabetes_ps")
+
+    if(MostrarDivDiabestes.checked){
+        DivDiabetesPS.style.display = "flex";
+    }else{
+        DivDiabetesPS.style.display = "none";
+    };
+}
+function MostrarObstericosPS(){
+
+    var MostrarDivObstericoPS = document.getElementById("obsterico_ps");
+    var DivObstericoPS = document.getElementById("div_obsterico_ps");
+
+    if(MostrarDivObstericoPS.checked){
+        DivObstericoPS.style.display = "flex"
+    }else{
+        DivObstericoPS.style.display = "none"
+    }
+}
+function MostrarTransportePS(){
+
+    var MostrarDivTransportePS = document.getElementById("transporte_ps");
+    var DivTransportePS = document.getElementById("div_transporte_ps");
+
+    if(MostrarDivTransportePS.checked){
+        DivTransportePS.style.display = "flex"
+    }else{
+        DivTransportePS.style.display = "none"
+    }
+
+}
+function LimparRadioPS(){
+    var Psiquiatrico  = document.getElementById("psiquiatrico_ps");
+    var Respiratorio = document.getElementById("respiratorio_ps_checkbox");
+    var DPOC = document.getElementById("respiratorio_dpoc_ps");
+    var InalacaoFumaca = document.getElementById("respiratorio_fumaca_ps");
+    var Diabete = document.getElementById("diabetes_ps");
+    var Hiperglicemia = document.getElementById("diabete_hiperglicemia_ps");
+    var Hipoglicemia = document.getElementById("diabete_hipoglicemia_ps");
+    var Obsterico = document.getElementById("obsterico_ps");
+    var PartoEmergencial = document.getElementById("obsterico_parto_emergencial_ps");
+    var Gestante = document.getElementById("obsterico_gestante_ps");
+    var Hemor = document.getElementById("obsterico_hemor_ps");
+    var Transporte = document.getElementById("transporte_ps");
+    var Aereo = document.getElementById("transporte_aereo_ps");
+    var Clinico = document.getElementById("transporte_clinico_ps");
+    var Emergencial = document.getElementById("transporte_emergencial_ps");
+    var PosTrauma = document.getElementById("transporte_pos_trauma_ps");
+    var Samu = document.getElementById("transporte_samu_ps");
+    var Outros = document.getElementById("transporte_outros_ps");
+    var SemRemocao = document.getElementById("transporte_sem_remocao_ps");
+    var OutroTexto = document.getElementById("transporte_outro_texto_ps");
+    var DivRespiratorioPS = document.getElementById("div_respiratorio_ps");
+    var DivDiabetesPS = document.getElementById("div_diabetes_ps");
+    var DivObstericoPS = document.getElementById("div_obsterico_ps");
+    var DivTransportePS = document.getElementById("div_transporte_ps");
+
+    Psiquiatrico.checked = false;
+    Respiratorio.checked = false;
+    DPOC.checked = false;
+    InalacaoFumaca.checked = false;
+    Diabete.checked = false;
+    Hiperglicemia.checked = false;
+    Hipoglicemia.checked = false;
+    Obsterico.checked = false;
+    PartoEmergencial.checked = false;
+    Gestante.checked = false;
+    Hemor.checked = false;
+    Transporte.checked = false;
+    Aereo.checked = false;
+    Clinico.checked = false;
+    Emergencial.checked = false;
+    PosTrauma.checked = false;
+    Samu.checked = false;
+    Outros.checked = false;
+    SemRemocao.checked = false;
+    OutroTexto.value = "";
+    DivRespiratorioPS.style.display = "none";
+    DivDiabetesPS.style.display = "none";
+    DivObstericoPS.style.display = "none";
+    DivTransportePS.style.display = "none";
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+}
