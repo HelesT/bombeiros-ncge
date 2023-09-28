@@ -1269,11 +1269,14 @@ function AnamneseGestacional(){
     
 }
 function SinaisESintomas(){
+
 }
+
+
 function ProblemasSuspeitos(){
 
     console.log("")
-    console.log("Estou funcionando!! ~senpai.. (>//<");
+    console.log("Estou funcionando!! ~senpai.. (>//< )");
 
     var psiqcheckboxps = document.getElementById("psiquiatrico_ps");/*Input type Checkbox*/
     var confirmapsiqcheck = psiqcheckboxps.checked;
