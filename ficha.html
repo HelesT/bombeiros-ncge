@@ -1034,8 +1034,8 @@
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_bronco_aspirando" value="Bronco-Aspirando" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Bronco-Aspirando</span></div>
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_cefaleia" value="Cefalia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cefalia</span></div>
           <div class="linha justify">
-            <input type="checkbox" id="sinais_e_sintomas_cinose" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cinose</span>
-            <div class="coluna" style="display: flex;">
+            <input type="checkbox" onclick="CinoseCheckbox()" id="sinais_e_sintomas_cinose" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cinose</span>
+            <div class="coluna" id="div_cinose" style="display: flex;">
               <div class="linha justify"><input type="radio" id="sinais_e_sintomas_labios" value="Lábios" name="sinais_e_sintomas_cinose"  class="checkbox"><span style="font-size: 15px;margin-left: 5px;">Lábios</span></div>
               <div class="linha justify"><input type="radio" id="sinais_e_sintomas_extremidades" value="Extremidades" name="sinais_e_sintomas_cinose" class="checkbox"><span style="font-size: 15px;margin-left: 5px;">Extremidades</span></div>
             </div>
@@ -1047,7 +1047,7 @@
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_desmaio" value="Desmaio" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Desmaio</span></div>
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_desvio_de_traqueia" value="Desvio de Traquéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Desvio de Traquéia</span></div>
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_dispneia" value="Dispnéia" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Dispnéia</span></div>
-          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_dor_local" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Dor local</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_dor_local" value="Dor local" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Dor local</span></div>
           <div class="linha justify">
             <input type="checkbox" id="sinais_e_sintomas_edema" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Edema</span>
             <div class="coluna" style="display: flex;">
@@ -1073,11 +1073,11 @@
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_ovace" value="O.V.A.C.E" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">O.V.A.C.E</span></div>
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_parada" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Parada</span>
             <div class="coluna" style="display: flex;">
-              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_cardiaca" name="sinais_e_sintomas_parada" class="checkbox"><span style="font-size: 15px;margin-left: 5px;">Cardíaca</span></div>
-              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_respiratória" name="sinais_e_sintomas_parada" class="checkbox"><span style="font-size: 15px;margin-left: 5px;">Respiratória</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_cardiaca" name="sinais_e_sintomas_parada" value="Cardíaca" class="checkbox"><span style="font-size: 15px;margin-left: 5px;">Cardíaca</span></div>
+              <div class="linha justify"><input type="radio" id="sinais_e_sintomas_respiratoria" name="sinais_e_sintomas_parada" value="Respiratória" class="checkbox"><span style="font-size: 15px;margin-left: 5px;">Respiratória</span></div>
           </div>
           </div>
-          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_priaprismo" value="Cardíaca" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Priaprismo</span></div>
+          <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_priaprismo" value="Priaprismo" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Priaprismo</span></div>
           <div class="linha justify"><input type="checkbox" id="sinais_e_sintomas_prurido_na_pele" value="Prurido" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Prurido na Pele</span></div>
           <div class="linha justify">
             <input type="checkbox" id="sinais_e_sintomas_pupilas" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Pupilas</span>
