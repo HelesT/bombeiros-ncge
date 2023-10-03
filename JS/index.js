@@ -1,16 +1,17 @@
 /*
     Paginas:
-    PacienteRegistro()
-    EmergenciaRegistro()
-    AvaliacaoPacienteMa()
-    AvaliacaoPacienteMe()
-    TermoDeRecusa()
-    FormaDeConducao()
-    DecisaoDeTransporte()
-    SinaisVitai()
-    Anamnese()
-    AnamneseGestacional()
-    ProblemasSuspeitos()
+    PacienteRegistro() FEITO
+    EmergenciaRegistro() FEITO
+    AvaliacaoPacienteMa() FEITO
+    AvaliacaoPacienteMe() FEITO
+    TermoDeRecusa() FEITO
+    FormaDeConducao() FEITO
+    DecisaoDeTransporte() FEITO
+    SinaisVitai() FEITO
+    Anamnese() FEITO
+    AnamneseGestacional() FEITO
+    ProblemasSuspeitos() FEITO
+    SinaisESintomas() ANDAMENTO
 */
 
 function PacienteRegistro(){    
@@ -295,7 +296,6 @@ function FormaDeConducao(){
         alert("alguma coisa deu!!");
     });
 }
-
 function Deitada() {/*Input type radio*/
     var semi_deitada_conducao = document.getElementById("semi_deitada_conducao"); 
     semi_deitada_conducao.checked = false;
@@ -404,7 +404,6 @@ console.log(ValorGCS);
         alert("alguma coisa deu!!");
     });
 }
-
 function Espontanea(){/*Input type radio*/
     var ComandoVerbalPacienteMa = document.getElementById("comando_verbal_paciente_ma"); 
     ComandoVerbalPacienteMa.checked = false;
@@ -425,7 +424,6 @@ function  ComandoVerbal(){
     var NenhumaAoPacienteMa = document.getElementById("nenhuma_paciente_ma_ao"); 
     NenhumaAoPacienteMa.checked = false; 
 }
-
 function  EstimuloDoloroso(){
     var EspontaneaPacienteMa = document.getElementById("espontanea_paciente_ma"); 
     EspontaneaPacienteMa.checked = false;
@@ -476,7 +474,6 @@ function Confuso() {/*Input type radio*/
         var NenhumaRvPacienteMa = document.getElementById("nenhuma_paciente_ma_rv"); 
         NenhumaRvPacienteMa.checked = false;
 }
-
 function PalavrasInapropriadas() {/*Input type radio*/
    
         var ConfusoPacienteMa = document.getElementById("confuso_paciente_ma"); 
@@ -491,7 +488,6 @@ function PalavrasInapropriadas() {/*Input type radio*/
         var NenhumaRvPacienteMa = document.getElementById("nenhuma_paciente_ma_rv"); 
         NenhumaRvPacienteMa.checked = false;
 }
-
 function PalavrasIncompreensiveis() {/*Input type radio*/
 
     var ConfusoPacienteMa = document.getElementById("confuso_paciente_ma"); 
@@ -522,7 +518,6 @@ function NenhumaRv() {/*Input type radio*/
         OrientadoPacienteMa.checked = false;  
 
 }
-
 function ObedeceComandosMa() {/*Input type radio*/
     var LocalizaDorPacienteMa = document.getElementById("localiza_dor_paciente_ma"); 
     LocalizaDorPacienteMa.checked = false;
@@ -539,7 +534,6 @@ function ObedeceComandosMa() {/*Input type radio*/
     var NenhumaRmPacienteMa = document.getElementById("nenhuma_paciente_ma_rm"); 
     NenhumaRmPacienteMa.checked = false;
 }
-
 function LocalizaDorMa() {/*Input type radio*/
     var ObedeceComandosPaciente = document.getElementById("obedece_comandos_paciente_ma"); 
     ObedeceComandosPaciente.checked = false;
@@ -639,7 +633,6 @@ function RespostaVerbalMe() {/*Input type radio*/
     var NenhumaRvPacienteMe = document.getElementById("nenhuma_paciente_me_rv"); 
     NenhumaRvPacienteMe.checked = false;
 }
-
 function RespostaMotoraMa() {/*Input type radio*/
     var ObedeceComandosPacienteMe = document.getElementById("obedece_comando_paciente_me"); 
    ObedeceComandosPacienteMe.checked = false;
@@ -861,7 +854,6 @@ function NenhumaRvMe(){
 
 }
 /*Resposta Motora*/
-
 function ObedeceComandosMe(){
      
     var LocalizaDorEstimuloTatilMe = document.getElementById("localiza_dor_estimulo_tatil_paciente_me"); 
@@ -878,8 +870,7 @@ function ObedeceComandosMe(){
  
      var AusenciaMe = document.getElementById("ausencia_paciente"); 
      AusenciaMe.checked = false;
- }
-
+}
 function LocalizaDorEstimuloTatilMe(){
      
     var ObedeceComandosMe = document.getElementById("obedece_comando_paciente_me"); 
@@ -965,7 +956,6 @@ function AusenciaMe(){
     ExtensaoAnormal.checked = false;
 
 }
-
 function ocultarDivMe() {
     var maiorque5paciente = document.getElementById("maiorque5paciente");
     var menorque5paciente = document.getElementById("menorque5paciente");
@@ -1104,6 +1094,7 @@ $.ajax({
         PressaoArterial: PressaoArterial,
         mmhg: mmhg,
         Pulso: Pulso,
+        SegSv: Maior2SegSv,
         Respiracao: Respiracao,
         Temperatura: Temperatura,
         Anormal: Anormal
@@ -1114,7 +1105,6 @@ $.ajax({
 });
 
 }
-
 function Anamnese(){
     var AcAnamnese = $('#oa_anamnese').val();
     var QsAnamnese = $('#qs_anamnese').val();
@@ -1271,8 +1261,6 @@ function AnamneseGestacional(){
 function SinaisESintomas(){
 
 }
-
-
 function ProblemasSuspeitos(){
 
     console.log("")
