@@ -1816,7 +1816,7 @@ function ProcedimentosEfetuados(){
         var AspiracaoPef = 'Aspiração';
     } else {
         var AspiracaoPef = 'n';
-    }console.log(AspiracaoPef);
+    };
 
     var AvaliacaoInicialPefCheckbox = document.getElementById("avaliacao_inicial_pef");/*Input type Checkbox*/
     var AvaliacaoInicialPefChecked = AvaliacaoInicialPefCheckbox.checked;
@@ -1824,7 +1824,7 @@ function ProcedimentosEfetuados(){
         var AvaliacaoInicialPef = 'Avaliação Inicial';
     } else {
         var AvaliacaoInicialPef = 'n';
-    }console.log(AvaliacaoInicialPef);
+    }
 
     var AvaliacaoContinuadaPefCheckbox = document.getElementById("avaliacao_continuada_pef");/*Input type Checkbox*/
     var AvaliacaoContinuadaPefChecked = AvaliacaoContinuadaPefCheckbox.checked;
@@ -1832,7 +1832,7 @@ function ProcedimentosEfetuados(){
         var AvaliacaoContinuadaPef = 'Avaliação continuada';
     } else {
         var AvaliacaoContinuadaPef = 'n';
-    }console.log(AvaliacaoContinuadaPef);
+    }
 
     var ChaveRautekPefCheckbox = document.getElementById("chave_rautek_pef");/*Input type Checkbox*/
     var ChaveRautekPefChecked = ChaveRautekPefCheckbox.checked;
@@ -1840,7 +1840,7 @@ function ProcedimentosEfetuados(){
         var ChaveRautekPef = 'Chave de Rautek';
     } else {
         var ChaveRautekPef = 'n';
-    }console.log(ChaveRautekPef);
+    }
 
     var CanulaGuedelPefCheckbox = document.getElementById("canula_guedel_pef");/*Input type Checkbox*/
     var CanulaGuedelPefChecked = CanulaGuedelPefCheckbox.checked;
@@ -1848,7 +1848,7 @@ function ProcedimentosEfetuados(){
         var CanulaGuedelPef = 'Cânula de Guedel';
     } else {
         var CanulaGuedelPef = 'n';
-    }console.log(CanulaGuedelPef);
+    }
 
     var DesobstrucaoVAPefCheckbox = document.getElementById("desobstrucao_va_pef");/*Input type Checkbox*/
     var DesobstrucaoVAPefChecked = DesobstrucaoVAPefCheckbox.checked;
@@ -1856,7 +1856,7 @@ function ProcedimentosEfetuados(){
         var DesobstrucaoVAPef = 'Desobstrução de V.A';
     } else {
         var DesobstrucaoVAPef = 'n';
-    }console.log(DesobstrucaoVAPef);
+    }
 
     var DesobstrucaoDEAPefCheckbox = document.getElementById("desobtrucao_dea_pef");/*Input type Checkbox*/
     var DesobstrucaoDEAPefChecked = DesobstrucaoDEAPefCheckbox.checked;
@@ -1864,7 +1864,7 @@ function ProcedimentosEfetuados(){
         var DesobstrucaoDEAPef = 'Desobstrução do D.E.A';
     } else {
         var DesobstrucaoDEAPef = 'n';
-    }console.log(DesobstrucaoDEAPef);
+    }
 
     var EmpregoDEAPefCheckbox = document.getElementById("emprego_dea_pef");/*Input type Checkbox*/
     var EmpregoDEAPefChecked = EmpregoDEAPefCheckbox.checked;
@@ -1872,7 +1872,7 @@ function ProcedimentosEfetuados(){
         var EmpregoDEAPef = 'Emprego do D.E.A';
     } else {
         var EmpregoDEAPef = 'n';
-    }console.log(EmpregoDEAPef);
+    }
 
     var GerenciamentoRiscosPefCheckbox = document.getElementById("gerenciamento_riscos_pef");/*Input type Checkbox*/
     var GerenciamentoRiscosPefChecked = GerenciamentoRiscosPefCheckbox.checked;
@@ -1880,7 +1880,7 @@ function ProcedimentosEfetuados(){
         var GerenciamentoRiscosPef = 'Gerenciamento de Riscos';
     } else {
         var GerenciamentoRiscosPef = 'n';
-    }console.log(GerenciamentoRiscosPef);
+    }
 
     var LimpezaFerimentosPefCheckbox = document.getElementById("limpeza_ferimentos_pef");/*Input type Checkbox*/
     var LimpezaFerimentosPefChecked = LimpezaFerimentosPefCheckbox.checked;
@@ -1888,7 +1888,7 @@ function ProcedimentosEfetuados(){
         var LimpezaFerimentosPef = 'Limpeza de Ferimentos';
     } else {
         var LimpezaFerimentosPef = 'n';
-    }console.log(LimpezaFerimentosPef);
+    }
 
     var CurativosPefCheckbox = document.getElementById("curativos_pef");/*Input type Checkbox*/
     var CurativosPefChecked = CurativosPefCheckbox.checked;
@@ -1896,7 +1896,7 @@ function ProcedimentosEfetuados(){
         var CurativosPef = 'Limpeza de Ferimentos';
     } else {
         var CurativosPef = 'n';
-    }console.log(CurativosPef);
+    }
 
     var CompressivosPefCheckbox = document.getElementById("compressivo_pef");/*Input type Checkbox*/
     var CompressivosPefChecked = CompressivosPefCheckbox.checked;
@@ -1904,7 +1904,422 @@ function ProcedimentosEfetuados(){
         var CompressivosPef = 'Compressivo';
     } else {
         var CompressivosPef = 'n';
-    }console.log(CompressivosPef);
+    }
 
+    var EncravamentoPefCheckbox = document.getElementById("encravamento_pef");/*Input type Checkbox*/
+    var EncravamentoPefChecked = EncravamentoPefCheckbox.checked;
+    if (EncravamentoPefChecked) {
+        var EncravamentoPef = 'Encravamento';
+    } else {
+        var EncravamentoPef = 'n';
+    }
+
+    var OcularPefCheckbox = document.getElementById("ocular_pef");/*Input type Checkbox*/
+    var OcularPefChecked = OcularPefCheckbox.checked;
+    if (OcularPefChecked) {
+        var OcularPef = 'Ocular';
+    } else {
+        var OcularPef = 'n';
+    }
+
+    var QueimaduraPefCheckbox = document.getElementById("queimadura_pef");/*Input type Checkbox*/
+    var QueimaduraPefChecked = QueimaduraPefCheckbox.checked;
+    if (QueimaduraPefChecked) {
+        var QueimaduraPef = 'Queimadura';
+    } else {
+        var QueimaduraPef = 'n';
+    }
+
+    var SimplesPefCheckbox = document.getElementById("simples_pef");/*Input type Checkbox*/
+    var SimplesPefChecked = SimplesPefCheckbox.checked;
+    if (SimplesPefChecked) {
+        var SimplesPef = 'Simples';
+    } else {
+        var SimplesPef = 'n';
+    }
+
+    var TresPontasPefCheckbox = document.getElementById("3pontas_pef");/*Input type Checkbox*/
+    var TresPontasPefChecked = TresPontasPefCheckbox.checked;
+    if (TresPontasPefChecked) {
+        var TresPontasPef = '3 pontas';
+    } else {
+        var TresPontasPef = 'n';
+    }
+
+    var ImobilizacaoPefCheckbox = document.getElementById("imobilizacao_pef");/*Input type Checkbox*/
+    var ImobilizacaoPefChecked = ImobilizacaoPefCheckbox.checked;
+    if (ImobilizacaoPefChecked) {
+        var ImobilizacaoPef = 'Imobilização';
+    } else {
+        var ImobilizacaoPef = 'n';
+    }
+
+    var MmbInfDirPefCheckbox = document.getElementById("mmb_inf_dir_pef");/*Input type Checkbox*/
+    var MmbInfDirPefChecked = MmbInfDirPefCheckbox.checked;
+    if (MmbInfDirPefChecked) {
+        var MmbInfDirPef = 'Membro inferior Direito';
+    } else {
+        var MmbInfDirPef = 'n';
+    }
+
+    var MmbInfEsqPefCheckbox = document.getElementById("mmb_inf_esq_pef");/*Input type Checkbox*/
+    var MmbInfEsqPefChecked = MmbInfEsqPefCheckbox.checked;
+    if (MmbInfEsqPefChecked) {
+        var MmbInfEsqPef = 'Membro Inferior Esquerdo';
+    } else {
+        var MmbInfEsqPef = 'n';
+    }
+
+    var MmbSupDirPefCheckbox = document.getElementById("mmb_sup_dir_pef");/*Input type Checkbox*/
+    var MmbSupDirPefChecked = MmbSupDirPefCheckbox.checked;
+    if (MmbSupDirPefChecked) {
+        var MmbSupDirPef = 'Membro Superior Direito';
+    } else {
+        var MmbSupDirPef = 'n';
+    }
+
+    var MmbSupEsqPefCheckbox = document.getElementById("mmb_sup_esq_pef");/*Input type Checkbox*/
+    var MmbSupEsqPefChecked = MmbSupEsqPefCheckbox.checked;
+    if (MmbSupEsqPefChecked) {
+        var MmbSupEsqPef = 'Membro Superior Esquerdo';
+    } else {
+        var MmbSupEsqPef = 'n';
+    }
+
+    var QuadrilPefCheckbox = document.getElementById("quadril_pef");/*Input type Checkbox*/
+    var QuadrilPefChecked = QuadrilPefCheckbox.checked;
+    if (QuadrilPefChecked) {
+        var QuadrilPef = 'Quadril';
+    } else {
+        var QuadrilPef = 'n';
+    }
+
+    var CervicalPefCheckbox = document.getElementById("cervical_pef");/*Input type Checkbox*/
+    var CervicalPefChecked = CervicalPefCheckbox.checked;
+    if (CervicalPefChecked) {
+        var CervicalPef = 'Cervical';
+    } else {
+        var CervicalPef = 'n';
+    }
+
+    var MacaSobreRodasPefCheckbox = document.getElementById("maca_sobre_rodas_pef");/*Input type Checkbox*/
+    var MacaSobreRodasPefChecked = MacaSobreRodasPefCheckbox.checked;
+    if (MacaSobreRodasPefChecked) {
+        var MacaSobreRodasPef = 'Maca Sobre Rodas';
+    } else {
+        var MacaSobreRodasPef = 'n';
+    }
+
+    var MacaRigidaPefCheckbox = document.getElementById("maca_rigida_pef");/*Input type Checkbox*/
+    var MacaRigidaPefChecked = MacaRigidaPefCheckbox.checked;
+    if (MacaRigidaPefChecked) {
+        var MacaRigidaPef = 'Maca Sobre Rodas';
+    } else {
+        var MacaRigidaPef = 'n';
+    }
+
+    var RetiradoCapacetePefCheckbox = document.getElementById("retirado_capacete_pef");/*Input type Checkbox*/
+    var RetiradoCapacetePefChecked = RetiradoCapacetePefCheckbox.checked;
+    if (RetiradoCapacetePefChecked) {
+        var RetiradoCapacetePef = 'Retirado Do Capacete';
+    } else {
+        var RetiradoCapacetePef = 'n';
+    }
+
+    var RCPPefCheckbox = document.getElementById("rcp_pef");/*Input type Checkbox*/
+    var RCPPefChecked = RCPPefCheckbox.checked;
+    if (RCPPefChecked) {
+        var RCPPef = 'R.C.P';
+    } else {
+        var RCPPef = 'n';
+    }
+
+    var Rolamento90PefCheckbox = document.getElementById("rolamento90_pef");/*Input type Checkbox*/
+    var Rolamento90PefChecked = Rolamento90PefCheckbox.checked;
+    if (Rolamento90PefChecked) {
+        var Rolamento90Pef = 'Rolamento 90°';
+    } else {
+        var Rolamento90Pef = 'n';
+    }
+
+    var Rolamento180PefCheckbox = document.getElementById("rolamento180_pef");/*Input type Checkbox*/
+    var Rolamento180PefChecked = Rolamento180PefCheckbox.checked;
+    if (Rolamento180PefChecked) {
+        var Rolamento180Pef = 'Rolamento 180°';
+    } else {
+        var Rolamento180Pef = 'n';
+    }
+
+    var TomadaDecisaoPefCheckbox = document.getElementById("tomada_decisao_pef");/*Input type Checkbox*/
+    var TomadaDecisaoPefChecked = TomadaDecisaoPefCheckbox.checked;
+    if (TomadaDecisaoPefChecked) {
+        var TomadaDecisaoPef = 'Tomada Decisão';
+    } else {
+        var TomadaDecisaoPef = 'n';
+    }
+
+    var TratamentoChoquePefCheckbox = document.getElementById("tratamento_choque_pef");/*Input type Checkbox*/
+    var TratamentoChoquePefChecked = TratamentoChoquePefCheckbox.checked;
+    if (TratamentoChoquePefChecked) {
+        var TratamentoChoquePef = 'Tratamento de Choque';
+    } else {
+        var TratamentoChoquePef = 'n';
+    }
+
+    var UsoCanulaPefCheckbox = document.getElementById("uso_canula_pef");/*Input type Checkbox*/
+    var UsoCanulaPefChecked = UsoCanulaPefCheckbox.checked;
+    if (UsoCanulaPefChecked) {
+        var UsoCanulaPef = 'Uso de Cânula';
+    } else {
+        var UsoCanulaPef = 'n';
+    }
+
+    var UsoColarPefCheckbox = document.getElementById("uso_colar_pef");/*Input type Checkbox*/
+    var UsoColarPefChecked = UsoColarPefCheckbox.checked;
+    if (UsoColarPefChecked) {
+        var UsoColarPef = 'Uso de Colar: ' + document.getElementById("text_colar_pef").value;
+    } else {
+        var UsoColarPef = 'n';
+    }
+
+    var UsoKEDPefCheckbox = document.getElementById("uso_ked_pef");/*Input type Checkbox*/
+    var UsoKEDPefChecked = UsoKEDPefCheckbox.checked;
+    if (UsoKEDPefChecked) {
+        var UsoKEDPef = 'Uso KED';
+    } else {
+        var UsoKEDPef = 'n';
+    }
+
+    var UsoTTFPefCheckbox = document.getElementById("Uso_ttf_pef");/*Input type Checkbox*/
+    var UsoTTFPefChecked = UsoTTFPefCheckbox.checked;
+    if (UsoTTFPefChecked) {
+        var UsoTTFPef = 'Uso TTF';
+    } else {
+        var UsoTTFPef = 'n';
+    }
+
+    var VentilacaoSuportePefCheckbox = document.getElementById("ventilacao_suporte_pef");/*Input type Checkbox*/
+    var VentilacaoSuportePefChecked = VentilacaoSuportePefCheckbox.checked;
+    if (VentilacaoSuportePefChecked) {
+        var VentilacaoSuportePef = 'Ventilação Suporte';
+    } else {
+        var VentilacaoSuportePef = 'n';
+    }
+
+    var OxigenoterapiaPefCheckbox = document.getElementById("oxigenoterapia_pef");/*Input type Checkbox*/
+    var OxigenoterapiaPefChecked = OxigenoterapiaPefCheckbox.checked;
+    if (OxigenoterapiaPefChecked) {
+        var OxigenoterapiaPef = 'Oxigenoterapia: ' + document.getElementById("text_oxigenoterapia_pef").value;
+    } else {
+        var OxigenoterapiaPef = 'n';
+    }
+
+    var ReanimadorPefCheckbox = document.getElementById("reanimador_pef");/*Input type Checkbox*/
+    var ReanimadorPefChecked = ReanimadorPefCheckbox.checked;
+    if (ReanimadorPefChecked) {
+        var ReanimadorPef = 'Reanimador: ' + document.getElementById("text_reanimador_pef").value;
+    } else {
+        var ReanimadorPef = 'n';
+    }
+
+    var MeiosAuxiliaresPefCheckbox = document.getElementById("meios_auxiliares_pef");/*Input type Checkbox*/
+    var MeiosAuxiliaresPefChecked = MeiosAuxiliaresPefCheckbox.checked;
+    if (MeiosAuxiliaresPefChecked) {
+        var MeiosAuxiliaresPef = 'Meios Auxiliares';
+    } else {
+        var MeiosAuxiliaresPef = 'n';
+    }
+
+    var CelescPefCheckbox = document.getElementById("celesc_pef");/*Input type Checkbox*/
+    var CelescPefChecked = CelescPefCheckbox.checked;
+    if (CelescPefChecked) {
+        var CelescPef = 'Celesc';
+    } else {
+        var CelescPef = 'n';
+    }
+
+    var PoliciaCivilPefCheckbox = document.getElementById("policia_civil_pef");/*Input type Checkbox*/
+    var PoliciaCivilPefChecked = PoliciaCivilPefCheckbox.checked;
+    if (PoliciaCivilPefChecked) {
+        var PoliciaCivilPef = 'Policia Civil';
+    } else {
+        var PoliciaCivilPef = 'n';
+    }
+
+    var PoliciaMilitarPefCheckbox = document.getElementById("policia_militar_pef");/*Input type Checkbox*/
+    var PoliciaMilitarPefChecked = PoliciaMilitarPefCheckbox.checked;
+    if (PoliciaMilitarPefChecked) {
+        var PoliciaMilitarPef = 'Policia Militar';
+    } else {
+        var PoliciaMilitarPef = 'n';
+    }
+
+    var PoliciaPrePefCheckbox = document.getElementById("policia_pre_pef");/*Input type Checkbox*/
+    var PoliciaPrePefChecked = PoliciaPrePefCheckbox.checked;
+    if (PoliciaPrePefChecked) {
+        var PoliciaPrePef = 'Policia Pre';
+    } else {
+        var PoliciaPrePef = 'n';
+    }
+
+    var PoliciaPrfPefCheckbox = document.getElementById("policia_prf_pef");/*Input type Checkbox*/
+    var PoliciaPrfPefChecked = PoliciaPrfPefCheckbox.checked;
+    if (PoliciaPrfPefChecked) {
+        var PoliciaPrfPef = 'Policia Prf';
+    } else {
+        var PoliciaPrfPef = 'n';
+    }
+
+    var DefCivilPefCheckbox = document.getElementById("def_civil_pef");/*Input type Checkbox*/
+    var DefCivilPefChecked = DefCivilPefCheckbox.checked;
+    if (DefCivilPefChecked) {
+        var DefCivilPef = 'DEF. Civil';
+    } else {
+        var DefCivilPef = 'n';
+    }
+
+    var IPGPCPefCheckbox = document.getElementById("ipg_pc_pef");/*Input type Checkbox*/
+    var IPGPCPefChecked = IPGPCPefCheckbox.checked;
+    if (IPGPCPefChecked) {
+        var IPGPCPef = 'IPG/PC';
+    } else {
+        var IPGPCPef = 'n';
+    }
+
+    var SamuPefCheckbox = document.getElementById("samu_pef");/*Input type Checkbox*/
+    var SamuPefChecked = SamuPefCheckbox.checked;
+    if (SamuPefChecked) {
+        var SamuPef = 'Samu';
+    } else {
+        var SamuPef = 'n';
+    }
+
+    var CITPefCheckbox = document.getElementById("cit_pef");/*Input type Checkbox*/
+    var CITPefChecked = CITPefCheckbox.checked;
+    if (CITPefChecked) {
+        var CITPef = 'CIT';
+    } else {
+        var CITPef = 'n';
+    }
+
+    if (document.getElementById("textobox_pef").checked){
+        var TextoPef = document.getElementById("texto_pef").value;
+    } else{
+        var TextoPef = "n";
+    }
     
+    var TodosOsValoresPef = ""
+    if(AspiracaoPef !== "n"){TodosOsValoresPef += AspiracaoPef}
+    if(AvaliacaoInicialPef !== "n"){TodosOsValoresPef += ", " + AvaliacaoInicialPef}
+    if(AvaliacaoContinuadaPef !== "n"){TodosOsValoresPef += ", " + AvaliacaoContinuadaPef}
+    if(ChaveRautekPef !== "n"){TodosOsValoresPef += ", " + ChaveRautekPef}
+    if(CanulaGuedelPef !== "n"){TodosOsValoresPef += ", " + CanulaGuedelPef}
+    if(DesobstrucaoVAPef !== "n"){TodosOsValoresPef += ", " + DesobstrucaoVAPef}
+    if(DesobstrucaoDEAPef !== "n"){TodosOsValoresPef += ", " + DesobstrucaoDEAPef}
+    if(EmpregoDEAPef !== "n"){TodosOsValoresPef += ", " + EmpregoDEAPef}
+    if(GerenciamentoRiscosPef !== "n"){TodosOsValoresPef += ", " + GerenciamentoRiscosPef}
+    if(LimpezaFerimentosPef !== "n"){TodosOsValoresPef += ", " + LimpezaFerimentosPef}
+    if(CurativosPef !== "n"){TodosOsValoresPef += ", " + CurativosPef}
+    if(CompressivosPef !== "n"){TodosOsValoresPef += ", " + CompressivosPef}
+    if(EncravamentoPef !== "n"){TodosOsValoresPef += ", " + EncravamentoPef}
+    if(OcularPef !== "n"){TodosOsValoresPef += ", " + OcularPef}
+    if(QueimaduraPef !== "n"){TodosOsValoresPef += ", " + QueimaduraPef}
+    if(SimplesPef !== "n"){TodosOsValoresPef += ", " + SimplesPef}
+    if(TresPontasPef !== "n"){TodosOsValoresPef += ", " + TresPontasPef}
+    if(ImobilizacaoPef !== "n"){TodosOsValoresPef += ", " + ImobilizacaoPef}
+    if(MmbInfDirPef !== "n"){TodosOsValoresPef += ", " + MmbInfDirPef}
+    if(MmbInfEsqPef !== "n"){TodosOsValoresPef += ", " + MmbInfEsqPef}
+    if(MmbSupDirPef !== "n"){TodosOsValoresPef += ", " + MmbSupDirPef}
+    if(MmbSupEsqPef !== "n"){TodosOsValoresPef += ", " + MmbSupEsqPef}
+    if(QuadrilPef !== "n"){TodosOsValoresPef += ", " + QuadrilPef}
+    if(CervicalPef !== "n"){TodosOsValoresPef += ", " + CervicalPef}
+    if(MacaSobreRodasPef !== "n"){TodosOsValoresPef += ", " + MacaSobreRodasPef}
+    if(MacaRigidaPef !== "n"){TodosOsValoresPef += ", " + MacaRigidaPef}
+    if(RCPPef !== "n"){TodosOsValoresPef += ", " + RCPPef}
+    if(Rolamento90Pef !== "n"){TodosOsValoresPef += ", " + Rolamento90Pef}
+    if(Rolamento180Pef !== "n"){TodosOsValoresPef += ", " + Rolamento180Pef}
+    if(TomadaDecisaoPef !== "n"){TodosOsValoresPef += ", " + TomadaDecisaoPef}
+    if(TratamentoChoquePef !== "n"){TodosOsValoresPef += ", " + TratamentoChoquePef}
+    if(UsoCanulaPef !== "n"){TodosOsValoresPef += ", " + UsoCanulaPef}
+    if(UsoColarPef !== "n"){TodosOsValoresPef += ", " + UsoColarPef}
+    if(UsoKEDPef !== "n"){TodosOsValoresPef += ", " + UsoKEDPef}
+    if(UsoTTFPef !== "n"){TodosOsValoresPef += ", " + UsoTTFPef}
+    if(VentilacaoSuportePef !== "n"){TodosOsValoresPef += ", " + VentilacaoSuportePef}
+    if(OxigenoterapiaPef !== "n"){TodosOsValoresPef += ", " + OxigenoterapiaPef}
+    if(ReanimadorPef !== "n"){TodosOsValoresPef += ", " + ReanimadorPef}
+    if(MeiosAuxiliaresPef !== "n"){TodosOsValoresPef += ", " + MeiosAuxiliaresPef}
+    if(CelescPef !== "n"){TodosOsValoresPef += ", " + CelescPef}
+    if(PoliciaCivilPef !== "n"){TodosOsValoresPef += ", " + PoliciaCivilPef}
+    if(PoliciaMilitarPef !== "n"){TodosOsValoresPef += ", " + PoliciaMilitarPef}
+    if(PoliciaPrePef !== "n"){TodosOsValoresPef += ", " + PoliciaPrePef}
+    if(PoliciaPrfPef !== "n"){TodosOsValoresPef += ", " + PoliciaPrfPef}
+    if(DefCivilPef !== "n"){TodosOsValoresPef += ", " + DefCivilPef}
+    if(IPGPCPef !== "n"){TodosOsValoresPef += ", " + IPGPCPef}
+    if(SamuPef !== "n"){TodosOsValoresPef += ", " + SamuPef}
+    if(CITPef !== "n"){TodosOsValoresPef += ", " + CITPef}
+    if(TextoPef !== "n"){TodosOsValoresPef += ", " + TextoPef}
+    console.log(TodosOsValoresPef)
+}
+function UsoDeColarTamPef(){
+    var TextColarTamPef = document.getElementById("text_colar_pef");
+    var ColarTamCheckBoxPef = document.getElementById("uso_colar_pef");
+
+    if(ColarTamCheckBoxPef.checked){
+        TextColarTamPef.style.display = "flex"
+    }else{
+        TextColarTamPef.style.display = "none"
+        TextColarTamPef.value = ""
+    }
+}
+function OxigenoterapiaPef(){
+    var OxigenoterapiaCheckBoxPef = document.getElementById("oxigenoterapia_pef");
+    var TextOxigenoterapia = document.getElementById("text_oxigenoterapia_pef");
+
+    if(OxigenoterapiaCheckBoxPef.checked){
+        TextOxigenoterapia.style.display = "flex"
+    }else{
+        TextOxigenoterapia.style.display = "none"
+        TextOxigenoterapia.value = ""
+    }
+}
+function ReanimadorPef(){
+    var TextReanimadorPef = document.getElementById("text_reanimador_pef");
+    var ReanimadorCheckBoxPef = document.getElementById("reanimador_pef");
+
+    if(ReanimadorCheckBoxPef.checked){
+        TextReanimadorPef.style.display = "flex"
+    }else{
+        TextReanimadorPef.style.display = "none"
+        TextReanimadorPef.value = ""
+    }
+}
+function PoliciaPef(){
+    var PoliciaCheckBoxPef = document.getElementById("policia_radio_box");
+    var DivPoliciaPef = document.getElementById("policia_div_pef");
+    var Policia1 = document.getElementById("policia_civil_pef");
+    var Policia2 = document.getElementById("policia_militar_pef");
+    var Policia3 = document.getElementById("policia_pre_pef");
+    var Policia4 = document.getElementById("policia_prf_pef");
+
+    if(PoliciaCheckBoxPef.checked){
+        DivPoliciaPef.style.display = "flex"
+    }else{
+        DivPoliciaPef.style.display = "none"
+        DivPoliciaPef.value = ""
+        Policia1.checked = false
+        Policia2.checked = false
+        Policia3.checked = false
+        Policia4.checked = false
+    }
+}
+function OutroPef(){
+    var OutroCheckBoxPef = document.getElementById("textobox_pef");
+    var TextOutroPef = document.getElementById("texto_pef");
+
+    if(OutroCheckBoxPef.checked){
+        TextOutroPef.style.display = "flex"
+    }else{
+        TextOutroPef.style.display = "none"
+        TextOutroPef.value = ""
+    }
 }

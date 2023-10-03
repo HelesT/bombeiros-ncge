@@ -1159,19 +1159,19 @@
             <div class="linha justify"><input type="checkbox" id="tomada_decisao_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tomada Decisão</span></div>
             <div class="linha justify"><input type="checkbox" id="tratamento_choque_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Tratamento de Choque</span></div>
             <div class="linha justify"><input type="checkbox" id="uso_canula_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Cânula</span></div>
-            <div class="linha justify"><input type="checkbox" id="uso_colar_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Colar</span>TAM <input type="text" class="input-linha" style="width: 35px; "> </div>
+            <div class="linha justify"><input type="checkbox" id="uso_colar_pef" class="checkbox" onclick="UsoDeColarTamPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso de Colar</span>TAM<input type="text" id="text_colar_pef" class="input-linha" style="width: 35px;display: none;"> </div>
             <div class="linha justify"><input type="checkbox" id="uso_ked_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso KED</span></div>
-            <div class="linha justify"><input type="checkbox" id="Uso_tff_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso TTF</span></div>
+            <div class="linha justify"><input type="checkbox" id="Uso_ttf_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Uso TTF</span></div>
             <div class="linha justify"><input type="checkbox" id="ventilacao_suporte_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Ventilação Suporte</span></div>
-            <div class="linha justify"><input type="checkbox" id="oxinoterapia_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Oxigenoterapia</span> <input type="text" class="input-linha" style="width: 35px; "> LPM</div>
-            <div class="linha justify"><input type="checkbox" id="reanimador_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Reanimador</span> <input type="text" class="input-linha" style="width: 35px; "> LPM</div>
+            <div class="linha justify"><input type="checkbox" id="oxigenoterapia_pef" class="checkbox" onclick="OxigenoterapiaPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Oxigenoterapia</span> <input type="text" id="text_oxigenoterapia_pef" class="input-linha" style="width: 35px; display: none;"> LPM</div>
+            <div class="linha justify"><input type="checkbox" id="reanimador_pef" class="checkbox" onclick="ReanimadorPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Reanimador</span> <input type="text" id="text_reanimador_pef" class="input-linha" style="width: 35px; display: none;"> LPM</div>
             <div class="linha justify"><input type="checkbox" id="meios_auxiliares_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Meios Auxiliares</span></div>
             <div class="linha justify"><input type="checkbox" id="celesc_pef" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Celesc</span></div>
             <div class="linha justify">
-              <input type="checkbox" id="policia_radio_box" class="checkbox" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia</span>
-              <div class="coluna" id="policia_div_pef" style="display: flex;">
+              <input type="checkbox" id="policia_radio_box" class="checkbox" onclick="PoliciaPef()" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Polícia</span>
+              <div class="coluna" id="policia_div_pef" style="display: none;">
                 <div class="linha justify"><input type="checkbox" id="policia_civil_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia Civil</span></div>
-                <div class="linha justify"><input type="checkbox" id="policia militar_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia Militar</span></div>
+                <div class="linha justify"><input type="checkbox" id="policia_militar_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia Militar</span></div>
                 <div class="linha justify"><input type="checkbox" id="policia_pre_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia PRE</span></div>
                 <div class="linha justify"><input type="checkbox" id="policia_prf_pef" class="checkbox" style="width: 15px; height: 15px;"><span style="font-size: 15px;margin-left: 5px;">Polícia PRF</span></div>
               </div>
@@ -1180,7 +1180,7 @@
             <div class="linha justify"><input type="checkbox" class="checkbox" id="ipg_pc_pef" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">IPG/PC</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" id="samu_pef" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Samu</span></div>
             <div class="linha justify"><input type="checkbox" class="checkbox" id="cit_pef" style="width: 25px; height: 25px;"><span style="font-size: 20px;margin-left: 5px;">Cit</span></div>
-            <div class="linha justify"><input type="checkbox" class="checkbox" id="textobox_pef" style="width: 25px; height: 25px;"> <input id="texto_pef" type="text" class="input-linha" ></div>
+            <div class="linha justify"><input type="checkbox" class="checkbox" id="textobox_pef" onclick="OutroPef()" style="width: 25px; height: 25px;"> <input id="texto_pef" type="text" class="input-linha" style="display: none;" ></div>
           
             <!--Cute button -->
             <input type="button" onclick="ProcedimentosEfetuados()" value="Clica em mim :3"
