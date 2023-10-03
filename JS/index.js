@@ -1259,8 +1259,310 @@ function AnamneseGestacional(){
     
 }
 function SinaisESintomas(){
+    var AbdomenCheckbox = document.getElementById("sinais_e_sintomas_abdomen_sensivel_ou_rigido");/*Input type Checkbox*/
+    var AbdomenChecked = AbdomenCheckbox.checked;
+    if (AbdomenChecked) {
+        var Abdomen = 's';
+    } else {
+        var Abdomen = 'n';
+    }
+    var AfundamentoCheckbox = document.getElementById("sinais_e_sintomas_afundamento_cranio");/*Input type Checkbox*/
+    var AfundamentoChecked = AfundamentoCheckbox.checked;
+    if (AfundamentoChecked) {
+        var Afundamento = 's';
+    } else {
+        var Afundamento = 'n';
+    }
+    var AgitacaoCheckbox = document.getElementById("sinais_e_sintomas_agitacao");/*Input type Checkbox*/
+    var AgitacaoChecked = AgitacaoCheckbox.checked;
+    if (AgitacaoChecked) {
+        var Agitacao = 's';
+    } else {
+        var Agitacao = 'n';
+    }
+    var AminesiaCheckbox = document.getElementById("sinais_e_sintomas_aminesia");/*Input type Checkbox*/
+    var AminesiaChecked = AminesiaCheckbox.checked;
+    if (AminesiaChecked) {
+        var Aminesia = 's';
+    } else {
+        var Aminesia = 'n';
+    }
+    var ApineiaCheckbox = document.getElementById("sinais_e_sintomas_apineia");/*Input type Checkbox*/
+    var ApineiaChecked = ApineiaCheckbox.checked;
+    if (ApineiaChecked) {
+        var Apineia = 's';
+    } else {
+        var Apineia = 'n';
+    }
+    var BradicardiaCheckbox = document.getElementById("sinais_e_sintomas_bradicardia");/*Input type Checkbox*/
+    var BradicardiaChecked = BradicardiaCheckbox.checked;
+    if (BradicardiaChecked) {
+        var Bradicardia = 's';
+    } else {
+        var Bradicardia = 'n';
+    }
+    var BradipneiaCheckbox = document.getElementById("sinais_e_sintomas_bradipneia");/*Input type Checkbox*/
+    var BradipneiaChecked = BradipneiaCheckbox.checked;
+    if (BradipneiaChecked) {
+        var Bradipneia = 's';
+    } else {
+        var Bradipneia = 'n';
+    }
+    var BroncoAspirandoCheckbox = document.getElementById("sinais_e_sintomas_bronco_aspirando");/*Input type Checkbox*/
+    var BroncoAspirandoChecked = BroncoAspirandoCheckbox.checked;
+    if (BroncoAspirandoChecked) {
+        var BroncoAspirando = 's';
+    } else {
+        var BroncoAspirando = 'n';
+    }
+   
+    
+    var ConvulsaoCheckbox = document.getElementById("sinais_e_sintomas_convulsao");/*Input type Checkbox*/
+    var ConvulsaoChecked = ConvulsaoCheckbox.checked;
+    if (ConvulsaoChecked) {
+        var Convulsao = 's';
+    } else {
+        var Convulsao = 'n';
+    }
+    var DecorticacaoCheckbox = document.getElementById("sinais_e_sintomas_decorticacao");/*Input type Checkbox*/
+    var DecorticacaoChecked = DecorticacaoCheckbox.checked;
+    if (DecorticacaoChecked) {
+        var Decorticacao = 's';
+    } else {
+        var Decorticacao = 'n';
+    }
+    var DeformidadeCheckbox = document.getElementById("sinais_e_sintomas_deformidade");/*Input type Checkbox*/
+    var DeformidadeChecked = DeformidadeCheckbox.checked;
+    if (DeformidadeChecked) {
+        var Deformidade = 's';
+    } else {
+        var Deformidade = 'n'; 
+    }
+    var DescerebracaoCheckbox = document.getElementById("sinais_e_sintomas_descerebracao");/*Input type Checkbox*/
+    var DescerebracaoChecked = DescerebracaoCheckbox.checked;
+    if (DescerebracaoChecked) {
+        var Descerebracao = 's';
+    } else {
+        var Descerebracao = 'n'; 
+    }
+    var DesmaioCheckbox = document.getElementById("sinais_e_sintomas_desmaio");/*Input type Checkbox*/
+    var DesmaioChecked = DesmaioCheckbox.checked;
+    if (DesmaioChecked) {
+        var Desmaio = 's';
+    } else {
+        var Desmaio = 'n';
+    }
+    var TraqueiaCheckbox = document.getElementById("sinais_e_sintomas_desvio_de_traqueia");/*Input type Checkbox*/
+    var TraqueiaChecked = TraqueiaCheckbox.checked;
+    if (TraqueiaChecked) {
+        var Traqueia = 's';
+    } else {
+        var Traqueia = 'n';
+    }
+    var DispneiaCheckbox = document.getElementById("sinais_e_sintomas_dispneia");/*Input type Checkbox*/
+    var DispneiaChecked = DispneiaCheckbox.checked;
+    if (DispneiaChecked) {
+        var Dispneia = 's';
+    } else {
+        var Dispneia = 'n';
+    }
+    var DorLocalCheckbox = document.getElementById("sinais_e_sintomas_dor_local");/*Input type Checkbox*/
+    var DorLocalChecked = DorLocalCheckbox.checked;
+    if (DorLocalChecked) {
+        var DorLocal = 's';
+    } else {
+        var DorLocal = 'n';
+    }
+    
+    var EnfisemaSubcutaneoCheckbox = document.getElementById("sinais_e_sintomas_enfisema_subcutaneo");/*Input type Checkbox*/
+    var EnfisemaSubcutaneoChecked = EnfisemaSubcutaneoCheckbox.checked;
+    if (EnfisemaSubcutaneoChecked) {
+        var EnfisemaSubcutaneo = 's';
+    } else {
+        var EnfisemaSubcutaneo = 'n';
+    }
+    var EstaseDeJugularCheckbox = document.getElementById("sinais_e_sintomas_estase_de_jugular");/*Input type Checkbox*/
+    var EstaseDeJugularChecked = EstaseDeJugularCheckbox.checked;
+    if (EstaseDeJugularChecked) {
+        var EstaseDeJugular = 's';
+    } else {
+        var EstaseDeJugular = 'n';
+    }
+    var FacePalidaCheckbox = document.getElementById("sinais_e_sintomas_face_palida");/*Input type Checkbox*/
+    var FacePalidaChecked = FacePalidaCheckbox.checked;
+    if (FacePalidaChecked) {
+        var FacePalida = 's';
+    } else {
+        var FacePalida = 'n';
+    }
+    
+    var HipertensaoCheckbox = document.getElementById("sinais_e_sintomas_hipertensao");/*Input type Checkbox*/
+    var HipertensaoChecked = HipertensaoCheckbox.checked;
+    if (HipertensaoChecked) {
+        var Hipertensao = 's';
+    } else {
+        var Hipertensao = 'n';
+    }
+    var HipotensaoCheckbox = document.getElementById("sinais_e_sintomas_hipotensao");/*Input type Checkbox*/
+    var HipotensaoChecked = HipotensaoCheckbox.checked;
+    if (HipotensaoChecked) {
+        var Hipotensao = 's';
+    } else {
+        var Hipotensao = 'n';
+    }
+    var NausesEVomitosCheckbox = document.getElementById("sinais_e_sintomas_nauses_e_vomitos");/*Input type Checkbox*/
+    var NausesEVomitosChecked = NausesEVomitosCheckbox.checked;
+    if (NausesEVomitosChecked) {
+        var NausesEVomitos = 's';
+    } else {
+        var NausesEVomitos = 'n';
+    }
+    var NasoragiaCheckbox = document.getElementById("sinais_e_sintomas_nasoragia");/*Input type Checkbox*/
+    var NasoragiaChecked = NasoragiaCheckbox.checked;
+    if (NasoragiaChecked) {
+        var Nasoragia = 's';
+    } else {
+        var Nasoragia = 'n';
+    }
+    var ObitoCheckbox = document.getElementById("sinais_e_sintomas_obito");/*Input type Checkbox*/
+    var ObitoChecked = ObitoCheckbox.checked;
+    if (ObitoChecked) {
+        var Obito = 's';
+    } else {
+        var Obito = 'n';
+    }
+    var OtorreiaCheckbox = document.getElementById("sinais_e_sintomas_otorreia");/*Input type Checkbox*/
+    var OtorreiaChecked = OtorreiaCheckbox.checked;
+    if (OtorreiaChecked) {
+        var Otorreia = 's';
+    } else {
+        var Otorreia = 'n';
+    }
+    var OvaceCheckbox = document.getElementById("sinais_e_sintomas_ovace");/*Input type Checkbox*/
+    var OvaceChecked = OvaceCheckbox.checked;
+    if (OvaceChecked) {
+        var Ovace = 's';
+    } else {
+        var Ovace = 'n';
+    }
+    
+    var PriaprismoCheckbox = document.getElementById("sinais_e_sintomas_priaprismo");/*Input type Checkbox*/
+    var PriaprismoChecked = PriaprismoCheckbox.checked;
+    if (PriaprismoChecked) {
+        var Priaprismo = 's';
+    } else {
+        var Priaprismo = 'n';
+    }
+    var PruridoNaPeleCheckbox = document.getElementById("sinais_e_sintomas_prurido_na_pele");/*Input type Checkbox*/
+    var PruridoNaPeleChecked = PruridoNaPeleCheckbox.checked;
+    if (PruridoNaPeleChecked) {
+        var PruridoNaPele = 's';
+    } else {
+        var PruridoNaPele = 'n';
+    }
+    
+    var SedeCheckbox = document.getElementById("sinais_e_sintomas_sede");/*Input type Checkbox*/
+    var SedeChecked = SedeCheckbox.checked;
+    if (SedeChecked) {
+        var Sede = 's';
+    } else {
+        var Sede = 'n';
+    }
+    var SinalDeBattleCheckbox = document.getElementById("sinais_e_sintomas_sinal_de_battle");/*Input type Checkbox*/
+    var SinalDeBattleChecked = SinalDeBattleCheckbox.checked;
+    if (SinalDeBattleChecked) {
+        var SinalDeBattle = 's';
+    } else {
+        var SinalDeBattle = 'n';
+    }
+    var SinalDeGuaxinimCheckbox = document.getElementById("sinais_e_sintomas_sinal_de_guaxinim");/*Input type Checkbox*/
+    var SinalDeGuaxinimChecked = SinalDeGuaxinimCheckbox.checked;
+    if (SinalDeGuaxinimChecked) {
+        var SinalDeGuaxinim = 's';
+    } else {
+        var SinalDeGuaxinim = 'n';
+    }
+    var SudoreseCheckbox = document.getElementById("sinais_e_sintomas_sudorese");/*Input type Checkbox*/
+    var SudoreseChecked = SudoreseCheckbox.checked;
+    if (SudoreseChecked) {
+        var Sudorese = 's';
+    } else {
+        var Sudorese = 'n';
+    }
+    var TaquipnéiaCheckbox = document.getElementById("sinais_e_sintomas_taquipnéia");/*Input type Checkbox*/
+    var TaquipnéiaChecked = TaquipnéiaCheckbox.checked;
+    if (TaquipnéiaChecked) {
+        var Taquipnéia = 's';
+    } else {
+        var Taquipnéia = 'n';
+    }
+    var TaquicardiaCheckbox = document.getElementById("sinais_e_sintomas_taquicardia");/*Input type Checkbox*/
+    var TaquicardiaChecked = TaquicardiaCheckbox.checked;
+    if (TaquicardiaChecked) {
+        var Taquicardia = 's';
+    } else {
+        var Taquicardia = 'n';
+    }
+    var TonturaCheckbox = document.getElementById("sinais_e_sintomas_tontura");/*Input type Checkbox*/
+    var TonturaChecked = TonturaCheckbox.checked;
+    if (TonturaChecked) {
+        var Tontura = 's';
+    } else {
+        var Tontura = 'n';
+    }
+    var CefaleiaCheckbox = document.getElementById("sinais_e_sintomas_cefaleia");/*Input type Checkbox*/
+    var CefaleiaChecked = CefaleiaCheckbox.checked;
+    if (CefaleiaChecked) {
+        var Cefaleia = 's';
+    } else {
+        var Cefaleia = 'n';
+    }
+    console.log("Abdomen: " + Abdomen)
+    console.log("Afundamento: " + Afundamento) 
+    console.log("Agitacao: " + Agitacao) 
+    console.log("Aminesia: " + Aminesia) 
+    console.log("Apineia: " + Apineia) 
+    console.log("Bradicardia: " + Bradicardia) 
+    console.log("Bradipneia: " + Bradipneia) 
+    console.log("BroncoAspirando: " + BroncoAspirando) 
+    console.log("Convulsao: " + Convulsao) 
+    console.log("Decorticacao: " + Decorticacao) 
+    console.log("Desmaio: " + Desmaio) 
+    console.log("Deformidade: " + Deformidade)
+    console.log("Descerebracao: " + Descerebracao)
+    console.log("Traqueia: " + Traqueia) 
+    console.log("Dispneia: " + Dispneia) 
+    console.log("DorLocal: " + DorLocal) 
+    console.log("EnfisemaSubcutaneo: " + EnfisemaSubcutaneo) 
+    console.log("EstaseDeJugular: " + EstaseDeJugular) 
+    console.log("FacePalida: " + FacePalida) 
+    console.log("Hipertensao: " + Hipertensao) 
+    console.log("Hipotensao: " + Hipotensao) 
+    console.log("NausesEVomitos: " + NausesEVomitos) 
+    console.log("Obito: " + Obito) 
+    console.log("Nasoragia: " + Nasoragia) 
+    console.log("Otorreia: " + Otorreia)
+    console.log("Ovace: " + Ovace) 
+    console.log("Priaprismo: " + Priaprismo) 
+    console.log("PruridoNaPele: " + PruridoNaPele) 
+    console.log("Sede: " + Sede) 
+    console.log("SinalDeBattle: " + SinalDeBattle) 
+    console.log("SinalDeGuaxinim: " + SinalDeGuaxinim) 
+    console.log("Sudorese: " + Sudorese) 
+    console.log("Taquipnéia: " + Taquipnéia) 
+    console.log("Taquicardia: " + Taquicardia) 
+    console.log("Tontura: " + Tontura) 
+    console.log("Cefaleia: " + Cefaleia) 
 
 }
+
+var HemorragiaCheckbox = document.getElementById("sinais_e_sintomas_hemorragia");/*Input type Checkbox*/
+var TXTCheckbox = document.getElementById("sinais_e_sintomas_txt");/*Input type CheckboxTXT*/
+var PupilasCheckbox = document.getElementById("sinais_e_sintomas_pupilas");/*Input type Checkbox*/
+var ParadaCheckbox = document.getElementById("sinais_e_sintomas_parada");/*Input type Checkbox*/
+var EdemaCheckbox = document.getElementById("sinais_e_sintomas_edema");/*Input type Checkbox*/
+var CinoseCheckbox = document.getElementById("sinais_e_sintomas_cinose");/*Input type Checkbox*/  
+
 function ProblemasSuspeitos(){
 
     console.log("")
