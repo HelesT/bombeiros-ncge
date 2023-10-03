@@ -1,4 +1,4 @@
-/*
+/*REGISTRO DE PÁGINAS
     Paginas:
     PacienteRegistro() FEITO
     EmergenciaRegistro() FEITO
@@ -1433,4 +1433,8 @@ function LimparRadioPS(){
     DivTransportePS.style.display = "none";
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
+}
+function ProcedimentosEfetuados(){
+    console.log("Estou funcionando!! ~senpai.. (>//<");
+
 }
