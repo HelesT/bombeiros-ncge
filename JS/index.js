@@ -1807,6 +1807,104 @@ function LimparRadioPS(){
     document.body.scrollTop = 0;
 }
 function ProcedimentosEfetuados(){
+    console.log("");
     console.log("Estou funcionando!! ~senpai.. (>//<");
 
+    var AspiracaoPefCheckbox = document.getElementById("aspiracao_pef");/*Input type Checkbox*/
+    var AspiracaoPefChecked = AspiracaoPefCheckbox.checked;
+    if (AspiracaoPefChecked) {
+        var AspiracaoPef = 'Aspiração';
+    } else {
+        var AspiracaoPef = 'n';
+    }console.log(AspiracaoPef);
+
+    var AvaliacaoInicialPefCheckbox = document.getElementById("avaliacao_inicial_pef");/*Input type Checkbox*/
+    var AvaliacaoInicialPefChecked = AvaliacaoInicialPefCheckbox.checked;
+    if (AvaliacaoInicialPefChecked) {
+        var AvaliacaoInicialPef = 'Avaliação Inicial';
+    } else {
+        var AvaliacaoInicialPef = 'n';
+    }console.log(AvaliacaoInicialPef);
+
+    var AvaliacaoContinuadaPefCheckbox = document.getElementById("avaliacao_continuada_pef");/*Input type Checkbox*/
+    var AvaliacaoContinuadaPefChecked = AvaliacaoContinuadaPefCheckbox.checked;
+    if (AvaliacaoContinuadaPefChecked) {
+        var AvaliacaoContinuadaPef = 'Avaliação continuada';
+    } else {
+        var AvaliacaoContinuadaPef = 'n';
+    }console.log(AvaliacaoContinuadaPef);
+
+    var ChaveRautekPefCheckbox = document.getElementById("chave_rautek_pef");/*Input type Checkbox*/
+    var ChaveRautekPefChecked = ChaveRautekPefCheckbox.checked;
+    if (ChaveRautekPefChecked) {
+        var ChaveRautekPef = 'Chave de Rautek';
+    } else {
+        var ChaveRautekPef = 'n';
+    }console.log(ChaveRautekPef);
+
+    var CanulaGuedelPefCheckbox = document.getElementById("canula_guedel_pef");/*Input type Checkbox*/
+    var CanulaGuedelPefChecked = CanulaGuedelPefCheckbox.checked;
+    if (CanulaGuedelPefChecked) {
+        var CanulaGuedelPef = 'Cânula de Guedel';
+    } else {
+        var CanulaGuedelPef = 'n';
+    }console.log(CanulaGuedelPef);
+
+    var DesobstrucaoVAPefCheckbox = document.getElementById("desobstrucao_va_pef");/*Input type Checkbox*/
+    var DesobstrucaoVAPefChecked = DesobstrucaoVAPefCheckbox.checked;
+    if (DesobstrucaoVAPefChecked) {
+        var DesobstrucaoVAPef = 'Desobstrução de V.A';
+    } else {
+        var DesobstrucaoVAPef = 'n';
+    }console.log(DesobstrucaoVAPef);
+
+    var DesobstrucaoDEAPefCheckbox = document.getElementById("desobtrucao_dea_pef");/*Input type Checkbox*/
+    var DesobstrucaoDEAPefChecked = DesobstrucaoDEAPefCheckbox.checked;
+    if (DesobstrucaoDEAPefChecked) {
+        var DesobstrucaoDEAPef = 'Desobstrução do D.E.A';
+    } else {
+        var DesobstrucaoDEAPef = 'n';
+    }console.log(DesobstrucaoDEAPef);
+
+    var EmpregoDEAPefCheckbox = document.getElementById("emprego_dea_pef");/*Input type Checkbox*/
+    var EmpregoDEAPefChecked = EmpregoDEAPefCheckbox.checked;
+    if (EmpregoDEAPefChecked) {
+        var EmpregoDEAPef = 'Emprego do D.E.A';
+    } else {
+        var EmpregoDEAPef = 'n';
+    }console.log(EmpregoDEAPef);
+
+    var GerenciamentoRiscosPefCheckbox = document.getElementById("gerenciamento_riscos_pef");/*Input type Checkbox*/
+    var GerenciamentoRiscosPefChecked = GerenciamentoRiscosPefCheckbox.checked;
+    if (GerenciamentoRiscosPefChecked) {
+        var GerenciamentoRiscosPef = 'Gerenciamento de Riscos';
+    } else {
+        var GerenciamentoRiscosPef = 'n';
+    }console.log(GerenciamentoRiscosPef);
+
+    var LimpezaFerimentosPefCheckbox = document.getElementById("limpeza_ferimentos_pef");/*Input type Checkbox*/
+    var LimpezaFerimentosPefChecked = LimpezaFerimentosPefCheckbox.checked;
+    if (LimpezaFerimentosPefChecked) {
+        var LimpezaFerimentosPef = 'Limpeza de Ferimentos';
+    } else {
+        var LimpezaFerimentosPef = 'n';
+    }console.log(LimpezaFerimentosPef);
+
+    var CurativosPefCheckbox = document.getElementById("curativos_pef");/*Input type Checkbox*/
+    var CurativosPefChecked = CurativosPefCheckbox.checked;
+    if (CurativosPefChecked) {
+        var CurativosPef = 'Limpeza de Ferimentos';
+    } else {
+        var CurativosPef = 'n';
+    }console.log(CurativosPef);
+
+    var CompressivosPefCheckbox = document.getElementById("compressivo_pef");/*Input type Checkbox*/
+    var CompressivosPefChecked = CompressivosPefCheckbox.checked;
+    if (CompressivosPefChecked) {
+        var CompressivosPef = 'Compressivo';
+    } else {
+        var CompressivosPef = 'n';
+    }console.log(CompressivosPef);
+
+    
 }
