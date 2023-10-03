@@ -2325,9 +2325,7 @@ function OutroPef(){
 }
 var DivObservacoes = document.getElementById("obsdiv");
 document.addEventListener("click", function(ObservacoesImportantes) {
-    // Verifica se o clique foi dentro ou fora da div editável
     if (ObservacoesImportantes.target !== DivObservacoes) {
-        // Desativa a edição quando o clique for fora da div
         DivObservacoes.setAttribute("contenteditable", "false");
     }else{
         DivObservacoes.setAttribute("contenteditable", "true");
