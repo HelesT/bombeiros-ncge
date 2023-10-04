@@ -11,7 +11,7 @@
     Anamnese() FEITO
     AnamneseGestacional() FEITO
     ProblemasSuspeitos() FEITO
-    SinaisESintomas() ANDAMENTO
+    SinaisESintomas() FEITO
 */
 
 function PacienteRegistro(){    
@@ -1259,6 +1259,8 @@ function AnamneseGestacional(){
     
 }
 function SinaisESintomas(){
+   
+
     var AbdomenCheckbox = document.getElementById("sinais_e_sintomas_abdomen_sensivel_ou_rigido");/*Input type Checkbox*/
     var AbdomenChecked = AbdomenCheckbox.checked;
     if (AbdomenChecked) {
@@ -1528,26 +1530,28 @@ function SinaisESintomas(){
         LabiosSinaiESintomas = document.getElementById("sinais_e_sintomas_labios").value;
     } else if (document.getElementById("sinais_e_sintomas_extremidades").checked) {
         LabiosSinaiESintomas = document.getElementById("sinais_e_sintomas_extremidades").value;
-    }
+    } else {LabiosSinaiESintomas = "n"}
 
     var GeneralizadoSinaiESintomas = "";/*Input type radio*/
     if (document.getElementById("sinais_e_sintomas_generalizado").checked) {
         GeneralizadoSinaiESintomas = document.getElementById("sinais_e_sintomas_generalizado").value;
     } else if (document.getElementById("sinais_e_sintomas_localizado").checked) {
         GeneralizadoSinaiESintomas = document.getElementById("sinais_e_sintomas_localizado").value;
-    }
+    } else {GeneralizadoSinaiESintomas = "n"}
     var InternaSinaiESintomas = "";/*Input type radio*/
     if (document.getElementById("sinais_e_sintomas_interna").checked) {
         InternaSinaiESintomas = document.getElementById("sinais_e_sintomas_interna").value;
     } else if (document.getElementById("sinais_e_sintomas_externa").checked) {
         InternaSinaiESintomas = document.getElementById("sinais_e_sintomas_externa").value;
-    }
+    } else {InternaSinaiESintomas = "n"}
+
     var CardiacaSinaiESintomas = "";/*Input type radio*/
     if (document.getElementById("sinais_e_sintomas_cardiaca").checked) {
         CardiacaSinaiESintomas = document.getElementById("sinais_e_sintomas_cardiaca").value;
     } else if (document.getElementById("sinais_e_sintomas_respiratoria").checked) {
         CardiacaSinaiESintomas = document.getElementById("sinais_e_sintomas_respiratoria").value;
-    }
+    } else {CardiacaSinaiESintomas = "n"}
+
     var AnisocoriaSinaiESintomas = "";/*Input type radio*/
     if (document.getElementById("sinais_e_sintomas_anisocoria").checked) {
         AnisocoriaSinaiESintomas = document.getElementById("sinais_e_sintomas_anisocoria").value;
@@ -1561,78 +1565,170 @@ function SinaisESintomas(){
         AnisocoriaSinaiESintomas = document.getElementById("sinais_e_sintomas_midriase").value;
     }else if (document.getElementById("sinais_e_sintomas_miose").checked) {
         AnisocoriaSinaiESintomas = document.getElementById("sinais_e_sintomas_miose").value;
+    } else {AnisocoriaSinaiESintomas = "n"}
+    
+    if (document.getElementById("sinais_e_sintomas_txt").checked){
+        var TextoSes = document.getElementById("sinais_e_sintomas_input_txt").value;
+    } else{
+        var TextoSes= "n";
     }
+
+  
+   
+  
+     
+
+    var TodosOsValoresSeS = ""
+    if(LabiosSinaiESintomas !== "n"){TodosOsValoresSeS += LabiosSinaiESintomas + ", "} 
+    if(TextoSes !== "n"){TodosOsValoresSeS += TextoSes + ", "}
+    if(GeneralizadoSinaiESintomas !== "n"){TodosOsValoresSeS += GeneralizadoSinaiESintomas + ", "}
+    if(InternaSinaiESintomas !== "n"){TodosOsValoresSeS += InternaSinaiESintomas + ", "}
+    if(CardiacaSinaiESintomas !== "n"){TodosOsValoresSeS += CardiacaSinaiESintomas + ", "}
+    if(AnisocoriaSinaiESintomas !== "n"){TodosOsValoresSeS += AnisocoriaSinaiESintomas + ", "}
+    if(Abdomen !== "n"){TodosOsValoresSeS += Abdomen + ", "}
+    if(Afundamento !== "n"){TodosOsValoresSeS += Afundamento + ", "}
+    if(Agitacao !== "n"){TodosOsValoresSeS += Agitacao + ", "}
+    if(Apineia !== "n"){TodosOsValoresSeS += Apineia + ", "}
+    if(Aminesia !== "n"){TodosOsValoresSeS += Aminesia + ", "}
+    if(Ovace !== "n"){TodosOsValoresSeS += Ovace + ", "} 
+    if(Hipotensao !== "n"){TodosOsValoresSeS += Hipotensao + ", "}   
+    if(Bradipneia !== "n"){TodosOsValoresSeS += Bradipneia + ", "}
+    if(Bradicardia !== "n"){TodosOsValoresSeS += Bradicardia + ", "}
+    if(BroncoAspirando !== "n"){TodosOsValoresSeS += BroncoAspirando + ", "}
+    if(Convulsao !== "n"){TodosOsValoresSeS += Convulsao + ", "}
+    if(Decorticacao !== "n"){TodosOsValoresSeS += Decorticacao + ", "}
+    if(Desmaio !== "n"){TodosOsValoresSeS += Desmaio + ", "}
+    if(Deformidade !== "n"){TodosOsValoresSeS += Deformidade + ", "}
+    if(Descerebracao !== "n"){TodosOsValoresSeS += Descerebracao + ", "}
+    if(Traqueia !== "n"){TodosOsValoresSeS += Traqueia + ", "}
+    if(Dispneia !== "n"){TodosOsValoresSeS += Dispneia + ", "}
+    if(DorLocal !== "n"){TodosOsValoresSeS += DorLocal + ", "}
+    if(EnfisemaSubcutaneo !== "n"){TodosOsValoresSeS += EnfisemaSubcutaneo + ", "}
+    if(EstaseDeJugular !== "n"){TodosOsValoresSeS += EstaseDeJugular + ", "}
+    if(FacePalida !== "n"){TodosOsValoresSeS += FacePalida + ", "}
+    if(Hipertensao !== "n"){TodosOsValoresSeS += Hipertensao + ", "}
+    if(NausesEVomitos !== "n"){TodosOsValoresSeS += NausesEVomitos + ", "}
+    if(Obito !== "n"){TodosOsValoresSeS += Obito + ", "}
+    if(Nasoragia !== "n"){TodosOsValoresSeS += Nasoragia + ", "}
+    if(Otorreia !== "n"){TodosOsValoresSeS += Otorreia + ", "}
+    if(Priaprismo !== "n"){TodosOsValoresSeS += Priaprismo + ", "}
+    if(PruridoNaPele !== "n"){TodosOsValoresSeS += PruridoNaPele + ", "}
+    if(Sede !== "n"){TodosOsValoresSeS += Sede + ", "}
+    if(SinalDeBattle !== "n"){TodosOsValoresSeS += SinalDeBattle + ", "}
+    if(SinalDeGuaxinim !== "n"){TodosOsValoresSeS += SinalDeGuaxinim + ", "}
+    if(Sudorese !== "n"){TodosOsValoresSeS += Sudorese + ", "}
+    if(Taquipnéia !== "n"){TodosOsValoresSeS += Taquipnéia + ", "}
+    if(Taquicardia !== "n"){TodosOsValoresSeS += Taquicardia + ", "}
+    if(Tontura !== "n"){TodosOsValoresSeS += Tontura + ", "}
+    if(Cefaleia !== "n"){TodosOsValoresSeS += Cefaleia + ", "}
+
+    $.ajax({
+        url: 'PHP/SinaisESintomas.php',
+        method: 'POST',
+        data: {
+            TodosOsValoresSeS: TodosOsValoresSeS
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
     
-
-
-
-    
-    var Texto = $('#sinais_e_sintomas_input_txt').val();/*Input type text*/
-    console.log("Cinose:" + LabiosSinaiESintomas)
-    console.log("Edema:" + GeneralizadoSinaiESintomas)
-    console.log("Hemorragia:" + InternaSinaiESintomas)
-    console.log("Parada:" + CardiacaSinaiESintomas)
-    console.log("Pupilass:" + AnisocoriaSinaiESintomas)
-    console.log("Texto: " + Texto)
-    console.log("Abdomen: " + Abdomen)
-    console.log("Afundamento: " + Afundamento) 
-    console.log("Agitacao: " + Agitacao) 
-    console.log("Aminesia: " + Aminesia) 
-    console.log("Apineia: " + Apineia) 
-    console.log("Bradicardia: " + Bradicardia) 
-    console.log("Bradipneia: " + Bradipneia) 
-    console.log("BroncoAspirando: " + BroncoAspirando) 
-    console.log("Convulsao: " + Convulsao) 
-    console.log("Decorticacao: " + Decorticacao) 
-    console.log("Desmaio: " + Desmaio) 
-    console.log("Deformidade: " + Deformidade)
-    console.log("Descerebracao: " + Descerebracao)
-    console.log("Traqueia: " + Traqueia) 
-    console.log("Dispneia: " + Dispneia) 
-    console.log("DorLocal: " + DorLocal) 
-    console.log("EnfisemaSubcutaneo: " + EnfisemaSubcutaneo) 
-    console.log("EstaseDeJugular: " + EstaseDeJugular) 
-    console.log("FacePalida: " + FacePalida) 
-    console.log("Hipertensao: " + Hipertensao) 
-    console.log("Hipotensao: " + Hipotensao) 
-    console.log("NausesEVomitos: " + NausesEVomitos) 
-    console.log("Obito: " + Obito) 
-    console.log("Nasoragia: " + Nasoragia) 
-    console.log("Otorreia: " + Otorreia)
-    console.log("Ovace: " + Ovace) 
-    console.log("Priaprismo: " + Priaprismo) 
-    console.log("PruridoNaPele: " + PruridoNaPele) 
-    console.log("Sede: " + Sede) 
-    console.log("SinalDeBattle: " + SinalDeBattle) 
-    console.log("SinalDeGuaxinim: " + SinalDeGuaxinim) 
-    console.log("Sudorese: " + Sudorese) 
-    console.log("Taquipnéia: " + Taquipnéia) 
-    console.log("Taquicardia: " + Taquicardia) 
-    console.log("Tontura: " + Tontura) 
-    console.log("Cefaleia: " + Cefaleia) 
-
 }
-var EdemaCheckbox = document.getElementById("sinais_e_sintomas_edema");/*Input type Checkbox*/
-var ParadaCheckbox = document.getElementById("sinais_e_sintomas_parada");/*Input type Checkbox*/
-var HemorragiaCheckbox = document.getElementById("sinais_e_sintomas_hemorragia");/*Input type Checkbox*/
-var PupilasCheckbox = document.getElementById("sinais_e_sintomas_pupilas");/*Input type Checkbox*/
-var TXTCheckbox = document.getElementById("sinais_e_sintomas_txt");/*Input type CheckboxTXT*/
+
 
 function CinoseCheckbox(){ /*Input type DIV NONE*/
 
-    var CinoseT = document.getElementById("sinais_e_sintomas_cinose");
+    var Cinose = document.getElementById("sinais_e_sintomas_cinose");
     var DivCinose = document.getElementById("div_cinose");
     var Labios = document.getElementById("sinais_e_sintomas_labios");/*Input type Radio*/
     var Extremidades = document.getElementById("sinais_e_sintomas_extremidades");/*Input type Radio*/
-    if(CinoseT.checked){
+    if(Cinose.checked){
         DivCinose.style.display = "flex";
     }else{
         DivCinose.style.display = "none";
         Labios.checked = false;/*Input type Radio*/
         Extremidades.checked = false;/*Input type Radio*/
-    };
+    };  
 }
 
+function EdemaCheckbox(){ /*Input type DIV NONE*/
+
+    var Cinose = document.getElementById("sinais_e_sintomas_edema");
+    var DivEdema = document.getElementById("div_edema");
+    var Generalizado = document.getElementById("sinais_e_sintomas_generalizado");/*Input type Radio*/
+    var Localizado = document.getElementById("sinais_e_sintomas_localizado");/*Input type Radio*/
+    if(Cinose.checked){
+        DivEdema.style.display = "flex";
+    }else{
+        DivEdema.style.display = "none";
+        Generalizado.checked = false;/*Input type Radio*/
+        Localizado.checked = false;/*Input type Radio*/
+    };  
+}
+
+function ParadaCheckbox(){ /*Input type DIV NONE*/
+
+    var Parada = document.getElementById("sinais_e_sintomas_parada");
+    var DivParada = document.getElementById("div_parada");
+    var Cardiaca = document.getElementById("sinais_e_sintomas_cardiaca");/*Input type Radio*/
+    var Respiratoria = document.getElementById("sinais_e_sintomas_respiratoria");/*Input type Radio*/
+    if(Parada.checked){
+        DivParada.style.display = "flex";
+    }else{
+        DivParada.style.display = "none";
+        Cardiaca.checked = false;/*Input type Radio*/
+        Respiratoria.checked = false;/*Input type Radio*/
+    };  
+}
+function HemorragiaCheckbox(){ /*Input type DIV NONE*/
+
+    var Hemorragia = document.getElementById("sinais_e_sintomas_hemorragia");
+    var DivHemorragia = document.getElementById("div_hemorragia");
+    var Interna = document.getElementById("sinais_e_sintomas_interna");/*Input type Radio*/
+    var Externa = document.getElementById("sinais_e_sintomas_externa");/*Input type Radio*/
+    if(Hemorragia.checked){
+        DivHemorragia.style.display = "flex";
+    }else{
+        DivHemorragia.style.display = "none";
+        Interna.checked = false;/*Input type Radio*/
+        Externa.checked = false;/*Input type Radio*/
+    };  
+}
+function PupilasCheckbox(){ /*Input type DIV NONE*/
+
+    var Pupilas = document.getElementById("sinais_e_sintomas_pupilas");
+    var DivPupilas = document.getElementById("div_pupilas");
+    var Anisocoria = document.getElementById("sinais_e_sintomas_anisocoria");/*Input type Radio*/
+    var Isocoria = document.getElementById("sinais_e_sintomas_isocoria");/*Input type Radio*/
+    var Reagente = document.getElementById("sinais_e_sintomas_reagente");/*Input type Radio*/
+    var NReagente = document.getElementById("sinais_e_sintomas_n_reagente");/*Input type Radio*/
+    var Midriase = document.getElementById("sinais_e_sintomas_midriase");/*Input type Radio*/
+    var Miose = document.getElementById("sinais_e_sintomas_miose");/*Input type Radio*/
+
+    if(Pupilas.checked){
+        DivPupilas.style.display = "flex";
+    }else{
+        DivPupilas.style.display = "none";
+        Anisocoria.checked = false;/*Input type Radio*/
+        Isocoria.checked = false;/*Input type Radio*/
+        Reagente.checked = false;/*Input type Radio*/
+        NReagente.checked = false;/*Input type Radio*/
+        Midriase.checked = false;/*Input type Radio*/
+        Miose.checked = false;/*Input type Radio*/
+    };  
+}
+function TXTCheckbox(){ /*Input type DIV NONE*/
+
+    var TXT = document.getElementById("sinais_e_sintomas_txt");
+    var DivTXT = document.getElementById("sinais_e_sintomas_input_txt");
+    if(TXT.checked){
+        DivTXT.style.display = "flex";
+    }else{
+        DivTXT.style.display = "none";
+        DivTXT.value = "";/*Input type Radio*/
+    
+    };  
+}
 function ProblemasSuspeitos(){
 
     console.log("")
