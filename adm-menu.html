@@ -57,17 +57,17 @@
 
 
             <!--EDIÇÃO GERAL-->
-            <label style="margin-top: 20px; font-size: 20px;">Adicionar/Excluir/Editar Usuario</label>
+            <label style="margin-top: 20px; font-size: 20px;">Adicionar/Editar Usuario/Excluir</label>
             <div class="linha-tabela justify">
                 <div class="space-evenly" style="width: 800px;">
-                    <input class="input-text" placeholder="Nome">
-                    <input class="input-text" placeholder="Senha">
-                    <input class="input-text" placeholder="Chave de Acesso">
+                    <input class="input-text" placeholder="Nome" id="nome_geral">
+                    <input class="input-text" placeholder="Senha" id="senha_geral" >
+                    <input class="input-text" placeholder="Chave de Acesso" id="acesso_geral">
                 </div>
                 <div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;">
-                    <button style="width: 20px; height: 20px; background-color: black;"></button>
-                    <button style="width: 20px; height: 20px; background-color: black;"></button>
-                    <button style="width: 20px; height: 20px; background-color: black;"></button>
+                    <button style="width: 20px; height: 20px; background-color: black;" onclick="AdicionarGeral()"></button>
+                    <button style="width: 20px; height: 20px; background-color: black;" onclick="EditarGeral()"></button>
+                    <button style="width: 20px; height: 20px; background-color: black;" onclick="ExcluirGeral()"></button>
                 </div>
             </div>
             <!--FIM EDIÇÃO GERAL-->
@@ -104,4 +104,6 @@
         <!--FIM BLOCO CINZA-->
     </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="JS/menu-adm.js"></script>
 </html>
