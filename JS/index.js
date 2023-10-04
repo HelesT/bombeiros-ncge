@@ -2427,3 +2427,6 @@ document.addEventListener("click", function(ObservacoesImportantes) {
         DivObservacoes.setAttribute("contenteditable", "true");
     }
 });
+function AvaliacaoCinemática(){
+
+}
