@@ -1989,7 +1989,7 @@ function ProcedimentosEfetuados(){
     var CurativosPefCheckbox = document.getElementById("curativos_pef");/*Input type Checkbox*/
     var CurativosPefChecked = CurativosPefCheckbox.checked;
     if (CurativosPefChecked) {
-        var CurativosPef = 'Limpeza de Ferimentos';
+        var CurativosPef = 'Curativos';
     } else {
         var CurativosPef = 'n';
     }
@@ -2305,55 +2305,55 @@ function ProcedimentosEfetuados(){
     }
     
     var TodosOsValoresPef = ""
-    if(AspiracaoPef !== "n"){TodosOsValoresPef += AspiracaoPef}
-    if(AvaliacaoInicialPef !== "n"){TodosOsValoresPef += ", " + AvaliacaoInicialPef}
-    if(AvaliacaoContinuadaPef !== "n"){TodosOsValoresPef += ", " + AvaliacaoContinuadaPef}
-    if(ChaveRautekPef !== "n"){TodosOsValoresPef += ", " + ChaveRautekPef}
-    if(CanulaGuedelPef !== "n"){TodosOsValoresPef += ", " + CanulaGuedelPef}
-    if(DesobstrucaoVAPef !== "n"){TodosOsValoresPef += ", " + DesobstrucaoVAPef}
-    if(DesobstrucaoDEAPef !== "n"){TodosOsValoresPef += ", " + DesobstrucaoDEAPef}
-    if(EmpregoDEAPef !== "n"){TodosOsValoresPef += ", " + EmpregoDEAPef}
-    if(GerenciamentoRiscosPef !== "n"){TodosOsValoresPef += ", " + GerenciamentoRiscosPef}
-    if(LimpezaFerimentosPef !== "n"){TodosOsValoresPef += ", " + LimpezaFerimentosPef}
-    if(CurativosPef !== "n"){TodosOsValoresPef += ", " + CurativosPef}
-    if(CompressivosPef !== "n"){TodosOsValoresPef += ", " + CompressivosPef}
-    if(EncravamentoPef !== "n"){TodosOsValoresPef += ", " + EncravamentoPef}
-    if(OcularPef !== "n"){TodosOsValoresPef += ", " + OcularPef}
-    if(QueimaduraPef !== "n"){TodosOsValoresPef += ", " + QueimaduraPef}
-    if(SimplesPef !== "n"){TodosOsValoresPef += ", " + SimplesPef}
-    if(TresPontasPef !== "n"){TodosOsValoresPef += ", " + TresPontasPef}
-    if(ImobilizacaoPef !== "n"){TodosOsValoresPef += ", " + ImobilizacaoPef}
-    if(MmbInfDirPef !== "n"){TodosOsValoresPef += ", " + MmbInfDirPef}
-    if(MmbInfEsqPef !== "n"){TodosOsValoresPef += ", " + MmbInfEsqPef}
-    if(MmbSupDirPef !== "n"){TodosOsValoresPef += ", " + MmbSupDirPef}
-    if(MmbSupEsqPef !== "n"){TodosOsValoresPef += ", " + MmbSupEsqPef}
-    if(QuadrilPef !== "n"){TodosOsValoresPef += ", " + QuadrilPef}
-    if(CervicalPef !== "n"){TodosOsValoresPef += ", " + CervicalPef}
-    if(MacaSobreRodasPef !== "n"){TodosOsValoresPef += ", " + MacaSobreRodasPef}
-    if(MacaRigidaPef !== "n"){TodosOsValoresPef += ", " + MacaRigidaPef}
-    if(RCPPef !== "n"){TodosOsValoresPef += ", " + RCPPef}
-    if(Rolamento90Pef !== "n"){TodosOsValoresPef += ", " + Rolamento90Pef}
-    if(Rolamento180Pef !== "n"){TodosOsValoresPef += ", " + Rolamento180Pef}
-    if(TomadaDecisaoPef !== "n"){TodosOsValoresPef += ", " + TomadaDecisaoPef}
-    if(TratamentoChoquePef !== "n"){TodosOsValoresPef += ", " + TratamentoChoquePef}
-    if(UsoCanulaPef !== "n"){TodosOsValoresPef += ", " + UsoCanulaPef}
-    if(UsoColarPef !== "n"){TodosOsValoresPef += ", " + UsoColarPef}
-    if(UsoKEDPef !== "n"){TodosOsValoresPef += ", " + UsoKEDPef}
-    if(UsoTTFPef !== "n"){TodosOsValoresPef += ", " + UsoTTFPef}
-    if(VentilacaoSuportePef !== "n"){TodosOsValoresPef += ", " + VentilacaoSuportePef}
-    if(OxigenoterapiaPef !== "n"){TodosOsValoresPef += ", " + OxigenoterapiaPef}
-    if(ReanimadorPef !== "n"){TodosOsValoresPef += ", " + ReanimadorPef}
-    if(MeiosAuxiliaresPef !== "n"){TodosOsValoresPef += ", " + MeiosAuxiliaresPef}
-    if(CelescPef !== "n"){TodosOsValoresPef += ", " + CelescPef}
-    if(PoliciaCivilPef !== "n"){TodosOsValoresPef += ", " + PoliciaCivilPef}
-    if(PoliciaMilitarPef !== "n"){TodosOsValoresPef += ", " + PoliciaMilitarPef}
-    if(PoliciaPrePef !== "n"){TodosOsValoresPef += ", " + PoliciaPrePef}
-    if(PoliciaPrfPef !== "n"){TodosOsValoresPef += ", " + PoliciaPrfPef}
-    if(DefCivilPef !== "n"){TodosOsValoresPef += ", " + DefCivilPef}
-    if(IPGPCPef !== "n"){TodosOsValoresPef += ", " + IPGPCPef}
-    if(SamuPef !== "n"){TodosOsValoresPef += ", " + SamuPef}
-    if(CITPef !== "n"){TodosOsValoresPef += ", " + CITPef}
-    if(TextoPef !== "n"){TodosOsValoresPef += ", " + TextoPef}
+    if(AspiracaoPef !== "n"){TodosOsValoresPef += AspiracaoPef + ", "}
+    if(AvaliacaoInicialPef !== "n"){TodosOsValoresPef += AvaliacaoInicialPef + ", "}
+    if(AvaliacaoContinuadaPef !== "n"){TodosOsValoresPef += AvaliacaoContinuadaPef + ", "}
+    if(ChaveRautekPef !== "n"){TodosOsValoresPef += ChaveRautekPef + ", "}
+    if(CanulaGuedelPef !== "n"){TodosOsValoresPef += CanulaGuedelPef + ", "}
+    if(DesobstrucaoVAPef !== "n"){TodosOsValoresPef += DesobstrucaoVAPef + ", "}
+    if(DesobstrucaoDEAPef !== "n"){TodosOsValoresPef += DesobstrucaoDEAPef + ", "}
+    if(EmpregoDEAPef !== "n"){TodosOsValoresPef += EmpregoDEAPef + ", "}
+    if(GerenciamentoRiscosPef !== "n"){TodosOsValoresPef += GerenciamentoRiscosPef + ", "}
+    if(LimpezaFerimentosPef !== "n"){TodosOsValoresPef += LimpezaFerimentosPef + ", "}
+    if(CurativosPef !== "n"){TodosOsValoresPef += CurativosPef + ", "}
+    if(CompressivosPef !== "n"){TodosOsValoresPef += CompressivosPef + ", "}
+    if(EncravamentoPef !== "n"){TodosOsValoresPef += EncravamentoPef + ", "}
+    if(OcularPef !== "n"){TodosOsValoresPef += OcularPef + ", "}
+    if(QueimaduraPef !== "n"){TodosOsValoresPef += QueimaduraPef + ", "}
+    if(SimplesPef !== "n"){TodosOsValoresPef += SimplesPef + ", "}
+    if(TresPontasPef !== "n"){TodosOsValoresPef += TresPontasPef + ", "}
+    if(ImobilizacaoPef !== "n"){TodosOsValoresPef += ImobilizacaoPef + ", "}
+    if(MmbInfDirPef !== "n"){TodosOsValoresPef += MmbInfDirPef + ", "}
+    if(MmbInfEsqPef !== "n"){TodosOsValoresPef += MmbInfEsqPef + ", "}
+    if(MmbSupDirPef !== "n"){TodosOsValoresPef += MmbSupDirPef + ", "}
+    if(MmbSupEsqPef !== "n"){TodosOsValoresPef += MmbSupEsqPef + ", "}
+    if(QuadrilPef !== "n"){TodosOsValoresPef += QuadrilPef + ", "}
+    if(CervicalPef !== "n"){TodosOsValoresPef += CervicalPef + ", "}
+    if(MacaSobreRodasPef !== "n"){TodosOsValoresPef += MacaSobreRodasPef + ", "}
+    if(MacaRigidaPef !== "n"){TodosOsValoresPef += MacaRigidaPef + ", "}
+    if(RCPPef !== "n"){TodosOsValoresPef += RCPPef + ", "}
+    if(Rolamento90Pef !== "n"){TodosOsValoresPef += Rolamento90Pef + ", "}
+    if(Rolamento180Pef !== "n"){TodosOsValoresPef += Rolamento180Pef + ", "}
+    if(TomadaDecisaoPef !== "n"){TodosOsValoresPef += TomadaDecisaoPef + ", "}
+    if(TratamentoChoquePef !== "n"){TodosOsValoresPef += TratamentoChoquePef + ", "}
+    if(UsoCanulaPef !== "n"){TodosOsValoresPef += UsoCanulaPef + ", "}
+    if(UsoColarPef !== "n"){TodosOsValoresPef += UsoColarPef + ", "}
+    if(UsoKEDPef !== "n"){TodosOsValoresPef += UsoKEDPef + ", "}
+    if(UsoTTFPef !== "n"){TodosOsValoresPef += UsoTTFPef + ", "}
+    if(VentilacaoSuportePef !== "n"){TodosOsValoresPef += VentilacaoSuportePef + ", "}
+    if(OxigenoterapiaPef !== "n"){TodosOsValoresPef += OxigenoterapiaPef + ", "}
+    if(ReanimadorPef !== "n"){TodosOsValoresPef += ReanimadorPef + ", "}
+    if(MeiosAuxiliaresPef !== "n"){TodosOsValoresPef += MeiosAuxiliaresPef + ", "}
+    if(CelescPef !== "n"){TodosOsValoresPef += CelescPef + ", "}
+    if(PoliciaCivilPef !== "n"){TodosOsValoresPef += PoliciaCivilPef + ", "}
+    if(PoliciaMilitarPef !== "n"){TodosOsValoresPef += PoliciaMilitarPef + ", "}
+    if(PoliciaPrePef !== "n"){TodosOsValoresPef += PoliciaPrePef + ", "}
+    if(PoliciaPrfPef !== "n"){TodosOsValoresPef += PoliciaPrfPef + ", "}
+    if(DefCivilPef !== "n"){TodosOsValoresPef += DefCivilPef + ", "}
+    if(IPGPCPef !== "n"){TodosOsValoresPef += IPGPCPef + ", "}
+    if(SamuPef !== "n"){TodosOsValoresPef += SamuPef + ", "}
+    if(CITPef !== "n"){TodosOsValoresPef += CITPef + ", "}
+    if(TextoPef !== "n"){TodosOsValoresPef += TextoPef + ", "}
     console.log(TodosOsValoresPef)
 }
 function UsoDeColarTamPef(){
