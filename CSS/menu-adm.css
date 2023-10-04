@@ -3,13 +3,20 @@ body{
     height: 100vh;
     margin: 0px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
     overflow: hidden;
     background-color: antiquewhite;
 }
 .menu-lateral{
     width: 80px;
-    height: 100vh;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
     background-color: cadetblue;
     display: flex;
     flex-direction: column;
