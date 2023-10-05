@@ -12,6 +12,7 @@
     AnamneseGestacional() FEITO
     ProblemasSuspeitos() FEITO
     SinaisESintomas() FEITO
+    AvaliacaoCinematica()FEITO
 */
 
 function PacienteRegistro(){    
@@ -1522,9 +1523,6 @@ function SinaisESintomas(){
     } else {
         var Tontura = 'n';
     }
-
-
-    
     var LabiosSinaiESintomas = "";/*Input type radio*/
     if (document.getElementById("sinais_e_sintomas_labios").checked) {
         LabiosSinaiESintomas = document.getElementById("sinais_e_sintomas_labios").value;
@@ -1572,11 +1570,6 @@ function SinaisESintomas(){
     } else{
         var TextoSes= "n";
     }
-
-  
-   
-  
-     
 
     var TodosOsValoresSeS = ""
     if(LabiosSinaiESintomas !== "n"){TodosOsValoresSeS += LabiosSinaiESintomas + ", "} 
@@ -2427,6 +2420,68 @@ document.addEventListener("click", function(ObservacoesImportantes) {
         DivObservacoes.setAttribute("contenteditable", "true");
     }
 });
-function AvaliacaoCinemática(){
+function AvaliacaoCinematica(){
+    var DisturbioDeComportamento = "";/*Input type radio*/
+    if (document.getElementById("avaliacao_cimetica_dc_s").checked) {
+        DisturbioDeComportamento = document.getElementById("avaliacao_cimetica_dc_s").value;
+    } else if (document.getElementById("avaliacao_cimetica_dc_n").checked) {
+        DisturbioDeComportamento = document.getElementById("avaliacao_cimetica_dc_n").value;
+    }
+    var EncontradoDeCapacete = "";/*Input type radio*/
+    if (document.getElementById("avaliacao_cimetica_ec_s").checked) {
+        EncontradoDeCapacete = document.getElementById("avaliacao_cimetica_ec_s").value;
+    } else if (document.getElementById("avaliacao_cimetica_ec_n").checked) {
+        EncontradoDeCapacete = document.getElementById("avaliacao_cimetica_ec_n").value;
+    }
+    var EncontradoDeCinto = "";/*Input type radio*/
+    if (document.getElementById("avaliacao_cimetica_eo_s").checked) {
+        EncontradoDeCinto = document.getElementById("avaliacao_cimetica_eo_s").value;
+    } else if (document.getElementById("avaliacao_cimetica_eo_n").checked) {
+        EncontradoDeCinto = document.getElementById("avaliacao_cimetica_eo_n").value;
+    }
+    var ParaBrisasAvariado = "";/*Input type radio*/
+    if (document.getElementById("avaliacao_cimetica_pba_s").checked) {
+        ParaBrisasAvariado = document.getElementById("avaliacao_cimetica_pba_s").value;
+    } else if (document.getElementById("avaliacao_cimetica_pba_n").checked) {
+        ParaBrisasAvariado = document.getElementById("avaliacao_cimetica_pba_n").value;
+    }
+    var CaminhandoNaCena = "";/*Input type radio*/
+    if (document.getElementById("avaliacao_cimetica_cc_s").checked) {
+        CaminhandoNaCena = document.getElementById("avaliacao_cimetica_cc_s").value;
+    } else if (document.getElementById("avaliacao_cimetica_cc_n").checked) {
+        CaminhandoNaCena = document.getElementById("avaliacao_cimetica_cc_n").value;
+    }
+    var PainelAvariado = "";/*Input type radio*/
+    if (document.getElementById("avaliacao_cimetica_pa_s").checked) {
+        PainelAvariado = document.getElementById("avaliacao_cimetica_pa_s").value;
+    } else if (document.getElementById("avaliacao_cimetica_pa_n").checked) {
+        PainelAvariado = document.getElementById("avaliacao_cimetica_pa_n").value;
+    }
+    var VolanteTorcido = "";/*Input type radio*/
+    if (document.getElementById("avaliacao_cimetica_vt_s").checked) {
+        VolanteTorcido = document.getElementById("avaliacao_cimetica_vt_s").value;
+    } else if (document.getElementById("avaliacao_cimetica_vt_n").checked) {
+        VolanteTorcido = document.getElementById("avaliacao_cimetica_vt_n").value;
+    }
+    
+    $.ajax({
+        url: 'PHP/tabela-problemas-suspeitos.php',
+        method: 'POST',
+        data: {
+            DisturbioDeComportamento: DisturbioDeComportamento,
+            EncontradoDeCapacete: EncontradoDeCapacete,
+            EncontradoDeCinto: EncontradoDeCinto,
+            ParaBrisasAvariado: ParaBrisasAvariado,
+            VolanteTorcido: VolanteTorcido,
+            CaminhandoNaCena: CaminhandoNaCena,
+            PainelAvariado: PainelAvariado
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+
+}
+function MaterialUtilizadosA(){
 
 }
