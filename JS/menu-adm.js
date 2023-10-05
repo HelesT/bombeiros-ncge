@@ -22,7 +22,7 @@ function AdicionarGeral(){
     }).fail(function(errorThrown) {
         console.log(errorThrown);
         ChamarRegistro();
-        alert("Chace de Acesso Indisponível!!");
+        alert("Chave de Acesso Indisponível!!");
     });
 };
 
