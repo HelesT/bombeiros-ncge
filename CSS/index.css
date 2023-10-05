@@ -47,7 +47,6 @@ html {
   position: fixed;
   overflow-y: scroll;
   top: 60px;
-  left: -220px;
   transition: left 0.3s ease;
   background-color: #0667E8;
   padding: 10px;
