@@ -2483,5 +2483,60 @@ function AvaliacaoCinematica(){
 
 }
 function MaterialUtilizadosA(){
+    
+}
+
+function MaterialUtilizadosB(){
+
+    var BaseEstabilizadorCheckBox = document.getElementById("base_estabilizador_mub");
+    var BaseEstabilizadorText = $("#base_estabilizador_text_mub").val();
+    
+    if(BaseEstabilizadorCheckBox.checked){
+        var BaseEstabilizador = "Base Estabilizador: " + BaseEstabilizadorText;
+    }else{ var BaseEstabilizador = "nda"};console.log(BaseEstabilizador);
+
+
+    var ColarCheckBox1 = document.getElementById("colar_n_mub");
+    var ColarText1 = document.getElementById("colar_text_n_mub");
+    var Colar1 = "";
+    var ColarTamanho1 = "";
+    if(ColarCheckBox1.checked){
+        if(document.getElementById("n_colar_mub").checked){
+            ColarTamanho1 = "N";
+            Colar1 = "Colar " + ColarTamanho1 + ": " + ColarText1.value;
+        }else if(document.getElementById("pp_colar_mub")){
+            ColarTamanho1 = "PP"
+            Colar1 = "Colar " + ColarTamanho1 + ": " + ColarText1.value;
+        }else if(document.getElementById("p_colar_mub")){
+            ColarTamanho1 = "P";
+            Colar1 = "Colar " + ColarTamanho1 + ": " + ColarText1.value;
+        }else{Colar1 = "nda"};
+    }else{Colar1 = "nda"};console.log(Colar1);
+
+    var ColarCheckBox2 = document.getElementById("colar_m_mub");
+    var ColarText2 = document.getElementById("colar_m_text_mub");
+    var ColarText2b = document.getElementById("text_colar_mub");
+    var Colar2 = "";
+    var ColarTamanho2 = "";
+
+    if (ColarCheckBox2.checked){
+        if (document.getElementById("m_colar_mub").checked) {
+            ColarTamanho2 = "M";
+            Colar2 = "Colar " + ColarTamanho2 + ": " + ColarText2.value;
+        } else if (document.getElementById("g_colar_mub").checked) {
+            ColarTamanho2 = "G";
+            Colar2 = "Colar " + ColarTamanho2 + " " + ColarText2b.value + ": " + ColarText2.value;
+        } else {
+            Colar2 = "nda";
+        }
+    } else {
+        Colar2 = "nda";
+    }
+
+console.log(Colar2);
+
+
+
+    
 
 }
