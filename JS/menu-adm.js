@@ -92,4 +92,7 @@ function ChamarRegistro(){
         console.log("Erro na requisição AJAX: " + errorThrown);
     });
 }
+$(document).ready(function() {
+    ChamarRegistro();
+});
 
