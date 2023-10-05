@@ -1213,7 +1213,7 @@
               <th>Quant</th>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_ataduras"> Ataduras 8 <input value="Ataduras 8"  type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> 12<input value="Ataduras 12" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras">  20<input value="Ataduras 20"type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> </td>
+              <!--erro ""--><td style="width: 400px; height: 25px;"><input class="checkbox" onclick="AtaduraCheckbox()" type="checkbox"  id="materiais_utilizadosA_ataduras"> Ataduras<div id="div_atadura" style="display: none;">  8<input value="Ataduras 8" id="atadura_8" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> 12<input value="Ataduras 12"  id="atadura_12" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras">  20<input value="Ataduras 20" id="atadura_20" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> </div> </td>
               <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_ataduras_txt" style="width: 50px; height: 25px;" type="text" ></td>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1225,7 +1225,7 @@
             <td style="width: 100px; height: 25px;"><input class="input-linha" value=""  id="materiais_utilizadosA_compressa_comum_txt" style="width: 50px; height: 25px;" type="text" ></td>
         </tr> 
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_kit">Kit's H <input type="radio" class="radio" style="width:15px;height:15px;" value="Kit H"name="Kit"> P<input value="Kit P" type="radio" class="radio" style="width:15px;height:15px;"name="Kit">  Q<input value="Kit Q" type="radio" class="radio" style="width:15px;height:15px;"name="Kit"> </td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="KitCheckbox()"  id="materiais_utilizadosA_kit">Kit's <div id="div_kits" style="display: none;"> H <input type="radio" id="kits_h" class="radio" style="width:15px;height:15px;" value="Kit H"name="Kit"> P<input value="Kit P" type="radio" id="kits_p" class="radio" style="width:15px;height:15px;"name="Kit">  Q<input value="Kit Q" type="radio" id="kits_q" class="radio" style="width:15px;height:15px;"name="Kit">   </div> </td>
           <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_kit_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1253,7 +1253,7 @@
       <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_soro_fisiologico_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_talas"> Talas PAP. <input type="radio" class="radio" style="width:15px;height:15px;"  value="Talas P"name="Talas">P <input value="Talas " type="radio" class="radio" style="width:15px;height:15px;"name="Talas">G </td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="TalasCheckbox()"  id="materiais_utilizadosA_talas"> Talas PAP.<div id="div_talas" style="display: none;">  P<input type="radio" id="talas_p" class="radio" style="width:15px;height:15px;"  value="Talas P"name="Talas"> G<input value="Talas " type="radio" id="talas_g" class="radio" style="width:15px;height:15px;"name="Talas"> </div> </td>
       <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_talas_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1261,6 +1261,15 @@
           <td style="width: 100px; height: 25px;"><input class="input-linha" id="materiais_utilizadosA_txt" value="" style="width: 80px; height: 25px;" type="text" ></td>
       </tr>
           </table>
+
+<!--Cute button -->
+<input type="button" onclick="MaterialUtilizadosA()" value="Clica em mim :3"
+style="width: 100px; 
+height: 30px; 
+border: 1px solid black; 
+border-radius: 10px; 
+margin-top: 10px;">
+<!--Cute button-->
         </div><!--Fim do corpo da página de ""-->
 
       </div><!-- Fim da página de "" -->

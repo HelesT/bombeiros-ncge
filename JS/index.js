@@ -2483,8 +2483,75 @@ function AvaliacaoCinematica(){
 
 }
 function MaterialUtilizadosA(){
+    var Data = $('#data_paciente').val();/*Input type text*/
+
+    var  Atadura = "";/*Input type radio*/ /*erro*/
+    if (document.getElementById("atadura_8").checked) {
+         Atadura = document.getElementById("atadura_8").value;
+    } else if (document.getElementById("atadura_12").checked) {
+         Atadura = document.getElementById("atadura_12").value;
+    }else if (document.getElementById("atadura_20").checked) {
+        Atadura = document.getElementById("atadura_20").value;
+   }
+   console.log(Atadura)
+
+    var CodUrCheckbox = document.getElementById("cod_ur");/*Input type Checkbox*/
+    var CodUrChecked = CodUrCheckbox.checked;
+    if (CodUrChecked) {
+        var CodUr = 's';
+    } else {
+        var CodUr = 'n';
+    }
+}
+function AtaduraCheckbox(){ /*Input type DIV NONE*/
+
+
+    var Atadura = document.getElementById("materiais_utilizadosA_ataduras");
+    var DivAtadura = document.getElementById("div_atadura");
+    var Tamanho8 = document.getElementById("atadura_8");/*Input type Radio*/
+    var Tamanho12 = document.getElementById("atadura_12");/*Input type Radio*/
+    var Tamanho20 = document.getElementById("atadura_20");/*Input type Radio*/
+    if(Atadura.checked){
+        DivAtadura.style.display = "flex";
+    }else{
+        DivAtadura.style.display = "none";
+        Tamanho8.checked = false;/*Input type Radio*/
+        Tamanho12.checked = false;/*Input type Radio*/
+        Tamanho20.checked = false;/*Input type Radio*/
+    };  
+}
+function KitCheckbox(){
+    var Kit = document.getElementById("materiais_utilizadosA_kit");
+    var DivKit = document.getElementById("div_kits");
+    var TipoH = document.getElementById("kits_h");/*Input type Radio*/
+    var TipoP  = document.getElementById("kits_p");/*Input type Radio*/
+    var TipoQ  = document.getElementById("kits_q");/*Input type Radio*/
+    if(Kit.checked){
+        DivKit.style.display = "flex";
+    }else{
+        DivKit.style.display = "none";
+        TipoH .checked = false;/*Input type Radio*/
+        TipoP .checked = false;/*Input type Radio*/
+        TipoQ .checked = false;/*Input type Radio*/
+    };  
     
 }
+
+function TalasCheckbox(){
+    var Talas = document.getElementById("materiais_utilizadosA_talas");
+    var DivTalas = document.getElementById("div_talas");
+    var TamanhoP = document.getElementById("talas_p");/*Input type Radio*/
+    var TamanhoG = document.getElementById("talas_g");/*Input type Radio*/
+    if(Talas.checked){
+        DivTalas.style.display = "flex";
+    }else{
+        DivTalas.style.display = "none";
+        TamanhoP.checked = false;/*Input type Radio*/
+        TamanhoG.checked = false;/*Input type Radio*/
+    };  
+
+}
+
 
 function MaterialUtilizadosB(){
 
