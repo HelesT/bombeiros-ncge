@@ -15,6 +15,7 @@
     AvaliacaoCinematica()FEITO
     MaterialUtilizadosA() FEITO
     MaterialUtilizadosB() FEITO
+    ObservacoesImportantes() FEITO
     
 
 */
@@ -2925,4 +2926,13 @@ function ExibirOutroMUB(){
         CanulaDisplayText1.value = "";
         CanulaDisplayText2.value = "";
     }
+}
+function ObservacoesImportantes(){
+    var ObservacoesImportantesText = document.getElementById("obsdiv");
+    if(ObservacoesImportantesText.textContent !== ""){
+        var TextoDentroObs = ObservacoesImportantesText.textContent;
+    }else{
+        TextoDentroObs = "nda";
+    }console.log(TextoDentroObs);
+    
 }
