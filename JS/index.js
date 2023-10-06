@@ -2729,12 +2729,144 @@ function MaterialUtilizadosB(){
 
 }
 
-function EsconderColar1MUB(){
-    var ColarDisplayCheckBox = document.getElementById("");
-    var ColarDisplayDiv = document.getElementById("");
-    var ColarDisplayRadio1 = document.getElementById("");
-    var ColarDisplayRadio2 = document.getElementById("");
-    var ColarDisplayRadio3 = document.getElementById("");
-    var ColarDisplayText1 = document.getElementById("");
-    
+
+
+function ExibirBaseEstab(){
+    BaseEstabDisplayCheckBox = document.getElementById("base_estabilizador_mub");
+    BaseEstabDisplayText1 = document.getElementById("base_estabilizador_text_mub");
+    if(BaseEstabDisplayCheckBox.checked){
+        BaseEstabDisplayText1.style.display = "flex";
+    }else{
+        BaseEstabDisplayText1.style.display = "none";
+        BaseEstabDisplayText1.value = "";
+    }
+}
+function ExibirColar1MUB(){
+    var ColarDisplayCheckBox = document.getElementById("colar_n_mub");
+    var ColarDisplayDiv = document.getElementById("exibir_div_colar1");
+    var ColarDisplayRadio1 = document.getElementById("n_colar_mub");
+    var ColarDisplayRadio2 = document.getElementById("pp_colar_mub");
+    var ColarDisplayRadio3 = document.getElementById("p_colar_mub");
+    var ColarDisplayText1 = document.getElementById("colar_text_n_mub");
+    if(ColarDisplayCheckBox.checked){
+        ColarDisplayDiv.style.display = "flex";
+        ColarDisplayText1.style.display = "flex"
+    }else{
+        ColarDisplayRadio1.checked = false;
+        ColarDisplayRadio2.checked = false;
+        ColarDisplayRadio3.checked = false;
+        ColarDisplayText1.value = "";
+        ColarDisplayDiv.style.display = "none";
+        ColarDisplayText1.style.display = "none"
+    }
+}
+function ExibirColar2MUB(){
+    var ColarDisplayCheckBox = document.getElementById("colar_m_mub");
+    var ColarDisplayDiv = document.getElementById("exibir_div_colar2");
+    var ColarDisplayRadio1 = document.getElementById("m_colar_mub");
+    var ColarDisplayRadio2 = document.getElementById("g_colar_mub");
+    var ColarDisplayRadio3 = document.getElementById("text_colar_mub");
+    var ColarDisplayText1 = document.getElementById("colar_m_text_mub");
+    if(ColarDisplayCheckBox.checked){
+        ColarDisplayDiv.style.display = "flex";
+        ColarDisplayText1.style.display = "flex"
+    }else{
+        ColarDisplayRadio1.checked = false;
+        ColarDisplayRadio2.checked = false;
+        ColarDisplayRadio3.checked = false;
+        ColarDisplayText1.value = "";
+        ColarDisplayDiv.style.display = "none";
+        ColarDisplayText1.style.display = "none"
+    }
+}
+function ExibirCoxinsEstab(){
+    CoxinsEstabDisplayCheckBox = document.getElementById("conxin_estabilizador_mub");
+    CoxinsEstabDisplayText1 = document.getElementById("conxin_estabilizador_text_mub");
+    if(CoxinsEstabDisplayCheckBox.checked){
+        CoxinsEstabDisplayText1.style.display = "flex";
+    }else{
+        CoxinsEstabDisplayText1.style.display = "none";
+        CoxinsEstabDisplayText1.value = "";
+    }
+}
+function ExibirKEDMUB(){
+    var KEDDisplayCheckBox = document.getElementById("ked_checkbox_mub");
+    var KEDDisplayDiv = document.getElementById("exibir_div_ked");
+    var KEDDisplayRadio1 = document.getElementById("adul_mub");
+    var KEDDisplayRadio2 = document.getElementById("infa_mub");
+    var KEDDisplayText1 = document.getElementById("ked_text_mub");
+    if(KEDDisplayCheckBox.checked){
+        KEDDisplayDiv.style.display = "flex";
+        KEDDisplayText1.style.display = "flex";
+    }else{
+        KEDDisplayDiv.style.display = "none";
+        KEDDisplayText1.style.display = "none";
+        KEDDisplayText1.value = "";
+        KEDDisplayRadio1.checked = false;
+        KEDDisplayRadio2.checked = false;
+    }
+}
+function ExibirMacaRigida(){
+    MacaRigidaDisplayCheckBox = document.getElementById("maca_rigida_mub");
+    MacaRigidaDisplayText1 = document.getElementById("maca_rigita_text_mub");
+    if(MacaRigidaDisplayCheckBox.checked){
+        MacaRigidaDisplayText1.style.display = "flex";
+    }else{
+        MacaRigidaDisplayText1.style.display = "none";
+        MacaRigidaDisplayText1.value = "";
+    }
+}
+function ExibirTiranteAranha(){
+    TiranteAranhaDisplayCheckBox = document.getElementById("tirante_aranha_mub");
+    TiranteAranhaDisplayText1 = document.getElementById("tirante_aranha_text_mub");
+    if(TiranteAranhaDisplayCheckBox.checked){
+        TiranteAranhaDisplayText1.style.display = "flex";
+    }else{
+        TiranteAranhaDisplayText1.style.display = "none";
+        TiranteAranhaDisplayText1.value = "";
+    }
+}
+function ExibirTiranteCabeca(){
+    TiranteCabecaDisplayCheckBox = document.getElementById("tirante_cabeca_mub");
+    TiranteCabecaDisplayText1 = document.getElementById("tirante_cabeca_text_mub");
+    if(TiranteCabecaDisplayCheckBox.checked){
+        TiranteCabecaDisplayText1.style.display = "flex";
+    }else{
+        TiranteCabecaDisplayText1.style.display = "none";
+        TiranteCabecaDisplayText1.value = "";
+    }
+}
+function ExibirSondaAsp(){
+    SondaAspDisplayCheckBox = document.getElementById("soma_aspiracao_mub");
+    SondaAspDisplayText1 = document.getElementById("soma_aspiracao_text_mub");
+    if(SondaAspDisplayCheckBox.checked){
+        SondaAspDisplayText1.style.display = "flex";
+    }else{
+        SondaAspDisplayText1.style.display = "none";
+        SondaAspDisplayText1.value = "";
+    }
+}
+function ExibirCanula(){
+    CanulaDisplayCheckBox = document.getElementById("canula_mub");
+    CanulaDisplayText1 = document.getElementById("canula_text_mub");
+    if(CanulaDisplayCheckBox.checked){
+        CanulaDisplayText1.style.display = "flex";
+    }else{
+        CanulaDisplayText1.style.display = "none";
+        CanulaDisplayText1.value = "";
+    }
+}
+function ExibirOutroMUB(){
+    CanulaDisplayCheckBox = document.getElementById("checkbox_text_mub");
+    CanulaDisplayText1 = document.getElementById("text_mub");
+    CanulaDisplayText2 = document.getElementById("text_text_mub");
+    if(CanulaDisplayCheckBox.checked){
+        CanulaDisplayText1.style.display = "flex";
+        CanulaDisplayText2.style.display = "flex";
+    }else{
+        CanulaDisplayText1.style.display = "none";
+        CanulaDisplayText2.style.display = "none";
+        CanulaDisplayText1.value = "";
+        CanulaDisplayText2.value = "";
+    }
 }

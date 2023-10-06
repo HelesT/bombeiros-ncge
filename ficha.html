@@ -1294,17 +1294,19 @@ margin-top: 10px;">
               <th>Quant</th>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" id="base_estabilizador_mub"> Base do Estabiliza. </td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" onclick="ExibirBaseEstab()" type="checkbox" id="base_estabilizador_mub"> Base do Estabiliza. </td>
               <td style="width: 100px; height: 25px;">
                 <input class="input-linha" style="width: 50px; height: 25px;" id="base_estabilizador_text_mub" type="text" >
               </td>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
               <td style="width: 400px; height: 25px;">
-                <input class="checkbox" type="checkbox" id="colar_n_mub"> Colar  N 
-                <input type="radio" name="colar_n_mub"  id="n_colar_mub" class="radio" style="width: 15px; height: 15px;"> PP
-                <input type="radio" name="colar_n_mub" id="pp_colar_mub" class="radio" style="width: 15px; height: 15px;">  P
-                <input type="radio" name="colar_n_mub" id="p_colar_mub" class="radio" style="width: 15px; height: 15px;"> 
+                <input class="checkbox" type="checkbox" onclick="ExibirColar1MUB()" id="colar_n_mub"> Colar 
+                <div id="exibir_div_colar1">N 
+                  <input type="radio" name="colar_n_mub"  id="n_colar_mub" class="radio" style="width: 15px; height: 15px;"> PP
+                  <input type="radio" name="colar_n_mub" id="pp_colar_mub" class="radio" style="width: 15px; height: 15px;">  P
+                  <input type="radio" name="colar_n_mub" id="p_colar_mub" class="radio" style="width: 15px; height: 15px;">
+                </div>
               </td>
               <td style="width: 100px; height: 25px;">
                 <input class="input-linha" style="width: 50px; height: 25px;" id="colar_text_n_mub" type="text" >
@@ -1312,10 +1314,12 @@ margin-top: 10px;">
           </tr>
           <tr style="border-style:solid; border-color: #0667E8;" >
             <td style="width: 400px; height: 25px;">
-              <input class="checkbox" type="checkbox" id="colar_m_mub">Colar<div></div>  M 
-              <input type="radio" name="colar_m_mub" id="m_colar_mub" class="radio" style="width: 15px; height: 15px;"> G 
-              <input type="radio" name="colar_m_mub" id="g_colar_mub" class="radio" style="width: 15px; height: 15px;">
-              <input class="input-linha" style="width: 25px; height: 25px;" id="text_colar_mub" type="text" >
+              <input class="checkbox" type="checkbox" onclick="ExibirColar2MUB()" id="colar_m_mub">Colar 
+              <div id="exibir_div_colar2">M 
+                <input type="radio" name="colar_m_mub" id="m_colar_mub" class="radio" style="width: 15px; height: 15px;"> G 
+                <input type="radio" name="colar_m_mub" id="g_colar_mub" class="radio" style="width: 15px; height: 15px;">
+                <input class="input-linha" style="width: 25px; height: 25px;" id="text_colar_mub" type="text" >
+              </div>
             </td>
             <td style="width: 100px; height: 25px;">
               <input class="input-linha" style="width: 50px; height: 25px;" id="colar_m_text_mub" type="text" >
@@ -1323,7 +1327,7 @@ margin-top: 10px;">
         </tr> 
         <tr style="border-style:solid; border-color: #0667E8;" >
           <td style="width: 400px; height: 25px;">
-            <input class="checkbox" type="checkbox" id="conxin_estabilizador_mub">Coxins Estabiliza.
+            <input class="checkbox" type="checkbox" onclick="ExibirCoxinsEstab()" id="conxin_estabilizador_mub">Coxins Estabiliza.
           </td>
           <td style="width: 100px; height: 25px;">
             <input class="input-linha" style="width: 50px; height: 25px;" id="conxin_estabilizador_text_mub" type="text" >
@@ -1331,9 +1335,11 @@ margin-top: 10px;">
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
         <td style="width: 400px; height: 25px;">
-          <input class="checkbox" type="checkbox" id="ked_checkbox_mub"> KED 
-          <input type="radio" id="adul_mub" class="radio" name="ked_mub" style="width: 15px; height: 15px;">Adul. 
-          <input type="radio"id="infa_mub" class="radio" name="ked_mub" style="width: 15px; height: 15px;">Infa. 
+          <input class="checkbox" type="checkbox" onclick="ExibirKEDMUB()" id="ked_checkbox_mub"> KED
+          <div id="exibir_div_ked"> 
+            <input type="radio" id="adul_mub" class="radio" name="ked_mub" style="width: 15px; height: 15px;">Adul. 
+            <input type="radio"id="infa_mub" class="radio" name="ked_mub" style="width: 15px; height: 15px;">Infa.
+          </div>
         </td>
         <td style="width: 100px; height: 25px;">
           <input class="input-linha" style="width: 50px; height: 25px;" id="ked_text_mub" type="text" >
@@ -1341,7 +1347,7 @@ margin-top: 10px;">
     </tr>
     <tr style="border-style:solid; border-color: #0667E8;" >
       <td style="width: 400px; height: 25px;">
-        <input class="checkbox" type="checkbox" id="maca_rigida_mub"> Maca Rígida 
+        <input class="checkbox" onclick="ExibirMacaRigida()" type="checkbox" id="maca_rigida_mub"> Maca Rígida 
       </td>
       <td style="width: 100px; height: 25px;">
         <input class="input-linha" style="width: 50px; height: 25px;" id="maca_rigita_text_mub" type="text" >
@@ -1349,7 +1355,7 @@ margin-top: 10px;">
     </tr>
         <tr style="border-style:solid; border-color: #0667E8;" >
           <td style="width: 400px; height: 25px;">
-            <input class="checkbox" type="checkbox" id="tirante_aranha_mub"> Tirante aranha 
+            <input class="checkbox" type="checkbox" onclick="ExibirTiranteAranha()" id="tirante_aranha_mub"> Tirante aranha 
           </td>
           <td style="width: 100px; height: 25px;">
             <input class="input-linha" style="width: 50px; height: 25px;" id="tirante_aranha_text_mub" type="text" >
@@ -1357,7 +1363,7 @@ margin-top: 10px;">
         </tr>
         <tr style="border-style:solid; border-color: #0667E8;" >
           <td style="width: 400px; height: 25px;">
-            <input class="checkbox" type="checkbox" id="tirante_cabeca_mub">Tirante de cabeça 
+            <input class="checkbox" type="checkbox" onclick="ExibirTiranteCabeca()" id="tirante_cabeca_mub">Tirante de cabeça 
           </td>
           <td style="width: 100px; height: 25px;">
             <input class="input-linha" style="width: 50px; height: 25px;" id="tirante_cabeca_text_mub" type="text" >
@@ -1365,7 +1371,7 @@ margin-top: 10px;">
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
         <td style="width: 400px; height: 25px;">
-          <input class="checkbox" type="checkbox" id="soma_aspiracao_mub">Sonda de Aspiração
+          <input class="checkbox" type="checkbox" onclick="ExibirSondaAsp()" id="soma_aspiracao_mub">Sonda de Aspiração
         </td>
         <td style="width: 100px; height: 25px;">
           <input class="input-linha" style="width: 50px; height: 25px;" id="soma_aspiracao_text_mub" type="text" >
@@ -1373,7 +1379,7 @@ margin-top: 10px;">
       </tr> 
       <tr style="border-style:solid; border-color: #0667E8;" >
         <td style="width: 400px; height: 25px;">
-          <input class="checkbox" type="checkbox" id="canula_mub">Cânula
+          <input class="checkbox" type="checkbox" onclick="ExibirCanula()" id="canula_mub">Cânula
         </td>
         <td style="width: 100px; height: 25px;">
           <input class="input-linha" style="width: 50px; height: 25px;" id="canula_text_mub" type="text" >
@@ -1381,7 +1387,7 @@ margin-top: 10px;">
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
         <td style="width: 400px; height: 25px;">
-          <input class="checkbox" type="checkbox" id="checkbox_text_mub">
+          <input class="checkbox" type="checkbox" onclick="ExibirOutroMUB()" id="checkbox_text_mub">
           <input class="input-linha" style="width: 50px; height: 25px;" id="text_mub" type="text" >
         </td>
         <td style="width: 100px; height: 25px;">
