@@ -13,8 +13,9 @@
     ProblemasSuspeitos() FEITO
     SinaisESintomas() FEITO
     AvaliacaoCinematica()FEITO
-    MaterialUtilizadosB() ANDAMENTO
     MaterialUtilizadosA() FEITO
+    MaterialUtilizadosB() ANDAMENTO
+    
 
 */
 // var CompressaComumCheckbox = document.getElementById(""); /*Input type Checkbox*/
