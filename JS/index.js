@@ -14,7 +14,7 @@
     SinaisESintomas() FEITO
     AvaliacaoCinematica()FEITO
     MaterialUtilizadosA() FEITO
-    MaterialUtilizadosB() ANDAMENTO
+    MaterialUtilizadosB() FEITO
     
 
 */
