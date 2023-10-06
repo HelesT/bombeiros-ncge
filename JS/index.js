@@ -13,6 +13,7 @@
     ProblemasSuspeitos() FEITO
     SinaisESintomas() FEITO
     AvaliacaoCinematica()FEITO
+    MaterialUtilizadosB() ANDAMENTO
 */
 
 function PacienteRegistro(){    
@@ -2554,13 +2555,17 @@ function TalasCheckbox(){
 
 
 function MaterialUtilizadosB(){
+    console.log("");
+    console.log("Estou funcionando!! ~senpai.. (>//<");
+
+
 
     var BaseEstabilizadorCheckBox = document.getElementById("base_estabilizador_mub");
     var BaseEstabilizadorText = $("#base_estabilizador_text_mub").val();
-    
     if(BaseEstabilizadorCheckBox.checked){
         var BaseEstabilizador = "Base Estabilizador: " + BaseEstabilizadorText;
     }else{ var BaseEstabilizador = "nda"};console.log(BaseEstabilizador);
+
 
 
     var ColarCheckBox1 = document.getElementById("colar_n_mub");
@@ -2580,12 +2585,13 @@ function MaterialUtilizadosB(){
         }else{Colar1 = "nda"};
     }else{Colar1 = "nda"};console.log(Colar1);
 
+
+
     var ColarCheckBox2 = document.getElementById("colar_m_mub");
     var ColarText2 = document.getElementById("colar_m_text_mub");
     var ColarText2b = document.getElementById("text_colar_mub");
     var Colar2 = "";
     var ColarTamanho2 = "";
-
     if (ColarCheckBox2.checked){
         if (document.getElementById("m_colar_mub").checked) {
             ColarTamanho2 = "M";
@@ -2598,12 +2604,85 @@ function MaterialUtilizadosB(){
         }
     } else {
         Colar2 = "nda";
-    }
-
-console.log(Colar2);
+    }console.log(Colar2);
 
 
 
+    var CoxinsStabCheckBox = document.getElementById("conxin_estabilizador_mub");
+    var CoxinsText = document.getElementById("conxin_estabilizador_text_mub");
+    if(CoxinsStabCheckBox.checked){
+        var CoxinsStab = "Coxins Estabilizador: " + CoxinsText.value;
+    }else{var CoxinsStab = "nda"};console.log(CoxinsStab);
+
+
+
+    var KEDCheckBox = document.getElementById("ked_checkbox_mub");
+    var KEDText = document.getElementById("ked_text_mub");
+    if(KEDCheckBox.checked){
+        if(document.getElementById("adul_mub").checked){
+            var KED =  "KED Adulto: " + KEDText.value;
+        }else if(document.getElementById("infa_mub").checked){
+            var KED =  "KED Infantil: " + KEDText.value;
+        }else{var KED = "nda"};
+    }else{var KED = "nda"};console.log(KED);
+
+
+
+    var MacaRigidaCheckbox = document.getElementById("maca_rigida_mub");
+    var MacaRigidaText = document.getElementById("maca_rigita_text_mub");
+    if(MacaRigidaCheckbox.checked){
+        var MacaRigida = "Maca Rigida: " + MacaRigidaText.value;
+    }else{MacaRigida = "nda"};console.log(MacaRigida);
+
+
+
+    var TiranteAranhaCheckbox = document.getElementById("tirante_aranha_mub");
+    var TiranteAranhaText = document.getElementById("tirante_aranha_text_mub");
+    if(TiranteAranhaCheckbox.checked){
+        var TiranteAranha = "Tirante Aranha: " + TiranteAranhaText.value;
+    }else{TiranteAranha = "nda"};console.log(TiranteAranha);
+
+
+
+    var TiranteCabecaCheckbox = document.getElementById("tirante_cabeca_mub");
+    var TiranteCabecaText = document.getElementById("tirante_cabeca_text_mub");
+    if(TiranteCabecaCheckbox.checked){
+        var TiranteCabeca = "Tirante Cabeca: " + TiranteCabecaText.value;
+    }else{TiranteCabeca = "nda"};console.log(TiranteCabeca);
+
+
+
+    var SondaAspiracaoCheckBox = document.getElementById("soma_aspiracao_mub");
+    var SondaASpiracaoText = document.getElementById("soma_aspiracao_text_mub");
+    if(SondaAspiracaoCheckBox.checked){
+        var SondaAspiracao = "Sonda Aspiração: " + SondaASpiracaoText.value;
+    }else{ var SondaAspiracao = "nda"};console.log(SondaAspiracao);
+
+
+
+    var CanulaCheckBox = document.getElementById("canula_mub");
+    var CanulaText = document.getElementById("canula_text_mub");
+    if(CanulaCheckBox.checked){
+        var Canula = "Canula: " + CanulaText.value;
+    }else{var Canula = "nda"};console.log(Canula);
+
+
+
+    var MUBOutroCheckBox = document.getElementById("checkbox_text_mub");
+    var MUBOutroText = document.getElementById("text_mub");
+    var QTDMUBText = document.getElementById("text_text_mub");
+    if(MUBOutroCheckBox.checked){
+        var OutroMUB = MUBOutroText.value + ": " + QTDMUBText.value;
+    }else{var OutroMUB = "nda"};console.log(OutroMUB);
+
+}
+
+function EsconderColar1MUB(){
+    var ColarDisplayCheckBox = document.getElementById("");
+    var ColarDisplayDiv = document.getElementById("");
+    var ColarDisplayRadio1 = document.getElementById("");
+    var ColarDisplayRadio2 = document.getElementById("");
+    var ColarDisplayRadio3 = document.getElementById("");
+    var ColarDisplayText1 = document.getElementById("");
     
-
 }
