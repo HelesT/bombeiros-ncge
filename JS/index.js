@@ -2484,27 +2484,79 @@ function AvaliacaoCinematica(){
 
 }
 function MaterialUtilizadosA(){
-    var Data = $('#data_paciente').val();/*Input type text*/
+    // var Data = $('#data_paciente').val();/*Input type text*/
 
-    var  Atadura = "";/*Input type radio*/ /*erro*/
+   
+
+    var CompressaComumCheckbox = document.getElementById("materiais_utilizadosA_compressa_comum");
+    var CompressaComumChecked = CompressaComumCheckbox ? CompressaComumCheckbox.checked : false;
+    var CompressaComum = CompressaComumChecked ? 's' : 'n';
+
+    var CateterTpOculosCheckbox = document.getElementById("materiais_utilizadosA_cateter_tp_oculos");
+    var CateterTpOculosChecked = CateterTpOculosCheckbox ? CateterTpOculosCheckbox.checked : false;
+    var CateterTpOculos = CateterTpOculosChecked ? 's' : 'n';
+
+    var LuvasDescartaveisCheckbox = document.getElementById("materiais_utilizadosA_luvas_descartaveis");
+    var LuvasDescartaveisChecked = LuvasDescartaveisCheckbox ? LuvasDescartaveisCheckbox.checked : false;
+    var LuvasDescartaveis = LuvasDescartaveisChecked ? 's' : 'n';
+
+    var MascarasDescCheckbox = document.getElementById("materiais_utilizadosA_mascaras_desc");
+    var MascarasDescChecked = MascarasDescCheckbox ? MascarasDescCheckbox.checked : false;
+    var MascarasDesc = MascarasDescChecked ? 's' : 'n';
+
+    var MantaAlumiadaCheckbox = document.getElementById("materiais_utilizadosA_manta_alumiada");
+    var MantaAlumiadaChecked = MantaAlumiadaCheckbox ? MantaAlumiadaCheckbox.checked : false;
+    var MantaAlumiada = MantaAlumiadaChecked ? 's' : 'n';
+
+    var PasDoDeaCheckbox = document.getElementById("materiais_utilizadosA_pas_do_dea");
+    var PasDoDeaChecked = PasDoDeaCheckbox ? PasDoDeaCheckbox.checked : false;
+    var PasDoDea = PasDoDeaChecked ? 's' : 'n';
+
+    var MascarasDescCheckbox = document.getElementById("materiais_utilizadosA_mascaras_desc");
+    var MascarasDescChecked = MascarasDescCheckbox ? MascarasDescCheckbox.checked : false;
+    var MascarasDesc = MascarasDescChecked ? 's' : 'n';
+
+    var MascarasDescCheckbox = document.getElementById("materiais_utilizadosA_mascaras_desc");
+    var MascarasDescChecked = MascarasDescCheckbox ? MascarasDescCheckbox.checked : false;
+    var MascarasDesc = MascarasDescChecked ? 's' : 'n';
+    
+    var  AtaduraCheckbox = "";/*Input type radio*/ 
     if (document.getElementById("atadura_8").checked) {
-         Atadura = document.getElementById("atadura_8").value;
-    } else if (document.getElementById("atadura_12").checked) {
-         Atadura = document.getElementById("atadura_12").value;
+         AtaduraCheckbox = document.getElementById("atadura_8").value;
+    }else if (document.getElementById("atadura_12").checked) {
+         AtaduraCheckbox = document.getElementById("atadura_12").value;
     }else if (document.getElementById("atadura_20").checked) {
-        Atadura = document.getElementById("atadura_20").value;
-   }
-   console.log(Atadura)
+        AtaduraCheckbox = document.getElementById("atadura_20").value;
+   } 
+   var  KitCheckbox = "";/*Input type radio*/ 
+    if (document.getElementById("kits_h").checked) {
+         KitCheckbox = document.getElementById("kits_h").value;
+    }else if (document.getElementById("kits_p").checked) {
+         KitCheckbox = document.getElementById("kits_p").value;
+    }else if (document.getElementById("kits_q").checked) {
+        KitCheckbox = document.getElementById("kits_q").value;
+   } 
 
-    var CodUrCheckbox = document.getElementById("cod_ur");/*Input type Checkbox*/
-    var CodUrChecked = CodUrCheckbox.checked;
-    if (CodUrChecked) {
-        var CodUr = 's';
-    } else {
-        var CodUr = 'n';
+   var  TalaCheckbox = "";/*Input type radio*/ 
+    if (document.getElementById("talas_p").checked) {
+         TalaCheckbox = document.getElementById("talas_p").value;
+    }else if (document.getElementById("talas_g").checked) {
+         TalaCheckbox = document.getElementById("talas_g").value;
     }
+   console.log(AtaduraCheckbox)
+   console.log(KitCheckbox)
+   console.log(TalaCheckbox)
+   console.log(CompressaComum)
+   console.log(CateterTpOculos)
+   console.log(MascarasDesc)
+   console.log(MantaAlumiada)
+   console.log(PasDoDea)
+   console.log(MascarasDesc)
+   console.log(MascarasDesc)
+   console.log(LuvasDescartaveis)
+
 }
-function AtaduraCheckbox(){ /*Input type DIV NONE*/
+function AtaduraCheckboxDivNone(){ /*Input type DIV NONE*/
 
 
     var Atadura = document.getElementById("materiais_utilizadosA_ataduras");
@@ -2521,7 +2573,7 @@ function AtaduraCheckbox(){ /*Input type DIV NONE*/
         Tamanho20.checked = false;/*Input type Radio*/
     };  
 }
-function KitCheckbox(){
+function KitCheckboxDivNone(){
     var Kit = document.getElementById("materiais_utilizadosA_kit");
     var DivKit = document.getElementById("div_kits");
     var TipoH = document.getElementById("kits_h");/*Input type Radio*/
@@ -2538,7 +2590,7 @@ function KitCheckbox(){
     
 }
 
-function TalasCheckbox(){
+function TalasCheckboxDivNone(){
     var Talas = document.getElementById("materiais_utilizadosA_talas");
     var DivTalas = document.getElementById("div_talas");
     var TamanhoP = document.getElementById("talas_p");/*Input type Radio*/

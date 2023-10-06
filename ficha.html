@@ -30,7 +30,7 @@
     <!--<div class="navigation justify" onclick="navigateToSlide(15)" style="height: 30px;">Anamnese Gestacional</div>-->
     <!--<div class="navigation justify" onclick="navigateToSlide(16)" style="height: 30px;">Termo de Recusa de Ate...</div>-->
     <div class="navigation justify" onclick="navigateToSlide(17)" style="height: 30px;">Observações Importantes</div>
-    <div class="navigation justify" onclick="navigateToSlide(18)" style="height: 30px;">Avaliação Cinemática</div>
+    <!-- <div class="navigation justify" onclick="navigateToSlide(18)" style="height: 30px;">Avaliação Cinemática</div> -->
     <div class="navigation justify" onclick="navigateToSlide(19)" style="height: 30px;">Responsável Preencimento</div>
     <!--<div class="navigation justify" onclick="navigateToSlide(20)" style="height: 30px;">Slide 21</div>
     <div class="navigation justify" onclick="navigateToSlide(21)" style="height: 30px;">Slide 22</div>
@@ -1213,11 +1213,11 @@
               <th>Quant</th>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <!--erro ""--><td style="width: 400px; height: 25px;"><input class="checkbox" onclick="AtaduraCheckbox()" type="checkbox"  id="materiais_utilizadosA_ataduras"> Ataduras<div id="div_atadura" style="display: none;">  8<input value="Ataduras 8" id="atadura_8" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> 12<input value="Ataduras 12"  id="atadura_12" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras">  20<input value="Ataduras 20" id="atadura_20" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> </div> </td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" onclick="AtaduraCheckboxDivNone()" type="checkbox"  id="materiais_utilizadosA_ataduras"> Ataduras<div id="div_atadura" style="display: none;">  8<input value="Ataduras: 8" id="atadura_8" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> 12<input value="Ataduras: 12"  id="atadura_12" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras">  20<input value="Ataduras: 20" id="atadura_20" type="radio" class="radio" style="width:15px;height:15px;" name="Ataduras"> </div> </td>
               <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_ataduras_txt" style="width: 50px; height: 25px;" type="text" ></td>
             </tr>
             <tr style="border-style:solid; border-color: #0667E8;" >
-              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_"> Catéter TP. óculos </td>
+              <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox"  id="materiais_utilizadosA_cateter_tp_oculos"> Catéter TP. óculos </td>
               <td style="width: 100px; height: 25px;"><input class="input-linha" value="" style="width: 50px; height: 25px;" type="text" ></td>
           </tr>
           <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1225,7 +1225,7 @@
             <td style="width: 100px; height: 25px;"><input class="input-linha" value=""  id="materiais_utilizadosA_compressa_comum_txt" style="width: 50px; height: 25px;" type="text" ></td>
         </tr> 
         <tr style="border-style:solid; border-color: #0667E8;" >
-          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="KitCheckbox()"  id="materiais_utilizadosA_kit">Kit's <div id="div_kits" style="display: none;"> H <input type="radio" id="kits_h" class="radio" style="width:15px;height:15px;" value="Kit H"name="Kit"> P<input value="Kit P" type="radio" id="kits_p" class="radio" style="width:15px;height:15px;"name="Kit">  Q<input value="Kit Q" type="radio" id="kits_q" class="radio" style="width:15px;height:15px;"name="Kit">   </div> </td>
+          <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="KitCheckboxDivNone()"  id="materiais_utilizadosA_kit">Kit's <div id="div_kits" style="display: none;"> H <input type="radio" id="kits_h" class="radio" style="width:15px;height:15px;" value="Kit: H"name="Kit"> P<input value="Kit: P" type="radio" id="kits_p" class="radio" style="width:15px;height:15px;"name="Kit">  Q<input value="Kit: Q" type="radio" id="kits_q" class="radio" style="width:15px;height:15px;"name="Kit">   </div> </td>
           <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_kit_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
@@ -1253,7 +1253,7 @@
       <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_soro_fisiologico_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
-      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="TalasCheckbox()"  id="materiais_utilizadosA_talas"> Talas PAP.<div id="div_talas" style="display: none;">  P<input type="radio" id="talas_p" class="radio" style="width:15px;height:15px;"  value="Talas P"name="Talas"> G<input value="Talas " type="radio" id="talas_g" class="radio" style="width:15px;height:15px;"name="Talas"> </div> </td>
+      <td style="width: 400px; height: 25px;"><input class="checkbox" type="checkbox" onclick="TalasCheckboxDivNone()"  id="materiais_utilizadosA_talas"> Talas PAP.<div id="div_talas" style="display: none;">  P<input type="radio" id="talas_p" class="radio" style="width:15px;height:15px;"  value="Talas: P"name="Talas: G"> G<input value="Talas " type="radio" id="talas_g" class="radio" style="width:15px;height:15px;"name="Talas"> </div> </td>
       <td style="width: 100px; height: 25px;"><input class="input-linha" value="" id="materiais_utilizadosA_talas_txt" style="width: 50px; height: 25px;" type="text" ></td>
       </tr>
       <tr style="border-style:solid; border-color: #0667E8;" >
