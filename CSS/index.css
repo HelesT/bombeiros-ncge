@@ -463,6 +463,9 @@ html {
   align-content: center;
 }
 /*------------------------------------------CSS-GERAL------------------------------------------*/
+#imagem-posicao {
+  position: relative;
+}
 .checkbox-emergencia{
   appearance: none;
   -webkit-appearance: none;

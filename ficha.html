@@ -778,7 +778,7 @@
           <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
         </div><!-- Fim do cabeçalho da pagina "" -->
 
-        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
+        <div class="slide-body centro" onclick="inserirImagem(event)"><!--inicio do corpo da página de ""-->
       <div style="width: 100%; height: 1289px; justify-content: space-between; flex-direction: column;display: flex;"> 
         <div class="centro coluna"> 
           <div class="quadrado linha centro" style="width: 320px;height: 30px;">
@@ -786,9 +786,9 @@
             <div style="width: 2px;height: 100%;background-color: #0667E8;"></div>
             <span class="centro" style="width: 49%;height: 100%;">Maior de 5</span>
           </div>
-              <div class="coluna centro" style="border-style:solid; border-color: #0667E8; width: 320px; height: 279px;  ">
-               <img src="IMAGENS/corpo-maior-5.png" style="width: 88%; ">
-               <img src="IMAGENS/corpo-menor-5.png" style="width: 88%; display: none;">
+              <div id="div_traumas_localizados" class="coluna centro" style="border-style:solid; border-color: #0667E8; width: 320px;">
+               <img src="IMAGENS/corpo-maior-5.png" style="width: 90%; ">
+               <img src="IMAGENS/corpo-menor-5.png" style="width: 90%; display: none;">
               </div>
               <div></div>
               <div class="linha centro "  > 
@@ -2054,7 +2054,7 @@ margin-top: 10px;">
   <script src="JS/index.js"></script>
   <script src="JS/swiper.js"></script>
   <script src="JS/rolagem.js"></script>
-  
+  <script src="JS/localizar-trauma.js"></script>
   
   
 </html>
