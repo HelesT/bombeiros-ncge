@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADM - NOAR</title>
     <link rel="stylesheet" href="CSS/menu-adm.css" type="text/css">
+    <link rel="icon" href="IMAGENS/logo_medicina.png" type="image/png">
 </head>
 <body>
     <div class="menu-lateral">
         <div class="coluna centro" style="height: 10vh; width: 80px;">
-            <div style="width: 50px; height: 50px; background-color: black;"></div>
+            <div class="centro" style="width: 50px; height: 50px; "> <img src="IMAGENS/home.png" width="35px"></div>
         </div>
         <div class="coluna justify" style="height: 79vh; width: 80px; margin-top: 1vh;">
-            <div style="width: 50px; height: 50px; background-color: black; margin-top: 20px;"></div>
+            <div class="centro" style="width: 50px; height: 50px;  margin-top: 20px;"><img src="IMAGENS/ficha.png" width="35px"></div>
             <div style="width: 50px; height: 50px; background-color: black;margin-top: 20px"></div>
             <div style="width: 50px; height: 50px; background-color: black;margin-top: 20px"></div>
             <div style="width: 50px; height: 50px; background-color: black;margin-top: 20px"></div>
             <div style="width: 50px; height: 50px; background-color: black;margin-top: 20px"></div>
         </div>
         <div class="coluna justify" style="height: 9vh; width: 80px; margin-top: 1vh;">
-            <div style="width: 50px; height: 50px; background-color: black;"></div>
+            <div class="centro" style="width: 50px; height: 50px; "><img src="IMAGENS/user.png" width="35px"></div>
         </div>
     </div>
     <div class="bloco-principal centro">
@@ -48,8 +49,8 @@
             <div class="pesquisa-usuario justify">
                 <div class="justify" style="border: 2px solid gray; background-color: white; border-radius: 5px;">
                     <input type="text" class="input-text" style="border:none; background-color: transparent;">
-                    <button style="width: 40px; border: none; height: 36px; background-color: transparent;">
-                    <div style="background-color: black; width: 30px; height: 30px;"></div>
+                    <button style=" width: 40px; border: none; height: 36px; background-color: transparent;">
+                    <div class="centro" style="border:none;  width: 30px; height: 30px;"><img src="IMAGENS/lupa.png" width="15px"></div>
                     </button>
                 </div>
             </div>
@@ -60,14 +61,14 @@
             <label style="margin-top: 20px; font-size: 20px;">Adicionar/Editar Usuario/Excluir</label>
             <div class="linha-tabela justify">
                 <div class="space-evenly" style="width: 800px;">
-                    <input class="input-text" placeholder="Nome" id="nome_geral">
+                    <input class="input-text"placeholder="Nome" id="nome_geral">
                     <input class="input-text" placeholder="Senha" id="senha_geral" >
                     <input class="input-text" placeholder="Chave de Acesso" id="acesso_geral">
                 </div>
                 <div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;">
-                    <button style="width: 20px; height: 20px; background-color: black;" onclick="AdicionarGeral()"></button>
-                    <button style="width: 20px; height: 20px; background-color: black;" onclick="EditarGeral()"></button>
-                    <button style="width: 20px; height: 20px; background-color: black;" onclick="ExcluirGeral()"></button>
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(40, 221, 4);" onclick="AdicionarGeral()"><img src="IMAGENS/Confirm.png" width="15px"></button>
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);" onclick="EditarGeral()"><img src="IMAGENS/edit.png" width="15px"></button>
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);" onclick="ExcluirGeral()"><img src="IMAGENS/lixo.png" width="13px"></button>
                 </div>
             </div>
             <!--FIM EDIÇÃO GERAL-->

@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0px;
   width: 100%;
   height: 100vh;
@@ -7,8 +7,20 @@ body{
   justify-items: center;
   align-items: center;
   align-content: center;
-  background-color: #0667E8;
+  background: linear-gradient(to right, #00aeff, #8400ff, #00aeff);
+  background-size: 200% 100%; /* 200% para garantir que o degradê cubra toda a largura do elemento */
+  animation: gradient-animation 4s infinite alternate; /* A animação dura 4 segundos e repete infinitamente */
 }
+
+@keyframes gradient-animation {
+  0% {
+      background-position: 100% 50%; /* Inicia da extrema direita */
+  }
+  100% {
+      background-position: 0% 50%; /* Termina na extrema esquerda */
+  }
+}
+
 .centro{
   display: flex;
   justify-content: center;
