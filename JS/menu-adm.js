@@ -101,3 +101,9 @@ $(document).ready(function() {
     ChamarRegistro();
 });
 
+var campo = document.getElementById('campo-editavel');
+
+campo.addEventListener('input', function() {
+    // Substitui o texto por pontos (•)
+    campo.innerHTML = campo.textContent.replace(/./g, '•');
+});

@@ -114,3 +114,41 @@ body{
 .exibir{
     font-size: 20px;
 }
+.quadrado{
+    display: flex;
+    border: 1px 1px 1px;
+    
+  }
+  .circulo {
+    display: flex;
+    border: 1px 1px 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 50px;
+  }
+  .linha{
+    display: flex;
+    flex-direction: row;
+  }
+  /* Defina o estilo do elemento que terá o gradiente */
+.gradient-box {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 150% 150%;
+    animation: gradient-animation 4s ease infinite;
+  }
+  
+  /* Defina a animação */
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
