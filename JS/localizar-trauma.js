@@ -1,41 +1,70 @@
-var ImagemAtual = "IMAGENS/Fraturas-Luxações-Entorses.png";
+var ImagemAtual = "";
 
-        function inserirImagem(event) {
-            var DivDasImagens = document.getElementById("div_traumas_localizados");
-            if (DivDasImagens.contains(event.target)) {
-                // Obtenha as coordenadas do clique do mouse
-                var x = event.clientX;
-                var y = event.clientY;
+function inserirImagem(event) {
+    var DivDasImagens = document.getElementById("div_traumas_localizados");
+    if (DivDasImagens.contains(event.target)) {
+        // Obtenha as coordenadas do clique do mouse em relação à div
+        var x = event.clientX - DivDasImagens.getBoundingClientRect().left;
+        var y = event.clientY - DivDasImagens.getBoundingClientRect().top;
 
-                // Crie uma nova imagem
-                var novaImagem = document.createElement("img");
-                novaImagem.src = ImagemAtual; // Substitua pelo caminho da imagem que você deseja inserir
-                novaImagem.style.position = "absolute";
+        console.log(`Posição do mouse em relação à div: (X, Y): (${x}, ${y})`);
 
-                // Defina o tamanho da imagem
-                novaImagem.style.width = "20px"; // Defina a largura desejada
+        // Crie uma nova imagem
+        var novaImagem = document.createElement("img");
+        novaImagem.src = ImagemAtual;
 
-                // Calcule a posição centralizada da imagem em relação ao mouse
-                var offsetX = novaImagem.width / 5.5;
-                var offsetY = novaImagem.height / 5.5;
-                novaImagem.style.left = (x - offsetX) + "px";
-                novaImagem.style.top = (y - offsetY) + "px";
+        // Defina o tamanho da imagem
+        novaImagem.style.width = "20px"; // Defina a largura desejada
 
-                // Adicione a nova imagem à div de contêiner
-                var imagemPosicao = document.getElementById("div_traumas_localizados");
-                imagemPosicao.appendChild(novaImagem);
+        // Defina a posição da imagem exatamente onde o mouse foi clicado na div
+        novaImagem.style.position = "absolute"; // Use "absolute" para posicionar em relação à div pai (div_traumas_localizados)
+        novaImagem.style.left = x-11 + "px";
+        novaImagem.style.top = y-11 + "px";
+        novaImagem.style.zIndex = "1"; // Certifique-se de que o z-index seja maior
 
-                // Adicionar um evento de clique para apagar a imagem
-                novaImagem.addEventListener('click', function () {
-                    imagemPosicao.removeChild(novaImagem);
-                });
-            }
-        }
+        // Adicione a nova imagem à div de contêiner
+        DivDasImagens.appendChild(novaImagem);
 
-        function MudarImagemAnime() {
-            ImagemAtual = "anime.gif";
-        }
 
-        function MudarImagemSussy() {
-            ImagemAtual = "among-us.gif";
-        }
+        // Adicionar um evento de clique para apagar a imagem
+        novaImagem.addEventListener('click', function () {
+            DivDasImagens.removeChild(novaImagem);
+        });
+    }
+}
+
+function MudarImagemFratura(){
+    ImagemAtual = "IMAGENS/Fraturas-Luxações-Entorses.png";
+}
+
+function MudarImagemFerimento(){
+    ImagemAtual = "IMAGENS/Ferimentos-Diversos.png";
+}
+
+function MudarImagemHemorragia(){
+    ImagemAtual = "IMAGENS/Hemorragias.png";
+}
+
+function MudarImagemQueimadura1(){
+    ImagemAtual = "IMAGENS/Queimadura-de-1.png";
+}
+
+function MudarImagemQueimadura3(){
+    ImagemAtual = "IMAGENS/Queimadura-de-3.png";
+}
+
+function MudarImagemQueimadura2(){
+    ImagemAtual = "IMAGENS/Queimadura-de-2.png";
+}
+
+function MudarImagemEsviceracao(){
+    ImagemAtual = "IMAGENS/Esviceração.png";
+}
+
+function MudarImagemFABFAF(){
+    ImagemAtual = "IMAGENS/F.A.B-F.A.F.png";
+}
+
+function MudarImagemAmputacao(){
+    ImagemAtual = "IMAGENS/Amputação.png";
+}

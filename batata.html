@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
-    da
+    <div id="div1"></div>
+    <div id="texto"></div>
+
+    <script>
+        const div1 = document.getElementById("div1");
+        const texto = document.getElementById("texto");
+
+        div1.addEventListener("mousemove", (e) => {
+            const x = e.clientX - div1.getBoundingClientRect().left;
+            const y = e.clientY - div1.getBoundingClientRect().top;
+            texto.innerText = `Coordenadas (X, Y): (${x}, ${y})`;
+        });
+    </script>
 </body>
 </html>
