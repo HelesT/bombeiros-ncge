@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+  }
+.centro{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
+  .justify{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
+  .linha{
+    display: flex;
+    flex-direction: row;
+  }
+  .coluna{
+    display: flex;
+    flex-direction: column;
+  }
+  .quadrado{
+    display: flex;
+    border: 1px 1px 1px;
+    border-style: solid;
+    border-color: #0667E8;
+  }
+  .circulo {
+    display: flex;
+    border: 1px 1px 1px;
+    border-style: solid;
+    border-color: #0667E8;
+    border-radius: 50px;
+  }
+  .menu-lateral{
+    width: 80px;
+    height: 100%;
+    background-color: rgb(55, 198, 201);
+    display: flex;
+    flex-direction: column;
+}
+.cabecalho-titulo{
+    width: 240px;
+    text-align: center;
+    height: 100%;
+    color: white;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
+  .cabecalho{
+    background-color: rgb(55, 198, 201);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
