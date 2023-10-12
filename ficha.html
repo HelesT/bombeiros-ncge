@@ -779,16 +779,15 @@
         </div><!-- Fim do cabeçalho da pagina "" -->
 
         <div class="slide-body centro"><!--inicio do corpo da página de ""-->
-      <div style="width: 100%; height: 1289px; justify-content: space-between; flex-direction: column;display: flex;"> 
-        <div class="centro coluna"> 
-          <div class="quadrado linha centro" style="width: 320px;height: 30px;">
-            <span class="centro" style="width: 49%;height: 100%;">Menor de 5</span>
-            <div style="width: 2px;height: 100%;background-color: #0667E8;"></div>
-            <span class="centro" style="width: 49%;height: 100%;">Maior de 5</span>
+      <div style="width: 100%; justify-content: space-between; flex-direction: column;display: flex;"> 
+        <div class="centro coluna" style="padding-bottom: 20px;"> 
+          <div class="quadrado linha centro" style="width: 320px;height: 30px; margin-bottom: 5px;">
+            <span class="centro" style="width: 50%;height: 100%;" id="div_menor_trauma" onclick="AtivarMenorTrauma()">Menor de 5</span>
+            <span class="centro" style="width: 50%;height: 100%; background-color: #0667E8; color: white;" id="div_maior_trauma" onclick="AtivarMaiorTrauma()">Maior de 5</span>
           </div>
             <div id="div_traumas_localizados" onclick="inserirImagem(event)" class="coluna centro" style="border-style:solid; border-color: #0667E8; width: 320px; position: relative;">
-              <img src="IMAGENS/corpo-maior-5.png" style="width: 90%;">
-              <img src="IMAGENS/corpo-menor-5.png" style="width: 90%; display: none;">
+              <img src="IMAGENS/corpo-maior-5.png" style="width: 90%;" id="imagem_maior_trauma">
+              <img src="IMAGENS/corpo-menor-5.png" style="width: 90%; display: none;" id="imagem_menor_trauma">
           </div>
               <div></div>
               <div class="linha centro"> 
@@ -836,82 +835,48 @@
           </div>
           <div>           
               <div class="linha  centro" style="color: white; background-color: #0667E8;  width: 100%; height: 50px;">
-                  <span class=" coluna centro" style="font-size: 20px; text-align: center;"> Ferimentos/Fraturas/Entorses<br>Luxação/Contusão</span>
+                  <span class=" coluna centro" style="font-size: 20px; text-align: center;">Ferimentos/Fraturas/Entorses<br>Luxação/Contusão</span>
                 </div>
-                <div class="coluna centro"> 
-                  <table border="1" style="border-style:solid; border-color: #0667E8; width: 300px; ">
-                    <tr style="border-style:solid; border-color: #0667E8;">
-                      <th>Local</th>
-                      <th>Lado</th>
-                      <th>Face</th>
-                      <th>Tipo</th>
-                      
-                    </tr>
-                    <tr style="border-style:solid; border-color: #0667E8;" >
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                    </tr>
-                    <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                    </tr>
-                    <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
-                      <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
-                      <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
-                      <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
-                      <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
-                      <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
-                      <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
-                      <tr style="border-style:solid; border-color: #0667E8;">
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                        <td style="width: 100px; height: 25px;"></td>
-                      </tr>
+                <div class="coluna centro" style="margin-top: 20px;"> 
+                  <table border="1" id="tabela_de_traumas" style="border-style:solid; border-color: #0667E8; width: 300px; ">
+                      <thead> <!-- Use thead to define the table header -->
+                          <tr style="border-style:solid; border-color: #0667E8;">
+                              <th>Local</th>
+                              <th>Lado</th>
+                              <th>Face</th>
+                              <th>Tipo</th>
+                          </tr>
+                      </thead>
+                      <tbody id="tbody_corpo">
+                          <!-- Content goes here -->
+                      </tbody>
                   </table>
-                </div>
-            </div>
+                  <div class="linha">
+                      <!-- Cute buttons -->
+                      <input type="button" onclick="adicionarLinhaTraumas()" value="Nova Linha :3"
+                      style="width: 100px; 
+                      height: 30px; 
+                      border: 1px solid black; 
+                      border-radius: 10px; 
+                      margin-top: 10px;">
+                      <input type="button" onclick="ObterValoresTraumas()" value="Console.Log :3"
+                      style="width: 100px; 
+                      height: 30px; 
+                      border: 1px solid black; 
+                      border-radius: 10px; 
+                      margin-top: 10px;">
+                      <input type="button" onclick="limparTabelaTraumas()" value="Limpar :3"
+                      style="width: 100px; 
+                      height: 30px; 
+                      border: 1px solid black; 
+                      border-radius: 10px; 
+                      margin-top: 10px;">
+                      <!-- Cute buttons -->
+                  </div>
+              </div>
+              
             <div>
-                <div class="coluna centro">
+                <div class="coluna centro" style="margin-top: 20px;">
                   <table border="1" style="border-style:solid; border-color: #0667E8; width: 300px; ">
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;">
                       <th>Queimadura</th>
@@ -920,68 +885,68 @@
                       <th>3°Grau</th>
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> cabeça</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> cabeça</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="cabeca_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="cabeca_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="cabeca_trauma"></td>
             
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> pescoço</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> pescoço</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="pescoco_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="pescoco_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="pescoco_trauma"></td>
             
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> T.Ant</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> T.Ant</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="t_ant_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="t_ant_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="t_ant_trauma"></td>
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> T.Pos</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> T.Pos</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="t_pos_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="t_pos_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="t_pos_trauma"></td>
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> GENI</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> GENI</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="geni_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="geni_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="geni_trauma"></td>
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> M.I.D</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.I.D</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mid_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mid_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mid_trauma"></td>
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> M.I.E</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.I.E</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mie_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mie_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mie_trauma"></td>
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> M.S.D</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.S.D</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="msd_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="msd_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="msd_trauma"></td>
                     </tr>
                     <tr style="border-style:solid; border-color: #0667E8; width: 50px;" >
-                        <td style="width: 50px; height: 25px;"> M.S.E</td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
-                        <td style="width: 50px; height: 25px;"> <input type="checkbox"style="width: 50px; height: 25px;"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"> M.S.E</td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mse_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mse_trauma"></td>
+                        <td style="width: 50px; height: 25px; text-align: center;"><input type="radio" class="radio" name="mse_trauma"></td>
                     </tr>
                   </table>
                 </div>
               </div>  
           </div>
         </div><!--Fim do corpo da página de ""-->
-   
-    </div>
+      </div>
+      </div>
       <div class="swiper-slide slide9"><!---------------------------------------------------------Inicio da página de Objeto Recolhidos --------------------------------------------------------->
 
         <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->

@@ -2936,3 +2936,50 @@ function ObservacoesImportantes(){
     }console.log(TextoDentroObs);
     
 }
+
+function AtivarMenorTrauma(){
+    var MenorDiv = document.getElementById("div_menor_trauma");
+    var MaiorDIv = document.getElementById("div_maior_trauma");
+    var MaiorImagem = document.getElementById("imagem_maior_trauma");
+    var MenorImagem = document.getElementById("imagem_menor_trauma");
+    var DivDasImagens = document.getElementById("div_traumas_localizados");
+    var imagens = DivDasImagens.getElementsByTagName("img");
+    for (var i = imagens.length - 1; i >= 0; i--) {
+        var imagem = imagens[i];
+        var id = imagem.id;
+
+        if (id !== "imagem_maior_trauma" && id !== "imagem_menor_trauma") {
+            DivDasImagens.removeChild(imagem);
+        }
+    }
+
+    MenorDiv.style.backgroundColor = "rgb(6, 103, 232)"
+    MenorDiv.style.color = "white"
+    MaiorDIv.style.backgroundColor = "white"
+    MaiorDIv.style.color = "black"
+    MenorImagem.style.display = "flex"
+    MaiorImagem.style.display = "none"
+}
+function AtivarMaiorTrauma(){
+    var MenorDiv = document.getElementById("div_menor_trauma");
+    var MaiorDiv = document.getElementById("div_maior_trauma");
+    var MaiorImagem = document.getElementById("imagem_maior_trauma");
+    var MenorImagem = document.getElementById("imagem_menor_trauma");
+    var DivDasImagens = document.getElementById("div_traumas_localizados");
+    var imagens = DivDasImagens.getElementsByTagName("img");
+    for (var i = imagens.length - 1; i >= 0; i--) {
+        var imagem = imagens[i];
+        var id = imagem.id;
+
+        if (id !== "imagem_maior_trauma" && id !== "imagem_menor_trauma") {
+            DivDasImagens.removeChild(imagem);
+        }
+    }
+
+    MenorDiv.style.backgroundColor = "white"
+    MenorDiv.style.color = "black"
+    MaiorDiv.style.backgroundColor = "rgb(6, 103, 232)"
+    MaiorDiv.style.color = "white"
+    MenorImagem.style.display = "none"
+    MaiorImagem.style.display = "flex"
+}

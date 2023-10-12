@@ -1,31 +1,100 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Adicionar Linha à Tabela</title>
     <style>
-        #div1{
-            width: 100px;
-            height: 100px;
+        /* Estilos para as classes personalizadas */
+        .minha-classe-input {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 5px;
+        }
+
+        .minha-classe-linha {
             background-color: #e0e0e0;
+        }
+
+        .minha-classe-coluna {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div id="div1"></div>
-    <div id="texto"></div>
+    <table id="minhaTabela">
+        <thead>
+            <tr>
+                <th class="minha-classe-coluna">Coluna 1</th>
+                <th class="minha-classe-coluna">Coluna 2</th>
+                <th class="minha-classe-coluna">Coluna 3</th>
+                <th class="minha-classe-coluna">Coluna 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <button onclick="adicionarLinha()">Adicionar Linha</button>
+    <button onclick="obterDados()">Obter Dados</button>
 
     <script>
-        const div1 = document.getElementById("div1");
-        const texto = document.getElementById("texto");
+        var dadosLinhas = [];
 
-        div1.addEventListener("mousemove", (e) => {
-            const x = e.clientX - div1.getBoundingClientRect().left;
-            const y = e.clientY - div1.getBoundingClientRect().top;
-            texto.innerText = `Coordenadas (X, Y): (${x}, ${y})`;
-        });
+        function adicionarLinha() {
+            // Recuperar a tabela e a área de corpo (tbody)
+            var tabela = document.getElementById("minhaTabela");
+            var corpoTabela = tabela.getElementsByTagName("tbody")[0];
+
+            // Criar uma nova linha (tr)
+            var novaLinha = corpoTabela.insertRow();
+            novaLinha.classList.add("minha-classe-linha"); // Adiciona a classe à linha
+
+            // Inserir os valores nas novas células da linha a partir dos inputs
+            var inputColuna1 = document.createElement("input");
+            inputColuna1.type = "text";
+            inputColuna1.classList.add("minha-classe-input"); // Adiciona a classe ao input
+            var coluna1 = novaLinha.insertCell(0);
+            coluna1.appendChild(inputColuna1);
+
+            var inputColuna2 = document.createElement("input");
+            inputColuna2.type = "text";
+            inputColuna2.classList.add("minha-classe-input"); // Adiciona a classe ao input
+            var coluna2 = novaLinha.insertCell(1);
+            coluna2.appendChild(inputColuna2);
+
+            var inputColuna3 = document.createElement("input");
+            inputColuna3.type = "text";
+            inputColuna3.classList.add("minha-classe-input"); // Adiciona a classe ao input
+            var coluna3 = novaLinha.insertCell(2);
+            coluna3.appendChild(inputColuna3);
+
+            var inputColuna4 = document.createElement("input");
+            inputColuna4.type = "text";
+            inputColuna4.classList.add("minha-classe-input"); // Adiciona a classe ao input
+            var coluna4 = novaLinha.insertCell(3);
+            coluna4.appendChild(inputColuna4);
+        }
+
+        function obterDados() {
+            var tabela = document.getElementById("minhaTabela");
+            var linhas = tabela.getElementsByTagName("tr");
+
+            dadosLinhas = [];
+
+            for (var i = 1; i < linhas.length; i++) {
+                var colunas = linhas[i].getElementsByTagName("td");
+                var linhaDados = [];
+                for (var j = 0; j < colunas.length; j++) {
+                    var input = colunas[j].querySelector("input");
+                    if (input) {
+                        linhaDados.push(input.value);
+                    }
+                }
+                dadosLinhas.push(linhaDados.join(","));
+            }
+            var dados = dadosLinhas.join("; ");
+            console.log("Dados das Linhas: " + dados);
+        }
     </script>
 </body>
 </html>
