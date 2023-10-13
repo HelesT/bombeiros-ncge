@@ -109,15 +109,14 @@ var dadosLinhas = [];
                         linhaDados.push(input.value);
                     }
                 }
-                dadosLinhas.push(linhaDados.join(","));
+                dadosLinhas.push(linhaDados.join(", "));
             }
             var dados = dadosLinhas.join("; ");
             
             // Remova as ocorrências de ",,," e ";;;" da variável dados
-            dados = dados.replace(/,,,;/g, '');
-            dados = dados.replace(/,,,/g, '');
+            dados = dados.replace(/ , , , ;/g, '');
         
-            console.log("Dados das Linhas: " + dados);
+            console.log(dados);
         }
         function limparTabelaTraumas() {
             var corpoTabela = document.getElementById("tbody_corpo");
@@ -125,3 +124,239 @@ var dadosLinhas = [];
             // Remover todas as linhas do corpo da tabela
             corpoTabela.innerHTML = "";
         }
+        function AtivarMenorTrauma(){
+            var MenorDiv = document.getElementById("div_menor_trauma");
+            var MaiorDIv = document.getElementById("div_maior_trauma");
+            var MaiorImagem = document.getElementById("imagem_maior_trauma");
+            var MenorImagem = document.getElementById("imagem_menor_trauma");
+            var DivDasImagens = document.getElementById("div_traumas_localizados");
+            var imagens = DivDasImagens.getElementsByTagName("img");
+            for (var i = imagens.length - 1; i >= 0; i--) {
+                var imagem = imagens[i];
+                var id = imagem.id;
+        
+                if (id !== "imagem_maior_trauma" && id !== "imagem_menor_trauma") {
+                    DivDasImagens.removeChild(imagem);
+                }
+            }
+        
+            MenorDiv.style.backgroundColor = "rgb(6, 103, 232)"
+            MenorDiv.style.color = "white"
+            MaiorDIv.style.backgroundColor = "white"
+            MaiorDIv.style.color = "black"
+            MenorImagem.style.display = "flex"
+            MaiorImagem.style.display = "none"
+        }
+        function AtivarMaiorTrauma(){
+            var MenorDiv = document.getElementById("div_menor_trauma");
+            var MaiorDiv = document.getElementById("div_maior_trauma");
+            var MaiorImagem = document.getElementById("imagem_maior_trauma");
+            var MenorImagem = document.getElementById("imagem_menor_trauma");
+            var DivDasImagens = document.getElementById("div_traumas_localizados");
+            var imagens = DivDasImagens.getElementsByTagName("img");
+            for (var i = imagens.length - 1; i >= 0; i--) {
+                var imagem = imagens[i];
+                var id = imagem.id;
+        
+                if (id !== "imagem_maior_trauma" && id !== "imagem_menor_trauma") {
+                    DivDasImagens.removeChild(imagem);
+                }
+            }
+        
+            MenorDiv.style.backgroundColor = "white"
+            MenorDiv.style.color = "black"
+            MaiorDiv.style.backgroundColor = "rgb(6, 103, 232)"
+            MaiorDiv.style.color = "white"
+            MenorImagem.style.display = "none"
+            MaiorImagem.style.display = "flex"
+        }
+//Queimadura
+var radio1cabeca = document.getElementById("radio_1_cabeca_trauma");
+var radio2cabeca = document.getElementById("radio_2_cabeca_trauma");
+var radio3cabeca = document.getElementById("radio_3_cabeca_trauma");
+function AtivarRadio1Cabeca(){
+if (radio1cabeca.checked){
+    radio2cabeca.checked = false;
+    radio3cabeca.checked = false;
+}
+}
+function AtivarRadio2Cabeca(){
+if (radio2cabeca.checked){
+    radio1cabeca.checked = false;
+    radio3cabeca.checked = false;
+}
+}
+function AtivarRadio3Cabeca(){
+if (radio3cabeca.checked){
+    radio1cabeca.checked = false;
+    radio2cabeca.checked = false;
+}
+}
+var radio1pescoco = document.getElementById("radio_1_pescoco_trauma");
+var radio2pescoco = document.getElementById("radio_2_pescoco_trauma");
+var radio3pescoco = document.getElementById("radio_3_pescoco_trauma");
+function AtivarRadio1Pescoco(){
+if (radio1pescoco.checked){
+    radio2pescoco.checked = false;
+    radio3pescoco.checked = false;
+}
+}
+function AtivarRadio2Pescoco(){
+if (radio2pescoco.checked){
+    radio1pescoco.checked = false;
+    radio3pescoco.checked = false;
+}
+}
+function AtivarRadio3Pescoco(){
+if (radio3pescoco.checked){
+    radio1pescoco.checked = false;
+    radio2pescoco.checked = false;
+}
+}
+var Radio1TANT = document.getElementById("radio_1_tant_trauma");
+var Radio2TANT = document.getElementById("radio_2_tant_trauma");
+var Radio3TANT = document.getElementById("radio_3_tant_trauma");
+function AtivarRadio1TANT(){
+if(Radio1TANT.checked){
+    Radio2TANT.checked = false;
+    Radio3TANT.checked = false;
+}
+}
+function AtivarRadio2TANT(){
+if(Radio2TANT.checked){
+    Radio1TANT.checked = false;
+    Radio3TANT.checked = false;
+}
+}
+function AtivarRadio3TANT(){
+if(Radio3TANT.checked){
+    Radio1TANT.checked = false;
+    Radio2TANT.checked = false;
+}
+}
+var Radio1TPOS = document.getElementById("radio_1_tpos_trauma");
+var Radio2TPOS = document.getElementById("radio_2_tpos_trauma");
+var Radio3TPOS = document.getElementById("radio_3_tpos_trauma");
+function AtivarRadio1TPOS(){
+if (Radio1TPOS.checked){
+    Radio2TPOS.checked = false;
+    Radio3TPOS.checked = false;
+}
+}
+function AtivarRadio2TPOS(){
+if (Radio2TPOS.checked){
+    Radio1TPOS.checked = false;
+    Radio3TPOS.checked = false;
+}
+}
+function AtivarRadio3TPOS(){
+if (Radio3TPOS.checked){
+    Radio1TPOS.checked = false;
+    Radio2TPOS.checked = false;
+}
+}
+var Radio1Geni = document.getElementById("radio_1_geni_trauma");
+var Radio2Geni = document.getElementById("radio_2_geni_trauma");
+var Radio3Geni = document.getElementById("radio_3_geni_trauma");
+function AtivarRadio1Geni(){
+if (Radio1Geni.checked){
+    Radio2Geni.checked = false;
+    Radio3Geni.checked = false;
+}
+}
+function AtivarRadio2Geni(){
+if (Radio2Geni.checked){
+    Radio1Geni.checked = false;
+    Radio3Geni.checked = false;
+}
+}
+function AtivarRadio3Geni(){
+if (Radio3Geni.checked){
+    Radio1Geni.checked = false;
+    Radio2Geni.checked = false;
+}
+}
+var Radio1MID = document.getElementById("radio_1_mid_trauma");
+var Radio2MID = document.getElementById("radio_2_mid_trauma");
+var Radio3MID = document.getElementById("radio_3_mid_trauma");
+function AtivarRadio1MID(){
+if (Radio1MID.checked){
+    Radio2MID.checked = false;
+    Radio3MID.checked = false;
+}
+}
+function AtivarRadio2MID(){
+if (Radio2MID.checked){
+    Radio1MID.checked = false;
+    Radio3MID.checked = false;
+}
+}
+function AtivarRadio3MID(){
+if (Radio3MID.checked){
+    Radio1MID.checked = false;
+    Radio2MID.checked = false;
+}
+}
+var Radio1MIE = document.getElementById("radio_1_mie_trauma");
+var Radio2MIE = document.getElementById("radio_2_mie_trauma");
+var Radio3MIE = document.getElementById("radio_3_mie_trauma");
+function AtivarRadio1MIE(){
+if (Radio1MIE.checked){
+    Radio2MIE.checked = false;
+    Radio3MIE.checked = false;
+}
+}
+function AtivarRadio2MIE(){
+if (Radio2MIE.checked){
+    Radio1MIE.checked = false;
+    Radio3MIE.checked = false;
+}
+}
+function AtivarRadio3MIE(){
+if (Radio3MIE.checked){
+    Radio1MIE.checked = false;
+    Radio2MIE.checked = false;
+}
+}
+var Radio1MSD = document.getElementById("radio_1_msd_trauma");
+var Radio2MSD = document.getElementById("radio_2_msd_trauma");
+var Radio3MSD = document.getElementById("radio_3_msd_trauma");
+function AtivarRadio1MSD(){
+if (Radio1MSD.checked){
+    Radio2MSD.checked = false;
+    Radio3MSD.checked = false;
+}
+}
+function AtivarRadio2MSD(){
+if (Radio2MSD.checked){
+    Radio1MSD.checked = false;
+    Radio3MSD.checked = false;
+}
+}
+function AtivarRadio3MSD(){
+if (Radio3MSD.checked){
+    Radio1MSD.checked = false;
+    Radio2MSD.checked = false;
+}
+}
+var Radio1MSE = document.getElementById("radio_1_mse_trauma");
+var Radio2MSE = document.getElementById("radio_2_mse_trauma");
+var Radio3MSE = document.getElementById("radio_3_mse_trauma");
+function AtivarRadio1MSE(){
+if (Radio1MSE.checked){
+    Radio2MSE.checked = false;
+    Radio3MSE.checked = false;
+}
+}
+function AtivarRadio2MSE(){
+if (Radio2MSE.checked){
+    Radio1MSE.checked = false;
+    Radio3MSE.checked = false;
+}
+}
+function AtivarRadio3MSE(){
+if (Radio3MSE.checked){
+    Radio1MSE.checked = false;
+    Radio2MSE.checked = false;
+}
+}
