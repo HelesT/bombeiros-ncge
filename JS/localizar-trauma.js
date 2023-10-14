@@ -94,30 +94,6 @@ var dadosLinhas = [];
             coluna4.appendChild(inputColuna4);
         }
 
-        function ObterValoresTraumas() {
-            var tabela = document.getElementById("tabela_de_traumas");
-            var linhas = tabela.getElementsByTagName("tr");
-        
-            dadosLinhas = [];
-        
-            for (var i = 1; i < linhas.length; i++) {
-                var colunas = linhas[i].getElementsByTagName("td");
-                var linhaDados = [];
-                for (var j = 0; j < colunas.length; j++) {
-                    var input = colunas[j].querySelector("input");
-                    if (input) {
-                        linhaDados.push(input.value);
-                    }
-                }
-                dadosLinhas.push(linhaDados.join(", "));
-            }
-            var dados = dadosLinhas.join("; ");
-            
-            // Remova as ocorrências de ",,," e ";;;" da variável dados
-            dados = dados.replace(/ , , , ;/g, '');
-        
-            console.log(dados);
-        }
         function limparTabelaTraumas() {
             var corpoTabela = document.getElementById("tbody_corpo");
             
@@ -360,3 +336,180 @@ if (Radio3MSE.checked){
     Radio2MSE.checked = false;
 }
 }
+var dados_trauma = "";
+function LocalizacaoTraumas() {
+    var tabela = document.getElementById("tabela_de_traumas");
+    var linhas = tabela.getElementsByTagName("tr");
+
+    var dadosLinhas = [];
+
+    for (var i = 1; i < linhas.length; i++) {
+        var colunas = linhas[i].getElementsByTagName("td");
+        var linhaDados = [];
+
+        for (var j = 0; j < colunas.length; j++) {
+            var input = colunas[j].querySelector("input");
+
+            if (input) {
+                linhaDados.push(input.value);
+            }
+        }
+
+        dadosLinhas.push(linhaDados.join(", "));
+    }
+
+    var dados_trauma = dadosLinhas.join("; ");
+
+    // Remova as ocorrências de ",,," e ";;;" da variável dados_trauma
+    dados_trauma = dados_trauma.replace(/, , ,;/g, '');
+
+    var QueimaduraCabecaTrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_cabeca_trauma").checked) {
+        QueimaduraCabecaTrauma = "Cabeça: Primeiro Grau";
+    } else if (document.getElementById("radio_2_cabeca_trauma").checked) {
+        QueimaduraCabecaTrauma = "Cabeça: Segundo Grau";
+    }else if (document.getElementById("radio_3_cabeca_trauma").checked) {
+        QueimaduraCabecaTrauma = "Cabeça: Terceiro Grau";
+    }else {QueimaduraCabecaTrauma = "nda"};
+
+    var QueimaduraPescocoTrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_pescoco_trauma").checked) {
+        QueimaduraPescocoTrauma = "Pesoço: Primeiro Grau";
+    } else if (document.getElementById("radio_2_pescoco_trauma").checked) {
+        QueimaduraPescocoTrauma = "Pesoço: Segundo Grau";
+    }else if (document.getElementById("radio_3_pescoco_trauma").checked) {
+        QueimaduraPescocoTrauma = "Pesoço: Terceiro Grau";
+    }else {QueimaduraPescocoTrauma = "nda"};
+
+    var QueimaduraTANTTrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_tant_trauma").checked) {
+        QueimaduraTANTTrauma = "T.ant: Primeiro Grau";
+    } else if (document.getElementById("radio_2_tant_trauma").checked) {
+        QueimaduraTANTTrauma = "T.ant: Segundo Grau";
+    }else if (document.getElementById("radio_3_tant_trauma").checked) {
+        QueimaduraTANTTrauma = "T.ant: Terceiro Grau";
+    }else {QueimaduraTANTTrauma = "nda"};
+
+    var QueimaduraTPOSTrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_tpos_trauma").checked) {
+        QueimaduraTPOSTrauma = "T.pos: Primeiro Grau";
+    } else if (document.getElementById("radio_2_tpos_trauma").checked) {
+        QueimaduraTPOSTrauma = "T.pos: Segundo Grau";
+    }else if (document.getElementById("radio_3_tpos_trauma").checked) {
+        QueimaduraTPOSTrauma = "T.pos: Terceiro Grau";
+    }else {QueimaduraTPOSTrauma = "nda"};
+
+    var QueimaduraGeniTrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_geni_trauma").checked) {
+        QueimaduraGeniTrauma = "GENI: Primeiro Grau";
+    } else if (document.getElementById("radio_2_geni_trauma").checked) {
+        QueimaduraGeniTrauma = "GENI: Segundo Grau";
+    }else if (document.getElementById("radio_3_geni_trauma").checked) {
+        QueimaduraGeniTrauma = "GENI: Terceiro Grau";
+    }else {QueimaduraGeniTrauma = "nda"};
+
+    var QueimaduraMIDTrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_mid_trauma").checked) {
+        QueimaduraMIDTrauma = "M.I.D: Primeiro Grau";
+    } else if (document.getElementById("radio_2_mid_trauma").checked) {
+        QueimaduraMIDTrauma = "M.I.D: Segundo Grau";
+    }else if (document.getElementById("radio_3_mid_trauma").checked) {
+        QueimaduraMIDTrauma = "M.I.D: Terceiro Grau";
+    }else {QueimaduraMIDTrauma = "nda"};
+
+    var QueimaduraMIETrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_mie_trauma").checked) {
+        QueimaduraMIETrauma = "M.I.E: Primeiro Grau";
+    } else if (document.getElementById("radio_2_mie_trauma").checked) {
+        QueimaduraMIETrauma = "M.I.E: Segundo Grau";
+    }else if (document.getElementById("radio_3_mie_trauma").checked) {
+        QueimaduraMIETrauma = "M.I.E: Terceiro Grau";
+    }else {QueimaduraMIETrauma = "nda"};
+
+    var QueimaduraMSDTrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_msd_trauma").checked) {
+        QueimaduraMSDTrauma = "M.S.D: Primeiro Grau";
+    } else if (document.getElementById("radio_2_msd_trauma").checked) {
+        QueimaduraMSDTrauma = "M.S.D: Segundo Grau";
+    }else if (document.getElementById("radio_3_msd_trauma").checked) {
+        QueimaduraMSDTrauma = "M.S.D: Terceiro Grau";
+    }else {QueimaduraMSDTrauma = "nda"};
+
+    var QueimaduraMSETrauma = "";/*Input type radio*/
+    if (document.getElementById("radio_1_mse_trauma").checked) {
+        QueimaduraMSETrauma = "M.S.E: Primeiro Grau";
+    } else if (document.getElementById("radio_2_mse_trauma").checked) {
+        QueimaduraMSETrauma = "M.S.E: Segundo Grau";
+    }else if (document.getElementById("radio_3_mse_trauma").checked) {
+        QueimaduraMSETrauma = "M.S.E: Terceiro Grau";
+    }else {QueimaduraMSETrauma = "nda"};
+
+    var QueimaduraTotalTrauma = "";
+    if (QueimaduraCabecaTrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraCabecaTrauma;
+      }
+      if (QueimaduraPescocoTrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraPescocoTrauma;
+      }
+      if (QueimaduraTANTTrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraTANTTrauma;
+      }
+      if (QueimaduraTPOSTrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraTPOSTrauma;
+      }
+      if (QueimaduraGeniTrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraGeniTrauma;
+      }
+      if (QueimaduraMIDTrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraMIDTrauma;
+      }
+      if (QueimaduraMIETrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraMIETrauma;
+      }
+      if (QueimaduraMSDTrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraMSDTrauma;
+      }
+      if (QueimaduraMSETrauma !== "nda") {
+        if (QueimaduraTotalTrauma !== "") { QueimaduraTotalTrauma += ", "; }
+        QueimaduraTotalTrauma += QueimaduraMSETrauma;
+      }
+    
+      if(QueimaduraTotalTrauma === ""){QueimaduraTotalTrauma = "nda"}
+      if(dados_trauma === ""){dados_trauma = "nda"}
+
+    console.log(dados_trauma);
+    console.log(QueimaduraTotalTrauma);
+
+    $.ajax({
+        url: 'PHP/tabela-localizacao-trauma.php',
+        method: 'POST',
+        data: {
+            texto_trauma: dados_trauma,
+            queimadura: QueimaduraTotalTrauma,
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("Alguma coisa deu!!");
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    
