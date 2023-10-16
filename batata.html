@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Criar PDF com JavaScript</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
-</head>
-<body>
-    <button id="gerarPDF">Gerar PDF</button>
+<div id="content">
+    <h3>Generate PDF files in client-side JavaScript</h3>
 
-    <script>
-        document.getElementById('gerarPDF').addEventListener('click', function() {
-            // Cria um novo objeto jsPDF
-            var doc = new jsPDF();
+<p>href="https://parall.ax/products/jspdf#"</p>
+<p>Or refer to the YouTube video: https://www.youtube.com/watch?v=CnprxD_sJFE<p>
+</div>
 
-            // Define o tamanho e a posição do texto
-            var x = 10;
-            var y = 10;
+<div id="editor"></div>
 
-            // Dados a serem inseridos no PDF
-            var dados = ["Este é um exemplo de PDF.", "Você pode adicionar mais dados aqui."];
+<button id="cmd">Generate PDF</button>
+<script>
+    var doc = new jsPDF();
+var specialElementHandlers = {
+    '#editor': function (element, renderer) {
+        return true;
+    }
+};
 
-            // Insere os dados no PDF
-            for (var i = 0; i < dados.length; i++) {
-                doc.text(x, y, dados[i]);
-                y += 10; // Aumenta a posição Y para a próxima linha
-            }
-
-            // Salva o PDF
-            doc.save('exemplo.pdf');
-        });
-    </script>
-</body>
-</html>
+$('#cmd').click(function () {
+    doc.fromHTML($('#content').html(), 15, 15, {
+        'width': 170,
+            'elementHandlers': specialElementHandlers
+    });
+    doc.save('sample-file.pdf');
+});
+</script>
