@@ -24,6 +24,7 @@ body {
     padding-right: 10px;
     overflow-y: auto; /* Adicione isso para permitir a rolagem vertical */
     max-height: 300px; /* Defina a altura máxima para a div cinza e adicione uma barra de rolagem quando necessário */
+    
 }
   .coluna{
     display: flex;
@@ -72,26 +73,29 @@ body {
     align-items: center;
     align-content: center;
   }
-  .table {
+  /* .table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
+    height: 100%;
 }
 
         .table-row {
             display: table-row;
+      
         }
 
         .table-cell {
             display: table-cell;
             padding: 10px;
             border: 1px solid #ccc;
+      
         }
 
         .header-row {
             font-weight: bold;
             background-color: #f2f2f2;
+      
         }
         .tabela-container {
-            overflow: auto; /* Adicione esta linha para permitir rolagem quando a tabela for grande */
-        }
+            overflow: auto; Adicione esta linha para permitir rolagem quando a tabela for grande 
+        } */
