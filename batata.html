@@ -1,100 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Adicionar Linha à Tabela</title>
-    <style>
-        /* Estilos para as classes personalizadas */
-        .minha-classe-input {
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            padding: 5px;
-        }
-
-        .minha-classe-linha {
-            background-color: #e0e0e0;
-        }
-
-        .minha-classe-coluna {
-            font-weight: bold;
-        }
-    </style>
+    <title>Criar PDF com JavaScript</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-    <table id="minhaTabela">
-        <thead>
-            <tr>
-                <th class="minha-classe-coluna">Coluna 1</th>
-                <th class="minha-classe-coluna">Coluna 2</th>
-                <th class="minha-classe-coluna">Coluna 3</th>
-                <th class="minha-classe-coluna">Coluna 4</th>
-            </tr>
-        </thead>
-        <tbody>
-            
-        </tbody>
-    </table>
-
-    <button onclick="adicionarLinha()">Adicionar Linha</button>
-    <button onclick="obterDados()">Obter Dados</button>
+    <button id="gerarPDF">Gerar PDF</button>
 
     <script>
-        var dadosLinhas = [];
+        document.getElementById('gerarPDF').addEventListener('click', function() {
+            // Cria um novo objeto jsPDF
+            var doc = new jsPDF();
 
-        function adicionarLinha() {
-            // Recuperar a tabela e a área de corpo (tbody)
-            var tabela = document.getElementById("minhaTabela");
-            var corpoTabela = tabela.getElementsByTagName("tbody")[0];
+            // Define o tamanho e a posição do texto
+            var x = 10;
+            var y = 10;
 
-            // Criar uma nova linha (tr)
-            var novaLinha = corpoTabela.insertRow();
-            novaLinha.classList.add("minha-classe-linha"); // Adiciona a classe à linha
+            // Dados a serem inseridos no PDF
+            var dados = ["Este é um exemplo de PDF.", "Você pode adicionar mais dados aqui."];
 
-            // Inserir os valores nas novas células da linha a partir dos inputs
-            var inputColuna1 = document.createElement("input");
-            inputColuna1.type = "text";
-            inputColuna1.classList.add("minha-classe-input"); // Adiciona a classe ao input
-            var coluna1 = novaLinha.insertCell(0);
-            coluna1.appendChild(inputColuna1);
-
-            var inputColuna2 = document.createElement("input");
-            inputColuna2.type = "text";
-            inputColuna2.classList.add("minha-classe-input"); // Adiciona a classe ao input
-            var coluna2 = novaLinha.insertCell(1);
-            coluna2.appendChild(inputColuna2);
-
-            var inputColuna3 = document.createElement("input");
-            inputColuna3.type = "text";
-            inputColuna3.classList.add("minha-classe-input"); // Adiciona a classe ao input
-            var coluna3 = novaLinha.insertCell(2);
-            coluna3.appendChild(inputColuna3);
-
-            var inputColuna4 = document.createElement("input");
-            inputColuna4.type = "text";
-            inputColuna4.classList.add("minha-classe-input"); // Adiciona a classe ao input
-            var coluna4 = novaLinha.insertCell(3);
-            coluna4.appendChild(inputColuna4);
-        }
-
-        function obterDados() {
-            var tabela = document.getElementById("minhaTabela");
-            var linhas = tabela.getElementsByTagName("tr");
-
-            dadosLinhas = [];
-
-            for (var i = 1; i < linhas.length; i++) {
-                var colunas = linhas[i].getElementsByTagName("td");
-                var linhaDados = [];
-                for (var j = 0; j < colunas.length; j++) {
-                    var input = colunas[j].querySelector("input");
-                    if (input) {
-                        linhaDados.push(input.value);
-                    }
-                }
-                dadosLinhas.push(linhaDados.join(","));
+            // Insere os dados no PDF
+            for (var i = 0; i < dados.length; i++) {
+                doc.text(x, y, dados[i]);
+                y += 10; // Aumenta a posição Y para a próxima linha
             }
-            var dados = dadosLinhas.join("; ");
-            console.log("Dados das Linhas: " + dados);
-        }
+
+            // Salva o PDF
+            doc.save('exemplo.pdf');
+        });
     </script>
 </body>
 </html>

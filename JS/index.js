@@ -2428,6 +2428,14 @@ document.addEventListener("click", function(ObservacoesImportantes) {
         DivObservacoes.setAttribute("contenteditable", "true");
     }
 });
+var DivObjEscolhido = document.getElementById("objescolhido_div");
+document.addEventListener("click", function(ObjEscDiv) {
+    if (ObjEscDiv.target !== DivObjEscolhido) {
+        DivObjEscolhido.setAttribute("contenteditable", "false");
+    }else{
+        DivObjEscolhido.setAttribute("contenteditable", "true");
+    }
+});
 function AvaliacaoCinematica(){
     var DisturbioDeComportamento = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_dc_s").checked) {
@@ -2936,3 +2944,39 @@ function ObservacoesImportantes(){
     }console.log(TextoDentroObs);
     
 }
+function SelecionarImagensObj() {
+    // Cria um input de arquivo oculto
+    var input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'image/*';
+    input.style.display = 'none';
+
+    // Adiciona um ouvinte de eventos de mudança no input de arquivo
+    input.addEventListener('change', function () {
+      var file = input.files[0];
+
+      if (file) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          var image = new Image();
+          image.src = e.target.result;
+          image.width = 100;
+          image.classList.add('imagem-obj'); // Adiciona a classe imagem-obj
+
+          var divImagensObj = document.getElementById('div_imagens_obj');
+          divImagensObj.appendChild(image);
+
+          // Adiciona um ouvinte de evento de duplo clique para remover a imagem
+          image.addEventListener('dblclick', function () {
+            divImagensObj.removeChild(image);
+          });
+        };
+
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Dispara um clique no input de arquivo para abrir o seletor de arquivo
+    input.click();
+  }
