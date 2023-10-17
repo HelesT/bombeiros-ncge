@@ -73,6 +73,23 @@ body {
     align-items: center;
     align-content: center;
   }
+  .menu-icon {
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+  }
+  .menu-icon.clicked {
+    filter: brightness(30%);
+  }
+  .navigation {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: #0667E8;
+    text-decoration: underline white;
+    margin-left: 6px;
+    color: #ccc;
+    cursor: pointer;
+  }
   /* .table {
     width: 100%;
     border-collapse: collapse;
