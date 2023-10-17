@@ -326,7 +326,7 @@ function Sentada() {/*Input type radio*/
     var semi_deitada_conducao = document.getElementById("semi_deitada_conducao"); 
     semi_deitada_conducao.checked = false;
 }
-function AvaliacaoPacienteMa(){
+function AvaliacaoPacienteMaGCS(){
     var AberturaOcular = "";/*Input type radio*/
     var ValorAberturaOcularMa = ""
     if (document.getElementById("espontanea_paciente_ma").checked) {
@@ -341,7 +341,8 @@ function AvaliacaoPacienteMa(){
     } else if (document.getElementById("nenhuma_paciente_ma_ao").checked) {
         AberturaOcular = document.getElementById("nenhuma_paciente_ma_ao").value;
         ValorAberturaOcularMa = 4
-    }
+    } else {ValorAberturaOcularMa = 4}
+
     console.log(AberturaOcular)
     console.log(ValorAberturaOcularMa)
     
@@ -363,7 +364,7 @@ function AvaliacaoPacienteMa(){
     }else if (document.getElementById("nenhuma_paciente_ma_rv").checked) {
         RespostaVerbal = document.getElementById("nenhuma_paciente_ma_rv").value;
         ValorRespostaVerbalMa = 5
-    }
+    }else {ValorRespostaVerbalMa = 5}
 
     console.log(RespostaVerbal)
     console.log(ValorRespostaVerbalMa)
@@ -388,7 +389,7 @@ function AvaliacaoPacienteMa(){
     }else if (document.getElementById("nenhuma_paciente_ma_rm").checked) {
         RespostaMotora = document.getElementById("nenhuma_paciente_ma_rm").value;
         ValorRespostaMotoraMa = 6
-    } 
+    }else{ValorRespostaMotoraMa = 6}
    
     console.log(RespostaMotora)
     console.log(ValorRespostaMotoraMa)
@@ -399,6 +400,9 @@ function AvaliacaoPacienteMa(){
     SpanGCS.textContent = " " + ValorGCS;
 
 console.log(ValorGCS);
+}
+
+function AvaliacaoPacienteMa(){
 
     $.ajax({
         url: 'PHP/Avaliacao_paciente.php',
@@ -662,7 +666,7 @@ function RespostaMotoraMa() {/*Input type radio*/
     AusenciaPacienteMa.checked = false;
 }
 /*Menor 5*/
-function AvaliacaoPacienteMe() {/*Input type radio*/
+function AvaliacaoPacienteMeGCS() {/*Input type radio*/
 var AberturaOcularMe = "";/*Input type radio*/
 var ValorAberturaOcularMe = "";/*Valor numerico da avaliação*/
 if (document.getElementById("espontanea_paciente_me").checked) {
@@ -736,6 +740,9 @@ var ValorGCS = ValorRespostaMotoraMe + ValorAberturaOcularMe + ValorRespostaVerb
 SpanGCS.textContent = ValorGCS;
 
 console.log("Total GCS:  " + ValorGCS);
+}
+
+function AvaliacaoPacienteMe(){
 
 $.ajax({
     url: 'PHP/Avaliacao_paciente.php',
@@ -2980,3 +2987,12 @@ function SelecionarImagensObj() {
     // Dispara um clique no input de arquivo para abrir o seletor de arquivo
     input.click();
   }
+  function ObjetosRecolhidos(){
+    var ObjetosRecolhidosText = document.getElementById("objescolhido_div");
+    if(ObjetosRecolhidosText.textContent !== ""){
+        var TextoDentroObj = ObjetosRecolhidosText.textContent;
+    }else{
+        TextoDentroObj = "nda";
+    }console.log(TextoDentroObj);
+    
+}
