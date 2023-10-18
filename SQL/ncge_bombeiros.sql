@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Set-2023 às 14:27
+-- Tempo de geração: 18-Out-2023 às 17:18
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -89,7 +89,8 @@ CREATE TABLE `cadastro` (
 --
 
 INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Acesso_cadastro`) VALUES
-(123456, 'batata', 'Nylton', 's');
+(1, '123', '', ' '),
+(2, '123', '', 's');
 
 -- --------------------------------------------------------
 
@@ -117,7 +118,21 @@ CREATE TABLE `emergencias` (
 --
 
 INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
-(1, 'Emergencia medica,,,,,,,,,,,,,,,,,,,,,');
+(1, 'Emergencia medica,,,,,,,,,,,,,,,,,,,,,'),
+(2, ',,,,,,,,,,,,,,,,,,,,Transferencia,'),
+(3, ',,,,,,,,,,,,,,,,,,,,Transferencia,'),
+(4, ',,,,,,,,,,,,,,,,,,Queda,Trabalho,Transferencia,Outro'),
+(5, ',,,,,,,,,,,,,,,,,,Queda,Trabalho,Transferencia,Outro'),
+(6, ',,,,,,,,,,,,,,,,,,Queda,Trabalho,Transferencia,Outro'),
+(7, ',,,,,,,,,,,,,,,,,,Queda,Trabalho,Transferencia,Outro'),
+(8, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro'),
+(9, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro'),
+(10, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro'),
+(11, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro'),
+(12, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro'),
+(13, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro'),
+(14, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro'),
+(15, ',,,,,,,,,,,,,,,,Queda de bicicleta,Queda de Moto,Queda,Trabalho,Transferencia,Outro');
 
 -- --------------------------------------------------------
 
@@ -177,6 +192,7 @@ CREATE TABLE `objetos_recolhidos` (
 
 CREATE TABLE `paciente` (
   `id_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `nome_hospital_paciente` varchar(45) NOT NULL,
   `data_paciente` date NOT NULL,
   `sexo_paciente` varchar(1) NOT NULL,
@@ -201,12 +217,8 @@ CREATE TABLE `paciente` (
 -- Extraindo dados da tabela `paciente`
 --
 
-INSERT INTO `paciente` (`id_paciente`, `nome_hospital_paciente`, `data_paciente`, `sexo_paciente`, `nome_paciente`, `idade_paciente`, `rg_cpf_paciente`, `fone_paciente`, `acompanhante_paciente`, `idade_acompanhante_paciente`, `local_ocorrencia_paciente`, `n_usb_paciente`, `cod_ur_paciente`, `n_ocorr_paciente`, `cod_ps_paciente`, `desp_paciente`, `h_ch_paciente`, `km_final_paciente`, `cod_sia_sus_paciente`) VALUES
-(24, 'São José', '2023-09-20', 'm', 'Nylton Eduardo Constâncio', 18, '14833715902', '989130277', 'Gabriel Elesbao', 18, 'Senai Sul joinville', '21856', 's', '4891231', 'n', 'Sim', 'aasda', 'asdwasd', 0),
-(25, '', '0000-00-00', 'f', 'baaaaaaaa', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0),
-(26, '', '0000-00-00', 'm', '', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0),
-(27, '', '0000-00-00', 'm', '', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0),
-(28, '', '0000-00-00', 'm', 'aaaaaaaaaaaa', 0, '', '', '', 0, '', '', 's', '', 's', '', '', '', 0);
+INSERT INTO `paciente` (`id_paciente`, `bombeiro`, `nome_hospital_paciente`, `data_paciente`, `sexo_paciente`, `nome_paciente`, `idade_paciente`, `rg_cpf_paciente`, `fone_paciente`, `acompanhante_paciente`, `idade_acompanhante_paciente`, `local_ocorrencia_paciente`, `n_usb_paciente`, `cod_ur_paciente`, `n_ocorr_paciente`, `cod_ps_paciente`, `desp_paciente`, `h_ch_paciente`, `km_final_paciente`, `cod_sia_sus_paciente`) VALUES
+(43, 0, 'nda', '0000-00-00', 'n', 'nda', 0, 'nda', 'nda', 'nda', 0, 'nda', 'nda', 'n', 'nda', 'n', 'nda', 'nda', 'nda', 0);
 
 -- --------------------------------------------------------
 
@@ -309,13 +321,13 @@ ALTER TABLE `termo_recusa`
 -- AUTO_INCREMENT de tabela `emergencias`
 --
 ALTER TABLE `emergencias`
-  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de tabela `termo_recusa`
