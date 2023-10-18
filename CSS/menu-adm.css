@@ -17,6 +17,26 @@ body{
     display: flex;
     flex-direction: column;
 }
+.barra-Lateral {
+    margin-top: 54px;
+    width: 200px; 
+    height: 666px; 
+    position: absolute; 
+    left: 80px; 
+    top: 75%;
+    transition: left 0.3s ease;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9999; 
+  }
+
+  .menu-icon {
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+  }
+  .menu-icon.clicked {
+    filter: brightness(30%);
+  }
 .coluna{
     display: flex;
     flex-direction: column;
