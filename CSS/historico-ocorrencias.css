@@ -4,8 +4,59 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: row;
-    overflow-x: hidden;
+    overflow: hidden;
   }
+  .barra-Lateral {
+    margin-top: 56px;
+    width: 200px; 
+    height: 666px; 
+    position: absolute; 
+    left: 80px; 
+    top: 75%;
+    transition: left 0.3s ease;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 9999; 
+  }
+
+  .menu-icon {
+    filter: brightness(100%);
+    transition: filter 0.3s ease;
+  }
+  .menu-icon.clicked {
+    filter: brightness(30%);
+  }
+  .cabecalho-titulo{
+    width: 240px;
+    text-align: center;
+    height: 100%;
+    color: white;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+  }
+  .cabecalho{
+    background-color: rgb(55, 198, 201);
+  width: 100%;
+  height: 60px;
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}
+.menu-lateral{
+    width: 80px;
+    height: 100%;
+    background-color: rgb(55, 198, 201);
+    display: flex;
+    flex-direction: column;
+}
 .centro{
     display: flex;
     justify-content: center;
@@ -19,13 +70,10 @@ body {
     align-items: center;
     align-content: center;
   }
-  .linha.centro {
-    background-color: rgb(189,186,186);
-    padding-right: 10px;
-    overflow-y: auto; /* Adicione isso para permitir a rolagem vertical */
-    max-height: 300px; /* Defina a altura máxima para a div cinza e adicione uma barra de rolagem quando necessário */
-    
-}
+  .linha{
+    display: flex;
+    flex-direction: row;
+  }
   .coluna{
     display: flex;
     flex-direction: column;
@@ -42,43 +90,6 @@ body {
     border-style: solid;
     border-color: #0667E8;
     border-radius: 50px;
-  }
-  .menu-lateral{
-    width: 80px;
-    height: 100%;
-    background-color: rgb(55, 198, 201);
-    display: flex;
-    flex-direction: column;
-}
-.cabecalho-titulo{
-    width: 240px;
-    text-align: center;
-    height: 100%;
-    color: white;
-    font-size: 22px;
-    display: flex;
-    justify-content: space-around;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-  }
-  .cabecalho{
-    background-color: rgb(55, 198, 201);
-    width: 100%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-  }
-  .menu-icon {
-    filter: brightness(100%);
-    transition: filter 0.3s ease;
-  }
-  .menu-icon.clicked {
-    filter: brightness(30%);
   }
   .navigation {
     width: 100%;
