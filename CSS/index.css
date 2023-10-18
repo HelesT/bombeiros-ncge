@@ -111,6 +111,27 @@ html {
 .checkbox:focus {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
 }
+
+.radio{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #0667E8;
+  outline: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+.radio:checked {
+  background-color: #0667E8 ;
+}
+.radio:focus {
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+
 .checkbox-quadrado-azul{
   appearance: none;
   -webkit-appearance: none;
@@ -128,6 +149,31 @@ html {
 .checkbox-quadrado-azul:focus {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
 }
+
+
+.radio-quadrado-azul{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  
+}
+.radio-quadrado-azul:checked {
+  background-color: #000000 ;
+}
+.radio-quadrado-azul:focus {
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
 .input-linha{
   border: none;
   border-bottom: 1px solid #0667E8;
