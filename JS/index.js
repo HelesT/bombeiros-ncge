@@ -19,34 +19,51 @@
     
 
 */
-// var CompressaComumCheckbox = document.getElementById(""); /*Input type Checkbox*/
-    // var CompressaComumChecked = CompressaComumCheckbox ? CompressaComumCheckbox.checked : false;
-    // var CompressaComum = CompressaComumChecked ? 's' : 'n';
+
+var BombeiroAtual = "";
+
+$.ajax({
+    url: 'PHP/tabela-bombeiros.php',
+    method: 'GET',
+    data: {},
+    dataType: 'json'
+}).done(function(result) {
+    if (result.hasOwnProperty('cod_cadastro')) {
+        BombeiroAtual = result.cod_cadastro;
+        console.log(BombeiroAtual);
+    } else {
+        console.log('A chave "cod_cadastro" não está presente no objeto JSON retornado.');
+    }
+}).fail(function(jqXHR, textStatus, errorThrown) {
+    alert("Erro na solicitação AJAX: " + errorThrown);
+});
+
+
 
 function PacienteRegistro(){    
 
-    var Data = $('#data_paciente').val();/*Input type text*/
-    var NomeHospitalPaciente = $('#nome_hospital_paciente').val();
-    var NomePaciente = $('#nome_paciente').val();
-    var IdadePaciente = $('#idade_paciente').val();
-    var RgCpfPaciente = $('#rg_cpf_paciente').val();
-    var FonePaciente = $('#fone_paciente').val();
-    var AcompanhantePaciente = $('#acompanhante_paciente').val();
-    var IdadeAcompanhantePaciente = $('#idade_acompanhante_paciente').val();
-    var LocalOcorrenciaPaciente = $('#local_ocorrencia_paciente').val();
-    var NUsbPaciente = $('#n_usab_paciente').val();
-    var NOcorrPaciente = $('#n_ocorr_paciente').val();
-    var DespPaciente = $('#desp_paciente').val();
-    var HChPaciente = $('#h_ch_paciente').val();
-    var KmFinalPaciente = $('#km_final_paciente').val();
-    var CodSiaSusPaciente = $('#cod_sia_sus_paciente').val();
+    var Data = $('#data_paciente').val();if(Data === ""){Data = "nda"}
+    var NomeHospitalPaciente = $('#nome_hospital_paciente').val();if(NomeHospitalPaciente === ""){NomeHospitalPaciente = "nda"}
+    var NomePaciente = $('#nome_paciente').val();if(NomePaciente === ""){NomePaciente = "nda"}
+    var IdadePaciente = $('#idade_paciente').val();if(IdadePaciente === ""){IdadePaciente = "nda"}
+    var RgCpfPaciente = $('#rg_cpf_paciente').val();if(RgCpfPaciente === ""){RgCpfPaciente = "nda"}
+    var FonePaciente = $('#fone_paciente').val();if(FonePaciente === ""){FonePaciente = "nda"}
+    var AcompanhantePaciente = $('#acompanhante_paciente').val();if(AcompanhantePaciente === ""){AcompanhantePaciente = "nda"}
+    var IdadeAcompanhantePaciente = $('#idade_acompanhante_paciente').val();if(IdadeAcompanhantePaciente === ""){IdadeAcompanhantePaciente = "nda"}
+    var LocalOcorrenciaPaciente = $('#local_ocorrencia_paciente').val();if(LocalOcorrenciaPaciente === ""){LocalOcorrenciaPaciente = "nda"}
+    var NUsbPaciente = $('#n_usab_paciente').val();if(NUsbPaciente === ""){NUsbPaciente = "nda"}
+    var NOcorrPaciente = $('#n_ocorr_paciente').val();if(NOcorrPaciente === ""){NOcorrPaciente = "nda"}
+    var DespPaciente = $('#desp_paciente').val();if(DespPaciente === ""){DespPaciente = "nda"}
+    var HChPaciente = $('#h_ch_paciente').val();if(HChPaciente === ""){HChPaciente = "nda"}
+    var KmFinalPaciente = $('#km_final_paciente').val();if(KmFinalPaciente === ""){KmFinalPaciente = "nda"}
+    var CodSiaSusPaciente = $('#cod_sia_sus_paciente').val();if(CodSiaSusPaciente === ""){CodSiaSusPaciente = "nda"}
 
     var SexoPaciente = "";/*Input type radio*/
     if (document.getElementById("sexo_paciente_m").checked) {
         SexoPaciente = document.getElementById("sexo_paciente_m").value;
     } else if (document.getElementById("sexo_paciente_f").checked) {
         SexoPaciente = document.getElementById("sexo_paciente_f").value;
-    }
+    }else{SexoPaciente = "nda"}
 
     var CodUrCheckbox = document.getElementById("cod_ur");/*Input type Checkbox*/
     var CodUrChecked = CodUrCheckbox.checked;
@@ -63,6 +80,24 @@ function PacienteRegistro(){
     } else {
         var CodPs = 'n';
     }
+    console.log("Data: " + Data)
+    console.log("Sexo: " + SexoPaciente)
+    console.log("Hospital: " + NomeHospitalPaciente)
+    console.log("Nome Paciente: " + NomePaciente)
+    console.log("Idade: " + IdadePaciente)
+    console.log("RG/CPF: " + RgCpfPaciente)
+    console.log("Telefone: " + FonePaciente)
+    console.log("Acompanhante: " + AcompanhantePaciente)
+    console.log("Idade da Acompanhante: " + IdadeAcompanhantePaciente)
+    console.log("Local da Ocorrência: " + LocalOcorrenciaPaciente)
+    console.log("N°USB do Paciente: " + NUsbPaciente)
+    console.log("CodUr: " + CodUr)
+    console.log("N°Ocorrência: " + NOcorrPaciente)
+    console.log("CodPs: " + CodPs)
+    console.log("Desp. Paciente: " + DespPaciente)
+    console.log("H.CH: " + HChPaciente)
+    console.log("KmFinal: " + KmFinalPaciente)
+    console.log("CodSiaSus: " + CodSiaSusPaciente)
     
      $.ajax({
         url: 'PHP/tabela-paciente.php',
@@ -85,7 +120,8 @@ function PacienteRegistro(){
             DespPaciente: DespPaciente,
             HChPaciente: HChPaciente,
             KmFinalPaciente: KmFinalPaciente,
-            CodSiaSusPaciente: CodSiaSusPaciente
+            CodSiaSusPaciente: CodSiaSusPaciente,
+            Bombeiro: BombeiroAtual
         },
         dataType: 'json'
     }).done(function() {
