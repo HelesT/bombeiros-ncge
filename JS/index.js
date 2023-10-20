@@ -1220,6 +1220,62 @@ function Anamnese(){
     });
     
 }
+
+var PAPDSQuais = document.getElementById("anamnese_quais_ps");
+var PAPDSSim = document.getElementById("s_ps");
+var PAPDSNao = document.getElementById("n_ps");
+
+function PAPDSQuaisRadio(){ /*Input type DIV NONE*/
+
+    
+    if(PAPDSSim.checked){
+        PAPDSQuais.style.display = "flex";
+    }else if(PAPDSNao.checked){
+        PAPDSQuais.style.display = "none";
+    };
+}
+
+var FUDM = document.getElementById("anamnese_hm_fm");
+var FUDMSim = document.getElementById("s_fm");
+var FUDMNao = document.getElementById("n_fm");
+
+function FUDMRadio(){ /*Input type DIV NONE*/
+
+    
+    if(FUDMSim.checked){
+        FUDM.style.display = "flex";
+    }else if(FUDMNao.checked){
+        FUDM.style.display = "none";
+    };
+}
+var LaL = document.getElementById("anamnese_ee_aa");
+var LaLSim = document.getElementById("s_al");
+var LaLNao = document.getElementById("n_al");
+
+function LaLRadio(){ /*Input type DIV NONE*/
+
+    
+    if(LaLSim.checked){
+       LaL.style.display = "flex";
+    }else if(LaLNao.checked){
+       LaL.style.display = "none";
+    };
+}
+var IAOLEHQueHoras = document.getElementById("anamnese_qh_il");
+var IAOLEHQueHorasSim = document.getElementById("s_il");
+var IAOLEHQueHorasNao = document.getElementById("n_il");
+
+function IAOLEH(){ /*Input type DIV NONE*/
+
+    
+    if(IAOLEHQueHorasSim.checked){
+        IAOLEHQueHoras.style.display = "flex";
+    }else if(IAOLEHQueHorasNao.checked){
+        IAOLEHQueHoras.style.display = "none";
+    };
+}
+
+
 function AnamneseGestacional(){
     var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val();
     var NomeDoMedico = $('#nm_anamnese_gestacional').val();
@@ -1309,6 +1365,19 @@ function AnamneseGestacional(){
         alert("alguma coisa deu!!");
     });
     
+}
+var EOPF = document.getElementById("ef_anamnese_gestacional");
+var EOPFSim = document.getElementById("s_ef");
+var EOPFNao = document.getElementById("n_eF");
+
+function EOPFRadio(){ /*Input type DIV NONE*/
+
+    
+    if(EOPFSim.checked){
+        EOPF.style.display = "flex";
+    }else if(EOPFNao.checked){
+        EOPF.style.display = "none";
+    };
 }
 function SinaisESintomas(){
    
