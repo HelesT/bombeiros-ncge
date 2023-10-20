@@ -21,6 +21,7 @@
 */
 
 var BombeiroAtual = "";
+var CpfPaciente = ""
 
 $.ajax({
     url: 'PHP/tabela-bombeiros.php',
@@ -37,6 +38,27 @@ $.ajax({
 }).fail(function(jqXHR, textStatus, errorThrown) {
     alert("Erro na solicitação AJAX: " + errorThrown);
 });
+
+function RegistrarPaciente(){
+    var RgCpfPaciente = $('#rg_cpf_paciente').val();if(RgCpfPaciente === ""){RgCpfPaciente = "nda"}
+
+    $.ajax({
+        url: 'PHP/botao-final.php',
+        method: 'POST',
+        data: {
+            RgCpfPaciente: RgCpfPaciente
+        },
+        dataType: 'json'
+    }).done(function(){
+        CpfPaciente = RgCpfPaciente
+        PacienteRegistro()
+        console.log(CpfPaciente)
+    }).fail(function(){
+        CpfPaciente = RgCpfPaciente
+        PacienteRegistro()
+        console.log(CpfPaciente)
+    });
+}
 
 
 
@@ -98,6 +120,7 @@ function PacienteRegistro(){
     console.log("H.CH: " + HChPaciente)
     console.log("KmFinal: " + KmFinalPaciente)
     console.log("CodSiaSus: " + CodSiaSusPaciente)
+    console.log("Paciente: " + CpfPaciente)
     
      $.ajax({
         url: 'PHP/tabela-paciente.php',
@@ -121,7 +144,8 @@ function PacienteRegistro(){
             HChPaciente: HChPaciente,
             KmFinalPaciente: KmFinalPaciente,
             CodSiaSusPaciente: CodSiaSusPaciente,
-            Bombeiro: BombeiroAtual
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function() {
