@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estrutura para tabela `admin`
 --
-
+ 
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -34,21 +34,46 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese`
+-- Estrutura da tabela `anamnese`
 --
 
 CREATE TABLE `anamnese` (
-  `id_anamnese` int(11) NOT NULL
+  `id_anamnese` int(11) NOT NULL,
+  `AcAnamnese` varchar(45) NOT NULL,
+  `QsAnamnese` varchar(45) NOT NULL,
+  `HuAnamnese` varchar(45) NOT NULL,
+  `QisAnamnese` varchar(45) NOT NULL,
+  `EqAnamnese` varchar(45) NOT NULL,
+  `QrAnamnese` varchar(45) NOT NULL,
+  `OaAnamnese` varchar(1) NOT NULL,
+  `PsAnamnese` varchar(1) NOT NULL,
+  `FmAnamnese` varchar(1) NOT NULL,
+  `AlAnamnese` varchar(1) NOT NULL,
+  `IlAnamnese` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese_gestacional`
+-- Estrutura da tabela `anamnese_gestacional`
 --
 
 CREATE TABLE `anamnese_gestacional` (
-  `id_anamnese_gestacional` int(11) NOT NULL
+  `id_anamnese_gestacional` int(11) NOT NULL,
+  `PeriodoDeGestacao` varchar(45) NOT NULL,
+  `NomeDoMedico` varchar(45) NOT NULL,
+  `Quantos` varchar(45) NOT NULL,
+  `Duracao` varchar(45) NOT NULL,
+  `Intervalo` varchar(45) NOT NULL,
+  `HoraDoNascimento` varchar(45) NOT NULL,
+  `NomeDoBebe` varchar(45) NOT NULL,
+  `FpAnamneseGestacional` varchar(1) NOT NULL,
+  `EfAnamneseGestacional` varchar(1) NOT NULL,
+  `SqAnamneseGestacional` varchar(1) NOT NULL,
+  `JbAnamneseGestacional` varchar(1) NOT NULL,
+  `FvAnamneseGestacional` varchar(1) NOT NULL,
+  `PrAnamneseGestacional` varchar(1) NOT NULL,
+  `SexoAnamneseGestacional` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -94,11 +119,17 @@ INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Aces
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `decisao_transporte`
+-- Estrutura da tabela `decisao_transporte`
 --
 
 CREATE TABLE `decisao_transporte` (
-  `id_decisao_transporte` int(11) NOT NULL
+  `id_decisao_transporte` int(11) NOT NULL,
+  `MDT` varchar(45) NOT NULL,
+  `S1DT` varchar(45) NOT NULL,
+  `S2DT` varchar(45) NOT NULL,
+  `S3DT` varchar(45) NOT NULL,
+  `DemanteDT` varchar(45) NOT NULL,
+  `DecisaoDeTransporteDt` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -122,11 +153,13 @@ INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `forma_conducao`
+-- Estrutura da tabela `forma_conducao`
 --
 
 CREATE TABLE `forma_conducao` (
-  `id_forma_conducao` int(11) NOT NULL
+  `id_forma_conducao` int(11) NOT NULL,
+  `Conducao` varchar(45) NOT NULL,
+  `FormaConducao` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
