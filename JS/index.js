@@ -2950,6 +2950,29 @@ function MaterialUtilizadosB(){
         var OutroMUB = MUBOutroText.value + ": " + QTDMUBText.value;
     }else{var OutroMUB = "nda"};console.log(OutroMUB);
 
+    $.ajax({
+        url: 'PHP/.php',
+        method: 'POST',
+            data: {
+            BaseEstabilizador: BaseEstabilizador,
+            Colar1: Colar1,
+            Colar2: Colar2,
+            CoxinsStab: CoxinsStab,
+            KED: KED,
+            MacaRigida: MacaRigida,
+            TiranteAranha: TiranteAranha,
+            TiranteCabeca: TiranteCabeca,
+            SondaAspiracao: SondaAspiracao,
+            Canula: Canula,
+            OutroMUB: OutroMUB
+        },
+        dataType: 'json'
+    }).done(function(){
+       
+    }).fail(function(){
+       
+    });
+
 }
 
 
