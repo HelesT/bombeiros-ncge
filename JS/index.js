@@ -2739,7 +2739,29 @@ function MaterialUtilizadosA(){
         }else{Tala1 = "nda"};
     }else{Tala1 = "nda"};console.log(Tala1);
 
-   
+    $.ajax({
+        url: 'PHP/.php',
+        method: 'POST',
+        data: {
+            OutroText: OutroText,
+            CateterTpOculos: CateterTpOculos,
+            CompressaComum: CompressaComum,
+            LuvasDescartaveis: LuvasDescartaveis,
+            MascarasDesc: MascarasDesc,
+            MantaAlumiada: MantaAlumiada,
+            PasDoDea: PasDoDea,
+            SondaDeAspiracao: SondaDeAspiracao,
+            SoroFisiologico: SoroFisiologico,
+            Atadura1: Atadura1,
+            Kit1: Kit1,
+            Tala1: Tala1
+        },
+        dataType: 'json'
+    }).done(function(){
+       
+    }).fail(function(){
+       
+    });
    
 
 }
@@ -2927,6 +2949,29 @@ function MaterialUtilizadosB(){
     if(MUBOutroCheckBox.checked){
         var OutroMUB = MUBOutroText.value + ": " + QTDMUBText.value;
     }else{var OutroMUB = "nda"};console.log(OutroMUB);
+
+    $.ajax({
+        url: 'PHP/.php',
+        method: 'POST',
+            data: {
+            BaseEstabilizador: BaseEstabilizador,
+            Colar1: Colar1,
+            Colar2: Colar2,
+            CoxinsStab: CoxinsStab,
+            KED: KED,
+            MacaRigida: MacaRigida,
+            TiranteAranha: TiranteAranha,
+            TiranteCabeca: TiranteCabeca,
+            SondaAspiracao: SondaAspiracao,
+            Canula: Canula,
+            OutroMUB: OutroMUB
+        },
+        dataType: 'json'
+    }).done(function(){
+       
+    }).fail(function(){
+       
+    });
 
 }
 
