@@ -1,14 +1,17 @@
-cadastro
-emergencias
-paciente
-termo_recusa
-Anamnese
-Anamnese Gestacional
-DecisaoDe Transporte
-Forma De Conducao
-Avaliacao Paciente Maior
-Avaliacao Paciente Menor
-sinais_vitais
-problemas_suspeitos
+anamnese
+anamnese_gestacional
 avaliacao_cinematica
-d
+avaliacao_paciente_maior
+avaliacao_paciente_menor
+cadastro
+decisao_transporte
+emergencias
+ forma_conducao
+ material_utilizados_a
+ material_utilizados_b
+ paciente
+ problemas_suspeitos
+ sinais_e_sintomas
+ sinais_vitais
+ tabela_paciente
+termo_recusa
