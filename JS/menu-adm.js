@@ -89,7 +89,7 @@ function ChamarRegistro(){
         $('.exibir').empty();
 
         for (var i = 0; i < result.length; i++) {
-            $('.exibir').prepend('<div id="' + result[i].cod_cadastro + '" class="linha-tabela justify"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].senha_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button style="width: 20px; height: 20px; background-color: black;"></button><button style="width: 20px; height: 20px; background-color: black;"></button><button style="width: 20px; height: 20px; background-color: black;"></button></div></div>');
+            $('.exibir').prepend('<div id="' + result[i].cod_cadastro + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].senha_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button style="width: 20px; height: 20px; background-color: black;"></button><button style="width: 20px; height: 20px; background-color: black;"></button><button style="width: 20px; height: 20px; background-color: black;"></button></div></div>');
         }
         
     }).fail(function(errorThrown) {
@@ -97,6 +97,7 @@ function ChamarRegistro(){
         ChamarRegistro();
     });
 }
+
 $(document).ready(function() {
     ChamarRegistro();
 });
@@ -136,3 +137,40 @@ var menuIcons = document.getElementsByClassName("menu-icon");
         }, 100); // Remove a classe "clicked" após 1 milisegundo (100 milissegundos)
       });
     }
+
+function executarSelect(){
+    var select = document.getElementById("select_adm");
+    var OpcaoSelecionada = select.options[select.selectedIndex].value;
+
+    if (OpcaoSelecionada === "opcao_nome") {
+        
+        $.ajax({
+            url: 'PHP/adm-chamar-registro-nome.php',
+            method: 'GET',
+            dataType: 'json'
+        }).done(function(result){
+            $('.exibir').empty();
+        
+            for (var i = 0; i < result.length; i++) {
+                $('.exibir').prepend('<div id="' + result[i].cod_cadastro + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].senha_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button style="width: 20px; height: 20px; background-color: black;"></button><button style="width: 20px; height: 20px; background-color: black;"></button><button style="width: 20px; height: 20px; background-color: black;"></button></div></div>');
+            }
+                
+        }).fail(function(errorThrown) {
+            console.log(errorThrown);
+            OpcaoNomeSelect();
+        }); 
+
+    }else if (OpcaoSelecionada === "opcao_data") {
+        console.log("batata2")
+    }else{
+        ChamarRegistro();
+    }
+}
+
+function MudarOrdemRegistro() {
+    var divsPai = $('.exibir .div-pai');
+    var divsArray = divsPai.toArray();
+    divsArray = divsArray.reverse(); // Inverte a ordem do array
+    $('.exibir').html(divsArray); // Atualiza o conteúdo do elemento .exibir
+}
+
