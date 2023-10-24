@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/10/2023 às 14:15
+-- Tempo de geração: 24/10/2023 às 16:09
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -49,7 +49,9 @@ CREATE TABLE `anamnese` (
   `PsAnamnese` varchar(1) NOT NULL,
   `FmAnamnese` varchar(1) NOT NULL,
   `AlAnamnese` varchar(1) NOT NULL,
-  `IlAnamnese` varchar(1) NOT NULL
+  `IlAnamnese` varchar(1) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -60,6 +62,8 @@ CREATE TABLE `anamnese` (
 
 CREATE TABLE `anamnese_gestacional` (
   `id_anamnese_gestacional` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `PeriodoDeGestacao` varchar(45) NOT NULL,
   `NomeDoMedico` varchar(45) NOT NULL,
   `Quantos` varchar(45) NOT NULL,
@@ -103,6 +107,8 @@ CREATE TABLE `avaliacao_cinematica` (
 
 CREATE TABLE `avaliacao_paciente_maior` (
   `id_avaliacao_paciente_maior` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `AberturaOcular` varchar(45) NOT NULL,
   `RespostaVerbal` varchar(45) NOT NULL,
   `RespostaMotora` varchar(45) NOT NULL
@@ -116,6 +122,8 @@ CREATE TABLE `avaliacao_paciente_maior` (
 
 CREATE TABLE `avaliacao_paciente_menor` (
   `id_avaliacao_paciente_menor` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `AberturaOcularMe` int(45) NOT NULL,
   `RespostaVerbalMe` int(45) NOT NULL,
   `RespostaMotoraMe` int(45) NOT NULL
@@ -149,6 +157,8 @@ INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Aces
 
 CREATE TABLE `decisao_transporte` (
   `id_decisao_transporte` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `MDT` varchar(45) NOT NULL,
   `S1DT` varchar(45) NOT NULL,
   `S2DT` varchar(45) NOT NULL,
@@ -165,6 +175,8 @@ CREATE TABLE `decisao_transporte` (
 
 CREATE TABLE `emergencias` (
   `id_emergencias` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `tipo_emergencia` varchar(120) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -172,8 +184,8 @@ CREATE TABLE `emergencias` (
 -- Despejando dados para a tabela `emergencias`
 --
 
-INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
-(1, 'Emergencia medica,,,,,,,,,,,,,,,,,,,,,');
+INSERT INTO `emergencias` (`id_emergencias`, `cpf_paciente`, `bombeiro`, `tipo_emergencia`) VALUES
+(1, 0, 0, 'Emergencia medica,,,,,,,,,,,,,,,,,,,,,');
 
 -- --------------------------------------------------------
 
@@ -183,6 +195,8 @@ INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
 
 CREATE TABLE `forma_conducao` (
   `id_forma_conducao` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `Conducao` varchar(45) NOT NULL,
   `FormaConducao` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -190,31 +204,63 @@ CREATE TABLE `forma_conducao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `localizacao_traumas_maior`
+-- Estrutura para tabela `localizacao_traumas`
 --
 
-CREATE TABLE `localizacao_traumas_maior` (
-  `id_localizacao_traumas_maior` int(11) NOT NULL
+CREATE TABLE `localizacao_traumas` (
+  `id_localizacao_traumas` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `texto_trauma` varchar(45) NOT NULL,
+  `queimadura` varchar(45) NOT NULL,
+  `trauma_img` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `localizacao_traumas_menor`
+-- Estrutura para tabela `material_utilizados_a`
 --
 
-CREATE TABLE `localizacao_traumas_menor` (
-  `id_localizacao_traumas_menor` int(11) NOT NULL
+CREATE TABLE `material_utilizados_a` (
+  `material_utilizados_a` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `OutroText` varchar(45) NOT NULL,
+  `CateterTpOculos` varchar(45) NOT NULL,
+  `CompressaComum` varchar(45) NOT NULL,
+  `LuvasDescartaveis` varchar(45) NOT NULL,
+  `MascarasDesc` varchar(45) NOT NULL,
+  `MantaAlumiada` varchar(45) NOT NULL,
+  `PasDoDea` varchar(45) NOT NULL,
+  `SondaDeAspiracao` varchar(45) NOT NULL,
+  `SoroFisiologico` varchar(45) NOT NULL,
+  `Atadura1` varchar(45) NOT NULL,
+  `Kit1` varchar(45) NOT NULL,
+  `Tala1` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `materiais_utilizados`
+-- Estrutura para tabela `material_utilizados_b`
 --
 
-CREATE TABLE `materiais_utilizados` (
-  `id_materiais_utilizados` int(11) NOT NULL
+CREATE TABLE `material_utilizados_b` (
+  `material_utilizados_b` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `BaseEstabilizador` varchar(45) NOT NULL,
+  `Colar1` varchar(45) NOT NULL,
+  `Colar2` varchar(45) NOT NULL,
+  `CoxinsStab` varchar(45) NOT NULL,
+  `KED` varchar(45) NOT NULL,
+  `MacaRigida` varchar(45) NOT NULL,
+  `TiranteAranha` varchar(45) NOT NULL,
+  `TiranteCabeca` varchar(45) NOT NULL,
+  `SondaAspiracao` varchar(45) NOT NULL,
+  `Canula` varchar(45) NOT NULL,
+  `OutroMUB` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -224,7 +270,11 @@ CREATE TABLE `materiais_utilizados` (
 --
 
 CREATE TABLE `objetos_recolhidos` (
-  `id_objetos_recolhidos` int(11) NOT NULL
+  `id_objetos_recolhidos` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `TextoDentroObj` varchar(45) NOT NULL,
+  `Foto_ocorrido` mediumblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -256,6 +306,8 @@ INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
 
 CREATE TABLE `problemas_suspeitos` (
   `id_problemas_suspeitos` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `Psiquiatrico` varchar(45) NOT NULL,
   `Respiratorio` varchar(45) NOT NULL,
   `Diabete` varchar(45) NOT NULL,
@@ -271,7 +323,10 @@ CREATE TABLE `problemas_suspeitos` (
 --
 
 CREATE TABLE `procedimentos_efetuados` (
-  `id_procedimentos_efetuados` int(11) NOT NULL
+  `id_procedimentos_efetuados` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `TodosOsValoresPef` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -284,7 +339,7 @@ CREATE TABLE `sinais_e_sintomas` (
   `id_sinais_e_sintomas` int(11) NOT NULL,
   `bombeiro` int(11) NOT NULL,
   `cpf_paciente` int(11) NOT NULL,
-  `TodosOsValoresSeS` varchar(45) NOT NULL
+  `TodosOsValoresSeS` varchar(999) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -364,6 +419,24 @@ INSERT INTO `termo_recusa` (`id_termo_recusa`, `nome_recusa`, `identidade_recusa
 --
 
 --
+-- Índices de tabela `anamnese`
+--
+ALTER TABLE `anamnese`
+  ADD PRIMARY KEY (`id_anamnese`);
+
+--
+-- Índices de tabela `anamnese_gestacional`
+--
+ALTER TABLE `anamnese_gestacional`
+  ADD PRIMARY KEY (`id_anamnese_gestacional`);
+
+--
+-- Índices de tabela `avaliacao_cinematica`
+--
+ALTER TABLE `avaliacao_cinematica`
+  ADD PRIMARY KEY (`avaliacao_cinematica`);
+
+--
 -- Índices de tabela `avaliacao_paciente_maior`
 --
 ALTER TABLE `avaliacao_paciente_maior`
@@ -376,10 +449,34 @@ ALTER TABLE `cadastro`
   ADD PRIMARY KEY (`cod_cadastro`);
 
 --
+-- Índices de tabela `decisao_transporte`
+--
+ALTER TABLE `decisao_transporte`
+  ADD PRIMARY KEY (`id_decisao_transporte`);
+
+--
 -- Índices de tabela `emergencias`
 --
 ALTER TABLE `emergencias`
   ADD PRIMARY KEY (`id_emergencias`);
+
+--
+-- Índices de tabela `material_utilizados_a`
+--
+ALTER TABLE `material_utilizados_a`
+  ADD PRIMARY KEY (`material_utilizados_a`);
+
+--
+-- Índices de tabela `material_utilizados_b`
+--
+ALTER TABLE `material_utilizados_b`
+  ADD PRIMARY KEY (`material_utilizados_b`);
+
+--
+-- Índices de tabela `objetos_recolhidos`
+--
+ALTER TABLE `objetos_recolhidos`
+  ADD PRIMARY KEY (`id_objetos_recolhidos`);
 
 --
 -- Índices de tabela `paciente`
@@ -392,6 +489,12 @@ ALTER TABLE `paciente`
 --
 ALTER TABLE `problemas_suspeitos`
   ADD PRIMARY KEY (`id_problemas_suspeitos`);
+
+--
+-- Índices de tabela `procedimentos_efetuados`
+--
+ALTER TABLE `procedimentos_efetuados`
+  ADD PRIMARY KEY (`id_procedimentos_efetuados`);
 
 --
 -- Índices de tabela `sinais_e_sintomas`

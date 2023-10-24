@@ -16,7 +16,8 @@
     MaterialUtilizadosA() FEITO
     MaterialUtilizadosB() FEITO
     ObservacoesImportantes() FEITO
-    
+    ProcedimentosEfetuados() FEITO
+    ObjetosRecolhidos() FEITO
 
 */
 
@@ -2492,7 +2493,22 @@ function ProcedimentosEfetuados(){
     if(CITPef !== "n"){TodosOsValoresPef += CITPef + ", "}
     if(TextoPef !== "n"){TodosOsValoresPef += TextoPef + ", "}
     console.log(TodosOsValoresPef)
-}
+
+    $.ajax({
+        url: 'PHP/tabela-paciente.php',
+        method: 'POST',
+        data: {
+            Data: Data,
+            TodosOsValoresPef: TodosOsValoresPef,
+            
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
+};
+
 function UsoDeColarTamPef(){
     var TextColarTamPef = document.getElementById("text_colar_pef");
     var ColarTamCheckBoxPef = document.getElementById("uso_colar_pef");
@@ -3182,4 +3198,16 @@ function SelecionarImagensObj() {
         TextoDentroObj = "nda";
     }console.log(TextoDentroObj);
     
-}
+    $.ajax({
+        url: 'PHP/tabela-paciente.php',
+        method: 'POST',
+        data: {
+            Data: Data,
+            TextoDentroObj: TextoDentroObj
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
+};
