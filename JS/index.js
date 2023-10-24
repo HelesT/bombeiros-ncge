@@ -3123,6 +3123,19 @@ function ObservacoesImportantes(){
     }else{
         TextoDentroObs = "nda";
     }console.log(TextoDentroObs);
+
+    $.ajax({
+        url: 'PHP/.php',
+        method: 'POST',
+        data: {
+            TextoDentroObs: TextoDentroObs
+        },
+        dataType: 'json'
+    }).done(function(){
+       
+    }).fail(function(){
+       
+    });
     
 }
 function SelecionarImagensObj() {
