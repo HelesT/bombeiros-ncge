@@ -3198,4 +3198,16 @@ function SelecionarImagensObj() {
         TextoDentroObj = "nda";
     }console.log(TextoDentroObj);
     
-}
+    $.ajax({
+        url: 'PHP/tabela-paciente.php',
+        method: 'POST',
+        data: {
+            Data: Data,
+            TextoDentroObj: TextoDentroObj
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
+    
+};
