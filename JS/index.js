@@ -2739,7 +2739,29 @@ function MaterialUtilizadosA(){
         }else{Tala1 = "nda"};
     }else{Tala1 = "nda"};console.log(Tala1);
 
-   
+    $.ajax({
+        url: 'PHP/.php',
+        method: 'POST',
+        data: {
+            OutroText: OutroText,
+            CateterTpOculos: CateterTpOculos,
+            CompressaComum: CompressaComum,
+            LuvasDescartaveis: LuvasDescartaveis,
+            MascarasDesc: MascarasDesc,
+            MantaAlumiada: MantaAlumiada,
+            PasDoDea: PasDoDea,
+            SondaDeAspiracao: SondaDeAspiracao,
+            SoroFisiologico: SoroFisiologico,
+            Atadura1: Atadura1,
+            Kit1: Kit1,
+            Tala1: Tala1
+        },
+        dataType: 'json'
+    }).done(function(){
+       
+    }).fail(function(){
+       
+    });
    
 
 }
