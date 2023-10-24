@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/10/2023 às 01:47
+-- Tempo de geração: 24/10/2023 às 14:15
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Estrutura para tabela `admin`
 --
- 
+
 CREATE TABLE `admin` (
   `id_admin` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `anamnese`
+-- Estrutura para tabela `anamnese`
 --
 
 CREATE TABLE `anamnese` (
@@ -55,7 +55,7 @@ CREATE TABLE `anamnese` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `anamnese_gestacional`
+-- Estrutura para tabela `anamnese_gestacional`
 --
 
 CREATE TABLE `anamnese_gestacional` (
@@ -79,11 +79,33 @@ CREATE TABLE `anamnese_gestacional` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `avaliacao_cinematica`
+--
+
+CREATE TABLE `avaliacao_cinematica` (
+  `avaliacao_cinematica` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `DisturbioDeComportamento` varchar(45) NOT NULL,
+  `EncontradoDeCapacete` varchar(45) NOT NULL,
+  `EncontradoDeCinto` varchar(45) NOT NULL,
+  `ParaBrisasAvariado` varchar(45) NOT NULL,
+  `VolanteTorcido` varchar(45) NOT NULL,
+  `CaminhandoNaCena` varchar(45) NOT NULL,
+  `PainelAvariado` varchar(45) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `avaliacao_paciente_maior`
 --
 
 CREATE TABLE `avaliacao_paciente_maior` (
-  `id_avaliacao_paciente_maior` int(11) NOT NULL
+  `id_avaliacao_paciente_maior` int(11) NOT NULL,
+  `AberturaOcular` varchar(45) NOT NULL,
+  `RespostaVerbal` varchar(45) NOT NULL,
+  `RespostaMotora` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -93,7 +115,10 @@ CREATE TABLE `avaliacao_paciente_maior` (
 --
 
 CREATE TABLE `avaliacao_paciente_menor` (
-  `id_avaliacao_paciente_menor` int(11) NOT NULL
+  `id_avaliacao_paciente_menor` int(11) NOT NULL,
+  `AberturaOcularMe` int(45) NOT NULL,
+  `RespostaVerbalMe` int(45) NOT NULL,
+  `RespostaMotoraMe` int(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -119,7 +144,7 @@ INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Aces
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `decisao_transporte`
+-- Estrutura para tabela `decisao_transporte`
 --
 
 CREATE TABLE `decisao_transporte` (
@@ -153,7 +178,7 @@ INSERT INTO `emergencias` (`id_emergencias`, `tipo_emergencia`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `forma_conducao`
+-- Estrutura para tabela `forma_conducao`
 --
 
 CREATE TABLE `forma_conducao` (
@@ -230,7 +255,13 @@ INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
 --
 
 CREATE TABLE `problemas_suspeitos` (
-  `id_problemas_suspeitos` int(11) NOT NULL
+  `id_problemas_suspeitos` int(11) NOT NULL,
+  `Psiquiatrico` varchar(45) NOT NULL,
+  `Respiratorio` varchar(45) NOT NULL,
+  `Diabete` varchar(45) NOT NULL,
+  `Obsterico` varchar(45) NOT NULL,
+  `Transporte` varchar(45) NOT NULL,
+  `Outro` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -250,7 +281,10 @@ CREATE TABLE `procedimentos_efetuados` (
 --
 
 CREATE TABLE `sinais_e_sintomas` (
-  `id_sinais_e_sintomas` int(11) NOT NULL
+  `id_sinais_e_sintomas` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `TodosOsValoresSeS` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -260,7 +294,14 @@ CREATE TABLE `sinais_e_sintomas` (
 --
 
 CREATE TABLE `sinais_vitais` (
-  `id_sinais_vitais` int(11) NOT NULL
+  `id_sinais_vitais` int(11) NOT NULL,
+  `PressaoArterial` varchar(45) NOT NULL,
+  `mmhg` varchar(45) NOT NULL,
+  `Pulso` varchar(45) NOT NULL,
+  `SegSv` varchar(45) NOT NULL,
+  `Respiracao` varchar(45) NOT NULL,
+  `Temperatura` varchar(45) NOT NULL,
+  `Anormal` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -323,6 +364,12 @@ INSERT INTO `termo_recusa` (`id_termo_recusa`, `nome_recusa`, `identidade_recusa
 --
 
 --
+-- Índices de tabela `avaliacao_paciente_maior`
+--
+ALTER TABLE `avaliacao_paciente_maior`
+  ADD PRIMARY KEY (`id_avaliacao_paciente_maior`);
+
+--
 -- Índices de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
@@ -339,6 +386,24 @@ ALTER TABLE `emergencias`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`cpf_paciente`);
+
+--
+-- Índices de tabela `problemas_suspeitos`
+--
+ALTER TABLE `problemas_suspeitos`
+  ADD PRIMARY KEY (`id_problemas_suspeitos`);
+
+--
+-- Índices de tabela `sinais_e_sintomas`
+--
+ALTER TABLE `sinais_e_sintomas`
+  ADD PRIMARY KEY (`id_sinais_e_sintomas`);
+
+--
+-- Índices de tabela `sinais_vitais`
+--
+ALTER TABLE `sinais_vitais`
+  ADD PRIMARY KEY (`id_sinais_vitais`);
 
 --
 -- Índices de tabela `tabela_paciente`

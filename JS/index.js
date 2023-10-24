@@ -1,4 +1,4 @@
-/*REGISTRO DE PÁGINAS
+/*REGISTRO DE PÁGINAS slide1
     Paginas:
     PacienteRegistro() FEITO
     EmergenciaRegistro() FEITO
