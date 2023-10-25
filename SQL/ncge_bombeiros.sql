@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/10/2023 às 00:31
+-- Tempo de geração: 26/10/2023 às 01:21
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -181,6 +181,13 @@ CREATE TABLE `emergencias` (
   `tipo_emergencia` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `emergencias`
+--
+
+INSERT INTO `emergencias` (`id_emergencias`, `bombeiro`, `cpf_paciente`, `tipo_emergencia`) VALUES
+(30, 123456, 1, 'Queda de bicicleta, ');
+
 -- --------------------------------------------------------
 
 --
@@ -194,6 +201,13 @@ CREATE TABLE `forma_conducao` (
   `conducao` varchar(45) NOT NULL,
   `forma_conducao` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `forma_conducao`
+--
+
+INSERT INTO `forma_conducao` (`id_forma_conducao`, `bombeiro`, `cpf_paciente`, `conducao`, `forma_conducao`) VALUES
+(3, 123456, 1, 'deitada', 'ciclista, ');
 
 -- --------------------------------------------------------
 
@@ -281,6 +295,14 @@ CREATE TABLE `paciente` (
   `cpf_paciente` int(11) NOT NULL,
   `nome_paciente` varchar(75) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `paciente`
+--
+
+INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
+(1, ''),
+(20, '');
 
 -- --------------------------------------------------------
 
@@ -373,6 +395,13 @@ CREATE TABLE `tabela_paciente` (
   `cod_sia_sus_paciente` int(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tabela_paciente`
+--
+
+INSERT INTO `tabela_paciente` (`id_paciente`, `bombeiro`, `cpf_paciente`, `nome_hospital_paciente`, `data_paciente`, `sexo_paciente`, `nome_paciente`, `idade_paciente`, `rg_cpf_paciente`, `fone_paciente`, `acompanhante_paciente`, `idade_acompanhante_paciente`, `local_ocorrencia_paciente`, `n_usb_paciente`, `cod_ur_paciente`, `n_ocorr_paciente`, `cod_ps_paciente`, `desp_paciente`, `h_ch_paciente`, `km_final_paciente`, `cod_sia_sus_paciente`) VALUES
+(38, 123456, 1, 'nda', '0000-00-00', 'n', 'Astolfo', 0, '1', 'nda', 'nda', 0, 'nda', 'nda', 'n', 'nda', 'n', 'nda', 'nda', 'nda', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -429,7 +458,9 @@ ALTER TABLE `cadastro`
 -- Índices de tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
-  ADD PRIMARY KEY (`id_decisao_transporte`);
+  ADD PRIMARY KEY (`id_decisao_transporte`),
+  ADD KEY `fk_decisao_transporte_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_decisao_transporte_bombeiro` (`bombeiro`);
 
 --
 -- Índices de tabela `emergencias`
@@ -514,22 +545,28 @@ ALTER TABLE `termo_recusa`
 --
 
 --
+-- AUTO_INCREMENT de tabela `decisao_transporte`
+--
+ALTER TABLE `decisao_transporte`
+  MODIFY `id_decisao_transporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de tabela `emergencias`
 --
 ALTER TABLE `emergencias`
-  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `forma_conducao`
 --
 ALTER TABLE `forma_conducao`
-  MODIFY `id_forma_conducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_forma_conducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `tabela_paciente`
 --
 ALTER TABLE `tabela_paciente`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT de tabela `termo_recusa`
@@ -540,6 +577,13 @@ ALTER TABLE `termo_recusa`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `decisao_transporte`
+--
+ALTER TABLE `decisao_transporte`
+  ADD CONSTRAINT `fk_decisao_transporte_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_decisao_transporte_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
 -- Restrições para tabelas `forma_conducao`

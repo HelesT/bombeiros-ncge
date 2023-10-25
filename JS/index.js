@@ -57,6 +57,7 @@ function RegistrarPaciente(){
             PacienteRegistro();
             EmergenciaRegistro();
             FormaDeConducao();
+            DecisaoDeTransporte();
             console.log(CpfPaciente);
         } else {
             console.log("A consulta falhou.");
@@ -1168,10 +1169,17 @@ function DecisaoDeTransporte(){
         DecisaoDeTransporteDt = document.getElementById("estavel_dt").value;
     } else if (document.getElementById("potencial_mente_instavel_dt").checked) {
         DecisaoDeTransporteDt = document.getElementById("potencial_mente_instavel_dt").value;
-    }
+    }else{DecisaoDeTransporteDt = "nda"}
+
+    console.log(DecisaoDeTransporteDt)
+    console.log(MDT);
+    console.log(S1DT);
+    console.log(S2DT);
+    console.log(S3DT);
+    console.log(DemanteDT);
 
      $.ajax({
-        url: 'PHP/Decisao_De_Transporte.php',
+        url: 'PHP/tabela-decisao-de-transporte.php',
         method: 'POST',
         data: {
             DecisaoDeTransporteDt: DecisaoDeTransporteDt,
@@ -1179,7 +1187,9 @@ function DecisaoDeTransporte(){
             S1DT: S1DT,
             S2DT: S2DT,
             S3DT: S3DT,
-            DemanteDT: DemanteDT
+            DemanteDT: DemanteDT,
+            Paciente: CpfPaciente,
+            Bombeiro: BombeiroAtual
         },
         dataType: 'json'
     }).done(function() {
