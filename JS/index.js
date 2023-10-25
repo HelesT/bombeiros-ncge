@@ -5,8 +5,8 @@
     AvaliacaoPacienteMa() 
     AvaliacaoPacienteMe() 
     TermoDeRecusa() 
-    FormaDeConducao() 
-    DecisaoDeTransporte() 
+    FormaDeConducao() PHP FEITO
+    DecisaoDeTransporte() PHP FEITO
     SinaisVitai() 
     Anamnese() 
     AnamneseGestacional() 
