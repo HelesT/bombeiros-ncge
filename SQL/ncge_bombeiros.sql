@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/10/2023 às 16:09
+-- Tempo de geração: 26/10/2023 às 00:31
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Versão do PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -147,7 +147,8 @@ CREATE TABLE `cadastro` (
 --
 
 INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Acesso_cadastro`) VALUES
-(123456, 'batata', 'Nylton', 's');
+(123456, 'batata', 'Nylton', 's'),
+(234567, '123', 'Gabriel', '');
 
 -- --------------------------------------------------------
 
@@ -175,17 +176,10 @@ CREATE TABLE `decisao_transporte` (
 
 CREATE TABLE `emergencias` (
   `id_emergencias` int(11) NOT NULL,
-  `cpf_paciente` int(11) NOT NULL,
   `bombeiro` int(11) NOT NULL,
-  `tipo_emergencia` varchar(120) NOT NULL
+  `cpf_paciente` int(11) NOT NULL,
+  `tipo_emergencia` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `emergencias`
---
-
-INSERT INTO `emergencias` (`id_emergencias`, `cpf_paciente`, `bombeiro`, `tipo_emergencia`) VALUES
-(1, 0, 0, 'Emergencia medica,,,,,,,,,,,,,,,,,,,,,');
 
 -- --------------------------------------------------------
 
@@ -195,10 +189,10 @@ INSERT INTO `emergencias` (`id_emergencias`, `cpf_paciente`, `bombeiro`, `tipo_e
 
 CREATE TABLE `forma_conducao` (
   `id_forma_conducao` int(11) NOT NULL,
-  `cpf_paciente` int(11) NOT NULL,
   `bombeiro` int(11) NOT NULL,
-  `Conducao` varchar(45) NOT NULL,
-  `FormaConducao` varchar(45) NOT NULL
+  `cpf_paciente` int(11) NOT NULL,
+  `conducao` varchar(45) NOT NULL,
+  `forma_conducao` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -287,16 +281,6 @@ CREATE TABLE `paciente` (
   `cpf_paciente` int(11) NOT NULL,
   `nome_paciente` varchar(75) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `paciente`
---
-
-INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
-(1, 'Wesley'),
-(4, ''),
-(123, ''),
-(2222222, '');
 
 -- --------------------------------------------------------
 
@@ -408,13 +392,6 @@ CREATE TABLE `termo_recusa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `termo_recusa`
---
-
-INSERT INTO `termo_recusa` (`id_termo_recusa`, `nome_recusa`, `identidade_recusa`, `cpf_recusa`, `assinatura_recusa`, `testemunha_recusa`, `doc_recusa`, `testemunha_recusa2`, `doc_recusa2`) VALUES
-(1, '12321', 323214, 2147483647, 1231231241, 4343, 2234, 54353, 24234);
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -458,7 +435,17 @@ ALTER TABLE `decisao_transporte`
 -- Índices de tabela `emergencias`
 --
 ALTER TABLE `emergencias`
-  ADD PRIMARY KEY (`id_emergencias`);
+  ADD PRIMARY KEY (`id_emergencias`),
+  ADD KEY `fk_emergencias_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_emergencias_bombeiro` (`bombeiro`);
+
+--
+-- Índices de tabela `forma_conducao`
+--
+ALTER TABLE `forma_conducao`
+  ADD PRIMARY KEY (`id_forma_conducao`),
+  ADD KEY `fk_conducao_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_conducao_bombeiro` (`bombeiro`);
 
 --
 -- Índices de tabela `material_utilizados_a`
@@ -530,7 +517,13 @@ ALTER TABLE `termo_recusa`
 -- AUTO_INCREMENT de tabela `emergencias`
 --
 ALTER TABLE `emergencias`
-  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT de tabela `forma_conducao`
+--
+ALTER TABLE `forma_conducao`
+  MODIFY `id_forma_conducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tabela_paciente`
@@ -547,6 +540,13 @@ ALTER TABLE `termo_recusa`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `forma_conducao`
+--
+ALTER TABLE `forma_conducao`
+  ADD CONSTRAINT `fk_conducao_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_conducao_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
 -- Restrições para tabelas `tabela_paciente`

@@ -22,7 +22,7 @@
 */
 
 var BombeiroAtual = "";
-var CpfPaciente = "1"
+var CpfPaciente = ""
 
 $.ajax({
     url: 'PHP/tabela-bombeiros.php',
@@ -56,6 +56,7 @@ function RegistrarPaciente(){
             CpfPaciente = RgCpfPaciente;
             PacienteRegistro();
             EmergenciaRegistro();
+            FormaDeConducao();
             console.log(CpfPaciente);
         } else {
             console.log("A consulta falhou.");
