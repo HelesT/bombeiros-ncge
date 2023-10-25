@@ -1,28 +1,28 @@
 /*REGISTRO DE PÁGINAS slide1
     Paginas:
-    PacienteRegistro() FEITO
-    EmergenciaRegistro() FEITO
-    AvaliacaoPacienteMa() FEITO
-    AvaliacaoPacienteMe() FEITO
-    TermoDeRecusa() FEITO
-    FormaDeConducao() FEITO
-    DecisaoDeTransporte() FEITO
-    SinaisVitai() FEITO
-    Anamnese() FEITO
-    AnamneseGestacional() FEITO
-    ProblemasSuspeitos() FEITO
-    SinaisESintomas() FEITO
-    AvaliacaoCinematica()FEITO
-    MaterialUtilizadosA() FEITO
-    MaterialUtilizadosB() FEITO
-    ObservacoesImportantes() FEITO
-    ProcedimentosEfetuados() FEITO
-    ObjetosRecolhidos() FEITO
+    PacienteRegistro() PHP FEITO
+    EmergenciaRegistro() PHP FEITO
+    AvaliacaoPacienteMa() 
+    AvaliacaoPacienteMe() 
+    TermoDeRecusa() 
+    FormaDeConducao() 
+    DecisaoDeTransporte() 
+    SinaisVitai() 
+    Anamnese() 
+    AnamneseGestacional() 
+    ProblemasSuspeitos() 
+    SinaisESintomas() 
+    AvaliacaoCinematica()
+    MaterialUtilizadosA() 
+    MaterialUtilizadosB() 
+    ObservacoesImportantes() 
+    ProcedimentosEfetuados() 
+    ObjetosRecolhidos() 
 
 */
 
 var BombeiroAtual = "";
-var CpfPaciente = ""
+var CpfPaciente = "1"
 
 $.ajax({
     url: 'PHP/tabela-bombeiros.php',
@@ -41,7 +41,8 @@ $.ajax({
 });
 
 function RegistrarPaciente(){
-    var RgCpfPaciente = $('#rg_cpf_paciente').val();if(RgCpfPaciente === ""){RgCpfPaciente = "nda"}
+    var RgCpfPaciente = $('#rg_cpf_paciente').val();
+    if(RgCpfPaciente === ""){RgCpfPaciente = "nda"}
 
     $.ajax({
         url: 'PHP/botao-final.php',
@@ -50,14 +51,19 @@ function RegistrarPaciente(){
             RgCpfPaciente: RgCpfPaciente
         },
         dataType: 'json'
-    }).done(function(){
-        CpfPaciente = RgCpfPaciente
-        PacienteRegistro()
-        console.log(CpfPaciente)
-    }).fail(function(){
-        CpfPaciente = RgCpfPaciente
-        PacienteRegistro()
-        console.log(CpfPaciente)
+    }).done(function(resposta){
+        if (resposta.sucesso) {
+            CpfPaciente = RgCpfPaciente;
+            PacienteRegistro();
+            EmergenciaRegistro();
+            console.log(CpfPaciente);
+        } else {
+            console.log("A consulta falhou.");
+        }
+    }).fail(function(jqXHR, textStatus, errorThrown){
+        console.log("jqXHR: ", jqXHR);
+        console.log("textStatus: ", textStatus);
+        console.log("errorThrown: ", errorThrown);
     });
 }
 
@@ -252,17 +258,41 @@ function EmergenciaRegistro(){
         OutroEr = document.getElementById("outro_er").value;
     }else(OutroEr = "")
 
-    var EmergenciaRegistro = EmergenciaMedicaEr + "," + ComMeioTransporteEr + "," + CausadoPorAnimaisEr + "," + IncendioEr + "," + AfogamentoEr
-     + "," + DeslizamentoDesmoronamentoEr + "," + AgressaoEr + "," + QuedaAltura2mEr + "," + SuicidioEr + "," + QuedaPropriaAlturaEr 
-     + "," + AtropelamentoEr + "," + ChoqueEletricoEr + "," + DesabamentoEr + "," + DomesticoEr + "," + EsportivoEr + "," + IntoxicacaoEr 
-     + "," + QuedaBicicletaEr + "," + QuedaMotoEr + "," + QuedaEr + "," + TrabalhoEr + "," + TransferenciaEr + "," + OutroEr;
+    var EmergenciaRegistro = "";
+     if(EmergenciaMedicaEr !== ""){EmergenciaRegistro += EmergenciaMedicaEr + ", "}
+     if(ComMeioTransporteEr !== ""){EmergenciaRegistro += ComMeioTransporteEr + ", "}
+     if(CausadoPorAnimaisEr !== ""){EmergenciaRegistro += CausadoPorAnimaisEr + ", "}
+     if(IncendioEr !== ""){EmergenciaRegistro += IncendioEr + ", "}
+     if(AfogamentoEr !== ""){EmergenciaRegistro += AfogamentoEr + ", "}
+     if(DeslizamentoDesmoronamentoEr !== ""){EmergenciaRegistro += DeslizamentoDesmoronamentoEr + ", "}
+     if(AgressaoEr !== ""){EmergenciaRegistro += AgressaoEr + ", "}
+     if(QuedaAltura2mEr !== ""){EmergenciaRegistro += QuedaAltura2mEr + ", "}
+     if(SuicidioEr !== ""){EmergenciaRegistro += SuicidioEr + ", "}
+     if(QuedaPropriaAlturaEr !== ""){EmergenciaRegistro += QuedaPropriaAlturaEr + ", "}
+     if(AtropelamentoEr !== ""){EmergenciaRegistro += AtropelamentoEr + ", "}
+     if(AtropelamentoEr !== ""){EmergenciaRegistro += AtropelamentoEr + ", "}
+     if(ChoqueEletricoEr !== ""){EmergenciaRegistro += ChoqueEletricoEr + ", "}
+     if(DesabamentoEr !== ""){EmergenciaRegistro += DesabamentoEr + ", "}
+     if(DomesticoEr !== ""){EmergenciaRegistro += DomesticoEr + ", "}
+     if(EsportivoEr !== ""){EmergenciaRegistro += EsportivoEr + ", "}
+     if(IntoxicacaoEr !== ""){EmergenciaRegistro += IntoxicacaoEr + ", "}
+     if(QuedaBicicletaEr !== ""){EmergenciaRegistro += QuedaBicicletaEr + ", "}
+     if(QuedaMotoEr !== ""){EmergenciaRegistro += QuedaMotoEr + ", "}
+     if(QuedaEr !== ""){EmergenciaRegistro += QuedaEr + ", "}
+     if(TrabalhoEr !== ""){EmergenciaRegistro += TrabalhoEr + ", "}
+     if(TransferenciaEr !== ""){EmergenciaRegistro += TransferenciaEr + ", "}
+     if(OutroEr !== ""){EmergenciaRegistro += OutroEr + ", "}
 
+
+    console.log(EmergenciaRegistro)
 
     $.ajax({
         url: 'PHP/tabela-emergencia.php',
         method: 'POST',
         data: {
-            EmergenciaRegistro:EmergenciaRegistro
+            EmergenciaRegistro:EmergenciaRegistro,
+            Paciente: CpfPaciente,
+            Bombeiro: BombeiroAtual
         },
         dataType: 'json'
     }).done(function() {
@@ -307,10 +337,9 @@ function FormaDeConducao(){
         Conducao = document.getElementById("deitada_conducao").value;
     } else if (document.getElementById("semi_deitada_conducao").checked) {
         Conducao = document.getElementById("semi_deitada_conducao").value;
-    }
-    else if (document.getElementById("sentada_conducao").checked) {
+    }else if (document.getElementById("sentada_conducao").checked) {
         Conducao = document.getElementById("sentada_conducao").value;/*Input type radio*/
-    }
+    }else{Conducao = ""}
 
     if (document.getElementById("fc_ciclista").checked) {
         FcCiclista = document.getElementById("fc_ciclista").value;
@@ -352,14 +381,30 @@ function FormaDeConducao(){
         FcPedestre = document.getElementById("fc_pedestre").value;
     }else(FcPedestre = "")
 
-    var FormaConducao = FcCiclista + " " + FcCondutor + " " + FcGestante + " " + FcPassBanFrente + " " + FcPassMoto + " " + FcCondutorCarro + " " + FcClinico + " " + FcTrauma + " " + FcPassBanTras + " " + FcPedestre;
+    var FormaConducao = "";
+    if(FcCiclista !== ""){FormaConducao += FcCiclista + ", "}
+    if(FcCondutor !== ""){FormaConducao += FcCondutor + ", "}
+    if(FcGestante !== ""){FormaConducao += FcGestante + ", "}
+    if(FcPassBanFrente !== ""){FormaConducao += FcPassBanFrente + ", "}
+    if(FcPassMoto !== ""){FormaConducao += FcPassMoto + ", "}
+    if(FcCondutorCarro !== ""){FormaConducao += FcCondutorCarro + ", "}
+    if(FcClinico !== ""){FormaConducao += FcClinico + ", "}
+    if(FcTrauma !== ""){FormaConducao += FcTrauma + ", "}
+    if(FcPassBanTras !== ""){FormaConducao += FcPassBanTras + ", "}
+    if(FcPedestre !== ""){FormaConducao += FcPedestre + ", "}
+    
+    
+    console.log(Conducao);
+    console.log(FormaConducao);
 
     $.ajax({
-        url: 'PHP/forma_de_conducao.php',
+        url: 'PHP/tabela-forma_de_conducao.php',
         method: 'POST',
         data: {
            Conducao: Conducao,
-           FormaConducao: FormaConducao
+           FormaConducao: FormaConducao,
+           Paciente: CpfPaciente,
+           Bombeiro: BombeiroAtual
         },
         dataType: 'json'
     }).done(function() {
@@ -727,8 +772,10 @@ function RespostaMotoraMa() {/*Input type radio*/
     AusenciaPacienteMa.checked = false;
 }
 /*Menor 5*/
+var AberturaOcularMe = "Nenhuma";
+var RespostaVerbalMe = "Nenhuma";
+var RespostaMotoraMe = "Ausência(Paralisia Falecida, Hipônia)";
 function AvaliacaoPacienteMeGCS() {/*Input type radio*/
-var AberturaOcularMe = "";/*Input type radio*/
 var ValorAberturaOcularMe = "";/*Valor numerico da avaliação*/
 if (document.getElementById("espontanea_paciente_me").checked) {
     AberturaOcularMe = document.getElementById("espontanea_paciente_me").value;
@@ -749,7 +796,6 @@ console.log(AberturaOcularMe);
 console.log(ValorAberturaOcularMe);
 
 /*RespostaVerbal*/
-var RespostaVerbalMe = "";/*Input type radio*/
 if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").checked) {
     RespostaVerbalMe = document.getElementById("palavras_e_frases_inapropriadas_paciente_me").value;
     ValorRespostaVerbalMe = 1
@@ -771,7 +817,6 @@ if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").check
 console.log(RespostaVerbalMe)
 console.log(ValorRespostaVerbalMe)
 
-var RespostaMotoraMe = "";/*Input type radio*/
 if (document.getElementById("obedece_comando_paciente_me").checked) {
     RespostaMotoraMe = document.getElementById("obedece_comando_paciente_me").value;
     ValorRespostaMotoraMe = 1
@@ -805,13 +850,17 @@ console.log("Total GCS:  " + ValorGCS);
 
 function AvaliacaoPacienteMe(){
 
+    console.log(AberturaOcularMe);
+    console.log(RespostaVerbalMe);
+    console.log(RespostaMotoraMe);
+
 $.ajax({
     url: 'PHP/Avaliacao_paciente.php',
     method: 'POST',
     data: {
         AberturaOcularMe: AberturaOcularMe,
         RespostaVerbalMe: RespostaVerbalMe,
-        RespostaMotoraMe: RespostaMotoraMe,
+        RespostaMotoraMe: RespostaMotoraMe
     },
     dataType: 'json'
 }).done(function() {
