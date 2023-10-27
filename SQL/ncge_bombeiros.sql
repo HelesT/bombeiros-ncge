@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Out-2023 às 14:39
+-- Tempo de geração: 27-Out-2023 às 14:41
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -557,7 +557,9 @@ ALTER TABLE `procedimentos_efetuados`
 -- Índices para tabela `sinais_e_sintomas`
 --
 ALTER TABLE `sinais_e_sintomas`
-  ADD PRIMARY KEY (`id_sinais_e_sintomas`);
+  ADD PRIMARY KEY (`id_sinais_e_sintomas`),
+  ADD KEY `fk_sinais_e_sintomas_bombeiro` (`bombeiro`),
+  ADD KEY `fk_sinais_e_sintomas_cpf_paciente` (`cpf_paciente`);
 
 --
 -- Índices para tabela `sinais_vitais`
@@ -659,10 +661,16 @@ ALTER TABLE `problemas_suspeitos`
   ADD CONSTRAINT `fk_problemas_suspeitos_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
+-- Limitadores para a tabela `sinais_e_sintomas`
+--
+ALTER TABLE `sinais_e_sintomas`
+  ADD CONSTRAINT `fk_sinais_e_sintomas_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_sinais_e_sintomas_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
+
+--
 -- Limitadores para a tabela `sinais_vitais`
 --
 ALTER TABLE `sinais_vitais`
-  ADD CONSTRAINT `fk_sinais_e_sintomas_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_sinais_vitais_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_sinais_vitais_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
