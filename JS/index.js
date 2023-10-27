@@ -7,10 +7,10 @@
     TermoDeRecusa() 
     FormaDeConducao() PHP FEITO
     DecisaoDeTransporte() PHP FEITO
-    SinaisVitai() 
+    SinaisVitais() PHP FEITO
     Anamnese() 
     AnamneseGestacional() 
-    ProblemasSuspeitos() 
+    ProblemasSuspeitos() PHP FEITO
     SinaisESintomas() 
     AvaliacaoCinematica()
     MaterialUtilizadosA() 
@@ -22,7 +22,7 @@
 */
 
 var BombeiroAtual = "";
-var CpfPaciente = ""
+var CpfPaciente = "1"
 
 $.ajax({
     url: 'PHP/tabela-bombeiros.php',
@@ -58,7 +58,9 @@ function RegistrarPaciente(){
             EmergenciaRegistro();
             FormaDeConducao();
             DecisaoDeTransporte();
-            console.log(CpfPaciente);
+            ProblemasSuspeitos()
+            SinaisVitais()
+            console.log("Consulta Executada com sucesso!!!");
         } else {
             console.log("A consulta falhou.");
         }
@@ -284,7 +286,7 @@ function EmergenciaRegistro(){
      if(TrabalhoEr !== ""){EmergenciaRegistro += TrabalhoEr + ", "}
      if(TransferenciaEr !== ""){EmergenciaRegistro += TransferenciaEr + ", "}
      if(OutroEr !== ""){EmergenciaRegistro += OutroEr + ", "}
-
+     if(EmergenciaRegistro === ""){EmergenciaRegistro = "nda"}
 
     console.log(EmergenciaRegistro)
 
@@ -394,8 +396,11 @@ function FormaDeConducao(){
     if(FcTrauma !== ""){FormaConducao += FcTrauma + ", "}
     if(FcPassBanTras !== ""){FormaConducao += FcPassBanTras + ", "}
     if(FcPedestre !== ""){FormaConducao += FcPedestre + ", "}
-    
-    
+
+    if(FormaConducao === ""){FormaConducao = "nda"}
+
+    if(Conducao === ""){Conducao = "nda"}
+
     console.log(Conducao);
     console.log(FormaConducao);
 
@@ -1154,11 +1159,11 @@ function ocultarDivMa() {
     conteudoGCSspan.textContent = 0
 } 
 function DecisaoDeTransporte(){
-    var MDT = $('#m_dt').val();
-    var S1DT = $('#s1_dt').val();
-    var S2DT = $('#s2_dt').val();
-    var S3DT = $('#s3_dr').val();
-    var DemanteDT = $('#demante_dt').val();
+    var MDT = $('#m_dt').val(); if(MDT === ""){MDT = "nda"}
+    var S1DT = $('#s1_dt').val(); if(S1DT === ""){S1DT = "nda"}
+    var S2DT = $('#s2_dt').val(); if(S2DT === ""){S2DT = "nda"}
+    var S3DT = $('#s3_dr').val(); if(S3DT === ""){S3DT = "nda"}
+    var DemanteDT = $('#demante_dt').val(); if(DemanteDT === ""){DemanteDT = "nda"}
     
     var DecisaoDeTransporteDt = "";/*Input type radio*/
     if (document.getElementById("critico_dt").checked) {
@@ -1198,12 +1203,21 @@ function DecisaoDeTransporte(){
     
 
 }   
-function SinaisVitai(){
-    var PressaoArterial = $('#pressao_arterial_sv').val();
-    var mmhg = $('#mmhg_sv').val();
-    var Pulso = $('#pulso_sv').val();
-    var Respiracao = $('#respiracao_sv').val();
-    var Temperatura = $('#temperatura_sv').val();
+function SinaisVitais(){
+
+    var Psa1 = $('#pressao_arterial_sv').val();
+    if (Psa1 === "") {
+        Psa1 = "0";
+    }
+    var Psa2 = $('#mmhg_sv').val();
+    if (Psa2 === "") {
+        Psa2 = "0";
+    }
+    var PressaoArterial = Psa1 + " x " + Psa2 + " mmhg";
+
+    var Pulso = $('#pulso_sv').val(); if(Pulso === ""){Pulso = "0"}
+    var Respiracao = $('#respiracao_sv').val(); if(Respiracao === ""){Respiracao = "0"}
+    var Temperatura = $('#temperatura_sv').val(); if(Temperatura === ""){Temperatura = "0"}
 
     var AnormalCheckbox = document.getElementById("anormal_sv");/*Input type Checkbox*/
     var AnormalCheck = AnormalCheckbox.checked;
@@ -1220,21 +1234,28 @@ function SinaisVitai(){
         Maior2SegSv  = document.getElementById("normal_sv").value;
     } else if (document.getElementById("maior_2_seg_sv").checked) {
         Maior2SegSv  = document.getElementById("maior_2_seg_sv").value;
-    } 
+    } else{Maior2SegSv = "Normal"}
 
-
+    console.log(PressaoArterial)
+    console.log(Pulso)
+    console.log(Maior2SegSv)
+    console.log(Respiracao)
+    console.log(Temperatura)
+    console.log(Anormal)
+    console.log(Maior2SegSv)
     
 $.ajax({
-    url: 'PHP/SinaisVitai.php',
+    url: 'PHP/tabela-sinais-vitais.php',
     method: 'POST',
     data: {
         PressaoArterial: PressaoArterial,
-        mmhg: mmhg,
         Pulso: Pulso,
         SegSv: Maior2SegSv,
         Respiracao: Respiracao,
         Temperatura: Temperatura,
-        Anormal: Anormal
+        Anormal: Anormal,
+        Bombeiro: BombeiroAtual,
+        Paciente: CpfPaciente
     },
     dataType: 'json'
 }).done(function() {
@@ -1819,12 +1840,16 @@ function SinaisESintomas(){
     if(Taquicardia !== "n"){TodosOsValoresSeS += Taquicardia + ", "}
     if(Tontura !== "n"){TodosOsValoresSeS += Tontura + ", "}
     if(Cefaleia !== "n"){TodosOsValoresSeS += Cefaleia + ", "}
+    if(TodosOsValoresSeS === ""){TodosOsValoresSeS = "nda"}
+    console.log(TodosOsValoresSeS)
 
     $.ajax({
-        url: 'PHP/SinaisESintomas.php',
+        url: 'PHP/tabela-sinais-sintomas.php',
         method: 'POST',
         data: {
-            TodosOsValoresSeS: TodosOsValoresSeS
+            TodosOsValoresSeS: TodosOsValoresSeS,
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function() {
@@ -1929,7 +1954,6 @@ function TXTCheckbox(){ /*Input type DIV NONE*/
 }
 function ProblemasSuspeitos(){
 
-    console.log("")
     console.log("Estou funcionando!! ~senpai.. (>//< )");
 
     var psiqcheckboxps = document.getElementById("psiquiatrico_ps");/*Input type Checkbox*/
@@ -1995,7 +2019,9 @@ function ProblemasSuspeitos(){
             Diabete: diabradioboxps,
             Obsterico: obsterradioboxps,
             Transporte: transpradiobox,
-            Outro: OutroTextoPs
+            Outro: OutroTextoPs,
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function() {

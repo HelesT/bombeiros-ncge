@@ -712,7 +712,7 @@
           <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
         </div><!-- Fim do cabeçalho da pagina "" -->
 
-        <form method="post" class="slide-body centro"><!--inicio do corpo da página de ""-->
+        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
           <div>
           <div class="coluna" style="width: 100%;">
             <span style="color: black;margin-left: 15px;">Pressão Arterial</span>
@@ -752,20 +752,27 @@
           <div class="linha quadrado centro" style="width: 100%;justify-content: space-evenly;height: 45px;margin-top: 20px;">
             <div class="linha centro">
               <span>>2seg</span>
-              <input type="radio" name="SinaisVitais" id="maior_2_seg_sv" value="Maior 2Seg" class="radio" style="width: 20px;height: 20px;">
+              <input type="radio" value=">2seg" name="SinaisVitaes" id="maior_2_seg_sv" value="Maior 2Seg" class="radio" style="width: 20px;height: 20px;">
             </div>
             <div class="linha centro">
               <span><2seg</span>
-              <input type="radio" name="SinaisVitais" id="menor_2_seg_sv" value="Menor 2Seg" class="radio" style="width: 20px;height: 20px;">
+              <input type="radio" value="<2seg" name="SinaisVitaes" id="menor_2_seg_sv" value="Menor 2Seg" class="radio" style="width: 20px;height: 20px;">
             </div>
             <div class="linha centro">
               <span>Normal</span>
-              <input type="radio" name="SinaisVitais" id="normal_sv" value="Normal" class="radio" style="width: 20px;height: 20px;">
+              <input type="radio" value="Normal" name="SinaisVitaes" id="normal_sv" value="Normal" class="radio" style="width: 20px;height: 20px;">
             </div>
-            <input type="button" onclick="SinaisVitai()">
           </div>
         </div>
-      </form><!--Fim do corpo da página de ""-->
+        <!--Cute button -->
+<input type="button" onclick="SinaisVitais()" value="Clica em mim :3"
+style="width: 100px; 
+height: 30px; 
+border: 1px solid black; 
+border-radius: 10px; 
+margin-top: 10px;">
+<!--Cute button-->
+      </div><!--Fim do corpo da página de ""-->
         </div>
 
       <div class="swiper-slide slide8"><!---------------------------------------------------------Inicio da página de Localização dos Traumas --------------------------------------------------------->
