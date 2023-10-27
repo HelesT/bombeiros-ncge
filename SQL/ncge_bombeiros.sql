@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/10/2023 às 01:21
+-- Tempo de geração: 27-Out-2023 às 14:39
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `admin`
+-- Estrutura da tabela `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese`
+-- Estrutura da tabela `anamnese`
 --
 
 CREATE TABLE `anamnese` (
@@ -57,7 +57,7 @@ CREATE TABLE `anamnese` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese_gestacional`
+-- Estrutura da tabela `anamnese_gestacional`
 --
 
 CREATE TABLE `anamnese_gestacional` (
@@ -83,7 +83,7 @@ CREATE TABLE `anamnese_gestacional` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_cinematica`
+-- Estrutura da tabela `avaliacao_cinematica`
 --
 
 CREATE TABLE `avaliacao_cinematica` (
@@ -102,7 +102,7 @@ CREATE TABLE `avaliacao_cinematica` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_paciente_maior`
+-- Estrutura da tabela `avaliacao_paciente_maior`
 --
 
 CREATE TABLE `avaliacao_paciente_maior` (
@@ -117,7 +117,7 @@ CREATE TABLE `avaliacao_paciente_maior` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_paciente_menor`
+-- Estrutura da tabela `avaliacao_paciente_menor`
 --
 
 CREATE TABLE `avaliacao_paciente_menor` (
@@ -132,7 +132,7 @@ CREATE TABLE `avaliacao_paciente_menor` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadastro`
+-- Estrutura da tabela `cadastro`
 --
 
 CREATE TABLE `cadastro` (
@@ -143,7 +143,7 @@ CREATE TABLE `cadastro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `cadastro`
+-- Extraindo dados da tabela `cadastro`
 --
 
 INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Acesso_cadastro`) VALUES
@@ -153,7 +153,7 @@ INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Aces
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `decisao_transporte`
+-- Estrutura da tabela `decisao_transporte`
 --
 
 CREATE TABLE `decisao_transporte` (
@@ -168,10 +168,17 @@ CREATE TABLE `decisao_transporte` (
   `DecisaoDeTransporteDt` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `decisao_transporte`
+--
+
+INSERT INTO `decisao_transporte` (`id_decisao_transporte`, `cpf_paciente`, `bombeiro`, `MDT`, `S1DT`, `S2DT`, `S3DT`, `DemanteDT`, `DecisaoDeTransporteDt`) VALUES
+(7, 0, 123456, 'nda', 'nda', 'nda', 'nda', 'nda', 'nda');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `emergencias`
+-- Estrutura da tabela `emergencias`
 --
 
 CREATE TABLE `emergencias` (
@@ -182,16 +189,17 @@ CREATE TABLE `emergencias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `emergencias`
+-- Extraindo dados da tabela `emergencias`
 --
 
 INSERT INTO `emergencias` (`id_emergencias`, `bombeiro`, `cpf_paciente`, `tipo_emergencia`) VALUES
-(30, 123456, 1, 'Queda de bicicleta, ');
+(30, 123456, 1, 'Queda de bicicleta, '),
+(36, 123456, 0, 'nda');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `forma_conducao`
+-- Estrutura da tabela `forma_conducao`
 --
 
 CREATE TABLE `forma_conducao` (
@@ -203,16 +211,17 @@ CREATE TABLE `forma_conducao` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `forma_conducao`
+-- Extraindo dados da tabela `forma_conducao`
 --
 
 INSERT INTO `forma_conducao` (`id_forma_conducao`, `bombeiro`, `cpf_paciente`, `conducao`, `forma_conducao`) VALUES
-(3, 123456, 1, 'deitada', 'ciclista, ');
+(3, 123456, 1, 'deitada', 'ciclista, '),
+(9, 123456, 0, 'nda', 'nda');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `localizacao_traumas`
+-- Estrutura da tabela `localizacao_traumas`
 --
 
 CREATE TABLE `localizacao_traumas` (
@@ -227,7 +236,7 @@ CREATE TABLE `localizacao_traumas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `material_utilizados_a`
+-- Estrutura da tabela `material_utilizados_a`
 --
 
 CREATE TABLE `material_utilizados_a` (
@@ -251,7 +260,7 @@ CREATE TABLE `material_utilizados_a` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `material_utilizados_b`
+-- Estrutura da tabela `material_utilizados_b`
 --
 
 CREATE TABLE `material_utilizados_b` (
@@ -274,7 +283,7 @@ CREATE TABLE `material_utilizados_b` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_recolhidos`
+-- Estrutura da tabela `objetos_recolhidos`
 --
 
 CREATE TABLE `objetos_recolhidos` (
@@ -288,7 +297,7 @@ CREATE TABLE `objetos_recolhidos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `paciente`
+-- Estrutura da tabela `paciente`
 --
 
 CREATE TABLE `paciente` (
@@ -297,17 +306,18 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `paciente`
+-- Extraindo dados da tabela `paciente`
 --
 
 INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
+(0, ''),
 (1, ''),
 (20, '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `problemas_suspeitos`
+-- Estrutura da tabela `problemas_suspeitos`
 --
 
 CREATE TABLE `problemas_suspeitos` (
@@ -322,10 +332,17 @@ CREATE TABLE `problemas_suspeitos` (
   `Outro` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `problemas_suspeitos`
+--
+
+INSERT INTO `problemas_suspeitos` (`id_problemas_suspeitos`, `cpf_paciente`, `bombeiro`, `Psiquiatrico`, `Respiratorio`, `Diabete`, `Obsterico`, `Transporte`, `Outro`) VALUES
+(5, 0, 123456, 'nda', 'nda', 'nda', 'nda', 'nda', 'nda');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `procedimentos_efetuados`
+-- Estrutura da tabela `procedimentos_efetuados`
 --
 
 CREATE TABLE `procedimentos_efetuados` (
@@ -338,7 +355,7 @@ CREATE TABLE `procedimentos_efetuados` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinais_e_sintomas`
+-- Estrutura da tabela `sinais_e_sintomas`
 --
 
 CREATE TABLE `sinais_e_sintomas` (
@@ -348,16 +365,24 @@ CREATE TABLE `sinais_e_sintomas` (
   `TodosOsValoresSeS` varchar(999) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `sinais_e_sintomas`
+--
+
+INSERT INTO `sinais_e_sintomas` (`id_sinais_e_sintomas`, `bombeiro`, `cpf_paciente`, `TodosOsValoresSeS`) VALUES
+(1, 123456, 1, 'batata, ');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinais_vitais`
+-- Estrutura da tabela `sinais_vitais`
 --
 
 CREATE TABLE `sinais_vitais` (
   `id_sinais_vitais` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
   `PressaoArterial` varchar(45) NOT NULL,
-  `mmhg` varchar(45) NOT NULL,
   `Pulso` varchar(45) NOT NULL,
   `SegSv` varchar(45) NOT NULL,
   `Respiracao` varchar(45) NOT NULL,
@@ -365,10 +390,18 @@ CREATE TABLE `sinais_vitais` (
   `Anormal` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Extraindo dados da tabela `sinais_vitais`
+--
+
+INSERT INTO `sinais_vitais` (`id_sinais_vitais`, `cpf_paciente`, `bombeiro`, `PressaoArterial`, `Pulso`, `SegSv`, `Respiracao`, `Temperatura`, `Anormal`) VALUES
+(1, 1, 123456, '0 x 0 mmhg', '0', 'Normal', '0', '0', 'n'),
+(6, 0, 123456, '0 x 0 mmhg', '0', 'Normal', '0', '0', 'n');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tabela_paciente`
+-- Estrutura da tabela `tabela_paciente`
 --
 
 CREATE TABLE `tabela_paciente` (
@@ -396,20 +429,24 @@ CREATE TABLE `tabela_paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `tabela_paciente`
+-- Extraindo dados da tabela `tabela_paciente`
 --
 
 INSERT INTO `tabela_paciente` (`id_paciente`, `bombeiro`, `cpf_paciente`, `nome_hospital_paciente`, `data_paciente`, `sexo_paciente`, `nome_paciente`, `idade_paciente`, `rg_cpf_paciente`, `fone_paciente`, `acompanhante_paciente`, `idade_acompanhante_paciente`, `local_ocorrencia_paciente`, `n_usb_paciente`, `cod_ur_paciente`, `n_ocorr_paciente`, `cod_ps_paciente`, `desp_paciente`, `h_ch_paciente`, `km_final_paciente`, `cod_sia_sus_paciente`) VALUES
-(38, 123456, 1, 'nda', '0000-00-00', 'n', 'Astolfo', 0, '1', 'nda', 'nda', 0, 'nda', 'nda', 'n', 'nda', 'n', 'nda', 'nda', 'nda', 0);
+(38, 123456, 1, 'nda', '0000-00-00', 'n', 'Astolfo', 0, '1', 'nda', 'nda', 0, 'nda', 'nda', 'n', 'nda', 'n', 'nda', 'nda', 'nda', 0),
+(40, 123456, 1, 'nda', '0000-00-00', 'n', 'nda', 10, 'nda', 'nda', 'nda', 0, 'nda', 'nda', 'n', 'nda', 'n', 'nda', 'nda', 'nda', 0),
+(45, 123456, 0, 'nda', '0000-00-00', 'n', 'nda', 0, 'nda', 'nda', 'nda', 0, 'nda', 'nda', 'n', 'nda', 'n', 'nda', 'nda', 'nda', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `termo_recusa`
+-- Estrutura da tabela `termo_recusa`
 --
 
 CREATE TABLE `termo_recusa` (
   `id_termo_recusa` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
   `nome_recusa` varchar(120) NOT NULL,
   `identidade_recusa` int(20) NOT NULL,
   `cpf_recusa` int(20) NOT NULL,
@@ -425,37 +462,37 @@ CREATE TABLE `termo_recusa` (
 --
 
 --
--- Índices de tabela `anamnese`
+-- Índices para tabela `anamnese`
 --
 ALTER TABLE `anamnese`
   ADD PRIMARY KEY (`id_anamnese`);
 
 --
--- Índices de tabela `anamnese_gestacional`
+-- Índices para tabela `anamnese_gestacional`
 --
 ALTER TABLE `anamnese_gestacional`
   ADD PRIMARY KEY (`id_anamnese_gestacional`);
 
 --
--- Índices de tabela `avaliacao_cinematica`
+-- Índices para tabela `avaliacao_cinematica`
 --
 ALTER TABLE `avaliacao_cinematica`
   ADD PRIMARY KEY (`avaliacao_cinematica`);
 
 --
--- Índices de tabela `avaliacao_paciente_maior`
+-- Índices para tabela `avaliacao_paciente_maior`
 --
 ALTER TABLE `avaliacao_paciente_maior`
   ADD PRIMARY KEY (`id_avaliacao_paciente_maior`);
 
 --
--- Índices de tabela `cadastro`
+-- Índices para tabela `cadastro`
 --
 ALTER TABLE `cadastro`
   ADD PRIMARY KEY (`cod_cadastro`);
 
 --
--- Índices de tabela `decisao_transporte`
+-- Índices para tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
   ADD PRIMARY KEY (`id_decisao_transporte`),
@@ -463,7 +500,7 @@ ALTER TABLE `decisao_transporte`
   ADD KEY `fk_decisao_transporte_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `emergencias`
+-- Índices para tabela `emergencias`
 --
 ALTER TABLE `emergencias`
   ADD PRIMARY KEY (`id_emergencias`),
@@ -471,7 +508,7 @@ ALTER TABLE `emergencias`
   ADD KEY `fk_emergencias_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `forma_conducao`
+-- Índices para tabela `forma_conducao`
 --
 ALTER TABLE `forma_conducao`
   ADD PRIMARY KEY (`id_forma_conducao`),
@@ -479,55 +516,59 @@ ALTER TABLE `forma_conducao`
   ADD KEY `fk_conducao_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `material_utilizados_a`
+-- Índices para tabela `material_utilizados_a`
 --
 ALTER TABLE `material_utilizados_a`
   ADD PRIMARY KEY (`material_utilizados_a`);
 
 --
--- Índices de tabela `material_utilizados_b`
+-- Índices para tabela `material_utilizados_b`
 --
 ALTER TABLE `material_utilizados_b`
   ADD PRIMARY KEY (`material_utilizados_b`);
 
 --
--- Índices de tabela `objetos_recolhidos`
+-- Índices para tabela `objetos_recolhidos`
 --
 ALTER TABLE `objetos_recolhidos`
   ADD PRIMARY KEY (`id_objetos_recolhidos`);
 
 --
--- Índices de tabela `paciente`
+-- Índices para tabela `paciente`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`cpf_paciente`);
 
 --
--- Índices de tabela `problemas_suspeitos`
+-- Índices para tabela `problemas_suspeitos`
 --
 ALTER TABLE `problemas_suspeitos`
-  ADD PRIMARY KEY (`id_problemas_suspeitos`);
+  ADD PRIMARY KEY (`id_problemas_suspeitos`),
+  ADD KEY `fk_problemas_suspeitos_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_problemas_suspeitos_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `procedimentos_efetuados`
+-- Índices para tabela `procedimentos_efetuados`
 --
 ALTER TABLE `procedimentos_efetuados`
   ADD PRIMARY KEY (`id_procedimentos_efetuados`);
 
 --
--- Índices de tabela `sinais_e_sintomas`
+-- Índices para tabela `sinais_e_sintomas`
 --
 ALTER TABLE `sinais_e_sintomas`
   ADD PRIMARY KEY (`id_sinais_e_sintomas`);
 
 --
--- Índices de tabela `sinais_vitais`
+-- Índices para tabela `sinais_vitais`
 --
 ALTER TABLE `sinais_vitais`
-  ADD PRIMARY KEY (`id_sinais_vitais`);
+  ADD PRIMARY KEY (`id_sinais_vitais`),
+  ADD KEY `fk_sinais_e_sintomas_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_sinais_e_sintomas_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `tabela_paciente`
+-- Índices para tabela `tabela_paciente`
 --
 ALTER TABLE `tabela_paciente`
   ADD PRIMARY KEY (`id_paciente`),
@@ -535,38 +576,56 @@ ALTER TABLE `tabela_paciente`
   ADD KEY `fk_cpf_paciente` (`cpf_paciente`);
 
 --
--- Índices de tabela `termo_recusa`
+-- Índices para tabela `termo_recusa`
 --
 ALTER TABLE `termo_recusa`
   ADD PRIMARY KEY (`id_termo_recusa`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
-  MODIFY `id_decisao_transporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_decisao_transporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `emergencias`
 --
 ALTER TABLE `emergencias`
-  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de tabela `forma_conducao`
 --
 ALTER TABLE `forma_conducao`
-  MODIFY `id_forma_conducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_forma_conducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de tabela `problemas_suspeitos`
+--
+ALTER TABLE `problemas_suspeitos`
+  MODIFY `id_problemas_suspeitos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT de tabela `sinais_e_sintomas`
+--
+ALTER TABLE `sinais_e_sintomas`
+  MODIFY `id_sinais_e_sintomas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `sinais_vitais`
+--
+ALTER TABLE `sinais_vitais`
+  MODIFY `id_sinais_vitais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tabela_paciente`
 --
 ALTER TABLE `tabela_paciente`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de tabela `termo_recusa`
@@ -575,25 +634,40 @@ ALTER TABLE `termo_recusa`
   MODIFY `id_termo_recusa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `decisao_transporte`
+-- Limitadores para a tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
   ADD CONSTRAINT `fk_decisao_transporte_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_decisao_transporte_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `forma_conducao`
+-- Limitadores para a tabela `forma_conducao`
 --
 ALTER TABLE `forma_conducao`
   ADD CONSTRAINT `fk_conducao_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_conducao_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `tabela_paciente`
+-- Limitadores para a tabela `problemas_suspeitos`
+--
+ALTER TABLE `problemas_suspeitos`
+  ADD CONSTRAINT `fk_problemas_suspeitos_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_problemas_suspeitos_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
+
+--
+-- Limitadores para a tabela `sinais_vitais`
+--
+ALTER TABLE `sinais_vitais`
+  ADD CONSTRAINT `fk_sinais_e_sintomas_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_sinais_vitais_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_sinais_vitais_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
+
+--
+-- Limitadores para a tabela `tabela_paciente`
 --
 ALTER TABLE `tabela_paciente`
   ADD CONSTRAINT `fk_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
