@@ -11,12 +11,12 @@
     Anamnese() 
     AnamneseGestacional() 
     ProblemasSuspeitos() PHP FEITO
-    SinaisESintomas() 
+    SinaisESintomas() PHP FEITO
     AvaliacaoCinematica()
-    MaterialUtilizadosA() 
-    MaterialUtilizadosB() 
+    MaterialUtilizadosA() PHP FEITO
+    MaterialUtilizadosB() PHP FEITO 
     ObservacoesImportantes() 
-    ProcedimentosEfetuados() 
+    ProcedimentosEfetuados() PHP FEITO
     ObjetosRecolhidos() 
 
 */
@@ -59,7 +59,11 @@ function RegistrarPaciente(){
             FormaDeConducao();
             DecisaoDeTransporte();
             ProblemasSuspeitos()
-            SinaisVitais()
+            SinaisVitais();
+            SinaisESintomas();
+            ProcedimentosEfetuados();
+            MaterialUtilizadosA();
+            MaterialUtilizadosB();
             console.log("Consulta Executada com sucesso!!!");
         } else {
             console.log("A consulta falhou.");
@@ -2127,8 +2131,6 @@ function LimparRadioPS(){
     document.body.scrollTop = 0;
 }
 function ProcedimentosEfetuados(){
-    console.log("");
-    console.log("Estou funcionando!! ~senpai.. (>//<");
 
     var AspiracaoPefCheckbox = document.getElementById("aspiracao_pef");/*Input type Checkbox*/
     var AspiracaoPefChecked = AspiracaoPefCheckbox.checked;
@@ -2578,15 +2580,16 @@ function ProcedimentosEfetuados(){
     if(SamuPef !== "n"){TodosOsValoresPef += SamuPef + ", "}
     if(CITPef !== "n"){TodosOsValoresPef += CITPef + ", "}
     if(TextoPef !== "n"){TodosOsValoresPef += TextoPef + ", "}
+    if(TodosOsValoresPef === ""){TodosOsValoresPef = "nda"}
     console.log(TodosOsValoresPef)
 
     $.ajax({
-        url: 'PHP/tabela-paciente.php',
+        url: 'PHP/tabela-procedimentos-efetuados.php',
         method: 'POST',
         data: {
-            Data: Data,
             TodosOsValoresPef: TodosOsValoresPef,
-            
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function() {
@@ -2842,7 +2845,7 @@ function MaterialUtilizadosA(){
     }else{Tala1 = "nda"};console.log(Tala1);
 
     $.ajax({
-        url: 'PHP/.php',
+        url: 'PHP/tabela-material-utilizado-descartavel.php',
         method: 'POST',
         data: {
             OutroText: OutroText,
@@ -2856,7 +2859,9 @@ function MaterialUtilizadosA(){
             SoroFisiologico: SoroFisiologico,
             Atadura1: Atadura1,
             Kit1: Kit1,
-            Tala1: Tala1
+            Tala1: Tala1,
+            Bombeiro:  BombeiroAtual,
+            Paciente:CpfPaciente
         },
         dataType: 'json'
     }).done(function(){
@@ -2932,10 +2937,6 @@ function TXTCheckboxDivNone(){ /*Input type DIV NONE*/
 
 
 function MaterialUtilizadosB(){
-    console.log("");
-    console.log("Estou funcionando!! ~senpai.. (>//<");
-
-
 
     var BaseEstabilizadorCheckBox = document.getElementById("base_estabilizador_mub"); 
     var BaseEstabilizadorText = $("#base_estabilizador_text_mub").val();
@@ -3053,7 +3054,7 @@ function MaterialUtilizadosB(){
     }else{var OutroMUB = "nda"};console.log(OutroMUB);
 
     $.ajax({
-        url: 'PHP/.php',
+        url: 'PHP/tabela-materiais-utilizados-deixados-hospital.php',
         method: 'POST',
             data: {
             BaseEstabilizador: BaseEstabilizador,
@@ -3066,7 +3067,9 @@ function MaterialUtilizadosB(){
             TiranteCabeca: TiranteCabeca,
             SondaAspiracao: SondaAspiracao,
             Canula: Canula,
-            OutroMUB: OutroMUB
+            OutroMUB: OutroMUB,
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function(){
