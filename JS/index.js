@@ -1268,66 +1268,82 @@ $.ajax({
 
 }
 function Anamnese(){
-    var AcAnamnese = $('#oa_anamnese').val();
-    var QsAnamnese = $('#qs_anamnese').val();
-    var HuAnamnese = $('#hu_anamnese').val();
-    var QisAnamnese = $('#qis_anamnese').val();
-    var EqAnamnese = $('#eq_anamnese').val();
-    var QrAnamnese = $('#qr_anamnese').val();
+    console.clear()
+    /*Cute log*/
+    console.log("Estou funcionando!! ~senpai.. (>//<");
+    /*Cute log*/
+
+    var OaAnamnese = $('#oa_anamnese').val();if(OaAnamnese === ""){OaAnamnese = "nd"};
+
+    var AvAnamnese = "";/*Input type radio*/
+    if (document.getElementById("s_av").checked) {
+        AvAnamnese  = "sim";
+    } else if (document.getElementById("n_av").checked) {
+        AvAnamnese  = "não";
+    }else(AvAnamnese = "nda")
+
+    var AcAnamnese = $('#ac_anamnese').val();if(AcAnamnese === ""){AcAnamnese = "nda"};
+
+    var QsAnamnese = $('#qs_anamnese').val();if(QsAnamnese === ""){QsAnamnese = "nda"};
+    var HuAnamnese = $('#hu_anamnese').val();if(HuAnamnese === ""){HuAnamnese = "nda"};
+    var QsAnamnese = $('#qis_anamnese').val();if(QsAnamnese === ""){QsAnamnese = "nda"};
+    var EqAnamnese = $('#eq_anamnese').val();if(EqAnamnese === ""){EqAnamnese = "nda"};
+    var QrAnamnese = $('#qr_anamnese').val();if(QrAnamnese === ""){QrAnamnese = "nda"};
 
     
 
-    var OaAnamnese = "";/*Input type radio*/
-    if (document.getElementById("s_av").checked) {
-        OaAnamnese  = document.getElementById("s_av").value;
-    } else if (document.getElementById("n_av").checked) {
-        OaAnamnese  = document.getElementById("n_av").value;
-    }
+    
     var PsAnamnese = "";/*Input type radio*/
     if (document.getElementById("s_ps").checked) {
         PsAnamnese  = document.getElementById("s_ps").value;
     } else if (document.getElementById("n_ps").checked) {
         PsAnamnese  = document.getElementById("n_ps").value;
-    }
+    }else{PsAnamnese = "nda"}
     var FmAnamnese = "";/*Input type radio*/
     if (document.getElementById("s_fm").checked) {
         FmAnamnese  = document.getElementById("s_fm").value;
     } else if (document.getElementById("n_fm").checked) {
         FmAnamnese  = document.getElementById("n_fm").value;
-    }
+    }else{FmAnamnese = "nda"}
     var AlAnamnese = "";/*Input type radio*/
     if (document.getElementById("s_al").checked) {
         AlAnamnese  = document.getElementById("s_al").value;
     } else if (document.getElementById("n_al").checked) {
         AlAnamnese  = document.getElementById("n_al").value;
-    }
+    }else{AlAnamnese = "nda"}
     var IlAnamnese = "";/*Input type radio*/
     if (document.getElementById("s_il").checked) {
         IlAnamnese  = document.getElementById("s_il").value;
     } else if (document.getElementById("n_il").checked) {
         IlAnamnese  = document.getElementById("n_il").value;
-    }
+    }else{IlAnamnese = "nda"}
+
+    console.log(OaAnamnese)
+    console.log(AvAnamnese)
+    console.log(AcAnamnese)
+    console.log(QsAnamnese)
     
- $.ajax({
-        url: 'PHP/Anamnese.php',
-        method: 'POST',
-        data: {
-            AcAnamnese: AcAnamnese,
-            QsAnamnese: QsAnamnese,
-            HuAnamnese: HuAnamnese,
-            QisAnamnese: QisAnamnese,
-            EqAnamnese: EqAnamnese,
-            QrAnamnese: QrAnamnese,
-            OaAnamnese: OaAnamnese,
-            PsAnamnese: PsAnamnese,
-            FmAnamnese: FmAnamnese,
-            AlAnamnese: AlAnamnese,
-            IlAnamnese: IlAnamnese
-        },
-        dataType: 'json'
-    }).done(function() {
-        alert("alguma coisa deu!!");
-    });
+    
+//  $.ajax({
+//         url: 'PHP/Anamnese.php',
+//         method: 'POST',
+//         data: {
+//             AcAnamnese: AcAnamnese,
+//             QsAnamnese: QsAnamnese,
+//             HuAnamnese: HuAnamnese,
+//             QisAnamnese: QisAnamnese,
+//             EqAnamnese: EqAnamnese,
+//             QrAnamnese: QrAnamnese,
+//             OaAnamnese: OaAnamnese,
+//             PsAnamnese: PsAnamnese,
+//             FmAnamnese: FmAnamnese,
+//             AlAnamnese: AlAnamnese,
+//             IlAnamnese: IlAnamnese
+//         },
+//         dataType: 'json'
+//     }).done(function() {
+//         alert("alguma coisa deu!!");
+//     });
     
 }
 
