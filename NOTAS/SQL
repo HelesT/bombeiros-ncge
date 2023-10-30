@@ -32,12 +32,12 @@ avaliacao_paciente_menor
 cadastro
 decisao_transporte
 emergencias
- forma_conducao
- material_utilizados_a
- material_utilizados_b
- paciente
- problemas_suspeitos
- sinais_e_sintomas
- sinais_vitais
- tabela_paciente
+forma_conducao
+material_utilizados_a
+material_utilizados_b
+paciente
+problemas_suspeitos
+sinais_e_sintomas
+sinais_vitais
+tabela_paciente
 termo_recusa

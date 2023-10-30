@@ -1273,7 +1273,7 @@ function Anamnese(){
     console.log("Estou funcionando!! ~senpai.. (>//<");
     /*Cute log*/
 
-    var OaAnamnese = $('#oa_anamnese').val();if(OaAnamnese === ""){OaAnamnese = "nd"};
+    var OaAnamnese = $('#oa_anamnese').val();if(OaAnamnese === ""){OaAnamnese = "nda"};
 
     var AvAnamnese = "";/*Input type radio*/
     if (document.getElementById("s_av").checked) {
@@ -1284,61 +1284,60 @@ function Anamnese(){
 
     var AcAnamnese = $('#ac_anamnese').val();if(AcAnamnese === ""){AcAnamnese = "nda"};
 
-    var QsAnamnese = $('#qs_anamnese').val();if(QsAnamnese === ""){QsAnamnese = "nda"};
-    var HuAnamnese = $('#hu_anamnese').val();if(HuAnamnese === ""){HuAnamnese = "nda"};
-    var QsAnamnese = $('#qis_anamnese').val();if(QsAnamnese === ""){QsAnamnese = "nda"};
-    var EqAnamnese = $('#eq_anamnese').val();if(EqAnamnese === ""){EqAnamnese = "nda"};
-    var QrAnamnese = $('#qr_anamnese').val();if(QrAnamnese === ""){QrAnamnese = "nda"};
-
-    
-
-    
     var PsAnamnese = "";/*Input type radio*/
+    var QsAnamnese = "";
     if (document.getElementById("s_ps").checked) {
-        PsAnamnese  = document.getElementById("s_ps").value;
+        QsAnamnese = $('#qs_anamnese').val();if(QsAnamnese === ""){QsAnamnese = "nda"};;
     } else if (document.getElementById("n_ps").checked) {
-        PsAnamnese  = document.getElementById("n_ps").value;
-    }else{PsAnamnese = "nda"}
-    var FmAnamnese = "";/*Input type radio*/
+        QsAnamnese = "nda";
+    }else{PsAnamnese = "nda"; QsAnamnese = "nda"}
+
+    var HuAnamnese = ""
+    var QisAnamnese = ""
+    var FmAnamnese = ""
     if (document.getElementById("s_fm").checked) {
-        FmAnamnese  = document.getElementById("s_fm").value;
+        HuAnamnese = $('#hu_anamnese').val();if(HuAnamnese === ""){HuAnamnese = "nda"};
+        QisAnamnese = $('#qis_anamnese').val();if(QisAnamnese === ""){QisAnamnese = "nda"};
+        FmAnamnese = QisAnamnese + "(" + HuAnamnese + ")";
     } else if (document.getElementById("n_fm").checked) {
-        FmAnamnese  = document.getElementById("n_fm").value;
-    }else{FmAnamnese = "nda"}
-    var AlAnamnese = "";/*Input type radio*/
+        HuAnamnese = "nda"
+        QisAnamnese = "nda"
+        FmAnamnese = "nda"
+    }else{
+        HuAnamnese = "nda";
+        QisAnamnese = "nda";
+        FmAnamnese = "nda"
+    }
+
+    var EqAnamnese = ""
     if (document.getElementById("s_al").checked) {
-        AlAnamnese  = document.getElementById("s_al").value;
+        EqAnamnese = $('#eq_anamnese').val();if(EqAnamnese === ""){EqAnamnese = "nda"};
     } else if (document.getElementById("n_al").checked) {
-        AlAnamnese  = document.getElementById("n_al").value;
-    }else{AlAnamnese = "nda"}
+        EqAnamnese = "nda"
+    }else{AlAnamnese = "nda"; EqAnamnese = "nda"}
+
     var IlAnamnese = "";/*Input type radio*/
+    var QrAnamnese = "";
     if (document.getElementById("s_il").checked) {
-        IlAnamnese  = document.getElementById("s_il").value;
+        QrAnamnese = $('#qr_anamnese').val();if(QrAnamnese === ""){QrAnamnese = "nda"};
     } else if (document.getElementById("n_il").checked) {
-        IlAnamnese  = document.getElementById("n_il").value;
-    }else{IlAnamnese = "nda"}
+        QrAnamnese = "nda"
+    }else{IlAnamnese = "nda"; QrAnamnese = "nda"}
 
     console.log(OaAnamnese)
     console.log(AvAnamnese)
     console.log(AcAnamnese)
     console.log(QsAnamnese)
+    console.log(FmAnamnese)
+    console.log(EqAnamnese)
+    console.log(QrAnamnese)
     
     
 //  $.ajax({
 //         url: 'PHP/Anamnese.php',
 //         method: 'POST',
 //         data: {
-//             AcAnamnese: AcAnamnese,
-//             QsAnamnese: QsAnamnese,
-//             HuAnamnese: HuAnamnese,
-//             QisAnamnese: QisAnamnese,
-//             EqAnamnese: EqAnamnese,
-//             QrAnamnese: QrAnamnese,
-//             OaAnamnese: OaAnamnese,
-//             PsAnamnese: PsAnamnese,
-//             FmAnamnese: FmAnamnese,
-//             AlAnamnese: AlAnamnese,
-//             IlAnamnese: IlAnamnese
+//            
 //         },
 //         dataType: 'json'
 //     }).done(function() {
