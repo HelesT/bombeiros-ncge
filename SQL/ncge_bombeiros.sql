@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 28/10/2023 às 01:14
+-- Tempo de geração: 31/10/2023 às 13:55
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,19 +39,15 @@ CREATE TABLE `admin` (
 
 CREATE TABLE `anamnese` (
   `id_anamnese` int(11) NOT NULL,
-  `AcAnamnese` varchar(45) NOT NULL,
-  `QsAnamnese` varchar(45) NOT NULL,
-  `HuAnamnese` varchar(45) NOT NULL,
-  `QisAnamnese` varchar(45) NOT NULL,
-  `EqAnamnese` varchar(45) NOT NULL,
-  `QrAnamnese` varchar(45) NOT NULL,
-  `OaAnamnese` varchar(1) NOT NULL,
-  `PsAnamnese` varchar(1) NOT NULL,
-  `FmAnamnese` varchar(1) NOT NULL,
-  `AlAnamnese` varchar(1) NOT NULL,
-  `IlAnamnese` varchar(1) NOT NULL,
   `cpf_paciente` int(11) NOT NULL,
-  `bombeiro` int(11) NOT NULL
+  `bombeiro` int(11) NOT NULL,
+  `ocorrido_anamnese` varchar(45) NOT NULL,
+  `ocorrencia_anamnese` varchar(45) NOT NULL,
+  `aconteceu_anamnese` varchar(45) NOT NULL,
+  `problema_saude_anamnese` varchar(45) NOT NULL,
+  `medicamento_anamnese` varchar(45) NOT NULL,
+  `alergia_anamnese` varchar(45) NOT NULL,
+  `liquido_anamnese` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -408,7 +404,9 @@ CREATE TABLE `termo_recusa` (
 -- Índices de tabela `anamnese`
 --
 ALTER TABLE `anamnese`
-  ADD PRIMARY KEY (`id_anamnese`);
+  ADD PRIMARY KEY (`id_anamnese`),
+  ADD KEY `fk_anamnese_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_anamnese_bombeiro` (`bombeiro`);
 
 --
 -- Índices de tabela `anamnese_gestacional`
@@ -605,6 +603,13 @@ ALTER TABLE `termo_recusa`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `anamnese`
+--
+ALTER TABLE `anamnese`
+  ADD CONSTRAINT `fk_anamnese_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_anamnese_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
 -- Restrições para tabelas `decisao_transporte`
