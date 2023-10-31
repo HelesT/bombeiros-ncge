@@ -18,7 +18,7 @@
                 </span>
             </label>
         </div>
-                
+       
     </div>
     <div class="menu-lateral">
         <div class="coluna centro" style="height: 10vh; width: 80px;">
@@ -40,22 +40,28 @@
             <div style="width: 60%; height: 100%;"></div>
             <div class="justify" style="width: 20%; height: 100%;"><img src="IMAGENS/logo_medicina.png" width="50px" height="50px"></div>
         </div><!-- Fim do cabeçalho da pagina "" -->
-
-        <div class="centro coluna" style="margin-top:250px ;"> 
-            <input style="background-color: rgb(189,186,186); margin-left: 760px; width: 50px;height: 20px;font-weight: 700;" type="button" value="Data">
-            <div class="linha centro" style="background-color: rgb(189,186,186);width: 800px;height: 50px; padding-right: 10px;">
-                <div style="width: 300px;">
-                    <span style="font-weight: 900; color: #000000;">Nome:</span><div style="color: #000000;" value="" id="nome"></div>
-                </div><div style="width: 300px;">
-                    <span style="font-weight: 900; color: #000000;">Data:</span><div style="color: #000000;" value="" id="data"></div>
+    <div class="centro coluna" style="margin-top:250px ;"> 
+        <div class="linha centro" style="background-color: rgb(189,186,186);width: 750px;height: 50px; padding-right: 10px;">
+            <div class="linha centro" style="width: 100px;height: 100%; margin-right: 190px;"> 
+                <div class="justify" style="border: 2px solid gray; background-color: white; border-radius: 5px;">
+                    <input type="text" class="input-text" style="outline: none; height: 100%; border:none; background-color: transparent;">
+                    <button style=" width: 40px; border: none; height: 36px; background-color: transparent;">
+                    <div class="centro" style="border:none;  width: 30px; height: 30px;"><img src="IMAGENS/lupa.png" width="15px"></div>
+                    </button>
                 </div>
-                <div class="justify" style="width: 20%; height: 100%;"><img src="IMAGENS/eye.png" width="40px" style=" margin-left: 120px;"></div>
+            </div>
+            <div class="linha centro" style="width: 100px;height: 100%; margin-left: 200px;">
+                <select id="select_adm" onchange="executarSelect()" style="margin-left: 90px; width: 80px; height: 40px; border: 2px solid gray; border-radius: 5px; background-color: white; outline: none; ">
+                    <option value="opcao_nada"></option>
+                    <option value="opcao_nome">Nome</option>
+                    <option value="opcao_data">Data</option>
+                </select>
+                <div class="linha centro" style="width: 15px;height: 100%; margin-left: 90px;"> 
+                    <input style="background-color: rgba(61, 197, 8, 0.842); margin-right: 60px; width: 59px;height: 20px;font-weight: 700;" type="button" value="Buscar">
+                </div>
             </div>
         </div>
-        
     </div>
-
-    
 
 </body>
 <script src="JS/historicoocorrencias.js"></script>
