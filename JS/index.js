@@ -8,7 +8,7 @@
     FormaDeConducao() PHP FEITO
     DecisaoDeTransporte() PHP FEITO
     SinaisVitais() PHP FEITO
-    Anamnese() 
+    Anamnese() PHP FEITO
     AnamneseGestacional() 
     ProblemasSuspeitos() PHP FEITO
     SinaisESintomas() PHP FEITO
@@ -64,6 +64,7 @@ function RegistrarPaciente(){
             ProcedimentosEfetuados();
             MaterialUtilizadosA();
             MaterialUtilizadosB();
+            Anamnese();
             console.log("Consulta Executada com sucesso!!!");
         } else {
             console.log("A consulta falhou.");
@@ -1333,16 +1334,24 @@ function Anamnese(){
     console.log(QrAnamnese)
     
     
-//  $.ajax({
-//         url: 'PHP/Anamnese.php',
-//         method: 'POST',
-//         data: {
-//            
-//         },
-//         dataType: 'json'
-//     }).done(function() {
-//         alert("alguma coisa deu!!");
-//     });
+ $.ajax({
+        url: 'PHP/tabela-anamnese.php',
+        method: 'POST',
+        data: {
+           Ocorrido: OaAnamnese,
+           Ocorrencia: AvAnamnese,
+           Aconteceu: AcAnamnese,
+           ProblemaSaude: QsAnamnese,
+           Medicamento: FmAnamnese,
+           Alergia: EqAnamnese,
+           Liquido: QrAnamnese,
+           Bombeiro: BombeiroAtual,
+           Paciente: CpfPaciente
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
     
 }
 
@@ -1402,13 +1411,16 @@ function IAOLEH(){ /*Input type DIV NONE*/
 
 
 function AnamneseGestacional(){
-    var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val();
-    var NomeDoMedico = $('#nm_anamnese_gestacional').val();
-    var Quantos = $('#qs_anamnese_gestacional').val();
-    var Duracao = $('#tc_anamnese_gestacional').val();
-    var Intervalo = $('#io_anamnese_gestacional').val();
-    var HoraDoNascimento = $('#hn_anamnese_gestacional').val();
-    var NomeDoBebe = $('#nb_anamnese_gestacional').val();
+    console.clear()
+    /*Cute log*/
+    console.log("Estou funcionando!! ~senpai.. (>//<");
+    /*Cute log*/
+    var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val();if(PeriodoDeGestacao === ""){PeriodoDeGestacao = "nda"}
+    var NomeDoMedico = $('#nm_anamnese_gestacional').val();if(NomeDoMedico === ""){NomeDoMedico = "nda"}
+    var Duracao = $('#tc_anamnese_gestacional').val();if(Duracao === ""){Duracao = "nda"}
+    var Intervalo = $('#io_anamnese_gestacional').val();if(Intervalo === ""){Intervalo = "nda"}
+    var HoraDoNascimento = $('#hn_anamnese_gestacional').val();if(HoraDoNascimento === ""){HoraDoNascimento = "nda"}
+    var NomeDoBebe = $('#nb_anamnese_gestacional').val();if(NomeDoBebe === ""){NomeDoBebe = "nda"}
 
     
 
@@ -1417,92 +1429,98 @@ function AnamneseGestacional(){
         FpAnamneseGestacional  = document.getElementById("s_fp").value;
     } else if (document.getElementById("n_fp").checked) {
         FpAnamneseGestacional  = document.getElementById("n_fp").value;
-    }
+    }else{FpAnamneseGestacional = "nda"}
+
     var EcAnamneseGestacional = "";/*Input type radio*/
     if (document.getElementById("s_ec").checked) {
         EcAnamneseGestacional  = document.getElementById("s_ec").value;
     } else if (document.getElementById("n_ec").checked) {
        EcAnamneseGestacional  = document.getElementById("n_ec").value;
-    }
+    }else{EcAnamneseGestacional = "nda"}
+
+    var QtdFilhos = "";
     var EfAnamneseGestacional = "";/*Input type radio*/
     if (document.getElementById("s_ef").checked) {
-        EfAnamneseGestacional  = document.getElementById("s_ef").value;
+       EfAnamneseGestacional = "Primeiro filhos";
     } else if (document.getElementById("n_ef").checked) {
-        EfAnamneseGestacional  = document.getElementById("n_ef").value;
-    }
+        QtdFilhos = $('#qs_anamnese_gestacional').val();if(QtdFilhos === ""){QtdFilhos = "1+"}
+        EfAnamneseGestacional = QtdFilhos
+    }else{EfAnamneseGestacional = "nda"}
+
     var SqAnamneseGestacional = "";/*Input type radio*/
     if (document.getElementById("s_sq").checked) {
         SqAnamneseGestacional  = document.getElementById("s_sq").value;
     } else if (document.getElementById("n_sq").checked) {
         SqAnamneseGestacional  = document.getElementById("n_sq").value;
-    }
+    }else{SqAnamneseGestacional = "nda"}
 
     var JbAnamneseGestacional = "";/*Input type radio*/
     if (document.getElementById("s_jb").checked) {
         JbAnamneseGestacional  = document.getElementById("s_jb").value;
     } else if (document.getElementById("n_jb").checked) {
         JbAnamneseGestacional  = document.getElementById("n_jb").value;
-    }
-
-
+    }else{JbAnamneseGestacional = "nda"}
 
     var FvAnamneseGestacional = "";/*Input type radio*/
     if (document.getElementById("s_fv").checked) {
         FvAnamneseGestacional  = document.getElementById("s_fv").value;
     } else if (document.getElementById("n_fv").checked) {
         FvAnamneseGestacional  = document.getElementById("n_fv").value;
-    }
+    }else{FvAnamneseGestacional = "nda"}
+
     var PrAnamneseGestacional = "";/*Input type radio*/
     if (document.getElementById("s_pr").checked) {
         PrAnamneseGestacional  = document.getElementById("s_pr").value;
     } else if (document.getElementById("n_pr").checked) {
         PrAnamneseGestacional  = document.getElementById("n_pr").value;
-    }
+    }else{PrAnamneseGestacional = "nda"}
 
     var SexoAnamneseGestacional = "";/*Input type radio*/
     if (document.getElementById("fem").checked) {
         SexoAnamneseGestacional  = document.getElementById("fem").value;
     } else if (document.getElementById("mas").checked) {
         SexoAnamneseGestacional  = document.getElementById("mas").value;
-    }
+    }else{SexoAnamneseGestacional = "nda"}
     
- $.ajax({
-        url: 'PHP/AnamneseGestacional.php',
-        method: 'POST',
-        data: {
-            FpAnamneseGestacional: FpAnamneseGestacional,
-            EfAnamneseGestacional: EfAnamneseGestacional,
-            SqAnamneseGestacional: SqAnamneseGestacional,
-            JbAnamneseGestacional: JbAnamneseGestacional,
-            FvAnamneseGestacional: FvAnamneseGestacional,
-            PrAnamneseGestacional: PrAnamneseGestacional,
-            SexoAnamneseGestacional: SexoAnamneseGestacional,
-            PeriodoDeGestacao: PeriodoDeGestacao,
-            NomeDoMedico: NomeDoMedico,
-            Duracao: Duracao,
-            Quantos: Quantos,
-            Intervalo: Intervalo,
-            NomeDoBebe: NomeDoBebe,
-            HoraDoNascimento: HoraDoNascimento
-        },
-        dataType: 'json'
-    }).done(function() {
-        alert("alguma coisa deu!!");
-    });
+    console.log(PeriodoDeGestacao)//Periodo gestação
+    console.log(FpAnamneseGestacional)//pré natal
+    console.log(NomeDoMedico)//nome do medico
+    console.log(EcAnamneseGestacional)//possibilidade complicações
+    console.log(EfAnamneseGestacional)//primeiro filho
+    console.log(Duracao)//duracao
+    console.log(Intervalo)//intervalo
+    console.log(SqAnamneseGestacional)//vontade evacuar
+    console.log(JbAnamneseGestacional)//Ruptura da bolsa
+    console.log(FvAnamneseGestacional)//inspeção visual
+    console.log(PrAnamneseGestacional)//parto realizado
+    console.log(HoraDoNascimento)//hora nascimento
+    console.log(SexoAnamneseGestacional)//sexo bebe
+    console.log(NomeDoBebe)//nome bebe
+
+//  $.ajax({
+//         url: 'PHP/AnamneseGestacional.php',
+//         method: 'POST',
+//         data: {
+//            
+//         },
+//         dataType: 'json'
+//     }).done(function() {
+//         alert("alguma coisa deu!!");
+//     });
     
 }
 var EOPF = document.getElementById("ef_anamnese_gestacional");
 var EOPFSim = document.getElementById("s_ef");
-var EOPFNao = document.getElementById("n_eF");
+var EOPFNao = document.getElementById("n_ef");
 
 function EOPFRadio(){ /*Input type DIV NONE*/
 
-    
     if(EOPFSim.checked){
-        EOPF.style.display = "flex";
+        EOPF.style.display = "none"
     }else if(EOPFNao.checked){
-        EOPF.style.display = "none";
-    };
+        EOPF.style.display = "flex"
+    }
+
 }
 function SinaisESintomas(){
    
