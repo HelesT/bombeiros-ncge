@@ -317,6 +317,14 @@ function TermoDeRecusa(){
     var DocRecusa = $('#doc_Recusa').val();
     var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
     var DocRecusa2 = $('#doc_Recusa_2').val();
+console.log(NomeTermoRecusa)
+console.log(IdentidadeRecusa)
+console.log(CpfRescusa)
+console.log(AssinaturaRecusa)
+console.log(TestemunhaRecusa)
+console.log(DocRecusa)
+console.log(TestemunhaRecusa2)
+console.log(DocRecusa2)
 
      $.ajax({
         url: 'PHP/Termo_de_recusa.php',
