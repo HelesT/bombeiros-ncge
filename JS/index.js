@@ -1,21 +1,21 @@
 /*REGISTRO DE PÁGINAS slide1
     Paginas:
-    PacienteRegistro() PHP FEITO
-    EmergenciaRegistro() PHP FEITO
+    PacienteRegistro()       PHP FEITO
+    EmergenciaRegistro()     PHP FEITO
     AvaliacaoPacienteMa() 
     AvaliacaoPacienteMe() 
     TermoDeRecusa() 
-    FormaDeConducao() PHP FEITO
-    DecisaoDeTransporte() PHP FEITO
-    SinaisVitais() PHP FEITO
-    Anamnese() PHP FEITO
-    AnamneseGestacional() 
-    ProblemasSuspeitos() PHP FEITO
-    SinaisESintomas() PHP FEITO
-    AvaliacaoCinematica()
-    MaterialUtilizadosA() PHP FEITO
-    MaterialUtilizadosB() PHP FEITO 
-    ObservacoesImportantes() 
+    FormaDeConducao()        PHP FEITO
+    DecisaoDeTransporte()    PHP FEITO
+    SinaisVitais()           PHP FEITO
+    Anamnese()               PHP FEITO
+    AnamneseGestacional()    PHP FEITO
+    ProblemasSuspeitos()     PHP FEITO
+    SinaisESintomas()        PHP FEITO
+    AvaliacaoCinematica()    PHP FEITO
+    MaterialUtilizadosA()    PHP FEITO
+    MaterialUtilizadosB()    PHP FEITO 
+    ObservacoesImportantes() PHP FEITO
     ProcedimentosEfetuados() PHP FEITO
     ObjetosRecolhidos() 
 
@@ -65,6 +65,9 @@ function RegistrarPaciente(){
             MaterialUtilizadosA();
             MaterialUtilizadosB();
             Anamnese();
+            AnamneseGestacional();
+            ObservacoesImportantes();
+            AvaliacaoCinematica();
             console.log("Consulta Executada com sucesso!!!");
         } else {
             console.log("A consulta falhou.");
@@ -1506,16 +1509,31 @@ function AnamneseGestacional(){
     console.log(SexoAnamneseGestacional)//sexo bebe
     console.log(NomeDoBebe)//nome bebe
 
-//  $.ajax({
-//         url: 'PHP/AnamneseGestacional.php',
-//         method: 'POST',
-//         data: {
-//            
-//         },
-//         dataType: 'json'
-//     }).done(function() {
-//         alert("alguma coisa deu!!");
-//     });
+ $.ajax({
+        url: 'PHP/tabela-Anamnese-gestacional.php',
+        method: 'POST',
+        data: {
+           PeriodoGestacao: PeriodoDeGestacao,
+           PreNatal: FpAnamneseGestacional,
+           NomeMedico: NomeDoMedico,
+           Complicacoes: EcAnamneseGestacional,
+           Filhos: EfAnamneseGestacional,
+           ContracaoDuracao: Duracao,
+           ContracaoIntervalo: Intervalo,
+           Evacuacao: SqAnamneseGestacional,
+           RupturaBolsa: JbAnamneseGestacional,
+           InspecaoVisual: FvAnamneseGestacional,
+           PartoRealizado: PrAnamneseGestacional,
+           HoraNascimento: HoraDoNascimento,
+           SexoBebe: SexoAnamneseGestacional,
+           NomeBebe: NomeDoBebe,
+           Bombeiro: BombeiroAtual,
+           Paciente: CpfPaciente
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
     
 }
 var EOPF = document.getElementById("ef_anamnese_gestacional");
@@ -2720,48 +2738,55 @@ document.addEventListener("click", function(ObjEscDiv) {
     }
 });
 function AvaliacaoCinematica(){
+    console.clear();
     var DisturbioDeComportamento = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_dc_s").checked) {
-        DisturbioDeComportamento = document.getElementById("avaliacao_cimetica_dc_s").value;
+        DisturbioDeComportamento = "s"
     } else if (document.getElementById("avaliacao_cimetica_dc_n").checked) {
-        DisturbioDeComportamento = document.getElementById("avaliacao_cimetica_dc_n").value;
-    }
+        DisturbioDeComportamento = "n"
+    }else{DisturbioDeComportamento = "nda"}
+
     var EncontradoDeCapacete = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_ec_s").checked) {
-        EncontradoDeCapacete = document.getElementById("avaliacao_cimetica_ec_s").value;
+        EncontradoDeCapacete = "s"
     } else if (document.getElementById("avaliacao_cimetica_ec_n").checked) {
-        EncontradoDeCapacete = document.getElementById("avaliacao_cimetica_ec_n").value;
-    }
+        EncontradoDeCapacete = "n"
+    }else{EncontradoDeCapacete = "nda"}
     var EncontradoDeCinto = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_eo_s").checked) {
-        EncontradoDeCinto = document.getElementById("avaliacao_cimetica_eo_s").value;
+        EncontradoDeCinto = "s"
     } else if (document.getElementById("avaliacao_cimetica_eo_n").checked) {
-        EncontradoDeCinto = document.getElementById("avaliacao_cimetica_eo_n").value;
-    }
+        EncontradoDeCinto = "n"
+    }else{EncontradoDeCinto = "nda"}
+
     var ParaBrisasAvariado = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_pba_s").checked) {
-        ParaBrisasAvariado = document.getElementById("avaliacao_cimetica_pba_s").value;
+        ParaBrisasAvariado = "s"
     } else if (document.getElementById("avaliacao_cimetica_pba_n").checked) {
-        ParaBrisasAvariado = document.getElementById("avaliacao_cimetica_pba_n").value;
-    }
+        ParaBrisasAvariado = "n"
+    }else{ParaBrisasAvariado = "nda"}
+
     var CaminhandoNaCena = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_cc_s").checked) {
-        CaminhandoNaCena = document.getElementById("avaliacao_cimetica_cc_s").value;
+        CaminhandoNaCena = "s"
     } else if (document.getElementById("avaliacao_cimetica_cc_n").checked) {
-        CaminhandoNaCena = document.getElementById("avaliacao_cimetica_cc_n").value;
-    }
+        CaminhandoNaCena = "n"
+    }else{CaminhandoNaCena = "nda"}
+
     var PainelAvariado = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_pa_s").checked) {
-        PainelAvariado = document.getElementById("avaliacao_cimetica_pa_s").value;
+        PainelAvariado = "s"
     } else if (document.getElementById("avaliacao_cimetica_pa_n").checked) {
-        PainelAvariado = document.getElementById("avaliacao_cimetica_pa_n").value;
-    }
+        PainelAvariado = "n"
+    }else{PainelAvariado = "nda"}
+
     var VolanteTorcido = "";/*Input type radio*/
     if (document.getElementById("avaliacao_cimetica_vt_s").checked) {
-        VolanteTorcido = document.getElementById("avaliacao_cimetica_vt_s").value;
+        VolanteTorcido = "s"
     } else if (document.getElementById("avaliacao_cimetica_vt_n").checked) {
-        VolanteTorcido = document.getElementById("avaliacao_cimetica_vt_n").value;
-    }
+        VolanteTorcido = "n"
+    }else{VolanteTorcido = "nda"}
+
     console.log(DisturbioDeComportamento)
     console.log(EncontradoDeCapacete)
     console.log(PainelAvariado)
@@ -2773,7 +2798,7 @@ function AvaliacaoCinematica(){
    
 
     $.ajax({
-        url: 'PHP/tabela-problemas-suspeitos.php',
+        url: 'PHP/tabela-avaliacao-cinematica.php',
         method: 'POST',
         data: {
             DisturbioDeComportamento: DisturbioDeComportamento,
@@ -2782,7 +2807,9 @@ function AvaliacaoCinematica(){
             ParaBrisasAvariado: ParaBrisasAvariado,
             VolanteTorcido: VolanteTorcido,
             CaminhandoNaCena: CaminhandoNaCena,
-            PainelAvariado: PainelAvariado
+            PainelAvariado: PainelAvariado,
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function() {
@@ -3281,10 +3308,12 @@ function ObservacoesImportantes(){
     }console.log(TextoDentroObs);
 
     $.ajax({
-        url: 'PHP/.php',
+        url: 'PHP/tabela-observacoes.php',
         method: 'POST',
         data: {
-            TextoDentroObs: TextoDentroObs
+            TextoDentroObs: TextoDentroObs,
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function(){
@@ -3331,6 +3360,7 @@ function SelecionarImagensObj() {
     input.click();
   }
   function ObjetosRecolhidos(){
+    console.clear();
     var ObjetosRecolhidosText = document.getElementById("objescolhido_div");
     if(ObjetosRecolhidosText.textContent !== ""){
         var TextoDentroObj = ObjetosRecolhidosText.textContent;

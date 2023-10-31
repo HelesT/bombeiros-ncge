@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31/10/2023 às 13:55
+-- Tempo de geração: 31/10/2023 às 16:28
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -60,20 +60,20 @@ CREATE TABLE `anamnese_gestacional` (
   `id_anamnese_gestacional` int(11) NOT NULL,
   `cpf_paciente` int(11) NOT NULL,
   `bombeiro` int(11) NOT NULL,
-  `PeriodoDeGestacao` varchar(45) NOT NULL,
-  `NomeDoMedico` varchar(45) NOT NULL,
-  `Quantos` varchar(45) NOT NULL,
-  `Duracao` varchar(45) NOT NULL,
-  `Intervalo` varchar(45) NOT NULL,
-  `HoraDoNascimento` varchar(45) NOT NULL,
-  `NomeDoBebe` varchar(45) NOT NULL,
-  `FpAnamneseGestacional` varchar(1) NOT NULL,
-  `EfAnamneseGestacional` varchar(1) NOT NULL,
-  `SqAnamneseGestacional` varchar(1) NOT NULL,
-  `JbAnamneseGestacional` varchar(1) NOT NULL,
-  `FvAnamneseGestacional` varchar(1) NOT NULL,
-  `PrAnamneseGestacional` varchar(1) NOT NULL,
-  `SexoAnamneseGestacional` varchar(1) NOT NULL
+  `periodo_gestacao` int(11) NOT NULL,
+  `pre_natal` int(11) NOT NULL,
+  `nome_medico` int(11) NOT NULL,
+  `complicacoes` varchar(45) NOT NULL,
+  `filhos` varchar(45) NOT NULL,
+  `contracao_duracao` varchar(45) NOT NULL,
+  `contracao_intervalo` varchar(45) NOT NULL,
+  `evacuacao` varchar(45) NOT NULL,
+  `ruptura_bolsa` varchar(45) NOT NULL,
+  `inspecao_visual` varchar(45) NOT NULL,
+  `parto_realizado` varchar(45) NOT NULL,
+  `hora_nascimento` varchar(45) NOT NULL,
+  `sexo_bebe` varchar(45) NOT NULL,
+  `nome_bebe` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -269,6 +269,19 @@ CREATE TABLE `objetos_recolhidos` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `observacoes_importantes`
+--
+
+CREATE TABLE `observacoes_importantes` (
+  `id_observacoes_importantes` int(11) NOT NULL,
+  `cpf_paciente` int(11) NOT NULL,
+  `bombeiro` int(11) NOT NULL,
+  `observacoes_importantes` varchar(999) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `paciente`
 --
 
@@ -412,7 +425,9 @@ ALTER TABLE `anamnese`
 -- Índices de tabela `anamnese_gestacional`
 --
 ALTER TABLE `anamnese_gestacional`
-  ADD PRIMARY KEY (`id_anamnese_gestacional`);
+  ADD PRIMARY KEY (`id_anamnese_gestacional`),
+  ADD KEY `fk_anamnese_gestacional_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_anamnese_gestacional_cpf_bombeiro` (`bombeiro`);
 
 --
 -- Índices de tabela `avaliacao_cinematica`
@@ -479,6 +494,14 @@ ALTER TABLE `objetos_recolhidos`
   ADD PRIMARY KEY (`id_objetos_recolhidos`);
 
 --
+-- Índices de tabela `observacoes_importantes`
+--
+ALTER TABLE `observacoes_importantes`
+  ADD PRIMARY KEY (`id_observacoes_importantes`),
+  ADD KEY `fk_observacoes_importantes_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_observacoes_importantes_bombeiro` (`bombeiro`);
+
+--
 -- Índices de tabela `paciente`
 --
 ALTER TABLE `paciente`
@@ -535,6 +558,24 @@ ALTER TABLE `termo_recusa`
 --
 
 --
+-- AUTO_INCREMENT de tabela `anamnese`
+--
+ALTER TABLE `anamnese`
+  MODIFY `id_anamnese` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `anamnese_gestacional`
+--
+ALTER TABLE `anamnese_gestacional`
+  MODIFY `id_anamnese_gestacional` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `avaliacao_cinematica`
+--
+ALTER TABLE `avaliacao_cinematica`
+  MODIFY `avaliacao_cinematica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT de tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
@@ -563,6 +604,12 @@ ALTER TABLE `materiais_utilizados_deixados_hospital`
 --
 ALTER TABLE `material_utilizados_descartavel`
   MODIFY `material_utilizados_a` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `observacoes_importantes`
+--
+ALTER TABLE `observacoes_importantes`
+  MODIFY `id_observacoes_importantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `problemas_suspeitos`
@@ -598,7 +645,7 @@ ALTER TABLE `tabela_paciente`
 -- AUTO_INCREMENT de tabela `termo_recusa`
 --
 ALTER TABLE `termo_recusa`
-  MODIFY `id_termo_recusa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_termo_recusa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para tabelas despejadas
@@ -610,6 +657,13 @@ ALTER TABLE `termo_recusa`
 ALTER TABLE `anamnese`
   ADD CONSTRAINT `fk_anamnese_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_anamnese_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
+
+--
+-- Restrições para tabelas `anamnese_gestacional`
+--
+ALTER TABLE `anamnese_gestacional`
+  ADD CONSTRAINT `fk_anamnese_gestacional_cpf_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_anamnese_gestacional_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
 -- Restrições para tabelas `decisao_transporte`
@@ -638,6 +692,13 @@ ALTER TABLE `materiais_utilizados_deixados_hospital`
 ALTER TABLE `material_utilizados_descartavel`
   ADD CONSTRAINT `fk_material_utilizados_descartavel_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_material_utilizados_descartavel_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
+
+--
+-- Restrições para tabelas `observacoes_importantes`
+--
+ALTER TABLE `observacoes_importantes`
+  ADD CONSTRAINT `fk_observacoes_importantes_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_observacoes_importantes_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
 -- Restrições para tabelas `problemas_suspeitos`
