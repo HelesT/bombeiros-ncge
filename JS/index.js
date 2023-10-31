@@ -525,6 +525,7 @@ function AvaliacaoPacienteMaGCS(){
     SpanGCS.textContent = " " + ValorGCS;
 
 console.log(ValorGCS);
+
 }
 
 function AvaliacaoPacienteMa(){
