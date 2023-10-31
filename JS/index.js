@@ -318,6 +318,14 @@ function TermoDeRecusa(){
     var DocRecusa = $('#doc_Recusa').val();
     var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
     var DocRecusa2 = $('#doc_Recusa_2').val();
+console.log(NomeTermoRecusa)
+console.log(IdentidadeRecusa)
+console.log(CpfRescusa)
+console.log(AssinaturaRecusa)
+console.log(TestemunhaRecusa)
+console.log(DocRecusa)
+console.log(TestemunhaRecusa2)
+console.log(DocRecusa2)
 
      $.ajax({
         url: 'PHP/Termo_de_recusa.php',
@@ -518,6 +526,7 @@ function AvaliacaoPacienteMaGCS(){
     SpanGCS.textContent = " " + ValorGCS;
 
 console.log(ValorGCS);
+
 }
 
 function AvaliacaoPacienteMa(){
@@ -2753,7 +2762,16 @@ function AvaliacaoCinematica(){
     } else if (document.getElementById("avaliacao_cimetica_vt_n").checked) {
         VolanteTorcido = document.getElementById("avaliacao_cimetica_vt_n").value;
     }
-    
+    console.log(DisturbioDeComportamento)
+    console.log(EncontradoDeCapacete)
+    console.log(PainelAvariado)
+    console.log(EncontradoDeCinto)
+    console.log(ParaBrisasAvariado)
+    console.log(VolanteTorcido)
+    console.log(CaminhandoNaCena)
+    console.log(PainelAvariado)
+   
+
     $.ajax({
         url: 'PHP/tabela-problemas-suspeitos.php',
         method: 'POST',
