@@ -2743,7 +2743,16 @@ function AvaliacaoCinematica(){
     } else if (document.getElementById("avaliacao_cimetica_vt_n").checked) {
         VolanteTorcido = document.getElementById("avaliacao_cimetica_vt_n").value;
     }
-    
+    console.log(DisturbioDeComportamento)
+    console.log(EncontradoDeCapacete)
+    console.log(PainelAvariado)
+    console.log(EncontradoDeCinto)
+    console.log(ParaBrisasAvariado)
+    console.log(VolanteTorcido)
+    console.log(CaminhandoNaCena)
+    console.log(PainelAvariado)
+   
+
     $.ajax({
         url: 'PHP/tabela-problemas-suspeitos.php',
         method: 'POST',
