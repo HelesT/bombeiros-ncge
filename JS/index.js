@@ -17,7 +17,7 @@
     MaterialUtilizadosB()    PHP FEITO 
     ObservacoesImportantes() PHP FEITO
     ProcedimentosEfetuados() PHP FEITO
-    ObjetosRecolhidos() 
+    ObjetosRecolhidos()      PHP FEITO
 
 */
 
@@ -3500,8 +3500,6 @@ function SelecionarImagensObj() {
         TextoDentroObj = "nda";
     }console.log(TextoDentroObj);
     
-
-
     // $.ajax({
     //     url: 'PHP/tabela-paciente.php',
     //     method: 'POST',
@@ -3512,6 +3510,51 @@ function SelecionarImagensObj() {
     // }).done(function() {
     //     alert("alguma coisa deu!!");
     // });
-    
 };
+
+var base64ImagesObj = [];
+
+function SalvarImagensObj() {
+    // Limpe o console
+    console.clear();
+
+    // Limpe a variável base64ImagesObj
+    base64ImagesObj = [];
+
+    // Selecione a div com o ID "div_imagens_obj"
+    var divImagensObj = document.getElementById("div_imagens_obj");
+
+    // Encontre todas as tags <img> dentro dessa div
+    var imagens = divImagensObj.querySelectorAll("img");
+
+    // Para cada tag <img>, obtenha o valor do atributo src e adicione-o ao array
+    imagens.forEach(function(imagem) {
+        var src = imagem.getAttribute("src");
+        base64ImagesObj.push(src);
+
+        // Exibir os valores completos das imagens
+        console.log(src);
+    });
+
+    // Exibir os valores resumidos das imagens
+    console.log(base64ImagesObj);
+
+    for (var i = 0; i < base64ImagesObj.length; i++) {
+        var imagemBase64 = base64ImagesObj[i];
+        
+        $.ajax({
+            url: 'PHP/tabela-imagem-obj-recolhido.php',
+            method: 'POST',
+            data: {
+                imagens: imagemBase64,
+                Bombeiro: BombeiroAtual,
+                Paciente: CpfPaciente
+            },
+            dataType: 'json'
+        });
+    }
+}
+
+
+
 
