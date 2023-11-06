@@ -3359,6 +3359,7 @@ function SelecionarImagensObj() {
     // Dispara um clique no input de arquivo para abrir o seletor de arquivo
     input.click();
   }
+
   function ObjetosRecolhidos(){
     console.clear();
     var ObjetosRecolhidosText = document.getElementById("objescolhido_div");
@@ -3368,16 +3369,17 @@ function SelecionarImagensObj() {
         TextoDentroObj = "nda";
     }console.log(TextoDentroObj);
     
-    $.ajax({
-        url: 'PHP/tabela-paciente.php',
-        method: 'POST',
-        data: {
-            Data: Data,
-            TextoDentroObj: TextoDentroObj
-        },
-        dataType: 'json'
-    }).done(function() {
-        alert("alguma coisa deu!!");
-    });
+
+
+    // $.ajax({
+    //     url: 'PHP/tabela-paciente.php',
+    //     method: 'POST',
+    //     data: {
+    //         TextoDentroObj: TextoDentroObj
+    //     },
+    //     dataType: 'json'
+    // }).done(function() {
+    //     alert("alguma coisa deu!!");
+    // });
     
 };
