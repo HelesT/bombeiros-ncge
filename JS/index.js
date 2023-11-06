@@ -79,7 +79,136 @@ function RegistrarPaciente(){
     });
 }
 
+function ChegarInputs(){
+     //PacienteRegistro
 
+    // var DataPaciente = document.getElementById("data_paciente");
+    // if(DataPaciente.value.trim() === ""){alert("A área Data do paciente está vazio")}
+
+    // if(SexoPaciente === "nda"){alert("A área Sexo do paciente está vazio")}//radio/chekbox
+    
+    // var NomeHospitalPaciente = document.getElementById("nome_hospital_paciente");
+    // if(NomeHospitalPaciente.value.trim() === ""){alert("A área Nome do Hospital está vazio")}
+    
+    // var NomePaciente = document.getElementById("nome_paciente");
+    // if(NomePaciente.value.trim() === ""){alert("A área Nome do Paciente está vazio")}
+
+    // var IdadePaciente = document.getElementById("idade_paciente");
+    // if(IdadePaciente.value.trim() === ""){alert("A área Idade do Paciente está vazio")}
+
+    // var RgCpfPaciente = document.getElementById("rg_cpf_paciente");
+    // if(RgCpfPaciente.value.trim() === ""){alert("A área Rg/Cpf do Paciente está vazio")}
+
+    // var FonePaciente = document.getElementById("fone_paciente");
+    // if(FonePaciente.value.trim() === ""){alert("A área Fone do Paciente está vazio")}
+
+    // var AcompanhantePaciente = document.getElementById("acompanhante_paciente");
+    // if(AcompanhantePaciente.value.trim() === ""){alert("A área Acompanhante do Paciente está vazio")}
+
+    // var IdadeAcompanhantePaciente = document.getElementById("idade_acompanhante_paciente");
+    // if(IdadeAcompanhantePaciente.value.trim() === ""){alert("A área Idade do Acompanhante está vazio")}
+
+    // var LocalOcorrenciaPaciente = document.getElementById("local_ocorrencia_paciente");
+    // if(LocalOcorrenciaPaciente.value.trim() === ""){alert("A área Local da Ocorrenciaestá vazio")}
+
+    // var NUsbPaciente = document.getElementById("n_usab_paciente");
+    // if(NUsbPaciente.value.trim() === ""){alert("A área N°USB do Paciente está vazio")}
+
+    // var NOcorrPaciente = document.getElementById("n_ocorr_paciente");
+    // if(NOcorrPaciente.value.trim() === ""){alert("A área N°OCORR está vazio")}
+
+    // var DespPaciente = document.getElementById("desp_paciente");
+    // if(DespPaciente.value.trim() === ""){alert("A área DESP vazio")}
+
+    // var HChPaciente = document.getElementById("h_ch_paciente");
+    // if(HChPaciente.value.trim() === ""){alert("A área H.CH do Paciente está vazio")}
+
+    // var KmFinalPaciente = document.getElementById("km_final_paciente");
+    // if(KmFinalPaciente.value.trim() === ""){alert("A área Km Final vazio")}
+
+    // var CodSiaSusPaciente = document.getElementById("cod_sia_sus_paciente");
+    // if(CodSiaSusPaciente.value.trim() === ""){alert("A área  Cód.Sia/Sus do Paciente está vazio")}
+
+    //EmergenciaRegistro
+    
+    // if(EmergenciaRegistro1 === ""){alert("A área Emergencia Registro está vazio")}//radio/chekbox
+
+    //TermoDeRecusa
+
+    // var NomeTermoRecusa = document.getElementById("nome_Recusa");
+    // if(NomeTermoRecusa.value.trim() === ""){alert("A área Nome do Termo Recusa está vazio")}
+    
+    // var IdentidadeRecusa = document.getElementById("identidade_Recusa");
+    // if(IdentidadeRecusa.value.trim() === ""){alert("A área Identidade do Termo Recusa está vazio")}
+    
+    // var CpfRescusa = document.getElementById("cpf_Recusa");
+    // if(CpfRescusa.value.trim() === ""){alert("A área Cpf do Termo Recusa está vazio")}
+
+    // var AssinaturaRecusa = document.getElementById("assinatura_Recusa");
+    // if(AssinaturaRecusa.value.trim() === ""){alert("A área Assinatura do Termo Recusa está vazio")}
+
+    // var TestemunhaRecusa = document.getElementById("testemunha_Recusa");
+    // if(TestemunhaRecusa.value.trim() === ""){alert("A área Testemunha do Termo Recusa está vazio")}
+
+    // var DocRecusa = document.getElementById("doc_Recusa");
+    // if(DocRecusa.value.trim() === ""){alert("A área Doc do Termo Recusa  está vazio")}
+    
+    // var TestemunhaRecusa2 = document.getElementById("testemunha_Recusa_2");
+    // if(TestemunhaRecusa2.value.trim() === ""){alert("A área Testemunha(2) do Termo Recusa  está vazio")}
+
+    // var DocRecusa2 = document.getElementById("doc_Recusa_2");
+    // if(DocRecusa2.value.trim() === ""){alert("A área Doc(2) do Termo Recusa está vazio")}
+
+    //FormaDeConducao
+    //if(FormaConducao === ""){alert("A área Forma Condução está vazio")}//radio/chekbox
+
+    //AvaliacaoPaciente
+
+    //SinaisVitais 
+
+    // var Psa1 = document.getElementById("pressao_arterial_sv");
+    // if(Psa1.value.trim() === ""){alert("A área Pressão Arterial está vazio")}
+
+    // var Psa2 = document.getElementById("mmhg_sv");
+    // if(Psa2.value.trim() === ""){alert("A área mmhg está vazio")}
+    
+    // var Pulso = document.getElementById("pulso_sv");
+    // if(Pulso.value.trim() === ""){alert("A área Pulso está vazio")}
+
+    // var Respiracao = document.getElementById("respiracao_sv");
+    // if(Respiracao.value.trim() === ""){alert("A área Respiração está vazio")}
+
+    // var Temperatura = document.getElementById("temperatura_sv");
+    // if(Temperatura.value.trim() === ""){alert("A área Temperatura está vazio")}
+  
+    // if(Maior2SegSv.trim() === ""){alert("A área final da pagina sinais vitais está vazio")}
+
+    //DecisaoDeTransporte
+
+    // var MDT = document.getElementById("m_dt");
+    // if(MDT.value.trim() === ""){alert("A área MDT está vazio")}
+
+    // var S1DT = document.getElementById("s1_dt");
+    // if(S1DT.value.trim() === ""){alert("A área S1DT está vazio")}
+
+    // var S2DT = document.getElementById("s2_dt");
+    // if(S2DT.value.trim() === ""){alert("A área S2DT está vazio")}
+
+    // var S3DT = document.getElementById("s3_dr");
+    // if(S3DT.value.trim() === ""){alert("A área S3DT está vazio")}
+
+    // var DemanteDT = document.getElementById("demante_dt");
+    // if(DemanteDT.value.trim() === ""){alert("A área Demante está vazio")}
+
+    // if(DecisaoDeTransporteDt.trim() === ""){alert("A área do estado do paciente está vazio")}
+
+    //ProblemasSuspeitos
+    }
+    
+
+
+    var SexoPaciente = "";/*Input type radio*/
+    var EmergenciaRegistro1 = ""
 
 function PacienteRegistro(){    
 
@@ -99,7 +228,6 @@ function PacienteRegistro(){
     var KmFinalPaciente = $('#km_final_paciente').val();if(KmFinalPaciente === ""){KmFinalPaciente = "nda"}
     var CodSiaSusPaciente = $('#cod_sia_sus_paciente').val();if(CodSiaSusPaciente === ""){CodSiaSusPaciente = "nda"}
 
-    var SexoPaciente = "";/*Input type radio*/
     if (document.getElementById("sexo_paciente_m").checked) {
         SexoPaciente = document.getElementById("sexo_paciente_m").value;
     } else if (document.getElementById("sexo_paciente_f").checked) {
@@ -270,39 +398,39 @@ function EmergenciaRegistro(){
         OutroEr = document.getElementById("outro_er").value;
     }else(OutroEr = "")
 
-    var EmergenciaRegistro = "";
-     if(EmergenciaMedicaEr !== ""){EmergenciaRegistro += EmergenciaMedicaEr + ", "}
-     if(ComMeioTransporteEr !== ""){EmergenciaRegistro += ComMeioTransporteEr + ", "}
-     if(CausadoPorAnimaisEr !== ""){EmergenciaRegistro += CausadoPorAnimaisEr + ", "}
-     if(IncendioEr !== ""){EmergenciaRegistro += IncendioEr + ", "}
-     if(AfogamentoEr !== ""){EmergenciaRegistro += AfogamentoEr + ", "}
-     if(DeslizamentoDesmoronamentoEr !== ""){EmergenciaRegistro += DeslizamentoDesmoronamentoEr + ", "}
-     if(AgressaoEr !== ""){EmergenciaRegistro += AgressaoEr + ", "}
-     if(QuedaAltura2mEr !== ""){EmergenciaRegistro += QuedaAltura2mEr + ", "}
-     if(SuicidioEr !== ""){EmergenciaRegistro += SuicidioEr + ", "}
-     if(QuedaPropriaAlturaEr !== ""){EmergenciaRegistro += QuedaPropriaAlturaEr + ", "}
-     if(AtropelamentoEr !== ""){EmergenciaRegistro += AtropelamentoEr + ", "}
-     if(AtropelamentoEr !== ""){EmergenciaRegistro += AtropelamentoEr + ", "}
-     if(ChoqueEletricoEr !== ""){EmergenciaRegistro += ChoqueEletricoEr + ", "}
-     if(DesabamentoEr !== ""){EmergenciaRegistro += DesabamentoEr + ", "}
-     if(DomesticoEr !== ""){EmergenciaRegistro += DomesticoEr + ", "}
-     if(EsportivoEr !== ""){EmergenciaRegistro += EsportivoEr + ", "}
-     if(IntoxicacaoEr !== ""){EmergenciaRegistro += IntoxicacaoEr + ", "}
-     if(QuedaBicicletaEr !== ""){EmergenciaRegistro += QuedaBicicletaEr + ", "}
-     if(QuedaMotoEr !== ""){EmergenciaRegistro += QuedaMotoEr + ", "}
-     if(QuedaEr !== ""){EmergenciaRegistro += QuedaEr + ", "}
-     if(TrabalhoEr !== ""){EmergenciaRegistro += TrabalhoEr + ", "}
-     if(TransferenciaEr !== ""){EmergenciaRegistro += TransferenciaEr + ", "}
-     if(OutroEr !== ""){EmergenciaRegistro += OutroEr + ", "}
-     if(EmergenciaRegistro === ""){EmergenciaRegistro = "nda"}
+     EmergenciaRegistro1 = "";
+     if(EmergenciaMedicaEr !== ""){EmergenciaRegistro1 += EmergenciaMedicaEr + ", "}
+     if(ComMeioTransporteEr !== ""){EmergenciaRegistro1 += ComMeioTransporteEr + ", "}
+     if(CausadoPorAnimaisEr !== ""){EmergenciaRegistro1 += CausadoPorAnimaisEr + ", "}
+     if(IncendioEr !== ""){EmergenciaRegistro1 += IncendioEr + ", "}
+     if(AfogamentoEr !== ""){EmergenciaRegistro1 += AfogamentoEr + ", "}
+     if(DeslizamentoDesmoronamentoEr !== ""){EmergenciaRegistro1 += DeslizamentoDesmoronamentoEr + ", "}
+     if(AgressaoEr !== ""){EmergenciaRegistro1 += AgressaoEr + ", "}
+     if(QuedaAltura2mEr !== ""){EmergenciaRegistro1 += QuedaAltura2mEr + ", "}
+     if(SuicidioEr !== ""){EmergenciaRegistro1 += SuicidioEr + ", "}
+     if(QuedaPropriaAlturaEr !== ""){EmergenciaRegistro1 += QuedaPropriaAlturaEr + ", "}
+     if(AtropelamentoEr !== ""){EmergenciaRegistro1 += AtropelamentoEr + ", "}
+     if(AtropelamentoEr !== ""){EmergenciaRegistro1 += AtropelamentoEr + ", "}
+     if(ChoqueEletricoEr !== ""){EmergenciaRegistro1 += ChoqueEletricoEr + ", "}
+     if(DesabamentoEr !== ""){EmergenciaRegistro1 += DesabamentoEr + ", "}
+     if(DomesticoEr !== ""){EmergenciaRegistro1 += DomesticoEr + ", "}
+     if(EsportivoEr !== ""){EmergenciaRegistro1 += EsportivoEr + ", "}
+     if(IntoxicacaoEr !== ""){EmergenciaRegistro1 += IntoxicacaoEr + ", "}
+     if(QuedaBicicletaEr !== ""){EmergenciaRegistro1 += QuedaBicicletaEr + ", "}
+     if(QuedaMotoEr !== ""){EmergenciaRegistro1 += QuedaMotoEr + ", "}
+     if(QuedaEr !== ""){EmergenciaRegistro1 += QuedaEr + ", "}
+     if(TrabalhoEr !== ""){EmergenciaRegistro1 += TrabalhoEr + ", "}
+     if(TransferenciaEr !== ""){EmergenciaRegistro1 += TransferenciaEr + ", "}
+     if(OutroEr !== ""){EmergenciaRegistro1 += OutroEr + ", "}
+     if(EmergenciaRegistro1 === ""){EmergenciaRegistro1 = "nda"}
 
-    console.log(EmergenciaRegistro)
+    console.log(EmergenciaRegistro1)
 
     $.ajax({
         url: 'PHP/tabela-emergencia.php',
         method: 'POST',
         data: {
-            EmergenciaRegistro:EmergenciaRegistro,
+            EmergenciaRegistro:EmergenciaRegistro1,
             Paciente: CpfPaciente,
             Bombeiro: BombeiroAtual
         },
@@ -350,6 +478,7 @@ console.log(DocRecusa2)
     });
     
 };
+var FormaConducao = "";
 function FormaDeConducao(){
 
     var Conducao = "";/*Input type radio*/
@@ -401,7 +530,7 @@ function FormaDeConducao(){
         FcPedestre = document.getElementById("fc_pedestre").value;
     }else(FcPedestre = "")
 
-    var FormaConducao = "";
+     FormaConducao = "";
     if(FcCiclista !== ""){FormaConducao += FcCiclista + ", "}
     if(FcCondutor !== ""){FormaConducao += FcCondutor + ", "}
     if(FcGestante !== ""){FormaConducao += FcGestante + ", "}
@@ -1175,6 +1304,7 @@ function ocultarDivMa() {
     nenhuma_paciente_ma_rm.checked = false;
     conteudoGCSspan.textContent = 0
 } 
+var DecisaoDeTransporteDt = ""
 function DecisaoDeTransporte(){
     var MDT = $('#m_dt').val(); if(MDT === ""){MDT = "nda"}
     var S1DT = $('#s1_dt').val(); if(S1DT === ""){S1DT = "nda"}
@@ -1182,7 +1312,7 @@ function DecisaoDeTransporte(){
     var S3DT = $('#s3_dr').val(); if(S3DT === ""){S3DT = "nda"}
     var DemanteDT = $('#demante_dt').val(); if(DemanteDT === ""){DemanteDT = "nda"}
     
-    var DecisaoDeTransporteDt = "";/*Input type radio*/
+     DecisaoDeTransporteDt = "";/*Input type radio*/
     if (document.getElementById("critico_dt").checked) {
         DecisaoDeTransporteDt = document.getElementById("critico_dt").value;
     }  else if (document.getElementById("instavel_dt").checked) {
@@ -1220,6 +1350,7 @@ function DecisaoDeTransporte(){
     
 
 }   
+var Maior2SegSv = "";
 function SinaisVitais(){
 
     var Psa1 = $('#pressao_arterial_sv').val();
@@ -1244,7 +1375,7 @@ function SinaisVitais(){
         var Anormal = 'n';
     }
 
-    var Maior2SegSv = "";/*Input type radio*/
+       Maior2SegSv = "";/*Input type radio*/
     if (document.getElementById("menor_2_seg_sv").checked) {
         Maior2SegSv  = document.getElementById("menor_2_seg_sv").value;
     } else if (document.getElementById("normal_sv").checked) {
@@ -3383,3 +3514,4 @@ function SelecionarImagensObj() {
     // });
     
 };
+
