@@ -439,41 +439,36 @@ function EmergenciaRegistro(){
         alert("alguma coisa deu!!");
     });
 };
+let AssImagem = '';
+document.getElementById('assinatura_Recusa').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            AssImagem = event.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
 function TermoDeRecusa(){
 
-    var NomeTermoRecusa = $('#nome_Recusa').val();
-    var IdentidadeRecusa = $('#identidade_Recusa').val();
-    var CpfRescusa = $('#cpf_Recusa').val();
-    var TestemunhaRecusa = $('#testemunha_Recusa').val();
-    var DocRecusa = $('#doc_Recusa').val();
-    var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
-    var DocRecusa2 = $('#doc_Recusa_2').val();
-    const AssRecusa = document.getElementById('assinatura_Recusa');
-    const selectedFile = AssRecusa.files[0];
+  var NomeTermoRecusa = $('#nome_Recusa').val();
+  var IdentidadeRecusa = $('#identidade_Recusa').val();
+  var CpfRescusa = $('#cpf_Recusa').val();
+  var TestemunhaRecusa = $('#testemunha_Recusa').val();
+  var DocRecusa = $('#doc_Recusa').val();
+  var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
+  var DocRecusa2 = $('#doc_Recusa_2').val();
   
-    if (selectedFile) {
-      const reader = new FileReader();
-  
-      reader.onload = function(event) {
-        const imageDataURL = event.target.result;
-        var AssImagem = imageDataURL;
-  
-        // Se desejar armazenar em uma variável, faça isso aqui.
-        // Exemplo: const imagemSelecionada = imageDataURL;
-      };
-  
-      reader.readAsDataURL(selectedFile);
-    } else {
-      alert('Por favor, selecione um arquivo de imagem com assinatura.');
-    }
-
-    console.log(NomeTermoRecusa)
-    console.log(IdentidadeRecusa)
-    console.log(CpfRescusa)
-    console.log(TestemunhaRecusa)
-    console.log(DocRecusa)
-    console.log(TestemunhaRecusa2)
-    console.log(DocRecusa2)
+    console.log(AssImagem)
+    console.log(NomeTermoRecusa);
+    console.log(IdentidadeRecusa);
+    console.log(CpfRescusa);
+    console.log(TestemunhaRecusa);
+    console.log(DocRecusa);
+    console.log(TestemunhaRecusa2);
+    console.log(DocRecusa2);
 
      $.ajax({
         url: 'PHP/tabela-termo-recusa.php',
