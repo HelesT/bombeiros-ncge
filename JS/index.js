@@ -3875,7 +3875,7 @@ function SalvarImagensObj() {
     // Para cada tag <img>, obtenha o valor do atributo src e adicione-o ao array
     imagens.forEach(function(imagem) {
         var src = imagem.getAttribute("src");
-        base64ImagesObj.push(src);
+        base64ImagesObj.push(src); 
 
         // Exibir os valores completos das imagens
         console.log(src);
