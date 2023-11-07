@@ -444,33 +444,51 @@ function TermoDeRecusa(){
     var NomeTermoRecusa = $('#nome_Recusa').val();
     var IdentidadeRecusa = $('#identidade_Recusa').val();
     var CpfRescusa = $('#cpf_Recusa').val();
-    var AssinaturaRecusa = $('#assinatura_Recusa').val();
     var TestemunhaRecusa = $('#testemunha_Recusa').val();
     var DocRecusa = $('#doc_Recusa').val();
     var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
     var DocRecusa2 = $('#doc_Recusa_2').val();
-console.log(NomeTermoRecusa)
-console.log(IdentidadeRecusa)
-console.log(CpfRescusa)
-console.log(AssinaturaRecusa)
-console.log(TestemunhaRecusa)
-console.log(DocRecusa)
-console.log(TestemunhaRecusa2)
-console.log(DocRecusa2)
+    const AssRecusa = document.getElementById('assinatura_Recusa');
+    const selectedFile = AssRecusa.files[0];
+  
+    if (selectedFile) {
+      const reader = new FileReader();
+  
+      reader.onload = function(event) {
+        const imageDataURL = event.target.result;
+        var AssImagem = imageDataURL;
+  
+        // Se desejar armazenar em uma variável, faça isso aqui.
+        // Exemplo: const imagemSelecionada = imageDataURL;
+      };
+  
+      reader.readAsDataURL(selectedFile);
+    } else {
+      alert('Por favor, selecione um arquivo de imagem com assinatura.');
+    }
+
+    console.log(NomeTermoRecusa)
+    console.log(IdentidadeRecusa)
+    console.log(CpfRescusa)
+    console.log(TestemunhaRecusa)
+    console.log(DocRecusa)
+    console.log(TestemunhaRecusa2)
+    console.log(DocRecusa2)
 
      $.ajax({
-        url: 'PHP/Termo_de_recusa.php',
+        url: 'PHP/tabela-termo-recusa.php',
         method: 'POST',
         data: {
             NomeTermoRecusa: NomeTermoRecusa,
             IdentidadeRecusa: IdentidadeRecusa,
             CpfRescusa: CpfRescusa,
-            AssinaturaRecusa: AssinaturaRecusa,
             TestemunhaRecusa: TestemunhaRecusa,
             DocRecusa: DocRecusa,
             TestemunhaRecusa2: TestemunhaRecusa2,
             DocRecusa2: DocRecusa2,
-            
+            Imagem: AssImagem,
+            Bombeiro: BombeiroAtual,
+            Paciente: CpfPaciente
         },
         dataType: 'json'
     }).done(function() {
