@@ -80,12 +80,12 @@ function RegistrarPaciente(){
 }
 
 function ChegarInputs(){
-     //PacienteRegistro
+     ////PacienteRegistro
 
     // var DataPaciente = document.getElementById("data_paciente");
     // if(DataPaciente.value.trim() === ""){alert("A área Data do paciente está vazio")}
 
-    // if(SexoPaciente === "nda"){alert("A área Sexo do paciente está vazio")}//radio/chekbox
+    // if(SexoPaciente === "nda"){alert("A área Sexo do paciente está vazio")}//radio
     
     // var NomeHospitalPaciente = document.getElementById("nome_hospital_paciente");
     // if(NomeHospitalPaciente.value.trim() === ""){alert("A área Nome do Hospital está vazio")}
@@ -129,11 +129,11 @@ function ChegarInputs(){
     // var CodSiaSusPaciente = document.getElementById("cod_sia_sus_paciente");
     // if(CodSiaSusPaciente.value.trim() === ""){alert("A área  Cód.Sia/Sus do Paciente está vazio")}
 
-    //EmergenciaRegistro
+    ////EmergenciaRegistro
     
     // if(EmergenciaRegistro1 === ""){alert("A área Emergencia Registro está vazio")}//radio/chekbox
 
-    //TermoDeRecusa
+    ////TermoDeRecusa
 
     // var NomeTermoRecusa = document.getElementById("nome_Recusa");
     // if(NomeTermoRecusa.value.trim() === ""){alert("A área Nome do Termo Recusa está vazio")}
@@ -159,31 +159,55 @@ function ChegarInputs(){
     // var DocRecusa2 = document.getElementById("doc_Recusa_2");
     // if(DocRecusa2.value.trim() === ""){alert("A área Doc(2) do Termo Recusa está vazio")}
 
-    //FormaDeConducao
+   ////FormaDeConducao
     //if(FormaConducao === ""){alert("A área Forma Condução está vazio")}//radio/chekbox
 
-    //AvaliacaoPaciente
+    ////AvaliacaoPaciente
 
-    //SinaisVitais 
+    ////SinaisVitais 
+//     var Psa1 = $('#pressao_arterial_sv').val();
+// if (Psa1 === "") {
+//     Psa1 = "0";
+// }
+// var Psa2 = $('#mmhg_sv').val();
+// if (Psa2 === "") {
+//     Psa2 = "0";
+// }
+// var PressaoArterial = Psa1 + " x " + Psa2 + " mmhg";
 
-    // var Psa1 = document.getElementById("pressao_arterial_sv");
-    // if(Psa1.value.trim() === ""){alert("A área Pressão Arterial está vazio")}
+// var Pulso = $('#pulso_sv').val();
+// if (Pulso === "") {
+//     Pulso = "0";
+// }
+// var Respiracao = $('#respiracao_sv').val();
+// if (Respiracao === "") {
+//     Respiracao = "0";
+// }
+// var Temperatura = $('#temperatura_sv').val();
+// if (Temperatura === "") {
+//     Temperatura = "0";
+// }
 
-    // var Psa2 = document.getElementById("mmhg_sv");
-    // if(Psa2.value.trim() === ""){alert("A área mmhg está vazio")}
-    
-    // var Pulso = document.getElementById("pulso_sv");
-    // if(Pulso.value.trim() === ""){alert("A área Pulso está vazio")}
+// var AnormalCheckbox = document.getElementById("anormal_sv");/*Input type Checkbox*/
+// var AnormalCheck = AnormalCheckbox.checked;
+// var Anormal = AnormalCheck ? 's' : 'n';
 
-    // var Respiracao = document.getElementById("respiracao_sv");
-    // if(Respiracao.value.trim() === ""){alert("A área Respiração está vazio")}
+// var Maior2SegSv = "";/*Input type radio*/
+// if (document.getElementById("menor_2_seg_sv").checked) {
+//     Maior2SegSv = document.getElementById("menor_2_seg_sv").value;
+// } else if (document.getElementById("normal_sv").checked) {
+//     Maior2SegSv = document.getElementById("normal_sv").value;
+// } else if (document.getElementById("maior_2_seg_sv").checked) {
+//     Maior2SegSv = document.getElementById("maior_2_seg_sv").value;
+// } else {
+//     Maior2SegSv = "Normal";
+// }
 
-    // var Temperatura = document.getElementById("temperatura_sv");
-    // if(Temperatura.value.trim() === ""){alert("A área Temperatura está vazio")}
-  
-    // if(Maior2SegSv.trim() === ""){alert("A área final da pagina sinais vitais está vazio")}
+// if (Psa1 === "0" || Psa2 === "0" || Pulso === "0" || Respiracao === "0" || Temperatura === "0" || Maior2SegSv === "Normal") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página sinais vitais");}
 
-    //DecisaoDeTransporte
+
+    ////DecisaoDeTransporte
 
     // var MDT = document.getElementById("m_dt");
     // if(MDT.value.trim() === ""){alert("A área MDT está vazio")}
@@ -202,9 +226,312 @@ function ChegarInputs(){
 
     // if(DecisaoDeTransporteDt.trim() === ""){alert("A área do estado do paciente está vazio")}
 
-    //ProblemasSuspeitos
+    ////AnamneseGestacional
+//     var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val().trim();
+// if (PeriodoDeGestacao === "") {
+//     PeriodoDeGestacao = "nda";
+//     alert("A área Período de Gestação de Anamnese Gestacional está vazia");
+// }
+
+// var NomeDoMedico = $('#nm_anamnese_gestacional').val().trim();
+// if (NomeDoMedico === "") {
+//     NomeDoMedico = "nda";
+//     alert("A área Nome do Médico de Anamnese Gestacional está vazia");
+// }
+
+// var Duracao = $('#tc_anamnese_gestacional').val().trim();
+// if (Duracao === "") {
+//     Duracao = "nda";
+//     alert("A área Duração de Anamnese Gestacional está vazia");
+// }
+
+// var Intervalo = $('#io_anamnese_gestacional').val().trim();
+// if (Intervalo === "") {
+//     Intervalo = "nda";
+//     alert("A área Intervalo de Anamnese Gestacional está vazia");
+// }
+
+// var HoraDoNascimento = $('#hn_anamnese_gestacional').val().trim();
+// if (HoraDoNascimento === "") {
+//     HoraDoNascimento = "nda";
+//     alert("A área Hora do Nascimento de Anamnese Gestacional está vazia");
+// }
+
+// var NomeDoBebe = $('#nb_anamnese_gestacional').val().trim();
+// if (NomeDoBebe === "") {
+//     NomeDoBebe = "nda";
+//     alert("A área Nome do Bebê de Anamnese Gestacional está vazia");
+// }
+
+// var FpAnamneseGestacional = "";
+// if (document.getElementById("s_fp").checked) {
+//     FpAnamneseGestacional = document.getElementById("s_fp").value.trim();
+// } else if (document.getElementById("n_fp").checked) {
+//     FpAnamneseGestacional = document.getElementById("n_fp").value.trim();
+// } else {
+//     FpAnamneseGestacional = "nda";
+//     alert("A área Fez pré-natal de Anamnese Gestacional está vazia");
+// }
+
+// var EcAnamneseGestacional = "";
+// if (document.getElementById("s_ec").checked) {
+//     EcAnamneseGestacional = document.getElementById("s_ec").value.trim();
+// } else if (document.getElementById("n_ec").checked) {
+//     EcAnamneseGestacional = document.getElementById("n_ec").value.trim();
+// } else {
+//     EcAnamneseGestacional = "nda";
+//     alert("A área Existe possibilidade...  de Anamnese Gestacional está vazia");
+// }
+
+// var QtdFilhos = "";
+// var EfAnamneseGestacional = "";
+// if (document.getElementById("s_ef").checked) {
+//     EfAnamneseGestacional = "Primeiro filhos";
+// } else if (document.getElementById("n_ef").checked) {
+//     QtdFilhos = $('#qs_anamnese_gestacional').val().trim();
+//     if (QtdFilhos === "") {
+//         QtdFilhos = "1+";
+//         alert("A área É o primeiro filho de Anamnese Gestacional está vazia");
+//     }
+//     EfAnamneseGestacional = QtdFilhos;
+// } else {
+//     EfAnamneseGestacional = "nda";
+//     alert("A área É o primeiro filho de Anamnese Gestacional está vazia");
+// }
+
+// var SqAnamneseGestacional = "";
+// if (document.getElementById("s_sq").checked) {
+//     SqAnamneseGestacional = document.getElementById("s_sq").value.trim();
+// } else if (document.getElementById("n_sq").checked) {
+//     SqAnamneseGestacional = document.getElementById("n_sq").value.trim();
+// } else {
+//     SqAnamneseGestacional = "nda";
+//     alert("A área Sente pressão na região do quadril...  de Anamnese Gestacional está vazia");
+// }
+
+// var JbAnamneseGestacional = "";
+// if (document.getElementById("s_jb").checked) {
+//     JbAnamneseGestacional = document.getElementById("s_jb").value.trim();
+// } else if (document.getElementById("n_jb").checked) {
+//     JbAnamneseGestacional = document.getElementById("n_jb").value.trim();
+// } else {
+//     JbAnamneseGestacional = "nda";
+//     alert("A área Já houve ruptura da bolsa de Anamnese Gestacional está vazia");
+// }
+
+// var FvAnamneseGestacional = "";
+// if (document.getElementById("s_fv").checked) {
+//     FvAnamneseGestacional = document.getElementById("s_fv").value.trim();
+// } else if (document.getElementById("n_fv").checked) {
+//     FvAnamneseGestacional = document.getElementById("n_fv").value.trim();
+// } else {
+//     FvAnamneseGestacional = "nda";
+//     alert("A área Foi feito inspeção visual de Anamnese Gestacional está vazia");
+// }
+
+// var PrAnamneseGestacional = "";
+// if (document.getElementById("s_pr").checked) {
+//     PrAnamneseGestacional = document.getElementById("s_pr").value.trim();
+// } else if (document.getElementById("n_pr").checked) {
+//     PrAnamneseGestacional = document.getElementById("n_pr").value.trim();
+// } else {
+//     PrAnamneseGestacional = "nda";
+//     alert("A área Parto realizado de Anamnese Gestacional está vazia");
+// }
+
+// var SexoAnamneseGestacional = "";
+// if (document.getElementById("fem").checked) {
+//     SexoAnamneseGestacional = document.getElementById("fem").value.trim();
+// } else if (document.getElementById("mas").checked) {
+//     SexoAnamneseGestacional = document.getElementById("mas").value.trim();
+// } else {
+//     SexoAnamneseGestacional = "nda";
+//     alert("A área Sexo do bebê de Anamnese Gestacional está vazia");
+// }
+
+
+////AvaliacaoCinematica
+
+// var DisturbioDeComportamento;
+// if (document.getElementById("avaliacao_cimetica_dc_s").checked) {
+//     DisturbioDeComportamento = "s";
+// } else if (document.getElementById("avaliacao_cimetica_dc_n").checked) {
+//     DisturbioDeComportamento = "n";
+// } else {
+//     DisturbioDeComportamento = "nda";
+//     if (DisturbioDeComportamento.trim() === "nda") {
+//         alert("A área Distúrbio de Comportamento está vazia");
+//     }
+// }
+
+// var EncontradoDeCapacete = "";
+// /* Input type radio */
+// if (document.getElementById("avaliacao_cimetica_ec_s").checked) {
+//     EncontradoDeCapacete = "s";
+// } else if (document.getElementById("avaliacao_cimetica_ec_n").checked) {
+//     EncontradoDeCapacete = "n";
+// } else {
+//     EncontradoDeCapacete = "nda";
+//     alert("A área Encontrado de Capacete está vazia");
+// }
+
+// var EncontradoDeCinto = "";
+// /* Input type radio */
+// if (document.getElementById("avaliacao_cimetica_eo_s").checked) {
+//     EncontradoDeCinto = "s";
+// } else if (document.getElementById("avaliacao_cimetica_eo_n").checked) {
+//     EncontradoDeCinto = "n";
+// } else {
+//     EncontradoDeCinto = "nda";
+//     alert("A área Encontrado de Cinto está vazia");
+// }
+
+// var ParaBrisasAvariado = "";
+// /* Input type radio */
+// if (document.getElementById("avaliacao_cimetica_pba_s").checked) {
+//     ParaBrisasAvariado = "s";
+// } else if (document.getElementById("avaliacao_cimetica_pba_n").checked) {
+//     ParaBrisasAvariado = "n";
+// } else {
+//     ParaBrisasAvariado = "nda";
+//     alert("A área Para-Brisas Avariado está vazia");
+// }
+
+// var CaminhandoNaCena = "";
+// /* Input type radio */
+// if (document.getElementById("avaliacao_cimetica_cc_s").checked) {
+//     CaminhandoNaCena = "s";
+// } else if (document.getElementById("avaliacao_cimetica_cc_n").checked) {
+//     CaminhandoNaCena = "n";
+// } else {
+//     CaminhandoNaCena = "nda";
+//     alert("A área Caminhando na Cena está vazia");
+// }
+
+// var PainelAvariado = "";
+// /* Input type radio */
+// if (document.getElementById("avaliacao_cimetica_pa_s").checked) {
+//     PainelAvariado = "s";
+// } else if (document.getElementById("avaliacao_cimetica_pa_n").checked) {
+//     PainelAvariado = "n";
+// } else {
+//     PainelAvariado = "nda";
+//     alert("A área Painel Avariado está vazia");
+// }
+
+// var VolanteTorcido = "";
+// /* Input type radio */
+// if (document.getElementById("avaliacao_cimetica_vt_s").checked) {
+//     VolanteTorcido = "s";
+// } else if (document.getElementById("avaliacao_cimetica_vt_n").checked) {
+//     VolanteTorcido = "n";
+// } else {
+//     VolanteTorcido = "nda";
+//     alert("A área Volante Torcido está vazia");
+// }
+
+////Anamnese
+// var OaAnamnese = $('#oa_anamnese').val().trim();
+// if (OaAnamnese === "") {
+//     OaAnamnese = "nda";
+//     alert("A área O que aconteceu(sinais e sintomas) Anamnese está vazia");
+// }
+
+// var AvAnamnese = "";
+// if (document.getElementById("s_av").checked) {
+//     AvAnamnese = "sim";
+// } else if (document.getElementById("n_av").checked) {
+//     AvAnamnese = "não";
+// } else {
+//     AvAnamnese = "nda";
+//     alert("A área Aconteceu outras vezes Anamnese está vazia");
+// }
+
+// var AcAnamnese = $('#ac_anamnese').val().trim();
+// if (AcAnamnese === "") {
+//     AcAnamnese = "nda";
+//     alert("A área Aconteceu outras vezes Anamnese está vazia");
+// }
+
+// var PsAnamnese = "";
+// var QsAnamnese = "";
+// if (document.getElementById("s_ps").checked) {
+//     QsAnamnese = $('#qs_anamnese').val().trim();
+//     if (QsAnamnese === "") {
+//         QsAnamnese = "nda";
+//         alert("A área Quais Anamnese está vazia");
+//     }
+// } else if (document.getElementById("n_ps").checked) {
+//     QsAnamnese = "nda";
+// } else {
+//     PsAnamnese = "nda";
+//     QsAnamnese = "nda";
+//     alert("A área Possui algum problema de saúde Anamnese está vazia");
+// }
+
+// var HuAnamnese = "";
+// var QisAnamnese = "";
+// var FmAnamnese = "";
+// if (document.getElementById("s_fm").checked) {
+//     HuAnamnese = $('#hu_anamnese').val().trim();
+//     if (HuAnamnese === "") {
+//         HuAnamnese = "nda";
+//         alert("A área Horário da ultima... Anamnese está vazia");
+//     }
+//     QisAnamnese = $('#qis_anamnese').val().trim();
+//     if (QisAnamnese === "") {
+//         QisAnamnese = "nda";
+//         alert("A área Quais Anamnese está vazia");
+//     }
+//     FmAnamnese = QisAnamnese + "(" + HuAnamnese + ")";
+// } else if (document.getElementById("n_fm").checked) {
+//     HuAnamnese = "nda";
+//     QisAnamnese = "nda";
+//     FmAnamnese = "nda";
+// } else {
+//     HuAnamnese = "nda";
+//     QisAnamnese = "nda";
+//     FmAnamnese = "nda";
+//     alert("A área Faz uso de medicação Anamnese está vazia");
+// }
+
+// var EqAnamnese = $('#eq_anamnese').val().trim();
+// if (document.getElementById("s_al").checked) {
+//     if (EqAnamnese === "") {
+//         EqAnamnese = "nda";
+//         alert("A área Especifique Anamnese está vazia");
+//     }
+// } else if (document.getElementById("n_al").checked) {
+//     EqAnamnese = "nda";
+// } else {
+//     AlAnamnese = "nda";
+//     EqAnamnese = "nda";
+//     alert("A área Alérgico a algo  Anamnese está vazia");
+// }
+
+// var IlAnamnese = "";
+// var QrAnamnese = "";
+// if (document.getElementById("s_il").checked) {
+//     QrAnamnese = $('#qr_anamnese').val().trim();
+//     if (QrAnamnese === "") {
+//         QrAnamnese = "nda";
+//         alert("A área Que horas Anamnese está vazia");
+//     }
+// } else if (document.getElementById("n_il").checked) {
+//     QrAnamnese = "nda";
+// } else {
+//     IlAnamnese = "nda";
+//     QrAnamnese = "nda";
+//     alert("A área Ingeriu alimento ou liquido em 6h Anamnese está vazia");
+// }
+
+////ObservacoesImportantes
+
+
     }
-    
+   
+
+
 
 
     var SexoPaciente = "";/*Input type radio*/
@@ -1679,7 +2006,7 @@ function EOPFRadio(){ /*Input type DIV NONE*/
         EOPF.style.display = "flex"
     }
 
-}
+}//n tem notificaiton abaixo
 function SinaisESintomas(){
    
 
@@ -3554,7 +3881,3 @@ function SalvarImagensObj() {
         });
     }
 }
-
-
-
-
