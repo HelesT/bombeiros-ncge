@@ -526,6 +526,12 @@ function ChegarInputs(){
 // }
 
 ////ObservacoesImportantes
+// var ObservacoesImportantesText = document.getElementById("obsdiv").textContent.trim();
+
+// if (ObservacoesImportantesText === "") {
+//     alert("A área de observações importantes está vazia.");
+// }
+
 
 
     }
