@@ -4,7 +4,7 @@
     EmergenciaRegistro()     PHP FEITO
     AvaliacaoPacienteMa() 
     AvaliacaoPacienteMe() 
-    TermoDeRecusa() 
+    TermoDeRecusa()          PHP FEITO
     FormaDeConducao()        PHP FEITO
     DecisaoDeTransporte()    PHP FEITO
     SinaisVitais()           PHP FEITO
@@ -68,6 +68,7 @@ function RegistrarPaciente(){
             AnamneseGestacional();
             ObservacoesImportantes();
             AvaliacaoCinematica();
+            TermoDeRecusa();
             console.log("Consulta Executada com sucesso!!!");
         } else {
             console.log("A consulta falhou.");
@@ -793,11 +794,10 @@ function TermoDeRecusa(){
   var DocRecusa = $('#doc_Recusa').val();
   var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
   var DocRecusa2 = $('#doc_Recusa_2').val();
-  
+  var AssTxtRecusa = "EU " + NomeTermoRecusa + " PORTADOR DA CARTEIRA DE IDENTIDADE RG Nº " + IdentidadeRecusa + " INSCRITO NO CPF SOB Nº" + CpfRescusa + " NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS-VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUENCIAS QUE POSSAMOCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DASUANÃO REALIZAÇÃO."
+    
     console.log(AssImagem)
-    console.log(NomeTermoRecusa);
-    console.log(IdentidadeRecusa);
-    console.log(CpfRescusa);
+    console.log(AssTxtRecusa)
     console.log(TestemunhaRecusa);
     console.log(DocRecusa);
     console.log(TestemunhaRecusa2);
@@ -807,9 +807,7 @@ function TermoDeRecusa(){
         url: 'PHP/tabela-termo-recusa.php',
         method: 'POST',
         data: {
-            NomeTermoRecusa: NomeTermoRecusa,
-            IdentidadeRecusa: IdentidadeRecusa,
-            CpfRescusa: CpfRescusa,
+            TermoRecusa: AssTxtRecusa,
             TestemunhaRecusa: TestemunhaRecusa,
             DocRecusa: DocRecusa,
             TestemunhaRecusa2: TestemunhaRecusa2,
@@ -930,9 +928,15 @@ function Sentada() {/*Input type radio*/
     var semi_deitada_conducao = document.getElementById("semi_deitada_conducao"); 
     semi_deitada_conducao.checked = false;
 }
+
+var AberturaOcular = "Nenhuma";/*Input type radio*/
+var RespostaVerbal = "Nenhuma";/*Input type radio*/
+var RespostaMotora = "Nenhuma";/*Input type radio*/
+
 function AvaliacaoPacienteMaGCS(){
-    var AberturaOcular = "";/*Input type radio*/
-    var ValorAberturaOcularMa = ""
+
+    console.clear();
+
     if (document.getElementById("espontanea_paciente_ma").checked) {
         AberturaOcular = document.getElementById("espontanea_paciente_ma").value;
         ValorAberturaOcularMa = 1
@@ -948,10 +952,8 @@ function AvaliacaoPacienteMaGCS(){
     } else {ValorAberturaOcularMa = 4}
 
     console.log(AberturaOcular)
-    console.log(ValorAberturaOcularMa)
     
     /*RespostaVerbal*/
-    var RespostaVerbal = "";/*Input type radio*/
     var ValorRespostaVerbalMa = "";
     if (document.getElementById("orientado_paciente_ma").checked) {
         RespostaVerbal = document.getElementById("orientado_paciente_ma").value;
@@ -971,9 +973,7 @@ function AvaliacaoPacienteMaGCS(){
     }else {ValorRespostaVerbalMa = 5}
 
     console.log(RespostaVerbal)
-    console.log(ValorRespostaVerbalMa)
 
-    var RespostaMotora = "";/*Input type radio*/
     var ValorRespostaMotoraMa = "";
     if (document.getElementById("obedece_comandos_paciente_ma").checked) {
         RespostaMotora = document.getElementById("obedece_comandos_paciente_ma").value;
@@ -996,7 +996,6 @@ function AvaliacaoPacienteMaGCS(){
     }else{ValorRespostaMotoraMa = 6}
    
     console.log(RespostaMotora)
-    console.log(ValorRespostaMotoraMa)
 
     //var SpanGCS = document.getElementById("total_gcs_paciente");
     var ValorGCS = ValorRespostaMotoraMa + ValorAberturaOcularMa + ValorRespostaVerbalMa;
@@ -1008,6 +1007,10 @@ console.log(ValorGCS);
 }
 
 function AvaliacaoPacienteMa(){
+    console.clear();
+    console.log(AberturaOcular);
+    console.log(RespostaVerbal);
+    console.log(RespostaMotora);
 
     $.ajax({
         url: 'PHP/Avaliacao_paciente.php',
@@ -1015,7 +1018,7 @@ function AvaliacaoPacienteMa(){
         data: {
             AberturaOcular: AberturaOcular,
             RespostaVerbal: RespostaVerbal,
-            RespostaMotora: RespostaMotora,
+            RespostaMotora: RespostaMotora
         },
         dataType: 'json'
     }).done(function() {
@@ -1274,7 +1277,11 @@ function RespostaMotoraMa() {/*Input type radio*/
 var AberturaOcularMe = "Nenhuma";
 var RespostaVerbalMe = "Nenhuma";
 var RespostaMotoraMe = "Ausência(Paralisia Falecida, Hipônia)";
+
 function AvaliacaoPacienteMeGCS() {/*Input type radio*/
+
+console.clear();
+
 var ValorAberturaOcularMe = "";/*Valor numerico da avaliação*/
 if (document.getElementById("espontanea_paciente_me").checked) {
     AberturaOcularMe = document.getElementById("espontanea_paciente_me").value;
@@ -1292,7 +1299,6 @@ if (document.getElementById("espontanea_paciente_me").checked) {
     ValorAberturaOcularMe = 4
 }
 console.log(AberturaOcularMe);
-console.log(ValorAberturaOcularMe);
 
 /*RespostaVerbal*/
 if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").checked) {
@@ -1314,7 +1320,6 @@ if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").check
     ValorRespostaVerbalMe = 5
 }
 console.log(RespostaVerbalMe)
-console.log(ValorRespostaVerbalMe)
 
 if (document.getElementById("obedece_comando_paciente_me").checked) {
     RespostaMotoraMe = document.getElementById("obedece_comando_paciente_me").value;
@@ -1338,7 +1343,6 @@ if (document.getElementById("obedece_comando_paciente_me").checked) {
     ValorRespostaMotoraMe = 6
 }
 console.log(RespostaMotoraMe)
-console.log(ValorRespostaMotoraMe)
 
 var SpanGCS = document.getElementById("total_gcs_paciente");
 var ValorGCS = ValorRespostaMotoraMe + ValorAberturaOcularMe + ValorRespostaVerbalMe;
@@ -1348,6 +1352,7 @@ console.log("Total GCS:  " + ValorGCS);
 }
 
 function AvaliacaoPacienteMe(){
+    console.clear();
 
     console.log(AberturaOcularMe);
     console.log(RespostaVerbalMe);

@@ -1,8 +1,6 @@
 <?php
 include("conecta.php");
-$NomeTermoRecusa = $_POST['NomeTermoRecusa'];
-$IdentidadeRecusa = $_POST['IdentidadeRecusa'];
-$CpfRescusa = $_POST['CpfRescusa'];
+$TermoRecusa = $_POST['TermoRecusa'];
 $AssinaturaRecusa = $_POST['Imagem'];
 $TestemunhaRecusa = $_POST['TestemunhaRecusa'];
 $DocRecusa = $_POST['DocRecusa'];
@@ -12,11 +10,11 @@ $Bombeiro = $_POST['Bombeiro'];
 $Paciente = $_POST['Paciente'];
 
 $stmt = $pdo->prepare("INSERT INTO termo_recusa 
-(nome_recusa, identidade_recusa, cpf_recusa, assinatura_recusa,
+(termo_recusa, assinatura_recusa,
 testemunha_recusa, doc_recusa, testemunha_recusa2, doc_recusa2, bombeiro, cpf_paciente) VALUES 
-(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+(?, ?, ?, ?, ?, ?, ?, ?)");
 $stmt->execute([
-    $NomeTermoRecusa, $IdentidadeRecusa, $CpfRescusa, $AssinaturaRecusa,
+    $TermoRecusa, $AssinaturaRecusa,
     $TestemunhaRecusa, $DocRecusa, $TestemunhaRecusa2, $DocRecusa2, $Bombeiro, $Paciente
 ]);
 ?>
