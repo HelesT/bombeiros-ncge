@@ -930,8 +930,13 @@ function Sentada() {/*Input type radio*/
 }
 
 var AberturaOcular = "Nenhuma";/*Input type radio*/
+var ValorAberturaOcularMa = 4;
+
 var RespostaVerbal = "Nenhuma";/*Input type radio*/
+var ValorRespostaVerbalMa = 5;
+
 var RespostaMotora = "Nenhuma";/*Input type radio*/
+var ValorRespostaMotoraMa = 6;
 
 function AvaliacaoPacienteMaGCS(){
 
@@ -998,19 +1003,24 @@ function AvaliacaoPacienteMaGCS(){
     console.log(RespostaMotora)
 
     //var SpanGCS = document.getElementById("total_gcs_paciente");
-    var ValorGCS = ValorRespostaMotoraMa + ValorAberturaOcularMa + ValorRespostaVerbalMa;
-    var SpanGCS = document.getElementById("total_gcs_paciente")
-    SpanGCS.textContent = " " + ValorGCS;
+ ValorGCS = ValorRespostaMotoraMa + ValorAberturaOcularMa + ValorRespostaVerbalMa;
+ SpanGCS = document.getElementById("total_gcs_paciente")
+SpanGCS.textContent = " " + ValorGCS;
 
 console.log(ValorGCS);
-
 }
+
+//var SpanGCS = document.getElementById("total_gcs_paciente");
+var ValorGCS = ValorRespostaMotoraMa + ValorAberturaOcularMa + ValorRespostaVerbalMa;
+var SpanGCS = document.getElementById("total_gcs_paciente")
+SpanGCS.textContent = " " + ValorGCS;
 
 function AvaliacaoPacienteMa(){
     console.clear();
     console.log(AberturaOcular);
     console.log(RespostaVerbal);
     console.log(RespostaMotora);
+    console.log(ValorGCS);
 
     $.ajax({
         url: 'PHP/Avaliacao_paciente.php',
@@ -1274,15 +1284,20 @@ function RespostaMotoraMa() {/*Input type radio*/
     AusenciaPacienteMa.checked = false;
 }
 /*Menor 5*/
+
 var AberturaOcularMe = "Nenhuma";
+var ValorAberturaOcularMe = 4;
+
 var RespostaVerbalMe = "Nenhuma";
+var ValorRespostaVerbalMe = 5;
+
 var RespostaMotoraMe = "Ausência(Paralisia Falecida, Hipônia)";
+var ValorRespostaMotoraMe = 6;
 
 function AvaliacaoPacienteMeGCS() {/*Input type radio*/
 
 console.clear();
 
-var ValorAberturaOcularMe = "";/*Valor numerico da avaliação*/
 if (document.getElementById("espontanea_paciente_me").checked) {
     AberturaOcularMe = document.getElementById("espontanea_paciente_me").value;
     ValorAberturaOcularMe = 1
@@ -1344,12 +1359,16 @@ if (document.getElementById("obedece_comando_paciente_me").checked) {
 }
 console.log(RespostaMotoraMe)
 
-var SpanGCS = document.getElementById("total_gcs_paciente");
-var ValorGCS = ValorRespostaMotoraMe + ValorAberturaOcularMe + ValorRespostaVerbalMe;
-SpanGCS.textContent = ValorGCS;
+ SpanGCSMe = document.getElementById("total_gcs_paciente");
+ ValorGCSMe = ValorRespostaMotoraMe + ValorAberturaOcularMe + ValorRespostaVerbalMe;
+SpanGCSMe.textContent = ValorGCSMe;
 
-console.log("Total GCS:  " + ValorGCS);
+console.log(ValorGCSMe);
 }
+
+var SpanGCSMe = document.getElementById("total_gcs_paciente");
+var ValorGCSMe = ValorRespostaMotoraMe + ValorAberturaOcularMe + ValorRespostaVerbalMe;
+SpanGCSMe.textContent = ValorGCSMe;
 
 function AvaliacaoPacienteMe(){
     console.clear();
@@ -1357,6 +1376,7 @@ function AvaliacaoPacienteMe(){
     console.log(AberturaOcularMe);
     console.log(RespostaVerbalMe);
     console.log(RespostaMotoraMe);
+    console.log(ValorGCSMe)
 
 $.ajax({
     url: 'PHP/Avaliacao_paciente.php',
