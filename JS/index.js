@@ -2,8 +2,8 @@
     Paginas:
     PacienteRegistro()       PHP FEITO
     EmergenciaRegistro()     PHP FEITO
-    AvaliacaoPacienteMa() 
-    AvaliacaoPacienteMe() 
+    AvaliacaoPacienteMa() ChooseAvaPaciente()
+    AvaliacaoPacienteMe() ChooseAvaPaciente()
     TermoDeRecusa()          PHP FEITO
     FormaDeConducao()        PHP FEITO
     DecisaoDeTransporte()    PHP FEITO
@@ -1026,6 +1026,7 @@ SpanGCS.textContent = " " + ValorGCS;
 
 function AvaliacaoPacienteMa(){
     console.clear();
+    console.log("maior")
     console.log(AberturaOcular);
     console.log(RespostaVerbal);
     console.log(RespostaMotora);
@@ -1384,7 +1385,7 @@ SpanGCSMe.textContent = ValorGCSMe;
 
 function AvaliacaoPacienteMe(){
     console.clear();
-
+    console.log("menor")
     console.log(AberturaOcularMe);
     console.log(RespostaVerbalMe);
     console.log(RespostaMotoraMe);
@@ -1687,6 +1688,16 @@ function ocultarDivMa() {
     nenhuma_paciente_ma_rm.checked = false;
     conteudoGCSspan.textContent = 0
 } 
+
+function ChooseAvaPaciente(){
+    var ocultardivme = document.getElementById("ocultar_div_me");
+    if(ocultardivme.style.backgroundColor === "rgb(6, 103, 232)"){
+        AvaliacaoPacienteMa();
+    }else{
+        AvaliacaoPacienteMe();
+    }
+}
+
 var DecisaoDeTransporteDt = ""
 function DecisaoDeTransporte(){
     var MDT = $('#m_dt').val(); if(MDT === ""){MDT = "nda"}
