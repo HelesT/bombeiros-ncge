@@ -954,7 +954,10 @@ function AvaliacaoPacienteMaGCS(){
     } else if (document.getElementById("nenhuma_paciente_ma_ao").checked) {
         AberturaOcular = document.getElementById("nenhuma_paciente_ma_ao").value;
         ValorAberturaOcularMa = 4
-    } else {ValorAberturaOcularMa = 4}
+    } else {
+        AberturaOcular = document.getElementById("nenhuma_paciente_ma_ao").value;
+        ValorAberturaOcularMa = 4
+    }
 
     console.log(AberturaOcular)
     
@@ -975,7 +978,10 @@ function AvaliacaoPacienteMaGCS(){
     }else if (document.getElementById("nenhuma_paciente_ma_rv").checked) {
         RespostaVerbal = document.getElementById("nenhuma_paciente_ma_rv").value;
         ValorRespostaVerbalMa = 5
-    }else {ValorRespostaVerbalMa = 5}
+    }else {
+        RespostaVerbal = document.getElementById("nenhuma_paciente_ma_rv").value;
+        ValorRespostaVerbalMa = 5
+    }
 
     console.log(RespostaVerbal)
 
@@ -998,7 +1004,10 @@ function AvaliacaoPacienteMaGCS(){
     }else if (document.getElementById("nenhuma_paciente_ma_rm").checked) {
         RespostaMotora = document.getElementById("nenhuma_paciente_ma_rm").value;
         ValorRespostaMotoraMa = 6
-    }else{ValorRespostaMotoraMa = 6}
+    }else{
+        RespostaMotora = document.getElementById("nenhuma_paciente_ma_rm").value;
+        ValorRespostaMotoraMa = 6
+    }
    
     console.log(RespostaMotora)
 
@@ -1311,6 +1320,7 @@ if (document.getElementById("espontanea_paciente_me").checked) {
     AberturaOcularMe = document.getElementById("nenhuma_paciente_me_ao").value;
     ValorAberturaOcularMe = 4
 } else {
+    AberturaOcularMe = document.getElementById("nenhuma_paciente_me_ao").value;
     ValorAberturaOcularMe = 4
 }
 console.log(AberturaOcularMe);
@@ -1332,6 +1342,7 @@ if (document.getElementById("palavras_e_frases_inapropriadas_paciente_me").check
     RespostaVerbalMe = document.getElementById("nenhuma_paciente_me_rv").value;
     ValorRespostaVerbalMe = 5
 }  else{
+    RespostaVerbalMe = document.getElementById("nenhuma_paciente_me_rv").value;
     ValorRespostaVerbalMe = 5
 }
 console.log(RespostaVerbalMe)
@@ -1355,6 +1366,7 @@ if (document.getElementById("obedece_comando_paciente_me").checked) {
     RespostaMotoraMe = document.getElementById("ausencia_paciente").value;
     ValorRespostaMotoraMe = 6
 } else{
+    RespostaMotoraMe = document.getElementById("ausencia_paciente").value;
     ValorRespostaMotoraMe = 6
 }
 console.log(RespostaMotoraMe)
