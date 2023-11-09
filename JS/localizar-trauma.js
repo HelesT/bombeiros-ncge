@@ -333,7 +333,7 @@ if (Radio2MSE.checked){
 function AtivarRadio3MSE(){
 if (Radio3MSE.checked){
     Radio1MSE.checked = false;
-    Radio2MSE.checked = false;
+    Radio2MSE.checked = false; 
 }
 }
 var dados_trauma = "";
