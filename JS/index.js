@@ -1033,12 +1033,15 @@ function AvaliacaoPacienteMa(){
     console.log(ValorGCS);
 
     $.ajax({
-        url: 'PHP/Avaliacao_paciente.php',
+        url: 'PHP/tabela-avaliacao-paciente-maior.php',
         method: 'POST',
         data: {
             AberturaOcular: AberturaOcular,
             RespostaVerbal: RespostaVerbal,
-            RespostaMotora: RespostaMotora
+            RespostaMotora: RespostaMotora,
+            ValorGCS: ValorGCS,
+            Paciente: CpfPaciente,
+            Bombeiro: BombeiroAtual
         },
         dataType: 'json'
     }).done(function() {
@@ -1392,12 +1395,15 @@ function AvaliacaoPacienteMe(){
     console.log(ValorGCSMe)
 
 $.ajax({
-    url: 'PHP/Avaliacao_paciente.php',
+    url: 'PHP/tabela-avaliacao-paciente-menor.php',
     method: 'POST',
     data: {
-        AberturaOcularMe: AberturaOcularMe,
-        RespostaVerbalMe: RespostaVerbalMe,
-        RespostaMotoraMe: RespostaMotoraMe
+        AberturaOcular: AberturaOcularMe,
+        RespostaVerbal: RespostaVerbalMe,
+        RespostaMotora: RespostaMotoraMe,
+        ValorGCS: ValorGCSMe,
+        Bombeiro: BombeiroAtual,
+        Paciente: CpfPaciente
     },
     dataType: 'json'
 }).done(function() {

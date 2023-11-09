@@ -361,7 +361,7 @@ function LocalizacaoTraumas() {
     var dados_trauma = dadosLinhas.join("; ");
 
     // Remova as ocorrências de ",,," e ";;;" da variável dados_trauma
-    dados_trauma = dados_trauma.replace(/, , ,;/g, '');
+    dados_trauma = dados_trauma.replace(/; , , , /g, '');
 
     var QueimaduraCabecaTrauma = "";/*Input type radio*/
     if (document.getElementById("radio_1_cabeca_trauma").checked) {
