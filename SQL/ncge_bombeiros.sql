@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08/11/2023 às 22:59
+-- Tempo de geração: 09-Nov-2023 às 12:04
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.0.28
+-- versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `admin`
+-- Estrutura da tabela `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese`
+-- Estrutura da tabela `anamnese`
 --
 
 CREATE TABLE `anamnese` (
@@ -53,7 +53,7 @@ CREATE TABLE `anamnese` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `anamnese_gestacional`
+-- Estrutura da tabela `anamnese_gestacional`
 --
 
 CREATE TABLE `anamnese_gestacional` (
@@ -79,7 +79,7 @@ CREATE TABLE `anamnese_gestacional` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_cinematica`
+-- Estrutura da tabela `avaliacao_cinematica`
 --
 
 CREATE TABLE `avaliacao_cinematica` (
@@ -98,7 +98,7 @@ CREATE TABLE `avaliacao_cinematica` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_paciente_maior`
+-- Estrutura da tabela `avaliacao_paciente_maior`
 --
 
 CREATE TABLE `avaliacao_paciente_maior` (
@@ -107,28 +107,30 @@ CREATE TABLE `avaliacao_paciente_maior` (
   `bombeiro` int(11) NOT NULL,
   `AberturaOcular` varchar(45) NOT NULL,
   `RespostaVerbal` varchar(45) NOT NULL,
-  `RespostaMotora` varchar(45) NOT NULL
+  `RespostaMotora` varchar(45) NOT NULL,
+  `valor_gcs` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `avaliacao_paciente_menor`
+-- Estrutura da tabela `avaliacao_paciente_menor`
 --
 
 CREATE TABLE `avaliacao_paciente_menor` (
   `id_avaliacao_paciente_menor` int(11) NOT NULL,
   `cpf_paciente` int(11) NOT NULL,
   `bombeiro` int(11) NOT NULL,
-  `AberturaOcularMe` int(45) NOT NULL,
-  `RespostaVerbalMe` int(45) NOT NULL,
-  `RespostaMotoraMe` int(45) NOT NULL
+  `AberturaOcularMe` varchar(45) NOT NULL,
+  `RespostaVerbalMe` varchar(45) NOT NULL,
+  `RespostaMotoraMe` varchar(45) NOT NULL,
+  `valor_gcs` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cadastro`
+-- Estrutura da tabela `cadastro`
 --
 
 CREATE TABLE `cadastro` (
@@ -139,7 +141,7 @@ CREATE TABLE `cadastro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `cadastro`
+-- Extraindo dados da tabela `cadastro`
 --
 
 INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Acesso_cadastro`) VALUES
@@ -148,7 +150,7 @@ INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Aces
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `decisao_transporte`
+-- Estrutura da tabela `decisao_transporte`
 --
 
 CREATE TABLE `decisao_transporte` (
@@ -166,7 +168,7 @@ CREATE TABLE `decisao_transporte` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `emergencias`
+-- Estrutura da tabela `emergencias`
 --
 
 CREATE TABLE `emergencias` (
@@ -179,7 +181,7 @@ CREATE TABLE `emergencias` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `forma_conducao`
+-- Estrutura da tabela `forma_conducao`
 --
 
 CREATE TABLE `forma_conducao` (
@@ -193,7 +195,7 @@ CREATE TABLE `forma_conducao` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `localizacao_traumas`
+-- Estrutura da tabela `localizacao_traumas`
 --
 
 CREATE TABLE `localizacao_traumas` (
@@ -208,7 +210,7 @@ CREATE TABLE `localizacao_traumas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `materiais_utilizados_deixados_hospital`
+-- Estrutura da tabela `materiais_utilizados_deixados_hospital`
 --
 
 CREATE TABLE `materiais_utilizados_deixados_hospital` (
@@ -231,7 +233,7 @@ CREATE TABLE `materiais_utilizados_deixados_hospital` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `material_utilizados_descartavel`
+-- Estrutura da tabela `material_utilizados_descartavel`
 --
 
 CREATE TABLE `material_utilizados_descartavel` (
@@ -255,7 +257,7 @@ CREATE TABLE `material_utilizados_descartavel` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_recolhidos`
+-- Estrutura da tabela `objetos_recolhidos`
 --
 
 CREATE TABLE `objetos_recolhidos` (
@@ -268,7 +270,7 @@ CREATE TABLE `objetos_recolhidos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_recolhidos_imagem`
+-- Estrutura da tabela `objetos_recolhidos_imagem`
 --
 
 CREATE TABLE `objetos_recolhidos_imagem` (
@@ -281,7 +283,7 @@ CREATE TABLE `objetos_recolhidos_imagem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `observacoes_importantes`
+-- Estrutura da tabela `observacoes_importantes`
 --
 
 CREATE TABLE `observacoes_importantes` (
@@ -294,7 +296,7 @@ CREATE TABLE `observacoes_importantes` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `paciente`
+-- Estrutura da tabela `paciente`
 --
 
 CREATE TABLE `paciente` (
@@ -303,7 +305,7 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `paciente`
+-- Extraindo dados da tabela `paciente`
 --
 
 INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
@@ -312,7 +314,7 @@ INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `problemas_suspeitos`
+-- Estrutura da tabela `problemas_suspeitos`
 --
 
 CREATE TABLE `problemas_suspeitos` (
@@ -330,7 +332,7 @@ CREATE TABLE `problemas_suspeitos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `procedimentos_efetuados`
+-- Estrutura da tabela `procedimentos_efetuados`
 --
 
 CREATE TABLE `procedimentos_efetuados` (
@@ -343,7 +345,7 @@ CREATE TABLE `procedimentos_efetuados` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinais_e_sintomas`
+-- Estrutura da tabela `sinais_e_sintomas`
 --
 
 CREATE TABLE `sinais_e_sintomas` (
@@ -356,7 +358,7 @@ CREATE TABLE `sinais_e_sintomas` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `sinais_vitais`
+-- Estrutura da tabela `sinais_vitais`
 --
 
 CREATE TABLE `sinais_vitais` (
@@ -374,7 +376,7 @@ CREATE TABLE `sinais_vitais` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tabela_paciente`
+-- Estrutura da tabela `tabela_paciente`
 --
 
 CREATE TABLE `tabela_paciente` (
@@ -404,7 +406,7 @@ CREATE TABLE `tabela_paciente` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `termo_recusa`
+-- Estrutura da tabela `termo_recusa`
 --
 
 CREATE TABLE `termo_recusa` (
@@ -424,7 +426,7 @@ CREATE TABLE `termo_recusa` (
 --
 
 --
--- Índices de tabela `anamnese`
+-- Índices para tabela `anamnese`
 --
 ALTER TABLE `anamnese`
   ADD PRIMARY KEY (`id_anamnese`),
@@ -432,7 +434,7 @@ ALTER TABLE `anamnese`
   ADD KEY `fk_anamnese_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `anamnese_gestacional`
+-- Índices para tabela `anamnese_gestacional`
 --
 ALTER TABLE `anamnese_gestacional`
   ADD PRIMARY KEY (`id_anamnese_gestacional`),
@@ -440,25 +442,35 @@ ALTER TABLE `anamnese_gestacional`
   ADD KEY `fk_anamnese_gestacional_cpf_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `avaliacao_cinematica`
+-- Índices para tabela `avaliacao_cinematica`
 --
 ALTER TABLE `avaliacao_cinematica`
   ADD PRIMARY KEY (`avaliacao_cinematica`);
 
 --
--- Índices de tabela `avaliacao_paciente_maior`
+-- Índices para tabela `avaliacao_paciente_maior`
 --
 ALTER TABLE `avaliacao_paciente_maior`
-  ADD PRIMARY KEY (`id_avaliacao_paciente_maior`);
+  ADD PRIMARY KEY (`id_avaliacao_paciente_maior`),
+  ADD KEY `fk_avaliacao_paciente_maior_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_avaliacao_paciente_maior_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `cadastro`
+-- Índices para tabela `avaliacao_paciente_menor`
+--
+ALTER TABLE `avaliacao_paciente_menor`
+  ADD PRIMARY KEY (`id_avaliacao_paciente_menor`),
+  ADD KEY `fk_avaliacao_paciente_menor_cpf_paciente` (`cpf_paciente`),
+  ADD KEY `fk_avaliacao_paciente_menor_bombeiro` (`bombeiro`);
+
+--
+-- Índices para tabela `cadastro`
 --
 ALTER TABLE `cadastro`
   ADD PRIMARY KEY (`cod_cadastro`);
 
 --
--- Índices de tabela `decisao_transporte`
+-- Índices para tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
   ADD PRIMARY KEY (`id_decisao_transporte`),
@@ -466,7 +478,7 @@ ALTER TABLE `decisao_transporte`
   ADD KEY `fk_decisao_transporte_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `emergencias`
+-- Índices para tabela `emergencias`
 --
 ALTER TABLE `emergencias`
   ADD PRIMARY KEY (`id_emergencias`),
@@ -474,7 +486,7 @@ ALTER TABLE `emergencias`
   ADD KEY `fk_emergencias_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `forma_conducao`
+-- Índices para tabela `forma_conducao`
 --
 ALTER TABLE `forma_conducao`
   ADD PRIMARY KEY (`id_forma_conducao`),
@@ -482,7 +494,7 @@ ALTER TABLE `forma_conducao`
   ADD KEY `fk_conducao_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `materiais_utilizados_deixados_hospital`
+-- Índices para tabela `materiais_utilizados_deixados_hospital`
 --
 ALTER TABLE `materiais_utilizados_deixados_hospital`
   ADD PRIMARY KEY (`material_utilizados_b`),
@@ -490,7 +502,7 @@ ALTER TABLE `materiais_utilizados_deixados_hospital`
   ADD KEY `fk_materiais_utilizados_deixados_hospital_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `material_utilizados_descartavel`
+-- Índices para tabela `material_utilizados_descartavel`
 --
 ALTER TABLE `material_utilizados_descartavel`
   ADD PRIMARY KEY (`material_utilizados_a`),
@@ -498,13 +510,13 @@ ALTER TABLE `material_utilizados_descartavel`
   ADD KEY `fk_material_utilizados_descartavel_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `objetos_recolhidos`
+-- Índices para tabela `objetos_recolhidos`
 --
 ALTER TABLE `objetos_recolhidos`
   ADD PRIMARY KEY (`id_objetos_recolhidos`);
 
 --
--- Índices de tabela `objetos_recolhidos_imagem`
+-- Índices para tabela `objetos_recolhidos_imagem`
 --
 ALTER TABLE `objetos_recolhidos_imagem`
   ADD PRIMARY KEY (`id_objetos_recolgidos-imagem`),
@@ -512,7 +524,7 @@ ALTER TABLE `objetos_recolhidos_imagem`
   ADD KEY `fk_objetos_recolhidos_imagem_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `observacoes_importantes`
+-- Índices para tabela `observacoes_importantes`
 --
 ALTER TABLE `observacoes_importantes`
   ADD PRIMARY KEY (`id_observacoes_importantes`),
@@ -520,13 +532,13 @@ ALTER TABLE `observacoes_importantes`
   ADD KEY `fk_observacoes_importantes_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `paciente`
+-- Índices para tabela `paciente`
 --
 ALTER TABLE `paciente`
   ADD PRIMARY KEY (`cpf_paciente`);
 
 --
--- Índices de tabela `problemas_suspeitos`
+-- Índices para tabela `problemas_suspeitos`
 --
 ALTER TABLE `problemas_suspeitos`
   ADD PRIMARY KEY (`id_problemas_suspeitos`),
@@ -534,7 +546,7 @@ ALTER TABLE `problemas_suspeitos`
   ADD KEY `fk_problemas_suspeitos_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `procedimentos_efetuados`
+-- Índices para tabela `procedimentos_efetuados`
 --
 ALTER TABLE `procedimentos_efetuados`
   ADD PRIMARY KEY (`id_procedimentos_efetuados`),
@@ -542,7 +554,7 @@ ALTER TABLE `procedimentos_efetuados`
   ADD KEY `fk_procedimentos_efetuados_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `sinais_e_sintomas`
+-- Índices para tabela `sinais_e_sintomas`
 --
 ALTER TABLE `sinais_e_sintomas`
   ADD PRIMARY KEY (`id_sinais_e_sintomas`),
@@ -550,7 +562,7 @@ ALTER TABLE `sinais_e_sintomas`
   ADD KEY `fk_sinais_e_sintomas_cpf_paciente` (`cpf_paciente`);
 
 --
--- Índices de tabela `sinais_vitais`
+-- Índices para tabela `sinais_vitais`
 --
 ALTER TABLE `sinais_vitais`
   ADD PRIMARY KEY (`id_sinais_vitais`),
@@ -558,7 +570,7 @@ ALTER TABLE `sinais_vitais`
   ADD KEY `fk_sinais_e_sintomas_bombeiro` (`bombeiro`);
 
 --
--- Índices de tabela `tabela_paciente`
+-- Índices para tabela `tabela_paciente`
 --
 ALTER TABLE `tabela_paciente`
   ADD PRIMARY KEY (`id_paciente`),
@@ -566,7 +578,7 @@ ALTER TABLE `tabela_paciente`
   ADD KEY `fk_cpf_paciente` (`cpf_paciente`);
 
 --
--- Índices de tabela `termo_recusa`
+-- Índices para tabela `termo_recusa`
 --
 ALTER TABLE `termo_recusa`
   ADD PRIMARY KEY (`id_termo_recusa`),
@@ -574,7 +586,7 @@ ALTER TABLE `termo_recusa`
   ADD KEY `fk_termo_recusa_bombeiro` (`bombeiro`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
@@ -594,6 +606,18 @@ ALTER TABLE `anamnese_gestacional`
 --
 ALTER TABLE `avaliacao_cinematica`
   MODIFY `avaliacao_cinematica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de tabela `avaliacao_paciente_maior`
+--
+ALTER TABLE `avaliacao_paciente_maior`
+  MODIFY `id_avaliacao_paciente_maior` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `avaliacao_paciente_menor`
+--
+ALTER TABLE `avaliacao_paciente_menor`
+  MODIFY `id_avaliacao_paciente_menor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `decisao_transporte`
@@ -674,102 +698,116 @@ ALTER TABLE `termo_recusa`
   MODIFY `id_termo_recusa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `anamnese`
+-- Limitadores para a tabela `anamnese`
 --
 ALTER TABLE `anamnese`
   ADD CONSTRAINT `fk_anamnese_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_anamnese_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `anamnese_gestacional`
+-- Limitadores para a tabela `anamnese_gestacional`
 --
 ALTER TABLE `anamnese_gestacional`
   ADD CONSTRAINT `fk_anamnese_gestacional_cpf_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_anamnese_gestacional_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `decisao_transporte`
+-- Limitadores para a tabela `avaliacao_paciente_maior`
+--
+ALTER TABLE `avaliacao_paciente_maior`
+  ADD CONSTRAINT `fk_avaliacao_paciente_maior_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_avaliacao_paciente_maior_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
+
+--
+-- Limitadores para a tabela `avaliacao_paciente_menor`
+--
+ALTER TABLE `avaliacao_paciente_menor`
+  ADD CONSTRAINT `fk_avaliacao_paciente_menor_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
+  ADD CONSTRAINT `fk_avaliacao_paciente_menor_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
+
+--
+-- Limitadores para a tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
   ADD CONSTRAINT `fk_decisao_transporte_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_decisao_transporte_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `forma_conducao`
+-- Limitadores para a tabela `forma_conducao`
 --
 ALTER TABLE `forma_conducao`
   ADD CONSTRAINT `fk_conducao_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_conducao_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `materiais_utilizados_deixados_hospital`
+-- Limitadores para a tabela `materiais_utilizados_deixados_hospital`
 --
 ALTER TABLE `materiais_utilizados_deixados_hospital`
   ADD CONSTRAINT `fk_materiais_utilizados_deixados_hospital_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_materiais_utilizados_deixados_hospital_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `material_utilizados_descartavel`
+-- Limitadores para a tabela `material_utilizados_descartavel`
 --
 ALTER TABLE `material_utilizados_descartavel`
   ADD CONSTRAINT `fk_material_utilizados_descartavel_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_material_utilizados_descartavel_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `objetos_recolhidos_imagem`
+-- Limitadores para a tabela `objetos_recolhidos_imagem`
 --
 ALTER TABLE `objetos_recolhidos_imagem`
   ADD CONSTRAINT `fk_objetos_recolhidos_imagem_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_objetos_recolhidos_imagem_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `observacoes_importantes`
+-- Limitadores para a tabela `observacoes_importantes`
 --
 ALTER TABLE `observacoes_importantes`
   ADD CONSTRAINT `fk_observacoes_importantes_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_observacoes_importantes_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `problemas_suspeitos`
+-- Limitadores para a tabela `problemas_suspeitos`
 --
 ALTER TABLE `problemas_suspeitos`
   ADD CONSTRAINT `fk_problemas_suspeitos_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_problemas_suspeitos_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `procedimentos_efetuados`
+-- Limitadores para a tabela `procedimentos_efetuados`
 --
 ALTER TABLE `procedimentos_efetuados`
   ADD CONSTRAINT `fk_procedimentos_efetuados_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_procedimentos_efetuados_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `sinais_e_sintomas`
+-- Limitadores para a tabela `sinais_e_sintomas`
 --
 ALTER TABLE `sinais_e_sintomas`
   ADD CONSTRAINT `fk_sinais_e_sintomas_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_sinais_e_sintomas_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `sinais_vitais`
+-- Limitadores para a tabela `sinais_vitais`
 --
 ALTER TABLE `sinais_vitais`
   ADD CONSTRAINT `fk_sinais_vitais_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_sinais_vitais_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `tabela_paciente`
+-- Limitadores para a tabela `tabela_paciente`
 --
 ALTER TABLE `tabela_paciente`
   ADD CONSTRAINT `fk_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),
   ADD CONSTRAINT `fk_cpf_paciente` FOREIGN KEY (`cpf_paciente`) REFERENCES `paciente` (`cpf_paciente`);
 
 --
--- Restrições para tabelas `termo_recusa`
+-- Limitadores para a tabela `termo_recusa`
 --
 ALTER TABLE `termo_recusa`
   ADD CONSTRAINT `fk_termo_recusa_bombeiro` FOREIGN KEY (`bombeiro`) REFERENCES `cadastro` (`cod_cadastro`),

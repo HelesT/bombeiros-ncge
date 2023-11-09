@@ -333,7 +333,7 @@ if (Radio2MSE.checked){
 function AtivarRadio3MSE(){
 if (Radio3MSE.checked){
     Radio1MSE.checked = false;
-    Radio2MSE.checked = false;
+    Radio2MSE.checked = false; 
 }
 }
 var dados_trauma = "";
@@ -361,7 +361,7 @@ function LocalizacaoTraumas() {
     var dados_trauma = dadosLinhas.join("; ");
 
     // Remova as ocorrências de ",,," e ";;;" da variável dados_trauma
-    dados_trauma = dados_trauma.replace(/, , ,;/g, '');
+    dados_trauma = dados_trauma.replace(/; , , , /g, '');
 
     var QueimaduraCabecaTrauma = "";/*Input type radio*/
     if (document.getElementById("radio_1_cabeca_trauma").checked) {
