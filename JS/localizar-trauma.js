@@ -337,10 +337,11 @@ if (Radio3MSE.checked){
 }
 }
 var dados_trauma = "";
-function LocalizacaoTraumas() {
+async function LocalizacaoTraumas() {
+    console.clear();
+
     var tabela = document.getElementById("tabela_de_traumas");
     var linhas = tabela.getElementsByTagName("tr");
-
     var dadosLinhas = [];
 
     for (var i = 1; i < linhas.length; i++) {
@@ -485,20 +486,41 @@ function LocalizacaoTraumas() {
       if(QueimaduraTotalTrauma === ""){QueimaduraTotalTrauma = "nda"}
       if(dados_trauma === ""){dados_trauma = "nda"}
 
+      var resultado = await gerarImagemTrauma();
+
+    console.log(resultado);
     console.log(dados_trauma);
     console.log(QueimaduraTotalTrauma);
+    
 
     $.ajax({
         url: 'PHP/tabela-localizacao-trauma.php',
         method: 'POST',
         data: {
-            texto_trauma: dados_trauma,
+            textotrauma: dados_trauma,
             queimadura: QueimaduraTotalTrauma,
+            imagem: resultado,
+            Paciente: CpfPaciente,
+            Bombeiro: BombeiroAtual
         },
         dataType: 'json'
     }).done(function() {
         alert("Alguma coisa deu!!");
     });
+}
+
+
+
+async function gerarImagemTrauma() {
+    var divParaImagem = document.getElementById('captura_traumas');
+    var imagemTrauma = "";
+    var canvas = await html2canvas(divParaImagem);
+
+    const imagem = new Image();
+    imagem.src = canvas.toDataURL('image/png');
+    imagemTrauma = imagem.src;
+
+    return imagemTrauma;
 }
 
 

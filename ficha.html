@@ -835,15 +835,15 @@ margin-top: 10px;">
 
         <div class="slide-body centro"><!--inicio do corpo da página de ""-->
       <div style="width: 100%; justify-content: space-between; flex-direction: column;display: flex;"> 
-        <div class="centro coluna" style="padding-bottom: 20px;"> 
+        <div class="centro coluna" id="dv_traumas_imagem" style="padding-bottom: 20px;"> 
           <div class="quadrado linha centro" style="width: 320px;height: 30px; margin-bottom: 5px;">
             <span class="centro" style="width: 50%;height: 100%;" id="div_menor_trauma" onclick="AtivarMenorTrauma()">Menor de 5</span>
             <span class="centro" style="width: 50%;height: 100%; background-color: #0667E8; color: white;" id="div_maior_trauma" onclick="AtivarMaiorTrauma()">Maior de 5</span>
           </div>
-            <div id="div_traumas_localizados" onclick="inserirImagem(event)" class="coluna centro" style="border-style:solid; border-color: #0667E8; width: 320px; position: relative;">
+            <div id="captura_traumas"><div id="div_traumas_localizados" onclick="inserirImagem(event)" class="coluna centro" style="border-style:solid; border-color: #0667E8; width: 320px; position: relative;">
               <img src="IMAGENS/corpo-maior-5.png" style="width: 90%;" id="imagem_maior_trauma">
               <img src="IMAGENS/corpo-menor-5.png" style="width: 90%; display: none;" id="imagem_menor_trauma">
-          </div>
+          </div></div>
               <div class="coluna centro">
                 <div class="linha space-between" style="width: 325px;">
                   <div onclick="MudarImagemFratura()" class="linha" style=" border-style:solid; border-color: #0667E8; width: 158px; height: 30px; cursor:pointer;">
@@ -914,6 +914,13 @@ margin-top: 10px;">
                   <div class="linha">
                       <!-- Cute buttons -->
                       <input type="button" onclick="adicionarLinhaTraumas()" value="Nova Linha :3"
+                      style="width: 100px; 
+                      height: 30px; 
+                      border: 1px solid black; 
+                      border-radius: 10px; 
+                      margin-top: 10px;">
+                      <!-- Cute buttons -->
+                      <input type="button" onclick="usarImagemTrauma()" value="Testar inserção de imagem"
                       style="width: 100px; 
                       height: 30px; 
                       border: 1px solid black; 
@@ -1028,7 +1035,7 @@ margin-top: 10px;">
           <div class="centro" id="div_imagens_obj" style="width: 95%; min-height: 110px; background-color: #0668e818; justify-content: space-around; flex-wrap: wrap;">
           </div>
           <!--Cute button -->
-          <input type="button" onclick="SalvarImagensObj()" value="Clica em mim :3"
+          <input type="button" onclick="SalvarImagensObj(); ObjetosRecolhidos()" value="Clica em mim :3"
           style="width: 100px; 
           height: 30px; 
           border: 1px solid black; 
@@ -2123,6 +2130,7 @@ margin-top: 10px;">
   <script src="JS/swiper.js"></script>
   <script src="JS/rolagem.js"></script>
   <script src="JS/localizar-trauma.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   
   
 </html>

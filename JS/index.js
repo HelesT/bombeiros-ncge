@@ -69,14 +69,17 @@ function RegistrarPaciente(){
             ObservacoesImportantes();
             AvaliacaoCinematica();
             TermoDeRecusa();
+            ObjetosRecolhidos();
+            SalvarImagensObj();
+            ChooseAvaPaciente();
+            LocalizacaoTraumas();
+
             console.log("Consulta Executada com sucesso!!!");
         } else {
             console.log("A consulta falhou.");
         }
-    }).fail(function(jqXHR, textStatus, errorThrown){
-        console.log("jqXHR: ", jqXHR);
-        console.log("textStatus: ", textStatus);
-        console.log("errorThrown: ", errorThrown);
+    }).fail(function(){
+        alert("Área vazia ou valor inválido em Paciente RG/CPF")
     });
 }
 
@@ -3905,16 +3908,18 @@ function SelecionarImagensObj() {
         TextoDentroObj = "nda";
     }console.log(TextoDentroObj);
     
-    // $.ajax({
-    //     url: 'PHP/tabela-paciente.php',
-    //     method: 'POST',
-    //     data: {
-    //         TextoDentroObj: TextoDentroObj
-    //     },
-    //     dataType: 'json'
-    // }).done(function() {
-    //     alert("alguma coisa deu!!");
-    // });
+    $.ajax({
+        url: 'PHP/tabela-texto-obj-recolhidos.php',
+        method: 'POST',
+        data: {
+            TextoDentroObj: TextoDentroObj,
+            Paciente: CpfPaciente,
+            Bombeiro: BombeiroAtual
+        },
+        dataType: 'json'
+    }).done(function() {
+        alert("alguma coisa deu!!");
+    });
 };
 
 var base64ImagesObj = [];
