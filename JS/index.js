@@ -84,143 +84,143 @@ function RegistrarPaciente(){
 }
 
 function ChegarInputs(){
-     ////PacienteRegistro
+//      //PacienteRegistro
 
-    //  var Data = $('#data').val();
-    //  if (Data === "") {
-    //      Data = "nda";
-    //  }
+//      var Data = $('#data').val();
+//      if (Data === "") {
+//          Data = "nda";
+//      }
      
-    //  var NomeHospitalPaciente = $('#nome_hospital_paciente').val().trim();
-    //  if (NomeHospitalPaciente === "") {
-    //      NomeHospitalPaciente = "nda";
-    //  }
+//      var NomeHospitalPaciente = $('#nome_hospital_paciente').val().trim();
+//      if (NomeHospitalPaciente === "") {
+//          NomeHospitalPaciente = "nda";
+//      }
      
-    //  var NomePaciente = $('#nome_paciente').val().trim();
-    //  if (NomePaciente === "") {
-    //      NomePaciente = "nda";
-    //  }
+//      var NomePaciente = $('#nome_paciente').val().trim();
+//      if (NomePaciente === "") {
+//          NomePaciente = "nda";
+//      }
      
-    //  var IdadePaciente = $('#idade_paciente').val();
-    //  if (IdadePaciente === "") {
-    //      IdadePaciente = "nda";
-    //  }
+//      var IdadePaciente = $('#idade_paciente').val();
+//      if (IdadePaciente === "") {
+//          IdadePaciente = "nda";
+//      }
      
-    //  var RgCpfPaciente = $('#rg_cpf_paciente').val().trim();
-    //  if (RgCpfPaciente === "") {
-    //      RgCpfPaciente = "nda";
-    //  }
+//      var RgCpfPaciente = $('#rg_cpf_paciente').val().trim();
+//      if (RgCpfPaciente === "") {
+//          RgCpfPaciente = "nda";
+//      }
      
-    //  var FonePaciente = $('#fone_paciente').val().trim();
-    //  if (FonePaciente === "") {
-    //      FonePaciente = "nda";
-    //  }
+//      var FonePaciente = $('#fone_paciente').val().trim();
+//      if (FonePaciente === "") {
+//          FonePaciente = "nda";
+//      }
      
-    //  var AcompanhantePaciente = $('#acompanhante_paciente').val().trim();
-    //  if (AcompanhantePaciente === "") {
-    //      AcompanhantePaciente = "nda";
-    //  }
+//      var AcompanhantePaciente = $('#acompanhante_paciente').val().trim();
+//      if (AcompanhantePaciente === "") {
+//          AcompanhantePaciente = "nda";
+//      }
      
-    //  var IdadeAcompanhantePaciente = $('#idade_acompanhante_paciente').val();
-    //  if (IdadeAcompanhantePaciente === "") {
-    //      IdadeAcompanhantePaciente = "nda";
-    //  }
+//      var IdadeAcompanhantePaciente = $('#idade_acompanhante_paciente').val();
+//      if (IdadeAcompanhantePaciente === "") {
+//          IdadeAcompanhantePaciente = "nda";
+//      }
      
-    //  var LocalOcorrenciaPaciente = $('#local_ocorrencia_paciente').val().trim();
-    //  if (LocalOcorrenciaPaciente === "") {
-    //      LocalOcorrenciaPaciente = "nda";
-    //  }
+//      var LocalOcorrenciaPaciente = $('#local_ocorrencia_paciente').val().trim();
+//      if (LocalOcorrenciaPaciente === "") {
+//          LocalOcorrenciaPaciente = "nda";
+//      }
      
-    //  var NUsbPaciente = $('#n_usab_paciente').val().trim();
-    //  if (NUsbPaciente === "") {
-    //      NUsbPaciente = "nda";
-    //  }
+//      var NUsbPaciente = $('#n_usab_paciente').val().trim();
+//      if (NUsbPaciente === "") {
+//          NUsbPaciente = "nda";
+//      }
      
-    //  var NOcorrPaciente = $('#n_ocorr_paciente').val().trim();
-    //  if (NOcorrPaciente === "") {
-    //      NOcorrPaciente = "nda";
-    //  }
+//      var NOcorrPaciente = $('#n_ocorr_paciente').val().trim();
+//      if (NOcorrPaciente === "") {
+//          NOcorrPaciente = "nda";
+//      }
      
-    //  var DespPaciente = $('#desp_paciente').val().trim();
-    //  if (DespPaciente === "") {
-    //      DespPaciente = "nda";
-    //  }
+//      var DespPaciente = $('#desp_paciente').val().trim();
+//      if (DespPaciente === "") {
+//          DespPaciente = "nda";
+//      }
      
-    //  var HChPaciente = $('#h_ch_paciente').val().trim();
-    //  if (HChPaciente === "") {
-    //      HChPaciente = "nda";
-    //  }
+//      var HChPaciente = $('#h_ch_paciente').val().trim();
+//      if (HChPaciente === "") {
+//          HChPaciente = "nda";
+//      }
      
-    //  var KmFinalPaciente = $('#km_final_paciente').val().trim();
-    //  if (KmFinalPaciente === "") {
-    //      KmFinalPaciente = "nda";
-    //  }
+//      var KmFinalPaciente = $('#km_final_paciente').val().trim();
+//      if (KmFinalPaciente === "") {
+//          KmFinalPaciente = "nda";
+//      }
      
-    //  var CodSiaSusPaciente = $('#cod_sia_sus_paciente').val().trim();
-    //  if (CodSiaSusPaciente === "") {
-    //      CodSiaSusPaciente = "nda";
-    //  }
+//      var CodSiaSusPaciente = $('#cod_sia_sus_paciente').val().trim();
+//      if (CodSiaSusPaciente === "") {
+//          CodSiaSusPaciente = "nda";
+//      }
      
-    //  var SexoPaciente = "";
-    //  if (document.getElementById("sexo_paciente_m").checked) {
-    //      SexoPaciente = document.getElementById("sexo_paciente_m").value;
-    //  } else if (document.getElementById("sexo_paciente_f").checked) {
-    //      SexoPaciente = document.getElementById("sexo_paciente_f").value;
-    //  } else {
-    //      SexoPaciente = "nda";
-    //  }
+//      var SexoPaciente = "";
+//      if (document.getElementById("sexo_paciente_m").checked) {
+//          SexoPaciente = document.getElementById("sexo_paciente_m").value;
+//      } else if (document.getElementById("sexo_paciente_f").checked) {
+//          SexoPaciente = document.getElementById("sexo_paciente_f").value;
+//      } else {
+//          SexoPaciente = "nda";
+//      }
      
      
-    //  if (Data === "nda" || NomeHospitalPaciente === "nda" || NomePaciente === "nda" || IdadePaciente === "nda" || RgCpfPaciente === "nda" || FonePaciente === "nda" || AcompanhantePaciente === "nda" || IdadeAcompanhantePaciente === "nda" || LocalOcorrenciaPaciente === "nda" || NUsbPaciente === "nda" || NOcorrPaciente === "nda" || DespPaciente === "nda" || HChPaciente === "nda" || KmFinalPaciente === "nda" || CodSiaSusPaciente === "nda" || SexoPaciente === "nda") {
-    //      alert("Por favor, preencha todos os campos obrigatórios. Da página Paciente");
-    //  }
+//      if (Data === "nda" || NomeHospitalPaciente === "nda" || NomePaciente === "nda" || IdadePaciente === "nda" || RgCpfPaciente === "nda" || FonePaciente === "nda" || AcompanhantePaciente === "nda" || IdadeAcompanhantePaciente === "nda" || LocalOcorrenciaPaciente === "nda" || NUsbPaciente === "nda" || NOcorrPaciente === "nda" || DespPaciente === "nda" || HChPaciente === "nda" || KmFinalPaciente === "nda" || CodSiaSusPaciente === "nda" || SexoPaciente === "nda") {
+//          alert("Por favor, preencha todos os campos obrigatórios. Da página Paciente");
+//      }
      
      
 
-    ////EmergenciaRegistro
+//     //EmergenciaRegistro
     
-    // if(EmergenciaRegistro1 === ""){alert("A área Emergencia Registro está vazio")}//radio/chekbox
+//     if(EmergenciaRegistro1 === ""){alert("A página Emergencia Registro está vazia")}//radio/chekbox
 
-    ////TermoDeRecusa
-////arrumar página ela só notifica quando seleciona uma imagem 
-    // let AssImagem = '';
-    // document.getElementById('assinatura_Recusa').addEventListener('change', function(e) {
-    //     const file = e.target.files[0];
-    //     if (file) {
-    //         const reader = new FileReader();
-    //         reader.onload = function(event) {
-    //             AssImagem = event.target.result;
-    //             // Verificar se os campos obrigatórios foram preenchidos após carregar a imagem
-    //             var NomeTermoRecusa = $('#nome_Recusa').val().trim();
-    //             var IdentidadeRecusa = $('#identidade_Recusa').val().trim();
-    //             var CpfRescusa = $('#cpf_Recusa').val().trim();
-    //             var TestemunhaRecusa = $('#testemunha_Recusa').val().trim();
-    //             var DocRecusa = $('#doc_Recusa').val().trim();
-    //             var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val().trim();
-    //             var DocRecusa2 = $('#doc_Recusa_2').val().trim();
+//     //TermoDeRecusa
+// //arrumar página ela só notifica quando seleciona uma imagem 
+//     let AssImagem = '';
+//     document.getElementById('assinatura_Recusa').addEventListener('change', function(e) {
+//         const file = e.target.files[0];
+//         if (file) {
+//             const reader = new FileReader();
+//             reader.onload = function(event) {
+//                 AssImagem = event.target.result;
+//                 // Verificar se os campos obrigatórios foram preenchidos após carregar a imagem
+//                 var NomeTermoRecusa = $('#nome_Recusa').val().trim();
+//                 var IdentidadeRecusa = $('#identidade_Recusa').val().trim();
+//                 var CpfRescusa = $('#cpf_Recusa').val().trim();
+//                 var TestemunhaRecusa = $('#testemunha_Recusa').val().trim();
+//                 var DocRecusa = $('#doc_Recusa').val().trim();
+//                 var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val().trim();
+//                 var DocRecusa2 = $('#doc_Recusa_2').val().trim();
     
-    //             if (AssImagem === "" || NomeTermoRecusa === "" || IdentidadeRecusa === "" || CpfRescusa === "" || TestemunhaRecusa === "" || DocRecusa === "" || TestemunhaRecusa2 === "" || DocRecusa2 === "") {
-    //                 alert("Por favor, preencha todos os campos obrigatórios na página Termo De Recusa.");
-    //             } else {
-    //                 // Se todos os campos obrigatórios estão preenchidos e a imagem foi carregada, continue com o restante do código
-    //                 // ...
-    //             }
-    //         };
-    //         reader.readAsDataURL(file);
-    //     } else {
-    //         // Notificação de erro se nenhum arquivo foi selecionado
-    //         alert('Por favor, selecione uma imagem.');
-    //     }
-    // });
+//                 if (AssImagem === "" || NomeTermoRecusa === "" || IdentidadeRecusa === "" || CpfRescusa === "" || TestemunhaRecusa === "" || DocRecusa === "" || TestemunhaRecusa2 === "" || DocRecusa2 === "") {
+//                     alert("Por favor, preencha todos os campos obrigatórios na página Termo De Recusa.");
+//                 } else {
+//                     // Se todos os campos obrigatórios estão preenchidos e a imagem foi carregada, continue com o restante do código
+//                     // ...
+//                 }
+//             };
+//             reader.readAsDataURL(file);
+//         } else {
+//             // Notificação de erro se nenhum arquivo foi selecionado
+//             alert('Por favor, selecione uma imagem.');
+//         }
+//     });
     
 
 
-   ////FormaDeConducao
-    //if(FormaConducao === ""){alert("A área Forma Condução está vazio")}//radio/chekbox
+//    //FormaDeConducao
+//     if(FormaConducao === ""){alert("A página Forma Condução está vazia")}//radio/chekbox
 
-    ////AvaliacaoPaciente
+//     //AvaliacaoPaciente
 
-    ////SinaisVitais 
+//     //SinaisVitais 
 //     var Psa1 = $('#pressao_arterial_sv').val();
 // if (Psa1 === "") {
 //     Psa1 = "0";
@@ -263,7 +263,7 @@ function ChegarInputs(){
 //     alert("Por favor, preencha todos os campos obrigatórios. Da página sinais vitais");}
 
 
-    ////DecisaoDeTransporte
+//     //DecisaoDeTransporte
 
 //     var MDT = $('#m_dt').val().trim(); 
 // if (MDT === "") {
@@ -312,138 +312,189 @@ function ChegarInputs(){
 //     alert("Por favor, preencha todos os campos obrigatórios. Da página Decisão de Transporte");
 // }
 
-    ////AnamneseGestacional
-    var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val().trim();
-    if (PeriodoDeGestacao === "") {
-        PeriodoDeGestacao = "nda";
-    }
+//     //AnamneseGestacional
+//     var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val().trim();
+//     if (PeriodoDeGestacao === "") {
+//         PeriodoDeGestacao = "nda";
+//     }
     
-    var NomeDoMedico = $('#nm_anamnese_gestacional').val().trim();
-    if (NomeDoMedico === "") {
-        NomeDoMedico = "nda";
-    }
+//     var NomeDoMedico = $('#nm_anamnese_gestacional').val().trim();
+//     if (NomeDoMedico === "") {
+//         NomeDoMedico = "nda";
+//     }
     
-    var Duracao = $('#tc_anamnese_gestacional').val().trim();
-    if (Duracao === "") {
-        Duracao = "nda";
-    }
+//     var Duracao = $('#tc_anamnese_gestacional').val().trim();
+//     if (Duracao === "") {
+//         Duracao = "nda";
+//     }
     
-    var Intervalo = $('#io_anamnese_gestacional').val().trim();
-    if (Intervalo === "") {
-        Intervalo = "nda";
-    }
+//     var Intervalo = $('#io_anamnese_gestacional').val().trim();
+//     if (Intervalo === "") {
+//         Intervalo = "nda";
+//     }
     
-    var HoraDoNascimento = $('#hn_anamnese_gestacional').val().trim();
-    if (HoraDoNascimento === "") {
-        HoraDoNascimento = "nda";
-    }
+//     var HoraDoNascimento = $('#hn_anamnese_gestacional').val().trim();
+//     if (HoraDoNascimento === "") {
+//         HoraDoNascimento = "nda";
+//     }
     
-    var NomeDoBebe = $('#nb_anamnese_gestacional').val().trim();
-    if (NomeDoBebe === "") {
-        NomeDoBebe = "nda";
-    }
+//     var NomeDoBebe = $('#nb_anamnese_gestacional').val().trim();
+//     if (NomeDoBebe === "") {
+//         NomeDoBebe = "nda";
+//     }
     
-    var FpAnamneseGestacional = "";
-    if ($('#s_fp').prop('checked')) {
-        FpAnamneseGestacional = "s";
-    } else if ($('#n_fp').prop('checked')) {
-        FpAnamneseGestacional = "n";
-    } else {
-        FpAnamneseGestacional = "nda";
-    }
+//     var FpAnamneseGestacional = "";
+//     if ($('#s_fp').prop('checked')) {
+//         FpAnamneseGestacional = "s";
+//     } else if ($('#n_fp').prop('checked')) {
+//         FpAnamneseGestacional = "n";
+//     } else {
+//         FpAnamneseGestacional = "nda";
+//     }
     
-    // Repita o mesmo processo para as outras variáveis...
-    
-    if (PeriodoDeGestacao === "nda" || NomeDoMedico === "nda" || Duracao === "nda" || Intervalo === "nda" || HoraDoNascimento === "nda" || NomeDoBebe === "nda" || FpAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda") {
-        alert("Por favor, preencha todos os campos obrigatórios. Da página Anamnese Gestacional");
-    }
-
-
-////AvaliacaoCinematica
-
-// var DisturbioDeComportamento;
-// if (document.getElementById("avaliacao_cimetica_dc_s").checked) {
-//     DisturbioDeComportamento = "s";
-// } else if (document.getElementById("avaliacao_cimetica_dc_n").checked) {
-//     DisturbioDeComportamento = "n";
+//     var EcAnamneseGestacional = "";
+// var s_ec_value = $('#s_ec').val().trim();
+// if (s_ec_value !== "") {
+//     EcAnamneseGestacional = s_ec_value;
 // } else {
-//     DisturbioDeComportamento = "nda";
-//     if (DisturbioDeComportamento.trim() === "nda") {
-//         alert("A área Distúrbio de Comportamento está vazia");
+//     var n_ec_value = $('#n_ec').val().trim();
+//     if (n_ec_value !== "") {
+//         EcAnamneseGestacional = n_ec_value;
+//     } else {
+//         EcAnamneseGestacional = "nda";
 //     }
 // }
 
-// var EncontradoDeCapacete = "";
-// /* Input type radio */
-// if (document.getElementById("avaliacao_cimetica_ec_s").checked) {
-//     EncontradoDeCapacete = "s";
-// } else if (document.getElementById("avaliacao_cimetica_ec_n").checked) {
-//     EncontradoDeCapacete = "n";
+// var QtdFilhos = "";
+// var EfAnamneseGestacional = "";
+// var s_ef_checked = $('#s_ef').prop('checked');
+// if (s_ef_checked) {
+//     EfAnamneseGestacional = "Primeiro filho";
 // } else {
-//     EncontradoDeCapacete = "nda";
-//     alert("A área Encontrado de Capacete está vazia");
+//     var n_ef_checked = $('#n_ef').prop('checked');
+//     if (n_ef_checked) {
+//         QtdFilhos = $('#qs_anamnese_gestacional').val().trim();
+//         if (QtdFilhos === "") {
+//             QtdFilhos = "1+";
+//         }
+//         EfAnamneseGestacional = QtdFilhos;
+//     } else {
+//         EfAnamneseGestacional = "nda";
+//     }
 // }
 
-// var EncontradoDeCinto = "";
-// /* Input type radio */
-// if (document.getElementById("avaliacao_cimetica_eo_s").checked) {
-//     EncontradoDeCinto = "s";
-// } else if (document.getElementById("avaliacao_cimetica_eo_n").checked) {
-//     EncontradoDeCinto = "n";
+// var SqAnamneseGestacional = "";
+// var s_sq_value = $('#s_sq').val().trim();
+// if (s_sq_value !== "") {
+//     SqAnamneseGestacional = s_sq_value;
 // } else {
-//     EncontradoDeCinto = "nda";
-//     alert("A área Encontrado de Cinto está vazia");
+//     var n_sq_value = $('#n_sq').val().trim();
+//     if (n_sq_value !== "") {
+//         SqAnamneseGestacional = n_sq_value;
+//     } else {
+//         SqAnamneseGestacional = "nda";
+//     }
 // }
 
-// var ParaBrisasAvariado = "";
-// /* Input type radio */
-// if (document.getElementById("avaliacao_cimetica_pba_s").checked) {
-//     ParaBrisasAvariado = "s";
-// } else if (document.getElementById("avaliacao_cimetica_pba_n").checked) {
-//     ParaBrisasAvariado = "n";
+// var JbAnamneseGestacional = "";
+// var s_jb_value = $('#s_jb').val().trim();
+// if (s_jb_value !== "") {
+//     JbAnamneseGestacional = s_jb_value;
 // } else {
-//     ParaBrisasAvariado = "nda";
-//     alert("A área Para-Brisas Avariado está vazia");
+//     var n_jb_value = $('#n_jb').val().trim();
+//     if (n_jb_value !== "") {
+//         JbAnamneseGestacional = n_jb_value;
+//     } else {
+//         JbAnamneseGestacional = "nda";
+//     }
 // }
 
-// var CaminhandoNaCena = "";
-// /* Input type radio */
-// if (document.getElementById("avaliacao_cimetica_cc_s").checked) {
-//     CaminhandoNaCena = "s";
-// } else if (document.getElementById("avaliacao_cimetica_cc_n").checked) {
-//     CaminhandoNaCena = "n";
+// var FvAnamneseGestacional = "";
+// var s_fv_value = $('#s_fv').val().trim();
+// if (s_fv_value !== "") {
+//     FvAnamneseGestacional = s_fv_value;
 // } else {
-//     CaminhandoNaCena = "nda";
-//     alert("A área Caminhando na Cena está vazia");
+//     var n_fv_value = $('#n_fv').val().trim();
+//     if (n_fv_value !== "") {
+//         FvAnamneseGestacional = n_fv_value;
+//     } else {
+//         FvAnamneseGestacional = "nda";
+//     }
 // }
 
-// var PainelAvariado = "";
-// /* Input type radio */
-// if (document.getElementById("avaliacao_cimetica_pa_s").checked) {
-//     PainelAvariado = "s";
-// } else if (document.getElementById("avaliacao_cimetica_pa_n").checked) {
-//     PainelAvariado = "n";
+// var PrAnamneseGestacional = "";
+// var s_pr_value = $('#s_pr').val().trim();
+// if (s_pr_value !== "") {
+//     PrAnamneseGestacional = s_pr_value;
 // } else {
-//     PainelAvariado = "nda";
-//     alert("A área Painel Avariado está vazia");
+//     var n_pr_value = $('#n_pr').val().trim();
+//     if (n_pr_value !== "") {
+//         PrAnamneseGestacional = n_pr_value;
+//     } else {
+//         PrAnamneseGestacional = "nda";
+//     }
 // }
 
-// var VolanteTorcido = "";
-// /* Input type radio */
-// if (document.getElementById("avaliacao_cimetica_vt_s").checked) {
-//     VolanteTorcido = "s";
-// } else if (document.getElementById("avaliacao_cimetica_vt_n").checked) {
-//     VolanteTorcido = "n";
+// var SexoAnamneseGestacional = "";
+// var fem_checked = $('#fem').prop('checked');
+// if (fem_checked) {
+//     SexoAnamneseGestacional = $('#fem').val().trim();
 // } else {
-//     VolanteTorcido = "nda";
-//     alert("A área Volante Torcido está vazia");
+//     var mas_checked = $('#mas').prop('checked');
+//     if (mas_checked) {
+//         SexoAnamneseGestacional = $('#mas').val().trim();
+//     } else {
+//         SexoAnamneseGestacional = "nda";
+//     }
+// }
+    
+// if (PeriodoDeGestacao === "nda" || NomeDoMedico === "nda" || Duracao === "nda" || Intervalo === "nda" || HoraDoNascimento === "nda" || NomeDoBebe === "nda" || FpAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página Anamnese Gestacional");
 // }
 
-////Anamnese
+
+
+// //AvaliacaoCinematica
+
+// var DisturbioDeComportamento = $('#avaliacao_cimetica_dc_s').prop('checked') ? 's' :
+//                              $('#avaliacao_cimetica_dc_n').prop('checked') ? 'n' : 'nda';
+// DisturbioDeComportamento = DisturbioDeComportamento.trim();
+
+// var EncontradoDeCapacete = $('#avaliacao_cimetica_ec_s').prop('checked') ? 's' :
+//                            $('#avaliacao_cimetica_ec_n').prop('checked') ? 'n' : 'nda';
+// EncontradoDeCapacete = EncontradoDeCapacete.trim();
+
+// var EncontradoDeCinto = $('#avaliacao_cimetica_eo_s').prop('checked') ? 's' :
+//                         $('#avaliacao_cimetica_eo_n').prop('checked') ? 'n' : 'nda';
+// EncontradoDeCinto = EncontradoDeCinto.trim();
+
+// var ParaBrisasAvariado = $('#avaliacao_cimetica_pba_s').prop('checked') ? 's' :
+//                          $('#avaliacao_cimetica_pba_n').prop('checked') ? 'n' : 'nda';
+// ParaBrisasAvariado = ParaBrisasAvariado.trim();
+
+// var CaminhandoNaCena = $('#avaliacao_cimetica_cc_s').prop('checked') ? 's' :
+//                        $('#avaliacao_cimetica_cc_n').prop('checked') ? 'n' : 'nda';
+// CaminhandoNaCena = CaminhandoNaCena.trim();
+
+// var PainelAvariado = $('#avaliacao_cimetica_pa_s').prop('checked') ? 's' :
+//                      $('#avaliacao_cimetica_pa_n').prop('checked') ? 'n' : 'nda';
+// PainelAvariado = PainelAvariado.trim();
+
+// var VolanteTorcido = $('#avaliacao_cimetica_vt_s').prop('checked') ? 's' :
+//                      $('#avaliacao_cimetica_vt_n').prop('checked') ? 'n' : 'nda';
+// VolanteTorcido = VolanteTorcido.trim();
+
+// // Notificação
+// if (DisturbioDeComportamento === "nda" || EncontradoDeCapacete === "nda" || EncontradoDeCinto === "nda" ||
+//     ParaBrisasAvariado === "nda" || CaminhandoNaCena === "nda" || PainelAvariado === "nda" || VolanteTorcido === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página Avaliação Cinemática");
+// }
+
+
+// //Anamnese
 // var OaAnamnese = $('#oa_anamnese').val().trim();
 // if (OaAnamnese === "") {
 //     OaAnamnese = "nda";
-//     alert("A área O que aconteceu(sinais e sintomas) Anamnese está vazia");
 // }
 
 // var AvAnamnese = "";
@@ -453,13 +504,11 @@ function ChegarInputs(){
 //     AvAnamnese = "não";
 // } else {
 //     AvAnamnese = "nda";
-//     alert("A área Aconteceu outras vezes Anamnese está vazia");
 // }
 
 // var AcAnamnese = $('#ac_anamnese').val().trim();
 // if (AcAnamnese === "") {
 //     AcAnamnese = "nda";
-//     alert("A área Aconteceu outras vezes Anamnese está vazia");
 // }
 
 // var PsAnamnese = "";
@@ -468,14 +517,12 @@ function ChegarInputs(){
 //     QsAnamnese = $('#qs_anamnese').val().trim();
 //     if (QsAnamnese === "") {
 //         QsAnamnese = "nda";
-//         alert("A área Quais Anamnese está vazia");
 //     }
 // } else if (document.getElementById("n_ps").checked) {
 //     QsAnamnese = "nda";
 // } else {
 //     PsAnamnese = "nda";
 //     QsAnamnese = "nda";
-//     alert("A área Possui algum problema de saúde Anamnese está vazia");
 // }
 
 // var HuAnamnese = "";
@@ -485,14 +532,12 @@ function ChegarInputs(){
 //     HuAnamnese = $('#hu_anamnese').val().trim();
 //     if (HuAnamnese === "") {
 //         HuAnamnese = "nda";
-//         alert("A área Horário da ultima... Anamnese está vazia");
 //     }
 //     QisAnamnese = $('#qis_anamnese').val().trim();
 //     if (QisAnamnese === "") {
 //         QisAnamnese = "nda";
-//         alert("A área Quais Anamnese está vazia");
 //     }
-//     FmAnamnese = QisAnamnese + "(" + HuAnamnese + ")";
+//     FmAnamnese = QisAnamnese + " x " + HuAnamnese;
 // } else if (document.getElementById("n_fm").checked) {
 //     HuAnamnese = "nda";
 //     QisAnamnese = "nda";
@@ -501,21 +546,19 @@ function ChegarInputs(){
 //     HuAnamnese = "nda";
 //     QisAnamnese = "nda";
 //     FmAnamnese = "nda";
-//     alert("A área Faz uso de medicação Anamnese está vazia");
 // }
 
-// var EqAnamnese = $('#eq_anamnese').val().trim();
+// var EqAnamnese = "";
 // if (document.getElementById("s_al").checked) {
+//     EqAnamnese = $('#eq_anamnese').val().trim();
 //     if (EqAnamnese === "") {
 //         EqAnamnese = "nda";
-//         alert("A área Especifique Anamnese está vazia");
 //     }
 // } else if (document.getElementById("n_al").checked) {
 //     EqAnamnese = "nda";
 // } else {
 //     AlAnamnese = "nda";
 //     EqAnamnese = "nda";
-//     alert("A área Alérgico a algo  Anamnese está vazia");
 // }
 
 // var IlAnamnese = "";
@@ -524,25 +567,25 @@ function ChegarInputs(){
 //     QrAnamnese = $('#qr_anamnese').val().trim();
 //     if (QrAnamnese === "") {
 //         QrAnamnese = "nda";
-//         alert("A área Que horas Anamnese está vazia");
 //     }
 // } else if (document.getElementById("n_il").checked) {
 //     QrAnamnese = "nda";
 // } else {
 //     IlAnamnese = "nda";
 //     QrAnamnese = "nda";
-//     alert("A área Ingeriu alimento ou liquido em 6h Anamnese está vazia");
 // }
 
-////ObservacoesImportantes
+// if (OaAnamnese === "nda" || AvAnamnese === "nda" || AcAnamnese === "nda" || PsAnamnese === "nda" || HuAnamnese === "nda" || EqAnamnese === "nda" || IlAnamnese === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios na página Anamnese.");
+// }
+
+
+// //ObservacoesImportantes
 // var ObservacoesImportantesText = document.getElementById("obsdiv").textContent.trim();
 
 // if (ObservacoesImportantesText === "") {
 //     alert("A área de observações importantes está vazia.");
 // }
-
-
-
     }
    
 
