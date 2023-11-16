@@ -22,7 +22,7 @@
 */
 
 var BombeiroAtual = "";
-var CpfPaciente = "1"
+var CpfPaciente = ""
 
 $.ajax({
     url: 'PHP/tabela-bombeiros.php',
@@ -41,19 +41,18 @@ $.ajax({
 });
 
 function RegistrarPaciente(){
-    var RgCpfPaciente = $('#rg_cpf_paciente').val();
-    if(RgCpfPaciente === ""){RgCpfPaciente = "nda"}
+    var NomePaciente = $('#nome_paciente').val();if(NomePaciente === ""){NomePaciente = "nda"}
 
     $.ajax({
         url: 'PHP/botao-final.php',
         method: 'POST',
         data: {
-            RgCpfPaciente: RgCpfPaciente
+            NomePaciente: NomePaciente
         },
         dataType: 'json'
     }).done(function(resposta){
         if (resposta.sucesso) {
-            CpfPaciente = RgCpfPaciente;
+            CpfPaciente = resposta.cpf_paciente;
             PacienteRegistro();
             EmergenciaRegistro();
             FormaDeConducao();
@@ -73,13 +72,16 @@ function RegistrarPaciente(){
             SalvarImagensObj();
             ChooseAvaPaciente();
             LocalizacaoTraumas();
-
+            console.clear();
             console.log("Consulta Executada com sucesso!!!");
         } else {
+            console.clear();
             console.log("A consulta falhou.");
         }
     }).fail(function(){
         alert("Área vazia ou valor inválido em Paciente RG/CPF")
+        console.clear();
+        console.log(CpfPaciente);
     });
 }
 
