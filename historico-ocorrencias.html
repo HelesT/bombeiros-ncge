@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADM - NOAR</title>
+    <link rel="stylesheet" href="CSS/menu-adm.css" type="text/css">
     <link rel="icon" href="IMAGENS/logo_medicina.png" type="image/png">
-    <link rel="stylesheet" href="CSS/historico-ocorrencias.css" type="text/css">
-    <title>Histórico de ocorrências</title>
 </head>
-<body >
+<body>
     <div id="barra-Lateral coluna" class="barra-Lateral" style="left: -220px;">
         <!-- margin-top: 2px; width: 200px; height: 190px; position: absolute; left: 80px; top: 75%;-->  
-        <div class="quadrado centro "  style=" display: flex; background-color: rgba(0, 0, 0, 0.681); border-color: #000000; border-width: 2px; "> 
+        <div class="quadrado centro "  style=" display: flex; background-color: rgba(0, 0, 0, 0.681); border-color: #000000; border-width: 2px; border: solid;"> 
                  <div class="circulo" id="foto_usu" style="width: 100px; height: 100px; border-color: #ffff;margin-bottom: 20px;"></div>
                 <span style=" font-size: 15px; color: white; margin-right: 65px;">
                      Nome: <span id="nome_que_vai_vir"style="word-break: break-all; word-wrap: break-word; " ></sup>
                 </span>
             </label>
         </div>
-       
+                
     </div>
     <div class="menu-lateral">
         <div class="coluna centro" style="height: 10vh; width: 80px;">
@@ -33,50 +33,81 @@
         </div>
      
     </div>
-    <div class="coluna" style="width: 100%;"> 
-         
-         <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->  
-            <span class="centro" style="width: 20%; height: 100%; text-align: center; color: white;">Histórico de ocorrências</span>
-            <div style="width: 60%; height: 100%;"></div>
-            <div class="justify" style="width: 20%; height: 100%;"><img src="IMAGENS/logo_medicina.png" width="50px" height="50px"></div>
-        </div><!-- Fim do cabeçalho da pagina "" -->
-    <div class="centro coluna" style="margin-top:250px ;"> 
-        <div class="linha centro" style="background-color: rgb(189,186,186);width: 750px;height: 50px; padding-right: 10px;">
-            <div class="linha centro" style="width: 100px;height: 100%; margin-right: 190px;"> 
+    <div class="bloco-principal centro">
+
+
+        <!--CABECALHO-->
+        <div class="cabecalho justify">
+            <span>Ocorrências</span>
+        </div>
+        <!--FIM CABECALHO-->
+
+
+        <!--BLOCO BRANCO-->
+        <div class="bloco-branco">
+
+        </div>
+        <!--FIM BLOCO BRANCO-->
+
+
+        <!--BLOCO CINZA-->
+        <div class="bloco-cinza">
+        
+
+            <!--BlOCO DE PESQUISA-->
+            <div class="pesquisa-usuario justify">
                 <div class="justify" style="border: 2px solid gray; background-color: white; border-radius: 5px;">
-                    <input type="text" class="input-text" style="outline: none; height: 100%; border:none; background-color: transparent;">
+                    <input type="text" class="input-text" style="border:none; background-color: transparent;">
                     <button style=" width: 40px; border: none; height: 36px; background-color: transparent;">
                     <div class="centro" style="border:none;  width: 30px; height: 30px;"><img src="IMAGENS/lupa.png" width="15px"></div>
                     </button>
                 </div>
-            </div>
-            <div class="linha centro" style="width: 100px;height: 100%; margin-left: 200px;">
-                <select id="select_adm" onchange="executarSelect()" style="margin-left: 90px; width: 80px; height: 40px; border: 2px solid gray; border-radius: 5px; background-color: white; outline: none; ">
+                <select id="select_adm" onchange="executarSelect()" style="width: 80px; height: 40px; border: 2px solid gray; border-radius: 5px; background-color: white; outline: none; margin-left: 10px;">
                     <option value="opcao_nada"></option>
                     <option value="opcao_nome">Nome</option>
                     <option value="opcao_data">Data</option>
                 </select>
-                <div class="linha centro" style="width: 15px;height: 100%; margin-left: 90px;"> 
-                    <input style="background-color: rgba(61, 197, 8, 0.842); margin-right: 60px; width: 59px;height: 20px;font-weight: 700;" type="button" value="Buscar">
+                <button onclick="MudarOrdemRegistro()" style="width: 30px; height: 30px; border: 1px solid gray; border-radius: 5px; margin-left: 10px;"><img src="IMAGENS/a-z.png" width="100%"></button>
+            </div>
+            <!--FIM BlOCO DE PESQUISA-->
+
+
+            <!--EDIÇÃO GERAL-->
+            <label style="margin-top: 20px; font-size: 20px;">Adicionar/Editar Usuario/Excluir</label>
+            <div class="linha-tabela justify">
+                <div class="space-evenly" style="width: 800px;">
+                    <input class="input-text" placeholder="Nome" id="nome_geral">
+                    <input class="input-text" placeholder="Registro" id="acesso_geral">
+                </div>
+                <div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;">
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(40, 221, 4);" onclick="AdicionarGeral()"><img src="IMAGENS/Confirm.png" width="15px"></button>
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);" onclick="EditarGeral()"><img src="IMAGENS/edit.png" width="15px"></button>
+                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);" onclick="ExcluirGeral()"><img src="IMAGENS/lixo.png" width="13px"></button>
                 </div>
             </div>
-        </div>
-    </div>
+            <!--FIM EDIÇÃO GERAL-->
 
+
+            <!--REGISTROS DOS USUARIOS-->
+
+
+            <div class="linha-tabela justify" style="margin-top: 20px;background-color: rgb(63, 177, 139);">
+                <div class="space-evenly" style="width: 900px;">
+                    <input style="font-size: 20px;" class="input-text-usuario" value="Nome" readonly><div style="width: 1px; height: 52px; background-color: black;"></div>
+                    <input style="font-size: 20px;" class="input-text-usuario" value="data" readonly><div style="width: 1px; height: 52px; background-color: black;"></div>
+                    <input style="font-size: 20px;" class="input-text-usuario" value="Registro" readonly><div style="width: 1px; height: 52px; background-color: black;"></div>
+                </div>
+            </div>
+
+            <div class="exibir">
+            </div>
+            <!--FIM REGISTROS DOS USUARIOS-->
+
+
+        </div>
+        <!--FIM BLOCO CINZA-->
+        
 </body>
-<script src="JS/historicoocorrencias.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="JS/adm-paciente.js"></script>
 </html>
-<!-- <div class="tabela-container"> 
-                    <div class="table" >
-                        <div class="table-row header-row">
-                            <div class="table-cell">Nome</div>
-                            <div class="table-cell">Data</div>
-                        </div>
-                        <div class="table-row">
-                            <div class="table-cell"></div>
-                            <div class="table-cell"></div>
-                        </div>
-            
-                    </div>
-                </div> -->
-                

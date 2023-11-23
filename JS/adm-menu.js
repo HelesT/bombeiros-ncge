@@ -1,3 +1,7 @@
+//CADASTRO BOMBEIROS
+//CADASTRO PACIENTES
+
+//CADASTRO BOMBEIROS-----------------------------------------------------------------//
 function AdicionarGeral(){
 
     var NomeGeral = $("#nome_geral").val();
@@ -173,4 +177,7 @@ function MudarOrdemRegistro() {
     divsArray = divsArray.reverse(); // Inverte a ordem do array
     $('.exibir').html(divsArray); // Atualiza o conteúdo do elemento .exibir
 }
+
+//CADASTRO PACIENTES-----------------------------------------------------------------//
+
 
