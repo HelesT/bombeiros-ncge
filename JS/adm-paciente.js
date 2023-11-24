@@ -2,6 +2,8 @@ $(document).ready(function() {
     ChamarRegistro();
 });
 
+//-------EXIBIR PACIENTES----------------------------------------
+
 function ChamarRegistro(){
     
 
@@ -17,6 +19,57 @@ function ChamarRegistro(){
         }
         
     }).fail(function(errorThrown) {
+        ChamarRegistro();
         console.log(errorThrown);
+    });
+}
+
+//-------ADICIONAR PACIENTES----------------------------------------
+
+function AdicionarGeral(){
+
+    var NomeGeral = $("#nome_geral").val();
+    var RegistroGeral = $("#registro_geral").val();
+
+    console.log("Nome: " + NomeGeral);
+    console.log("Acesso: " + RegistroGeral);
+
+    $.ajax({
+        url: 'PHP/adm-adicionar-paciente.php',
+        method: 'POST',
+        data: {
+           nome: NomeGeral,
+           id: RegistroGeral
+        },
+        dataType: 'json'
+    }).done(function(){
+        ChamarRegistro();
+    }).fail(function(errorThrown) {
+        console.log(errorThrown);
+        ChamarRegistro();
+        alert("Chave de Registro Indisponível!!");
+    });
+};
+
+function ExcluirGeral(){
+    var NomeGeral = $("#nome_geral").val();
+    var RegistroGeral = $("#registro_geral").val();
+
+    console.log("Nome: " + NomeGeral);
+    console.log("Acesso: " + RegistroGeral);
+
+    $.ajax({
+        url: 'PHP/adm-excluir-paciente.php',
+        method: 'POST',
+        data: {
+           nome: NomeGeral,
+           id: RegistroGeral
+        },
+        dataType: 'json'
+    }).done(function(){
+        ChamarRegistro();
+    }).fail(function(errorThrown) {
+        console.log(errorThrown);
+        ChamarRegistro();
     });
 }
