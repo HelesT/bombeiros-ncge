@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tabela = $_POST['tabela'];
         $coluna = $_POST['coluna'];
         $novo_valor = $_POST['novo_valor'];
+        $valor_id = $_POST['id_paciente'];
 
         // Conexão com o banco de dados (substitua pelas suas credenciais)
         $servername = "localhost";
@@ -21,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $response = array("success" => false, "message" => "Conexão falhou: " . $conn->connect_error);
         } else {
             // Query SQL para atualização
-            $sql = "UPDATE $tabela SET $coluna = '$novo_valor' WHERE cpf_paciente = '5'";
+            $sql = "UPDATE $tabela SET $coluna = '$novo_valor' WHERE cpf_paciente = '$valor_id'";
 
             if ($conn->query($sql) === TRUE) {
                 $response = array("success" => true, "message" => "Registro atualizado com sucesso!");

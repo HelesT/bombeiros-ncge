@@ -2,6 +2,14 @@ $(document).ready(function() {
     ChamarRegistro();
 });
 
+var inputGeralRegistro = document.getElementById('registro_geral');
+var inputHiddenEditar = document.getElementById('idPaciente');
+var painelEdicao = document.getElementById('painelEdicao');
+var blackbg = document.getElementById('blackbg');
+
+
+{//------REQUISIÇÕES AJAX---------------------------------------
+
 //-------EXIBIR PACIENTES----------------------------------------
 
 function ChamarRegistro(){
@@ -51,6 +59,8 @@ function AdicionarGeral(){
     });
 };
 
+//-------EXCLUIR PACIENTES----------------------------------------
+
 function ExcluirGeral(){
     var NomeGeral = $("#nome_geral").val();
     var RegistroGeral = $("#registro_geral").val();
@@ -72,4 +82,44 @@ function ExcluirGeral(){
         console.log(errorThrown);
         ChamarRegistro();
     });
+}
+
+// editarNome(){
+
+// };
+
+}
+
+{//-------FUNÇÕES LOCAIS-----------------------------------------
+
+//Input Hidden valor = input Geral valor
+inputGeralRegistro.addEventListener('input', function() {
+    inputHiddenEditar.value = inputGeralRegistro.value;
+    console.log(inputHiddenEditar.value);
+});
+
+//Aciona uma função dependendo da opção selecionada no editar geral
+function selecionarOpcaoEditarGeral(select) {
+    var opcaoSelecionada = select.value;
+    if (opcaoSelecionada === "nome") {
+        editarNome();
+    } else if (opcaoSelecionada === "avancado") {
+        abrirPainelEdicao();
+    }
+}
+
+function abrirPainelEdicao(){
+    painelEdicao.style.display = "flex";
+    blackbg.style.display = "flex";
+}
+
+function blackBgNone(){
+    painelEdicao.style.display = "none";
+    blackbg.style.display = "none";
+}
+
+function valueSelectEdicaoGeral(select){
+    select.value = "";
+}
+
 }

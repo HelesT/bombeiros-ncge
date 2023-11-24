@@ -9,6 +9,50 @@
     <link rel="icon" href="IMAGENS/logo_medicina.png" type="image/png">
 </head>
 <body>
+
+    <div class="blackbg" id="blackbg" style="display: none;" onclick="blackBgNone()"></div>
+
+    <div id="painelEdicao" class="painel-edicao" style="display: none;">
+        <h2 style="text-align: center;">Editar dados</h2>
+        <form action="PHP/processar_dados.php" method="post" id="formulario">
+            <label for="tabela">Selecionar Tabela:</label>
+            <select name="tabela" id="tabela">
+                <option>Selecionar Tabela</option>
+                <option value="anamnese">Anamnese</option>
+                <option value="anamnese_gestacional">Anamnese Gestacional</option>
+                <option value="avaliacao_cinematica">Avaliacao Cinematica</option>
+                <option value="avaliacao_paciente_maior">Avaliacao Paciente Maior</option>
+                <option value="avaliacao_paciente_menor">Avaliacao Paciente Menor</option>
+                <option value="decisao_transporte">Decisao de Transporte</option>
+                <option value="emergencias">Emergências</option>
+                <option value="forma_conducao">Forma de Conducao</option>
+                <option value="localizacao_traumas">Localizacao de Traumas</option>
+                <option value="materiais_utilizados_deixados_hospital">Materiais Utilizados Deixados no Hospital</option>
+                <option value="material_utilizados_descartavel">Materiais Utilizados Descartaveis</option>
+                <option value="objetos_recolhidos">Objetos Recolhidos</option>
+                <option value="observacoes_importantes">Observacoes Importantes</option>
+                <option value="problemas_suspeitos">Problemas Suspeitos</option>
+                <option value="procedimentos_efetuados">Procedimentos Efetuados</option>
+                <option value="sinais_e_sintomas">Sinais e Sintomas</option>
+                <option value="sinais_vitais">Sinais Vitais</option>
+                <option value="tabela_paciente">Tabela Paciente</option>
+
+                <!-- Adicione outras opcões para as outras tabelas -->
+            </select><br><br>
+
+            <label for="coluna">Selecionar Coluna:</label>
+            <select name="coluna" id="coluna">
+                <!-- As opções serao carregadas dinamicamente aqui -->
+            </select><br><br>
+
+            <label for="novo_valor">Novo Valor:</label>
+            <input type="text" name="novo_valor" id="novo_valor"><br><br>
+            
+            <input type="hidden" id="idPaciente" value="" name="id_paciente">
+            <input type="submit" value="Atualizar">
+        </form>
+    </div>
+
     <div id="barra-Lateral coluna" class="barra-Lateral" style="left: -220px;">
         <!-- margin-top: 2px; width: 200px; height: 190px; position: absolute; left: 80px; top: 75%;-->  
         <div class="quadrado centro "  style=" display: flex; background-color: rgba(0, 0, 0, 0.681); border-color: #000000; border-width: 2px; border: solid;"> 
@@ -81,7 +125,17 @@
                 </div>
                 <div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;">
                     <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(40, 221, 4);" onclick="AdicionarGeral()"><img src="IMAGENS/Confirm.png" width="15px"></button>
-                    <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);" onclick="EditarGeral()"><img src="IMAGENS/edit.png" width="15px"></button>
+                    
+                    <div class="centro" style="border: 1px solid black; width: 20px; height: 20px; background-color: rgb(230, 154, 12); display: inline-block; position: relative;">
+                        <select onclick="valueSelectEdicaoGeral(this)" onchange="selecionarOpcaoEditarGeral(this)" style="opacity: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0; cursor: pointer;">
+                            <option selected disabled hidden></option>
+                            <option style="background-color: rgb(230, 154, 12)" value="editar"><img src="IMAGENS/edit.png" width="15px"></option>
+                            <option value="nome" style="background-color: rgb(230, 154, 12)">Editar Nome</option>
+                            <option value="avancado" style="background-color: rgb(230, 154, 12)">Edição Avançada</option>
+                        </select>
+                        <img src="IMAGENS/edit.png" width="15px" style="pointer-events: none; margin-left: 20%;">
+                    </div>
+                                        
                     <button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);" onclick="ExcluirGeral()"><img src="IMAGENS/lixo.png" width="13px"></button>
                 </div>
             </div>
@@ -102,45 +156,6 @@
             <div class="exibir">
             </div>
 
-            <div style="border: 1px solid black; width: 350px;">
-                <h2>Editar dados</h2>
-                <form action="PHP/processar_dados.php" method="post" id="formulario">
-                    <label for="tabela">Selecionar Tabela:</label>
-                    <select name="tabela" id="tabela">
-                        <option>Selecionar Tabela</option>
-                        <option value="anamnese">Anamnese</option>
-                        <option value="anamnese_gestacional">Anamnese Gestacional</option>
-                        <option value="avaliacao_cinematica">Avaliacao Cinematica</option>
-                        <option value="avaliacao_paciente_maior">Avaliacao Paciente Maior</option>
-                        <option value="avaliacao_paciente_menor">Avaliacao Paciente Menor</option>
-                        <option value="decisao_transporte">Decisao de Transporte</option>
-                        <option value="emergencias">Emergências</option>
-                        <option value="forma_conducao">Forma de Conducao</option>
-                        <option value="localizacao_traumas">Localizacao de Traumas</option>
-                        <option value="materiais_utilizados_deixados_hospital">Materiais Utilizados Deixados no Hospital</option>
-                        <option value="material_utilizados_descartavel">Materiais Utilizados Descartaveis</option>
-                        <option value="objetos_recolhidos">Objetos Recolhidos</option>
-                        <option value="observacoes_importantes">Observacoes Importantes</option>
-                        <option value="problemas_suspeitos">Problemas Suspeitos</option>
-                        <option value="procedimentos_efetuados">Procedimentos Efetuados</option>
-                        <option value="sinais_e_sintomas">Sinais e Sintomas</option>
-                        <option value="sinais_vitais">Sinais Vitais</option>
-                        <option value="tabela_paciente">Tabela Paciente</option>
-        
-                        <!-- Adicione outras opcões para as outras tabelas -->
-                    </select><br><br>
-        
-                    <label for="coluna">Selecionar Coluna:</label>
-                    <select name="coluna" id="coluna">
-                        <!-- As opções serao carregadas dinamicamente aqui -->
-                    </select><br><br>
-        
-                    <label for="novo_valor">Novo Valor:</label>
-                    <input type="text" name="novo_valor" id="novo_valor"><br><br>
-                    
-                    <input type="submit" value="Atualizar">
-                </form>
-            </div>
             <!--FIM REGISTROS DOS USUARIOS-->
 
 
