@@ -21,13 +21,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conn->connect_error) {
             $response = array("success" => false, "message" => "Conexão falhou: " . $conn->connect_error);
         } else {
-            // Query SQL para atualização
-            $sql = "UPDATE $tabela SET $coluna = '$novo_valor' WHERE cpf_paciente = '$valor_id'";
+            // Query SQL para verificar se a linha existe
+            $select_query = "SELECT * FROM $tabela WHERE cpf_paciente = '$valor_id'";
+            $result = $conn->query($select_query);
 
-            if ($conn->query($sql) === TRUE) {
-                $response = array("success" => true, "message" => "Registro atualizado com sucesso!");
+            if ($result->num_rows > 0) {
+                // Se a linha existir, execute uma operação de UPDATE
+                $update_query = "UPDATE $tabela SET $coluna = '$novo_valor' WHERE cpf_paciente = '$valor_id'";
+                if ($conn->query($update_query) === TRUE) {
+                    $response = array("success" => true, "message" => "Registro atualizado com sucesso!");
+                } else {
+                    $response = array("success" => false, "message" => "Erro na atualização do registro: " . $conn->error);
+                }
             } else {
-                $response = array("success" => false, "message" => "Erro na atualização do registro: " . $conn->error);
+                // Se a linha não existir, execute uma operação de INSERT
+                $insert_query = "INSERT INTO $tabela (cpf_paciente, $coluna) VALUES ('$valor_id', '$novo_valor')";
+                if ($conn->query($insert_query) === TRUE) {
+                    $response = array("success" => true, "message" => "Registro inserido com sucesso!");
+                } else {
+                    $response = array("success" => false, "message" => "Erro na inserção do registro: " . $conn->error);
+                }
             }
         }
 

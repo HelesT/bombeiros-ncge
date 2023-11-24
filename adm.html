@@ -15,14 +15,33 @@
 <body class="centro" >
   <div class="coluna centro">
     <img src="IMAGENS/logo.png" width="250px" >
-    <span  style="text-align:center; color: white; font-size: 50px;">Cadastro ADM</span>
-    <input type="text" class="inputtextlogin" placeholder="Nome:">
-    <input type="text" class="inputtextlogin" placeholder="Telefone:">
-    <input type="text" class="inputtextlogin" placeholder="E-mail:">
-    <input type="text" class="inputtextlogin" placeholder="Senha:">
+    <span  style="text-align:center; color: white; font-size: 50px;">Login ADM</span>
+    <input type="text" class="inputtextlogin" id="codigo" placeholder="código:">
+    <input type="text" class="inputtextlogin" id="senha" placeholder="senha:">
   </div>
-  <button  type="submit" class="botao_pisca_pisca" > <span style="font-size: 20px;">Cadastrar</span> </button>
+  <button  type="submit" onclick="login()" class="botao_pisca_pisca" > <span style="font-size: 20px;">Login</span> </button>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="JS/login.js"></script>
+<script>
+  function login(){
+    var id = document.getElementById('codigo');
+    var senha = document.getElementById('senha');
+
+    $.ajax({
+        url: 'PHP/verficar-login-adm.php',
+        method: 'POST',
+        data: {
+           id: NomeGeral,
+           senha: SenhaGeral
+        },
+        dataType: 'json'
+    }).done(function(){
+        
+    }).fail(function(errorThrown) {
+        console.log(errorThrown);
+       
+    });
+  }
+</script>
 </html>

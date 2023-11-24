@@ -6,6 +6,8 @@ var inputGeralRegistro = document.getElementById('registro_geral');
 var inputHiddenEditar = document.getElementById('idPaciente');
 var painelEdicao = document.getElementById('painelEdicao');
 var blackbg = document.getElementById('blackbg');
+var nomeGeralPaciente = document.getElementById('nome_geral');
+var registroGeralPaciente = document.getElementById('registro_geral');
 
 
 {//------REQUISIÇÕES AJAX---------------------------------------
@@ -39,9 +41,6 @@ function AdicionarGeral(){
     var NomeGeral = $("#nome_geral").val();
     var RegistroGeral = $("#registro_geral").val();
 
-    console.log("Nome: " + NomeGeral);
-    console.log("Acesso: " + RegistroGeral);
-
     $.ajax({
         url: 'PHP/adm-adicionar-paciente.php',
         method: 'POST',
@@ -65,9 +64,6 @@ function ExcluirGeral(){
     var NomeGeral = $("#nome_geral").val();
     var RegistroGeral = $("#registro_geral").val();
 
-    console.log("Nome: " + NomeGeral);
-    console.log("Acesso: " + RegistroGeral);
-
     $.ajax({
         url: 'PHP/adm-excluir-paciente.php',
         method: 'POST',
@@ -84,9 +80,22 @@ function ExcluirGeral(){
     });
 }
 
-// editarNome(){
-
-// };
+function editarNome(){
+    $.ajax({
+        url: 'PHP/adm-editar-nome-paciente.php',
+        method: 'POST',
+        data: {
+           nome: nomeGeralPaciente.value,
+           id: registroGeralPaciente.value
+        },
+        dataType: 'json'
+    }).done(function(){
+        ChamarRegistro();
+    }).fail(function(errorThrown) {
+        console.log(errorThrown);
+        ChamarRegistro();
+    });
+};
 
 }
 
@@ -95,7 +104,6 @@ function ExcluirGeral(){
 //Input Hidden valor = input Geral valor
 inputGeralRegistro.addEventListener('input', function() {
     inputHiddenEditar.value = inputGeralRegistro.value;
-    console.log(inputHiddenEditar.value);
 });
 
 //Aciona uma função dependendo da opção selecionada no editar geral
@@ -104,7 +112,9 @@ function selecionarOpcaoEditarGeral(select) {
     if (opcaoSelecionada === "nome") {
         editarNome();
     } else if (opcaoSelecionada === "avancado") {
-        abrirPainelEdicao();
+        if (inputGeralRegistro.value != ""){
+            abrirPainelEdicao();
+        }else{alert("Registro vazio ou inválido")}
     }
 }
 
@@ -120,6 +130,13 @@ function blackBgNone(){
 
 function valueSelectEdicaoGeral(select){
     select.value = "";
+}
+
+function MudarOrdemRegistro() {
+    var divsPai = $('.exibir .div-pai');
+    var divsArray = divsPai.toArray();
+    divsArray = divsArray.reverse(); // Inverte a ordem do array
+    $('.exibir').html(divsArray); // Atualiza o conteúdo do elemento .exibir
 }
 
 }
