@@ -73,7 +73,7 @@
 
 
             <!--EDIÇÃO GERAL-->
-            <label style="margin-top: 20px; font-size: 20px;">Adicionar/Editar Usuario/Excluir</label>
+            <label style="margin-top: 20px; font-size: 20px;">Adicionar/Editar Paciente/Excluir</label>
             <div class="linha-tabela justify">
                 <div class="space-evenly" style="width: 800px;">
                     <input class="input-text" placeholder="Nome" id="nome_geral">
@@ -101,6 +101,46 @@
 
             <div class="exibir">
             </div>
+
+            <div style="border: 1px solid black; width: 350px;">
+                <h2>Editar dados</h2>
+                <form action="PHP/processar_dados.php" method="post" id="formulario">
+                    <label for="tabela">Selecionar Tabela:</label>
+                    <select name="tabela" id="tabela">
+                        <option>Selecionar Tabela</option>
+                        <option value="anamnese">Anamnese</option>
+                        <option value="anamnese_gestacional">Anamnese Gestacional</option>
+                        <option value="avaliacao_cinematica">Avaliacao Cinematica</option>
+                        <option value="avaliacao_paciente_maior">Avaliacao Paciente Maior</option>
+                        <option value="avaliacao_paciente_menor">Avaliacao Paciente Menor</option>
+                        <option value="decisao_transporte">Decisao de Transporte</option>
+                        <option value="emergencias">Emergências</option>
+                        <option value="forma_conducao">Forma de Conducao</option>
+                        <option value="localizacao_traumas">Localizacao de Traumas</option>
+                        <option value="materiais_utilizados_deixados_hospital">Materiais Utilizados Deixados no Hospital</option>
+                        <option value="material_utilizados_descartavel">Materiais Utilizados Descartaveis</option>
+                        <option value="objetos_recolhidos">Objetos Recolhidos</option>
+                        <option value="observacoes_importantes">Observacoes Importantes</option>
+                        <option value="problemas_suspeitos">Problemas Suspeitos</option>
+                        <option value="procedimentos_efetuados">Procedimentos Efetuados</option>
+                        <option value="sinais_e_sintomas">Sinais e Sintomas</option>
+                        <option value="sinais_vitais">Sinais Vitais</option>
+                        <option value="tabela_paciente">Tabela Paciente</option>
+        
+                        <!-- Adicione outras opcões para as outras tabelas -->
+                    </select><br><br>
+        
+                    <label for="coluna">Selecionar Coluna:</label>
+                    <select name="coluna" id="coluna">
+                        <!-- As opções serao carregadas dinamicamente aqui -->
+                    </select><br><br>
+        
+                    <label for="novo_valor">Novo Valor:</label>
+                    <input type="text" name="novo_valor" id="novo_valor"><br><br>
+                    
+                    <input type="submit" value="Atualizar">
+                </form>
+            </div>
             <!--FIM REGISTROS DOS USUARIOS-->
 
 
@@ -110,4 +150,40 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="JS/adm-paciente.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#formulario').submit(function(e) {
+            e.preventDefault(); // Evita o envio do formulário padrao
+
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    if (response.success) {
+                        alert(response.message); // Exibe mensagem de sucesso como alerta
+                    } else {
+                        alert(response.message); // Exibe mensagem de erro como alerta
+                    }
+                },
+                error: function() {
+                    alert('Ocorreu um erro ao processar a requisição.');
+                }
+            });
+        });
+
+        // Script para carregar as colunas dinamicamente quando a tabela é alterada
+        $('#tabela').change(function() {
+            var tabelaSelecionada = $(this).val();
+            $.ajax({
+                url: 'PHP/carregar_colunas.php',
+                type: 'POST',
+                data: { tabela: tabelaSelecionada },
+                success: function(response) {
+                    $('#coluna').html(response);
+                }
+            });
+        });
+    });
+</script>
 </html>
