@@ -32,12 +32,16 @@
         url: 'PHP/verficar-login-adm.php',
         method: 'POST',
         data: {
-           id: NomeGeral,
-           senha: SenhaGeral
+           id: id.value,
+           senha: senha.value
         },
         dataType: 'json'
-    }).done(function(){
-        
+    }).done(function(result){
+      if (result.success) {
+            window.location.href = 'adm-menu.html';
+        } else {
+            alert("Erro: " + result.error);
+        }
     }).fail(function(errorThrown) {
         console.log(errorThrown);
        

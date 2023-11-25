@@ -17,6 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Criando a conexão
         $conn = new mysqli($servername, $username, $password, $dbname);
 
+        $sql = "SELECT cod_cadastro FROM cadastro WHERE Acesso_cadastro = 's'";
+        $result = $conn->query($sql);
+
+        // Verifica se a consulta retornou algum resultado
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $bombeiro_id = $row["cod_cadastro"];
+        }
+
         // Verifica a conexão
         if ($conn->connect_error) {
             $response = array("success" => false, "message" => "Conexão falhou: " . $conn->connect_error);
@@ -35,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             } else {
                 // Se a linha não existir, execute uma operação de INSERT
-                $insert_query = "INSERT INTO $tabela (cpf_paciente, $coluna) VALUES ('$valor_id', '$novo_valor')";
+                $insert_query = "INSERT INTO $tabela (cpf_paciente, $coluna, bombeiro) VALUES ('$valor_id', '$novo_valor', '$bombeiro_id')";
                 if ($conn->query($insert_query) === TRUE) {
                     $response = array("success" => true, "message" => "Registro inserido com sucesso!");
                 } else {
