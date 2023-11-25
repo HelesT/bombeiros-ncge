@@ -56,14 +56,14 @@
     <div id="barra-Lateral coluna" class="barra-Lateral" style="left: -220px;">
         <!-- margin-top: 2px; width: 200px; height: 190px; position: absolute; left: 80px; top: 75%;-->  
         <div class="quadrado centro "  style=" display: flex; background-color: rgba(0, 0, 0, 0.681); border-color: #000000; border-width: 2px; border: solid;"> 
-                 <div class="circulo" id="foto_usu" style="width: 100px; height: 100px; border-color: #ffff;margin-bottom: 20px;"></div>
+                 <!-- <div class="circulo" id="foto_usu" style="width: 100px; height: 100px; border-color: #ffff;margin-bottom: 20px;"></div> -->
                 <span style=" font-size: 15px; color: white; margin-right: 65px;">
-                     Nome: <span id="nome_que_vai_vir"style="word-break: break-all; word-wrap: break-word; " ></sup>
+                    [Usuario]<span id="nome_que_vai_vir"style="word-break: break-all; word-wrap: break-word; " ></sup>
                 </span>
             </label>
-        </div>
-                
+        </div>     
     </div>
+    
     <div class="menu-lateral">
         <div class="coluna centro" style="height: 10vh; width: 80px;">
             <div class="centro" style="width: 50px; height: 50px; "> <a href="adm-menu.html"> <img src="IMAGENS/home.png" width="35px"> </a>  </div>
@@ -165,6 +165,11 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="JS/adm-paciente.js"></script>
+<script src="JS/gerarPDF.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.2.4/jspdf.plugin.autotable.min.js'></script>
 <script>
     $(document).ready(function() {
         $('#formulario').submit(function(e) {

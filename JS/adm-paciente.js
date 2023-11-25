@@ -25,7 +25,7 @@ function ChamarRegistro(){
         $('.exibir').empty();
 
         for (var i = 0; i < result.length; i++) {
-            $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 180px ;height: 100%; float: right;"><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+            $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
         }
         
     }).fail(function(errorThrown) {
@@ -138,5 +138,40 @@ function MudarOrdemRegistro() {
     divsArray = divsArray.reverse(); // Inverte a ordem do array
     $('.exibir').html(divsArray); // Atualiza o conteúdo do elemento .exibir
 }
+
+var menuIcons = document.getElementsByClassName("menu-icon");//TRAZ BARRA LATERAL PARA A TELA E A RETIRA
+var barraLateral = document.querySelector(".barra-Lateral");
+
+    for (var i = 0; i < menuIcons.length; i++) {
+      menuIcons[i].addEventListener("click", function() {
+        if (barraLateral.style.left === "-220px") {
+          barraLateral.style.left = "70px";
+        } else {
+          barraLateral.style.left = "-220px";
+        }
+      });
+    }
+
+document.addEventListener("click", function(event) {//TRAZ BARRA LATERAL PARA A TELA E A RETIRA
+var isClickedInsideBarraLateral = barraLateral.contains(event.target);
+var isClickedMenuIcon = event.target.classList.contains("menu-icon");
+  
+      if (!isClickedInsideBarraLateral && !isClickedMenuIcon) {
+        barraLateral.style.left = "-220px";
+      }
+    });
+
+var menuIcons = document.getElementsByClassName("menu-icon");
+
+    for (var i = 0; i < menuIcons.length; i++) {//MUDA A OPACIDADE DA IMAGEM APÓS O CLIQUE
+      menuIcons[i].addEventListener("click", function(event) {
+        var clickedIcon = event.target;
+        clickedIcon.classList.add("clicked");
+
+        setTimeout(function() {
+          clickedIcon.classList.remove("clicked");
+        }, 100); // Remove a classe "clicked" após 1 milisegundo (100 milissegundos)
+      });
+    }
 
 }
