@@ -118,9 +118,20 @@ body{
     background-color: transparent;
     border: none;
     width: 200px;
-    height: 50px;
+    height: 30px;
     font-size: 15px;
     padding-left: 4px;
+    border-radius: 10px;
+}
+.input-text-usuario-active{
+  outline: none;
+  background-color: white;
+  border: 1px solid black;
+  width: 198px;
+  height: 30px;
+  font-size: 15px;
+  padding-left: 4px;
+  border-radius: 10px;
 }
 .linha-tabela{
     width: 1200px;
