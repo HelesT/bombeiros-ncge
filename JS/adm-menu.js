@@ -56,29 +56,32 @@ function EditarGeral(){
     });
 };
 
-function ExcluirGeral(){
-    var NomeGeral = $("#nome_geral").val();
-    var SenhaGeral = $("#senha_geral").val();
-    var AcessoGeral = $("#acesso_geral").val();
+function ExcluirGeral(idExcluir){
+    var AcessoGeral;
 
-    console.log("Nome: " + NomeGeral);
-    console.log("Senha: " + SenhaGeral);
-    console.log("Acesso: " + AcessoGeral);
+    if(idExcluir != 0){
+        AcessoGeral = idExcluir
+    }else{
+        AcessoGeral = $("#acesso_geral").val();
+    }
 
     $.ajax({
         url: 'PHP/adm-excluir.php',
         method: 'POST',
         data: {
-           nome: NomeGeral,
-           senha: SenhaGeral,
            acesso: AcessoGeral
         },
         dataType: 'json'
-    }).done(function(){
-        ChamarRegistro();
-    }).fail(function(errorThrown) {
-        console.log(errorThrown);
-        ChamarRegistro();
+    }).done(function(response){
+        if ('error' in response) {
+            console.log('Erro: ' + response.error);
+        } else {
+            console.log('Sucesso: ', response);
+            ChamarRegistro();
+        }
+    }).fail(function(jqXHR, textStatus, errorThrown) {
+        console.log('Erro na requisição:', errorThrown);
+        alert("Ops, achamos um erro!\n1.Bombeiros com pacientes vinculado não podem ser excluidos\n2.Em caso de persistencia chame o responsável pela base de dados");
     });
 }
 
@@ -93,7 +96,7 @@ function ChamarRegistro(){
         $('.exibir').empty();
 
         for (var i = 0; i < result.length; i++) {
-            $('.exibir').prepend('<div id="' + result[i].cod_cadastro + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].senha_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 180px ;height: 100%; float: right;"><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12); cursor: pointer;" onclick="EditarGeral()"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114); cursor: pointer;" onclick="ExcluirGeral()"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+            $('.exibir').prepend('<div id="' + result[i].cod_cadastro + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].senha_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 180px ;height: 100%; float: right;"><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12); cursor: pointer;" onclick="EditarGeral()"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114); cursor: pointer;" onclick="ExcluirGeral(' + result[i].cod_cadastro + ')"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
         }
         
     }).fail(function(errorThrown) {

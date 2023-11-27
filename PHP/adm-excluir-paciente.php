@@ -33,8 +33,8 @@ if ($stmt_select->rowCount() >= 1) {
     $stmt_update->bindParam(":id", $id);
     $stmt_update->execute();
     
-    echo json_encode(array('success' => true));
+    echo json_encode(array('success' => "Paciente excluido com sucesso"));
 } else {
-    echo json_encode(array('error' => 'Chave de Acesso Indisponível'));
+    echo json_encode(array('error' => 'Paciente não encontrado'));
 }
 ?>

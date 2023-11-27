@@ -12,8 +12,8 @@ if ($stmt_select->rowCount() >= 1) {
     $stmt_update = $pdo->prepare("DELETE FROM cadastro WHERE cod_cadastro = ?");
     $stmt_update->execute([$acesso]);
     
-    echo json_encode(array('success' => true));
+    echo json_encode(array('success' => "Bombeiro excluido com sucesso"));
 } else {
-    echo json_encode(array('error' => 'Chave de Acesso Indisponível'));
+    echo json_encode(array('error' => 'Bombeiro não encontrado'));
 }
 ?>
