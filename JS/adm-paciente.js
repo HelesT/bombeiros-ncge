@@ -25,7 +25,7 @@ function ChamarRegistro(){
         $('.exibir').empty();
 
         for (var i = 0; i < result.length; i++) {
-            $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+            $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" id="nomeEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" id="codigoEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" onclick="editarNomeEspecifico(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
         }
         
     }).fail(function(errorThrown) {
@@ -121,7 +121,7 @@ function executarSelect(){
         $('.exibir').empty();
 
         for (var i = 0; i < result.length; i++) {
-            $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+            $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" id="nomeEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" id="codigoEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" onclick="editarNomeEspecifico(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
         }
         
     }).fail(function(errorThrown) {
@@ -139,7 +139,7 @@ function executarSelect(){
             $('.exibir').empty();
     
             for (var i = 0; i < result.length; i++) {
-                $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+                $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" id="nomeEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" id="codigoEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" onclick="editarNomeEspecifico(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
             }
             
         }).fail(function(errorThrown) {
@@ -148,8 +148,44 @@ function executarSelect(){
         });
 
     }else if(OpcaoSelecionada === "opcao_nada"){ChamarRegistro()}
-}
+    }
 
+    function editarNomeEspecifico(id){
+        var nomeEspId = document.getElementById("nomeEspecifico" + id);
+        var codeEspId = document.getElementById("codigoEspecifico" + id);
+        console.log(id);
+        
+        if (nomeEspId.readOnly === true) {
+            nomeEspId.classList.toggle("input-text-usuario-active");
+            nomeEspId.classList.remove("input-text-usuario");
+            nomeEspId.removeAttribute("readonly");
+
+        } else {
+            nomeEspId.classList.toggle("input-text-usuario");
+            nomeEspId.classList.remove("input-text-usuario-active");
+            nomeEspId.readOnly = true;
+
+            $.ajax({
+                url: 'PHP/adm-editar-paciente-especifico.php',
+                method: 'POST',
+                data: {
+                   acesso: codeEspId.value,
+                   nome: nomeEspId.value
+                },
+                dataType: 'json'
+            }).done(function(response){
+                if(response.success){
+                    alert("Edição Realizada!")
+                }
+
+            }).fail(function(errorThrown) {
+                console.log(errorThrown);
+
+            });
+
+        }
+
+    }
 }
 
 {//-------FUNÇÕES LOCAIS-----------------------------------------

@@ -100,12 +100,12 @@
 
             <!--BlOCO DE PESQUISA-->
             <div class="pesquisa-usuario justify">
-                <div class="justify" style="border: 2px solid gray; background-color: white; border-radius: 5px;">
+                <!-- <div class="justify" style="border: 2px solid gray; background-color: white; border-radius: 5px;">
                     <input type="text" class="input-text" style="border:none; background-color: transparent;">
                     <button style=" width: 40px; border: none; height: 36px; background-color: transparent;">
                     <div class="centro" style="border:none;  width: 30px; height: 30px;"><img src="IMAGENS/lupa.png" width="15px"></div>
                     </button>
-                </div>
+                </div> -->
                 <select id="select_adm" onchange="executarSelect()" style="width: 80px; height: 40px; border: 2px solid gray; border-radius: 5px; background-color: white; outline: none; margin-left: 10px;">
                     <option value="opcao_nada"></option>
                     <option value="opcao_nome">Nome</option>
@@ -154,7 +154,27 @@
             </div>
 
             <div class="exibir">
-                
+                <div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai">
+                    <div class="space-evenly" style="width: 900px;">
+                        <input class="input-text-usuario" value="' + result[i].nome_paciente + '" id="nomeEspecifico' + result[i].cpf_paciente + '" readonly>
+                        <div style="width: 1px; height: 52px; background-color: black;"></div>
+                        <input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly>
+                        <div style="width: 1px; height: 52px; background-color: black;"></div>
+                        <input class="input-text-usuario" value="' + result[i].cpf_paciente + '" id="codeEspecifico' + result[i].cpf_paciente + '" readonly>
+                        <div style="width: 1px; height: 52px; background-color: black;"></div>
+                    </div>
+                    <div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;">
+                        <button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;">
+                            <img src="IMAGENS/ficha.png" width="22px">
+                        </button>
+                        <button class="centro" onclick="editarNomeEspecifico(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);">
+                            <img src="IMAGENS/edit.png" width="15px">
+                        </button>
+                        <button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);">
+                            <img src="IMAGENS/lixo.png" width="13px">
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!--FIM REGISTROS DOS USUARIOS-->

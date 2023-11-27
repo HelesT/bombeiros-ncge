@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/11/2023 às 13:31
+-- Tempo de geração: 28/11/2023 às 00:04
 -- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Versão do PHP: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -137,6 +137,7 @@ CREATE TABLE `cadastro` (
   `cod_cadastro` int(11) NOT NULL,
   `senha_cadastro` varchar(45) NOT NULL,
   `nome_cadastro` varchar(45) NOT NULL,
+  `admin` varchar(1) NOT NULL,
   `Acesso_cadastro` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -144,8 +145,10 @@ CREATE TABLE `cadastro` (
 -- Despejando dados para a tabela `cadastro`
 --
 
-INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `Acesso_cadastro`) VALUES
-(123456, 'batata', 'Nylton', 's');
+INSERT INTO `cadastro` (`cod_cadastro`, `senha_cadastro`, `nome_cadastro`, `admin`, `Acesso_cadastro`) VALUES
+(1, '12', 'batata', '', ''),
+(123456, 'batata', 'Nylton', 's', 's'),
+(756892, '12345', 'Astolf', '', ' ');
 
 -- --------------------------------------------------------
 
@@ -304,6 +307,17 @@ CREATE TABLE `paciente` (
   `nome_paciente` varchar(75) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `paciente`
+--
+
+INSERT INTO `paciente` (`cpf_paciente`, `nome_paciente`) VALUES
+(1, 'Nylton'),
+(2, 'abelh'),
+(3, 'albio'),
+(4, 'Jorge'),
+(5, 'debora');
+
 -- --------------------------------------------------------
 
 --
@@ -395,6 +409,15 @@ CREATE TABLE `tabela_paciente` (
   `km_final_paciente` varchar(45) NOT NULL,
   `cod_sia_sus_paciente` int(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `tabela_paciente`
+--
+
+INSERT INTO `tabela_paciente` (`id_paciente`, `bombeiro`, `cpf_paciente`, `nome_hospital_paciente`, `data_paciente`, `sexo_paciente`, `nome_paciente`, `idade_paciente`, `rg_cpf_paciente`, `fone_paciente`, `acompanhante_paciente`, `idade_acompanhante_paciente`, `local_ocorrencia_paciente`, `n_usb_paciente`, `cod_ur_paciente`, `n_ocorr_paciente`, `cod_ps_paciente`, `desp_paciente`, `h_ch_paciente`, `km_final_paciente`, `cod_sia_sus_paciente`) VALUES
+(57, 123456, 4, '', '2023-10-24', '', '', 0, '', '', '', 0, '', '', '', '', '', '', '', '', 0),
+(58, 123456, 1, '', '2023-10-23', '', '', 0, '', '', '', 0, '', '', '', '', '', '', '', '', 0),
+(59, 123456, 5, '', '2023-09-12', '', '', 0, '', '', '', 0, '', '', '', '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -597,19 +620,19 @@ ALTER TABLE `termo_recusa`
 -- AUTO_INCREMENT de tabela `anamnese`
 --
 ALTER TABLE `anamnese`
-  MODIFY `id_anamnese` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_anamnese` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `anamnese_gestacional`
 --
 ALTER TABLE `anamnese_gestacional`
-  MODIFY `id_anamnese_gestacional` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_anamnese_gestacional` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `avaliacao_cinematica`
 --
 ALTER TABLE `avaliacao_cinematica`
-  MODIFY `avaliacao_cinematica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `avaliacao_cinematica` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `avaliacao_paciente_maior`
@@ -621,103 +644,103 @@ ALTER TABLE `avaliacao_paciente_maior`
 -- AUTO_INCREMENT de tabela `avaliacao_paciente_menor`
 --
 ALTER TABLE `avaliacao_paciente_menor`
-  MODIFY `id_avaliacao_paciente_menor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_avaliacao_paciente_menor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `decisao_transporte`
 --
 ALTER TABLE `decisao_transporte`
-  MODIFY `id_decisao_transporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_decisao_transporte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `emergencias`
 --
 ALTER TABLE `emergencias`
-  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_emergencias` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de tabela `forma_conducao`
 --
 ALTER TABLE `forma_conducao`
-  MODIFY `id_forma_conducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_forma_conducao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `localizacao_traumas`
 --
 ALTER TABLE `localizacao_traumas`
-  MODIFY `id_localizacao_traumas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_localizacao_traumas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `materiais_utilizados_deixados_hospital`
 --
 ALTER TABLE `materiais_utilizados_deixados_hospital`
-  MODIFY `material_utilizados_b` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `material_utilizados_b` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `material_utilizados_descartavel`
 --
 ALTER TABLE `material_utilizados_descartavel`
-  MODIFY `material_utilizados_a` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `material_utilizados_a` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `objetos_recolhidos`
 --
 ALTER TABLE `objetos_recolhidos`
-  MODIFY `id_objetos_recolhidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_objetos_recolhidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `objetos_recolhidos_imagem`
 --
 ALTER TABLE `objetos_recolhidos_imagem`
-  MODIFY `id_objetos_recolgidos-imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_objetos_recolgidos-imagem` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `observacoes_importantes`
 --
 ALTER TABLE `observacoes_importantes`
-  MODIFY `id_observacoes_importantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_observacoes_importantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `cpf_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cpf_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `problemas_suspeitos`
 --
 ALTER TABLE `problemas_suspeitos`
-  MODIFY `id_problemas_suspeitos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_problemas_suspeitos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `procedimentos_efetuados`
 --
 ALTER TABLE `procedimentos_efetuados`
-  MODIFY `id_procedimentos_efetuados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_procedimentos_efetuados` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `sinais_e_sintomas`
 --
 ALTER TABLE `sinais_e_sintomas`
-  MODIFY `id_sinais_e_sintomas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_sinais_e_sintomas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `sinais_vitais`
 --
 ALTER TABLE `sinais_vitais`
-  MODIFY `id_sinais_vitais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_sinais_vitais` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tabela_paciente`
 --
 ALTER TABLE `tabela_paciente`
-  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de tabela `termo_recusa`
 --
 ALTER TABLE `termo_recusa`
-  MODIFY `id_termo_recusa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_termo_recusa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- Restrições para tabelas despejadas
