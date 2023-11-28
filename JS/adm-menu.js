@@ -62,6 +62,12 @@ $(document).ready(function() {
 }
 
 {//FUNÇÕES LOCAIS-------------------------------------------------------------------//
+    function realizarPesquisaEnter(event){
+        if (event.key === 'Enter') {
+            realizarPesquisa();
+        }
+    }
+
     var menuIcons = document.getElementsByClassName("menu-icon");//TRAZ BARRA LATERAL PARA A TELA E A RETIRA
     var barraLateral = document.querySelector(".barra-Lateral");
     
@@ -257,6 +263,7 @@ $(document).ready(function() {
     
         }
     }
+
     function executarSelect(){
         var select = document.getElementById("select_adm");
         var OpcaoSelecionada = select.options[select.selectedIndex].value;
@@ -281,6 +288,60 @@ $(document).ready(function() {
         }else if(OpcaoSelecionada === "opcao_nada"){
             ChamarRegistro()
         }
+    }
+
+    function realizarPesquisa(){
+        var opcaoSelectPesquisa = document.getElementById("selectPesquisaBombeiro");
+        var opcaoSelecionadaPesquisa = opcaoSelectPesquisa.options[opcaoSelectPesquisa.selectedIndex].value;
+        var textoPesquisa = document.getElementById("inputPesquisaBombeiro").value;
+
+        if(opcaoSelecionadaPesquisa === "opcao_nome"){
+            console.log("Opção 'Nome' selecionada");
+
+            $.ajax({
+                url: 'PHP/adm-pesquisa-nome.php',
+                method: 'GET',
+                data: {
+                    nome: textoPesquisa
+                 },
+                dataType: 'json'
+            }).done(function(result){
+                $('.exibir').empty();
+        
+                for (var i = 0; i < result.length; i++) {
+                    $('.exibir').prepend('<div id="' + result[i].cod_cadastro + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_cadastro + '" id="nomeEspecifico' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].senha_cadastro + '" id="senhaEspecifico' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cod_cadastro + '" id="codigoEspecifico' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 180px ;height: 100%; float: right;"><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12); cursor: pointer;" onclick="editarNomeEspecificdo(' + result[i].cod_cadastro + ')"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114); cursor: pointer;" onclick="ExcluirGeral(' + result[i].cod_cadastro + ')"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+                }
+                
+            }).fail(function(errorThrown){
+                console.log(errorThrown);
+
+            });
+
+        }else if(opcaoSelecionadaPesquisa === "opcao_chave"){
+            console.log("Opção 'Chave' selecionada");
+
+            $.ajax({
+                url: 'PHP/adm-pesquisa-chave.php',
+                method: 'GET',
+                data: {
+                    chave: textoPesquisa
+                 },
+                dataType: 'json'
+            }).done(function(result){
+                $('.exibir').empty();
+        
+                for (var i = 0; i < result.length; i++) {
+                    $('.exibir').prepend('<div id="' + result[i].cod_cadastro + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_cadastro + '" id="nomeEspecifico' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].senha_cadastro + '" id="senhaEspecifico' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cod_cadastro + '" id="codigoEspecifico' + result[i].cod_cadastro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 180px ;height: 100%; float: right;"><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12); cursor: pointer;" onclick="editarNomeEspecificdo(' + result[i].cod_cadastro + ')"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114); cursor: pointer;" onclick="ExcluirGeral(' + result[i].cod_cadastro + ')"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+                }
+                
+            }).fail(function(errorThrown){
+                console.log(errorThrown);
+
+            });
+
+        }else{ChamarRegistro()}
+
+
     }
 }
 
