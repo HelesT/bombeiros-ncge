@@ -3,37 +3,54 @@ $(document).ready(function() {
     chamarNomeUsuario();
 });
 
-var inputGeralRegistro = document.getElementById('registro_geral');
-var inputHiddenEditar = document.getElementById('idPaciente');
-var painelEdicao = document.getElementById('painelEdicao');
-var blackbg = document.getElementById('blackbg');
-var nomeGeralPaciente = document.getElementById('nome_geral');
-var registroGeralPaciente = document.getElementById('registro_geral');
+{//PREPARAR DOCUMENTO----------------------------------------------//
 
-
-{//------REQUISIÇÕES AJAX---------------------------------------
-
-//-------EXIBIR PACIENTES----------------------------------------
-
-function ChamarRegistro(){
-    
-
-    $.ajax({
-        url: 'PHP/adm-chamar-paciente.php',
-        method: 'GET',
-        dataType: 'json'
-    }).done(function(result){
-        $('.exibir').empty();
-
-        for (var i = 0; i < result.length; i++) {
-            $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" id="nomeEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" id="codeEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].bombeiro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" onclick="editarNomeEspecifico(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
-        }
+    function ChamarRegistro(){
         
-    }).fail(function(errorThrown) {
-        ChamarRegistro();
-        console.log(errorThrown);
-    });
+
+        $.ajax({
+            url: 'PHP/adm-chamar-paciente.php',
+            method: 'GET',
+            dataType: 'json'
+        }).done(function(result){
+            $('.exibir').empty();
+
+            for (var i = 0; i < result.length; i++) {
+                $('.exibir').prepend('<div id="' + result[i].cpf_paciente + '" class="linha-tabela justify div-pai"><div class="space-evenly" style="width: 900px;"><input class="input-text-usuario" value="' + result[i].nome_paciente + '" id="nomeEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].data_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].cpf_paciente + '" id="codeEspecifico' + result[i].cpf_paciente + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div><input class="input-text-usuario" value="' + result[i].bombeiro + '" readonly><div style="width: 1px; height: 52px; background-color: black;"></div></div><div class="space-evenly justify" style="width: 250px ;height: 100%; float: right;"><button onclick="DadosPDF(' + result[i].cpf_paciente +')" style = "width: 25px; height: 25px; display: flex; justify-content: center; justify-items: center; align-items: center; align-content: center; background-color: rgba(255, 255, 255, 0); border: none; cursor: pointer;"><img src="IMAGENS/ficha.png" width="22px"></button><button class="centro" onclick="editarNomeEspecifico(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(230, 154, 12);"><img src="IMAGENS/edit.png" width="15px"></button><button class="centro" onclick="ExcluirGeral(' + result[i].cpf_paciente + ')" style="border:1px solid black; width: 20px; height: 20px;  background-color: rgb(199, 114, 114);"><img src="IMAGENS/lixo.png" width="13px"></button></div></div>');
+            }
+            
+        }).fail(function(errorThrown) {
+            ChamarRegistro();
+            console.log(errorThrown);
+        });
+    }
+
+    function chamarNomeUsuario(){
+
+        $.ajax({
+            url: 'PHP/adm-chamarUsuario.php',
+            method: 'GET',
+            dataType: 'json'
+        }).done(function(response){
+            $("#nome_que_vai_vir").text(response[0].nome_cadastro);
+    
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.log('Erro de requisição: ' + textStatus, errorThrown);
+            
+        });
+    }
 }
+
+{//VARIAVEIS-------------------------------------------------------//
+    var inputGeralRegistro = document.getElementById('registro_geral');
+    var inputHiddenEditar = document.getElementById('idPaciente');
+    var painelEdicao = document.getElementById('painelEdicao');
+    var blackbg = document.getElementById('blackbg');
+    var nomeGeralPaciente = document.getElementById('nome_geral');
+    var registroGeralPaciente = document.getElementById('registro_geral');
+}
+
+{//------REQUISIÇÕES AJAX------------------------------------------//
 
 //-------ADICIONAR PACIENTES----------------------------------------
 
@@ -205,23 +222,9 @@ function executarSelect(){
         
     }
 
-    function chamarNomeUsuario(){
-
-        $.ajax({
-            url: 'PHP/adm-chamarUsuario.php',
-            method: 'GET',
-            dataType: 'json'
-        }).done(function(response){
-            $("#nome_que_vai_vir").text(response[0].nome_cadastro);
-    
-        }).fail(function(jqXHR, textStatus, errorThrown) {
-            console.log('Erro de requisição: ' + textStatus, errorThrown);
-            
-        });
-    }
 }
 
-{//-------FUNÇÕES LOCAIS-----------------------------------------
+{//-------FUNÇÕES LOCAIS-------------------------------------------//
 
 //Input Hidden valor = input Geral valor
 inputGeralRegistro.addEventListener('input', function() {
