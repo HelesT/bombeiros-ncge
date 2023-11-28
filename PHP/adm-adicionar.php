@@ -4,12 +4,13 @@ include("conecta.php");
 $nome = $_POST['nome'];
 $senha = $_POST['senha'];
 $acesso = $_POST['acesso'];
+$adm = $_POST['adm'];
 
 $stmt = $pdo->prepare("INSERT INTO cadastro
-(cod_cadastro, senha_cadastro, nome_cadastro) VALUES 
-(?, ?, ?)");
+(cod_cadastro, senha_cadastro, nome_cadastro, Acesso_cadastro) VALUES 
+(?, ?, ?, ?)");
 $stmt->execute([
-    $acesso, $senha, $nome 
+    $acesso, $senha, $nome , $adm
 ]);
 
 if ($stmt->rowCount() >= 1) {
