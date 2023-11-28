@@ -64,6 +64,7 @@ function DadosPDF(valor_id_ficha){
                             },
                             success: (data) => {
                                data.forEach((item) => {
+                                 this.additionalInfo += "\n";
                                   this.additionalInfo += "Condução: " + item.conducao + "\n";
                                   this.additionalInfo += "A vitima era: " + item.forma_conducao + "\n";
                                  //  this.additionalInfo += "" + item.exemplo + "\n";
