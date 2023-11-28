@@ -1,5 +1,6 @@
 $(document).ready(function() {
     ChamarRegistro();
+    chamarNomeUsuario();
 });
 
 var inputGeralRegistro = document.getElementById('registro_geral');
@@ -185,6 +186,38 @@ function executarSelect(){
 
         }
 
+    }
+
+    function logout(){
+
+        $.ajax({
+            url: 'PHP/adm-logout.php',
+            method: 'POST',
+            data: {},
+            dataType: 'json'
+        }).done(function(response){
+            if(response.success){
+                window.location.href = 'adm.html';
+            }
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.log('Erro de requisição: ' + textStatus, errorThrown);
+        });
+        
+    }
+
+    function chamarNomeUsuario(){
+
+        $.ajax({
+            url: 'PHP/adm-chamarUsuario.php',
+            method: 'GET',
+            dataType: 'json'
+        }).done(function(response){
+            $("#nome_que_vai_vir").text(response[0].nome_cadastro);
+    
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.log('Erro de requisição: ' + textStatus, errorThrown);
+            
+        });
     }
 }
 

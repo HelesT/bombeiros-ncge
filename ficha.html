@@ -31,9 +31,9 @@
     <div class="navigation justify" onclick="navigateToSlide(16)" style="height: 30px;">Termo de Recusa de Ate...</div>
     <div class="navigation justify" onclick="navigateToSlide(17)" style="height: 30px;">Observações Importantes</div>
     <div class="navigation justify" onclick="navigateToSlide(18)" style="height: 30px;">Avaliação Cinemática</div>
-    <div class="navigation justify" onclick="navigateToSlide(19)" style="height: 30px;">Responsável Preencimento</div>
-    <!--<div class="navigation justify" onclick="navigateToSlide(20)" style="height: 30px;">Slide 21</div>
-    <div class="navigation justify" onclick="navigateToSlide(21)" style="height: 30px;">Slide 22</div>
+    <div class="navigation justify" onclick="navigateToSlide(19)" style="height: 30px;">Verificação</div>
+    <div class="navigation justify" onclick="navigateToSlide(20)" style="height: 30px;">Responsável Preencimento</div>
+    <!-- <div class="navigation justify" onclick="navigateToSlide(21)" style="height: 30px;">Slide 22</div>
     <div class="navigation justify" onclick="navigateToSlide(22)" style="height: 30px;">Slide 23</div>
     <div class="navigation justify" onclick="navigateToSlide(23)" style="height: 30px;">Slide 24</div>
     <div class="navigation justify" onclick="navigateToSlide(24)" style="height: 30px;">Slide 25</div>
@@ -1926,7 +1926,32 @@ margin-top: 10px;">
         </div><!--Fim do corpo da página de ""-->
 
       </div><!-- Fim da página de "" -->
+
       <div class="swiper-slide slide19"><!---------------------------------------------------------Inicio da página de Responsável --------------------------------------------------------->
+
+        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
+          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
+          <div class="cabecalho-titulo">
+            Verificação
+          </div>
+          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
+        </div><!-- Fim do cabeçalho da pagina "" -->
+
+        <div class="slide-body centro">
+          <span style="text-align:center; font-size: 20px">Pressione esse botão para verificar se existem valores vazios</span>
+          <button  onclick="ChegarInputs()" style="
+                margin-top: 25px; 
+                background-color: greenyellow;
+                border-style: solid;border-radius: 10px;
+                border-color: green; 
+                width: 160px;
+                height: 60px;"> 
+                <span style="font-size: 20px;">Verificar</span> 
+            </button>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide20"><!---------------------------------------------------------Inicio da página de Responsável --------------------------------------------------------->
         
         <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
           <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
@@ -1939,7 +1964,7 @@ margin-top: 10px;">
         <div class="slide-body centro"><!--inicio do corpo da página de ""-->
 
           <div class="coluna " >
-            <span style="font-size: 25px;" class="centro">Nome completo:</span>
+            <span style="font-size: 25px;" class="centro">Nome Bombeiro:</span>
             <input type="text" class="quadrado" style="outline:none; width: 250px; height: 50px;" >
             <div class=" linha centro"> 
               <button  onclick="RegistrarPaciente()" style="
