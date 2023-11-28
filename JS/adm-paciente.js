@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    ChamarRegistro();
-    chamarNomeUsuario();
+    verificarUsuario()
 });
 
 {//PREPARAR DOCUMENTO----------------------------------------------//
@@ -37,6 +36,29 @@ $(document).ready(function() {
         }).fail(function(jqXHR, textStatus, errorThrown) {
             console.log('Erro de requisição: ' + textStatus, errorThrown);
             
+        });
+    }
+
+    function verificarUsuario(){
+
+        $.ajax({
+            url: 'PHP/adm-verificarUsuario.php',
+            method: 'GET',
+            dataType: 'json'
+        }).done(function(response){
+            if(response.success){
+                alert(response.success);
+                window.location.href = 'adm.html';
+
+            }else if(response.error){
+                console.log(response.error);
+                chamarNomeUsuario();
+                ChamarRegistro();
+                
+            }
+    
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            console.log('Erro de requisição: ' + textStatus, errorThrown);
         });
     }
 }
