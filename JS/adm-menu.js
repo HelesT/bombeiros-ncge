@@ -12,10 +12,18 @@ function AdicionarGeral(){
     var NomeGeral = $("#nome_geral").val();
     var SenhaGeral = $("#senha_geral").val();
     var AcessoGeral = $("#acesso_geral").val();
+    var AdminGeralCheckbox = $("#admin_geral");
+    var AdminGeral;
+    if(AdminGeralCheckbox[0].checked === true){
+        AdminGeral = "s";
+    }else{
+        AdminGeral = " ";
+    };
 
     console.log("Nome: " + NomeGeral);
     console.log("Senha: " + SenhaGeral);
     console.log("Acesso: " + AcessoGeral);
+    console.log("admin: " + AdminGeral);
 
     $.ajax({
         url: 'PHP/adm-adicionar.php',
@@ -23,7 +31,8 @@ function AdicionarGeral(){
         data: {
            nome: NomeGeral,
            senha: SenhaGeral,
-           acesso: AcessoGeral
+           acesso: AcessoGeral,
+           adm: AdminGeral
         },
         dataType: 'json'
     }).done(function(){
@@ -79,9 +88,9 @@ function ExcluirGeral(idExcluir){
         dataType: 'json'
     }).done(function(response){
         if ('error' in response) {
-            console.log('Erro: ' + response.error);
+            console.log(response.error);
         } else {
-            console.log('Sucesso: ', response);
+            console.log(response);
             ChamarRegistro();
         }
     }).fail(function(jqXHR, textStatus, errorThrown) {
