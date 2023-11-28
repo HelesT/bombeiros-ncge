@@ -1,3 +1,4 @@
 1)Tirar Anamneses Gestacional quando paciente for homem
 2)Polimento do PDF e inserção de imagem
 3)Arrumar materiais utilizados(B)
+4) termo de recusa erro de pt
