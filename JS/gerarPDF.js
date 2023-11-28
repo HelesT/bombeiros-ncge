@@ -25,6 +25,8 @@ function DadosPDF(valor_id_ficha){
              },
              success: (data) => {
                 data.forEach((item) => {
+                  this.additionalInfo += "Paciente" + "\n";
+                  this.additionalInfo += "" + "\n";
                    this.additionalInfo += "Data: " + item.data_paciente + "\n";
                    this.additionalInfo += "RG/CPF: " + item.rg_cpf_paciente + "\n";
                    this.additionalInfo += "Idade: " + item.idade_paciente + "\n";
@@ -53,6 +55,9 @@ function DadosPDF(valor_id_ficha){
                     },
                     success: (data) => {
                        data.forEach((item) => {
+                        this.additionalInfo += "-------" + "\n";
+                        this.additionalInfo += "Emergências" + "\n";
+                        this.additionalInfo += "" + "\n";
                           this.additionalInfo += "Emergencias: " + item.tipo_emergencia + "\n";
                          //  this.additionalInfo += "" + item.exemplo + "\n";
                          $.ajax({
@@ -64,7 +69,9 @@ function DadosPDF(valor_id_ficha){
                             },
                             success: (data) => {
                                data.forEach((item) => {
-                                 this.additionalInfo += "\n";
+                                 this.additionalInfo += "-------" + "\n";
+                                 this.additionalInfo += "Forma de Condução" + "\n";
+                                 this.additionalInfo += "" + "\n";
                                   this.additionalInfo += "Condução: " + item.conducao + "\n";
                                   this.additionalInfo += "A vitima era: " + item.forma_conducao + "\n";
                                  //  this.additionalInfo += "" + item.exemplo + "\n";
@@ -77,6 +84,9 @@ function DadosPDF(valor_id_ficha){
                                   },
                                   success: (data) => {
                                      data.forEach((item) => {
+                                       this.additionalInfo += "-------" + "\n";
+                                       this.additionalInfo += "Decisão de Transporte" + "\n";
+                                       this.additionalInfo += "" + "\n";
                                         this.additionalInfo += "MDT: " + item.MDT + "\n";
                                         this.additionalInfo += "S1DT: " + item.S1DT + "\n";
                                         this.additionalInfo += "S2DT: " + item.S2DT + "\n";
@@ -93,6 +103,9 @@ function DadosPDF(valor_id_ficha){
                                         },
                                         success: (data) => {
                                            data.forEach((item) => {
+                                             this.additionalInfo += "-------" + "\n";
+                                             this.additionalInfo += "Problemas Suspeitos" + "\n";
+                                             this.additionalInfo += "" + "\n";
                                               this.additionalInfo += "Psiquiatrico: " + item.Psiquiatrico + "\n";
                                               this.additionalInfo += "Respiratório: " + item.Respiratorio + "\n";
                                               this.additionalInfo += "Diabete: " + item.Diabete + "\n";
@@ -109,6 +122,9 @@ function DadosPDF(valor_id_ficha){
                                               },
                                               success: (data) => {
                                                  data.forEach((item) => {
+                                                   this.additionalInfo += "-------" + "\n";
+                                                   this.additionalInfo += "Sinais Vitais" + "\n";
+                                                   this.additionalInfo += "" + "\n";
                                                     this.additionalInfo += "Pressão Arterial: " + item.PressaoArterial + "\n";
                                                     this.additionalInfo += "Pulso: " + item.Pulso + "\n";
                                                     this.additionalInfo += "SegSv: " + item.SegSv + "\n";
@@ -125,9 +141,13 @@ function DadosPDF(valor_id_ficha){
                                                     },
                                                     success: (data) => {
                                                        data.forEach((item) => {
+                                                         this.additionalInfo += "-------" + "\n";
+                                                         this.additionalInfo += "Localização dos Traumas" + "\n";
+                                                         this.additionalInfo += "" + "\n";
                                                           this.additionalInfo += "Ferimentos: " + item.texto_trauma + "\n";
                                                           this.additionalInfo += "Queimadura: " + item.queimadura + "\n";
                                                           this.additionalInfo += "SegSv: " + item.SegSv + "\n";
+                                                          //this.additionalInfo += "Trauma:" + item.trauma_img + "\n";
                                                          //  this.additionalInfo += "" + item.exemplo + "\n";
                                                          $.ajax({
                                                           type: 'GET',
@@ -138,6 +158,9 @@ function DadosPDF(valor_id_ficha){
                                                           },
                                                           success: (data) => {
                                                              data.forEach((item) => {
+                                                               this.additionalInfo += "-------" + "\n";
+                                                               this.additionalInfo += "Objeto Recolhidos" + "\n";
+                                                               this.additionalInfo += "" + "\n";
                                                                 this.additionalInfo += "Objeto Recolhido: " + item.TextoDentroObj + "\n";
                                                                 
                                                                //  this.additionalInfo += "" + item.exemplo + "\n";
@@ -150,6 +173,9 @@ function DadosPDF(valor_id_ficha){
                                                                 },
                                                                 success: (data) => {
                                                                    data.forEach((item) => {
+                                                                     this.additionalInfo += "-------" + "\n";
+                                                                     this.additionalInfo += "Sinais e Sintomas" + "\n";
+                                                                     this.additionalInfo += "" + "\n";
                                                                       this.additionalInfo += "Sinais e Sintomas: " + item.TodosOsValoresSeS + "\n";
                                                                       
                                                                      //  this.additionalInfo += "" + item.exemplo + "\n";
@@ -162,6 +188,9 @@ function DadosPDF(valor_id_ficha){
                                                                       },
                                                                       success: (data) => {
                                                                          data.forEach((item) => {
+                                                                           this.additionalInfo += "-------" + "\n";
+                                                                           this.additionalInfo += "Procedimentos Efetuados" + "\n";
+                                                                           this.additionalInfo += "" + "\n";
                                                                             this.additionalInfo += "Procedimentos Efetuados: " + item.TodosOsValoresPef + "\n";
                                                                             
                                                                            //  this.additionalInfo += "" + item.exemplo + "\n";
@@ -174,6 +203,9 @@ function DadosPDF(valor_id_ficha){
                                                                             },
                                                                             success: (data) => {
                                                                                data.forEach((item) => {
+                                                                                 this.additionalInfo += "-------" + "\n";
+                                                                                 this.additionalInfo += "Materiais Utilizados Descartável" + "\n";
+                                                                                 this.additionalInfo += "" + "\n";
                                                                                   this.additionalInfo += "Atadura: " + item.Atadura1 + "\n";
                                                                                   this.additionalInfo += "Catéter TP. óculos: " + item.CateterTpOculos + "\n";
                                                                                   this.additionalInfo += "Compressa Comum: " + item.CompressaComum + "\n";
@@ -196,6 +228,9 @@ function DadosPDF(valor_id_ficha){
                                                                                   },
                                                                                   success: (data) => {
                                                                                      data.forEach((item) => {
+                                                                                       this.additionalInfo += "-------" + "\n";
+                                                                                       this.additionalInfo += "Materiais Utilizados Deixados Hospital" + "\n";
+                                                                                       this.additionalInfo += "" + "\n";
                                                                                         this.additionalInfo += "Base Estabilizador: " + item.BaseEstabilizador + "\n";
                                                                                         this.additionalInfo += "Colar1: " + item.Colar1 + "\n";
                                                                                         this.additionalInfo += "Colar2: " + item.Colar2 + "\n";
@@ -217,6 +252,9 @@ function DadosPDF(valor_id_ficha){
                                                                                         },
                                                                                         success: (data) => {
                                                                                            data.forEach((item) => {
+                                                                                             this.additionalInfo += "-------" + "\n";
+                                                                                             this.additionalInfo += "Anamnese" + "\n";
+                                                                                             this.additionalInfo += "" + "\n";
                                                                                               this.additionalInfo += "O que aconteceu(sinais e sintomas): " + item.ocorrido_anamnese + "\n";
                                                                                               this.additionalInfo += "Aconteceu outras vezes?" + item.ocorrencia_anamnese + "\n";
                                                                                               this.additionalInfo += "A quanto tempo isso aconteceu? " + item.aconteceu_anamnese + "\n";
@@ -226,80 +264,92 @@ function DadosPDF(valor_id_ficha){
                                                                                               this.additionalInfo += "Ingeriu alimento ou liquido em 6h? " + item.liquido_anamnese + "\n";
                                                                                              //  this.additionalInfo += "" + item.exemplo + "\n";
                                                                                              $.ajax({
+                                                                                                type: 'GET',
+                                                                                                url: 'PHP-PDF/anamnese_gestacional.php',
+                                                                                                dataType: 'json',
+                                                                                                data: {
+                                                                                                   id: id
+                                                                                                },
+                                                                                                success: (data) => {
+                                                                                                   data.forEach((item) => {
+                                                                                                      this.additionalInfo += "-------" + "\n";
+                                                                                                      this.additionalInfo += "Anamnese Gestacional" + "\n";
+                                                                                                      this.additionalInfo += "" + "\n";
+                                                                                                      this.additionalInfo += "Periodo de gestação: " + item.periodo_gestacao + "\n";
+                                                                                                      this.additionalInfo += "Fez pré-natal?" + item.pre_natal + "\n";
+                                                                                                      this.additionalInfo += "Nome do médico" + item.nome_medico + "\n";
+                                                                                                      this.additionalInfo += "Existe possibilidade de complicações?" + item.complicacoes + "\n";
+                                                                                                      this.additionalInfo += "É o primeiro filho?" + item.filhos + "\n";
+                                                                                                      this.additionalInfo += "Contrações Duração:" + item.contracao_duracao + "\n";
+                                                                                                      this.additionalInfo += "Contrações Intervalo:" + item.contracao_intervalo + "\n";
+                                                                                                      this.additionalInfo += "Sente pressão na região do quadril ou vontade de evacuar?" + item.evacuacao + "\n";
+                                                                                                      this.additionalInfo += "Já houve ruptura da bolsa?" + item.ruptura_bolsa + "\n";
+                                                                                                      this.additionalInfo += "Foi feito inspeção visual?" + item.inspecao_visual + "\n";
+                                                                                                      this.additionalInfo += "Parto realizado?" + item.parto_realizado + "\n";
+                                                                                                      this.additionalInfo += "Hora do nascimento:" + item.hora_nascimento + "\n";
+                                                                                                      this.additionalInfo += "Sexo do bebê:" + item.sexo_bebe + "\n";
+                                                                                                      this.additionalInfo += "Nome do bebê:" + item.nome_bebe + "\n";
+                                                                                                     //  this.additionalInfo += "" + item.exemplo + "\n";
+                                                                                                   });
+                                                                                                },
+                                                                                                error: function (xhr, status, error) {
+                                                                                                   console.error("Erro na requisição AJAX: " + status + " - " + error);
+                                                                                                }
+                                                                                             });
+                                                                                             $.ajax({
                                                                                               type: 'GET',
-                                                                                              url: 'PHP-PDF/anamnese_gestacional.php',
+                                                                                              url: 'PHP-PDF/termo_recusa.php',
                                                                                               dataType: 'json',
                                                                                               data: {
                                                                                                  id: id
                                                                                               },
                                                                                               success: (data) => {
                                                                                                  data.forEach((item) => {
-                                                                                                    this.additionalInfo += "Periodo de gestação: " + item.periodo_gestacao + "\n";
-                                                                                                    this.additionalInfo += "Fez pré-natal?" + item.pre_natal + "\n";
-                                                                                                    this.additionalInfo += "Nome do médico" + item.nome_medico + "\n";
-                                                                                                    this.additionalInfo += "Existe possibilidade de complicações?" + item.complicacoes + "\n";
-                                                                                                    this.additionalInfo += "É o primeiro filho?" + item.filhos + "\n";
-                                                                                                    this.additionalInfo += "Contrações Duração:" + item.contracao_duracao + "\n";
-                                                                                                    this.additionalInfo += "Contrações Intervalo:" + item.contracao_intervalo + "\n";
-                                                                                                    this.additionalInfo += "Sente pressão na região do quadril ou vontade de evacuar?" + item.evacuacao + "\n";
-                                                                                                    this.additionalInfo += "Já houve ruptura da bolsa?" + item.ruptura_bolsa + "\n";
-                                                                                                    this.additionalInfo += "Foi feito inspeção visual?" + item.inspecao_visual + "\n";
-                                                                                                    this.additionalInfo += "Parto realizado?" + item.parto_realizado + "\n";
-                                                                                                    this.additionalInfo += "Hora do nascimento:" + item.hora_nascimento + "\n";
-                                                                                                    this.additionalInfo += "Sexo do bebê:" + item.sexo_bebe + "\n";
-                                                                                                    this.additionalInfo += "Nome do bebê:" + item.nome_bebe + "\n";
+                                                                                                   this.additionalInfo += "-------" + "\n";
+                                                                                                   this.additionalInfo += "TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE" + "\n";
+                                                                                                   this.additionalInfo += "" + "\n";
+                                                                                                    this.additionalInfo += "Termo Recusa: " + item.termo_recusa + "\n";
+                                                                                                    //this.additionalInfo += "ASS:" + item.assinatura_recusa + "\n";
+                                                                                                    this.additionalInfo += "Testemunha: " + item.testemunha_recusa + "\n";
+                                                                                                    this.additionalInfo += "Doc:" + item.doc_recusa + "\n";
+                                                                                                    this.additionalInfo += "Testemunha(2): " + item.testemunha_recusa2 + "\n";
+                                                                                                    this.additionalInfo += "Doc(2):" + item.doc_recusa2 + "\n";
                                                                                                    //  this.additionalInfo += "" + item.exemplo + "\n";
                                                                                                    $.ajax({
                                                                                                     type: 'GET',
-                                                                                                    url: 'PHP-PDF/termo_recusa.php',
+                                                                                                    url: 'PHP-PDF/observacoes_importantes.php',
                                                                                                     dataType: 'json',
                                                                                                     data: {
                                                                                                        id: id
                                                                                                     },
                                                                                                     success: (data) => {
                                                                                                        data.forEach((item) => {
-                                                                                                          this.additionalInfo += "Termo Recusa: " + item.termo_recusa + "\n";
-                                                                                                          //this.additionalInfo += "ASS:" + item.assinatura_recusa	 + "\n";
-                                                                                                          this.additionalInfo += "Testemunha: " + item.testemunha_recusa + "\n";
-                                                                                                          this.additionalInfo += "Doc:" + item.doc_recusa + "\n";
-                                                                                                          this.additionalInfo += "Testemunha(2): " + item.testemunha_recusa2 + "\n";
-                                                                                                          this.additionalInfo += "Doc(2):" + item.doc_recusa2 + "\n";
+                                                                                                         this.additionalInfo += "-------" + "\n";
+                                                                                                         this.additionalInfo += "Observações Importantes" + "\n";
+                                                                                                         this.additionalInfo += "" + "\n";
+                                                                                                          this.additionalInfo += "Observações: " + item.observacoes_importantes + "\n";
                                                                                                          //  this.additionalInfo += "" + item.exemplo + "\n";
                                                                                                          $.ajax({
                                                                                                           type: 'GET',
-                                                                                                          url: 'PHP-PDF/observacoes_importantes.php',
+                                                                                                          url: 'PHP-PDF/avaliacao_cinematica.php',
                                                                                                           dataType: 'json',
                                                                                                           data: {
                                                                                                              id: id
                                                                                                           },
                                                                                                           success: (data) => {
                                                                                                              data.forEach((item) => {
-                                                                                                                this.additionalInfo += "Observações: " + item.observacoes_importantes + "\n";
+                                                                                                               this.additionalInfo += "-------" + "\n";
+                                                                                                               this.additionalInfo += "Avaliação Cinemática" + "\n";
+                                                                                                               this.additionalInfo += "" + "\n";
+                                                                                                                this.additionalInfo += "Distúrbio de comportamento: " + item.DisturbioDeComportamento + "\n";
+                                                                                                                this.additionalInfo += "Encontrado de capacete: " + item.EncontradoDeCapacete + "\n";
+                                                                                                                this.additionalInfo += "Encontrado de cinto: " + item.EncontradoDeCinto + "\n";
+                                                                                                                this.additionalInfo += "Para-brisas avariado: " + item.ParaBrisasAvariado + "\n";
+                                                                                                                this.additionalInfo += "Caminhando na cena: " + item.CaminhandoNaCena + "\n";
+                                                                                                                this.additionalInfo += "Painel avariado: " + item.PainelAvariado + "\n";
+                                                                                                                this.additionalInfo += "Volante torcido: " + item.VolanteTorcido + "\n";
                                                                                                                //  this.additionalInfo += "" + item.exemplo + "\n";
-                                                                                                               $.ajax({
-                                                                                                                type: 'GET',
-                                                                                                                url: 'PHP-PDF/avaliacao_cinematica.php',
-                                                                                                                dataType: 'json',
-                                                                                                                data: {
-                                                                                                                   id: id
-                                                                                                                },
-                                                                                                                success: (data) => {
-                                                                                                                   data.forEach((item) => {
-                                                                                                                      this.additionalInfo += "Distúrbio de comportamento: " + item.DisturbioDeComportamento + "\n";
-                                                                                                                      this.additionalInfo += "Encontrado de capacete: " + item.EncontradoDeCapacete + "\n";
-                                                                                                                      this.additionalInfo += "Encontrado de cinto: " + item.EncontradoDeCinto + "\n";
-                                                                                                                      this.additionalInfo += "Para-brisas avariado: " + item.ParaBrisasAvariado + "\n";
-                                                                                                                      this.additionalInfo += "Caminhando na cena: " + item.CaminhandoNaCena + "\n";
-                                                                                                                      this.additionalInfo += "Painel avariado: " + item.PainelAvariado + "\n";
-                                                                                                                      this.additionalInfo += "Volante torcido: " + item.VolanteTorcido + "\n";
-                                                                                                                     //  this.additionalInfo += "" + item.exemplo + "\n";
-                                                                                                                     
-                                                                                                                   });
-                                                                                                                },
-                                                                                                                error: function (xhr, status, error) {
-                                                                                                                   console.error("Erro na requisição AJAX: " + status + " - " + error);
-                                                                                                                }
-                                                                                                             });
+                                                                                                               
                                                                                                              });
                                                                                                           },
                                                                                                           error: function (xhr, status, error) {
@@ -393,6 +443,9 @@ function DadosPDF(valor_id_ficha){
                           },
                           success: (data) => {
                              data.forEach((item) => {
+                              this.additionalInfo += "-------" + "\n";
+                              this.additionalInfo += "Avaliação Do Paciente Maior" + "\n";
+                              this.additionalInfo += "" + "\n";
                                 this.additionalInfo += "Abertura Ocular(Maior): " + item.AberturaOcular + "\n";
                                 this.additionalInfo += "Resposta Verbal(Maior): " + item.RespostaVerbal + "\n";
                                 this.additionalInfo += "Resposta Motora(Maior): " + item.RespostaMotora + "\n";
@@ -414,6 +467,9 @@ function DadosPDF(valor_id_ficha){
                          },
                          success: (data) => {
                             data.forEach((item) => {
+                              this.additionalInfo += "-------" + "\n";
+                              this.additionalInfo += "Avaliação Do Paciente Menor" + "\n";
+                              this.additionalInfo += "" + "\n";
                                this.additionalInfo += "Abertura Ocular(Menor): " + item.AberturaOcularMe + "\n";
                                this.additionalInfo += "Resposta Verbal(Menor): " + item.RespostaVerbalMe + "\n";
                                this.additionalInfo += "Resposta Motora(Menor): " + item.RespostaMotoraMe + "\n";
