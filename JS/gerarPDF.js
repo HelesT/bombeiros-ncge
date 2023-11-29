@@ -318,12 +318,10 @@ function DadosPDF(valor_id_ficha){
                                                                                                    texto = item.termo_recusa; 
                                                                                                    var tamanhoParte = 65;
 
-                                                                                                      // Divida o texto em partes
-                                                                                                      var partes = dividirTexto(texto, tamanhoParte);
-
-                                                                                                      // Concatene as partes usando uma quebra de linha
-                                                                                                      var texto = partes.join('\n');
-                                                                                                   
+                                                                                                   // Divida o texto em partes
+                                                                                                   var partes = dividirTexto(texto, tamanhoParte);
+                                                                                                   // Concatene as partes usando uma quebra de linha
+                                                                                                   var texto = partes.join('\n');
                                                                                                     this.additionalInfo += "Termo Recusa: " + texto + "\n";
                                                                                                     //this.additionalInfo += "ASS:" + item.assinatura_recusa + "\n";
                                                                                                     this.additionalInfo += "Testemunha: " + item.testemunha_recusa + "\n";
