@@ -316,7 +316,7 @@ function DadosPDF(valor_id_ficha){
                                                                                                    this.additionalInfo += "TERMO DE RECUSA DE ATENDIMENTO E/OU TRANSPORTE" + "\n";
                                                                                                    this.additionalInfo += "" + "\n";
                                                                                                    texto = item.termo_recusa; 
-                                                                                                   var tamanhoParte = 65;
+                                                                                                   var tamanhoParte = 60;
 
                                                                                                    // Divida o texto em partes
                                                                                                    var partes = dividirTexto(texto, tamanhoParte);

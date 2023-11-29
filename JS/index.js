@@ -265,10 +265,10 @@ if (document.getElementById("menor_2_seg_sv").checked) {
 } else if (document.getElementById("maior_2_seg_sv").checked) {
     Maior2SegSv = document.getElementById("maior_2_seg_sv").value;
 } else {
-    Maior2SegSv = "Normal";
+    Maior2SegSv = "0";
 }
 
-if (Psa1 === "0" || Psa2 === "0" || Pulso === "0" || Respiracao === "0" || Temperatura === "0" || Maior2SegSv === "Normal") {
+if (Psa1 === "0" || Psa2 === "0" || Pulso === "0" || Respiracao === "0" || Temperatura === "0" || Maior2SegSv === "0") {
     alert("Por favor, preencha todos os campos obrigatórios. Da página sinais vitais");}
 
 
@@ -829,7 +829,7 @@ function TermoDeRecusa(){
   var DocRecusa = $('#doc_Recusa').val();
   var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val();
   var DocRecusa2 = $('#doc_Recusa_2').val();
-  var AssTxtRecusa = "EU " + NomeTermoRecusa + " PORTADOR DA CARTEIRA DE IDENTIDADE RG Nº " + IdentidadeRecusa + " INSCRITO NO CPF SOB Nº" + CpfRescusa + " NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS-VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUENCIAS QUE POSSAMOCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DASUANÃO REALIZAÇÃO."
+  var AssTxtRecusa = "EU " + NomeTermoRecusa + " PORTADOR DA CARTEIRA DE IDENTIDADE RG Nº " + IdentidadeRecusa + " INSCRITO NO CPF SOB Nº" + CpfRescusa + " NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS-VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUENCIAS QUE POSSAMOCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO."
     
     console.log(AssImagem)
     console.log(AssTxtRecusa)
