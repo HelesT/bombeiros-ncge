@@ -22,9 +22,10 @@ function DadosPDF(valor_id_ficha){
             id: id
          },
          dataType: 'json'
-      }).done(function(item){
+      }).done(function(data){
+         data.forEach((item) => {
             imagem.push(item.trauma_img);
-            console.log("imagem de trauma obtida")
+          })
 
       }).fail(function(errorThrown) {
             console.log(errorThrown);
@@ -42,7 +43,7 @@ function DadosPDF(valor_id_ficha){
          data() {
            return {
              additionalInfo: "",
-             imageBase64: imagem,
+             imagem: imagem,
            };
          },
          created() {
@@ -569,7 +570,9 @@ function DadosPDF(valor_id_ficha){
               doc.text(line, 0.5, y);
               y += lineHeight;
             });
-   
+            
+            y = y - 0.1;
+
             // Define as coordenadas iniciais
             let xCoordinate = 0.5;
             let imageYCoordinate = y; // Inicia abaixo do texto
@@ -578,15 +581,15 @@ function DadosPDF(valor_id_ficha){
             const imgWidth = 2;
    
             // Itera sobre as imagens no vetor
-            for (const imageBase64 of this.imageBase64) {
+            for (const imagem of this.imagem) {
               // Obtém as propriedades da imagem
-              const imgProps = doc.getImageProperties(imageBase64);
+              const imgProps = doc.getImageProperties(imagem);
           
               // Calcula a altura proporcional com base na largura padrão
               const imgHeight = imgProps.height * imgWidth / imgProps.width;
           
               // Adiciona a imagem na mesma página
-              doc.addImage(imageBase64, 'JPEG', xCoordinate, imageYCoordinate, imgWidth, imgHeight);
+              doc.addImage(imagem, 'JPEG', xCoordinate, imageYCoordinate, imgWidth, imgHeight);
           
               // Atualiza a coordenada X para a próxima imagem
               xCoordinate += imgWidth + 0.2; // Adiciona um pequeno espaço entre as imagens
