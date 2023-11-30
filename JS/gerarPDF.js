@@ -13,8 +13,9 @@ function DadosPDF(valor_id_ficha){
       var imagem = [];
    }
 
-   {//OBTER OS ARQUIVOS DAS IMAGENS
+   {//OBTEM OS ARQUIVOS DAS IMAGENS
 
+      {//IMAGEM DO TRAUMA
       $.ajax({
          url: 'PHP/pdf-imagem-trauma.php',
          method: 'GET',
@@ -30,7 +31,45 @@ function DadosPDF(valor_id_ficha){
       }).fail(function(errorThrown) {
             console.log(errorThrown);
       });
+      }
 
+      {//IMAGEM DA ASSINATURA
+      $.ajax({
+         url: 'PHP/pdf-imagem-assinatura.php',
+         method: 'GET',
+         data: {
+            id: id
+         },
+         dataType: 'json'
+      }).done(function(data){
+         data.forEach((item) => {
+            imagem.push(item.assinatura_recusa);
+          })
+
+      }).fail(function(errorThrown) {
+            console.log(errorThrown);
+      });
+      }
+
+      {//IMAGENS DE OBJETOS RECOLHIDOS
+         $.ajax({
+            url: 'PHP/pdf-imagem-objetos.php',
+            method: 'GET',
+            data: {
+                id: id
+            },
+            dataType: 'json'
+        }).done(function(data) {
+         data.forEach((item) => {
+            imagem.push(item.imagem);
+        });
+        
+        }).fail(function(errorThrown) {
+            console.log(errorThrown);
+        });
+        
+      }
+      
    }
 
    setTimeout(() => {//ESPERO 1 SEGUNDO PARA EXECUTAR O PDF
