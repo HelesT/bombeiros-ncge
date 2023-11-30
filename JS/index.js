@@ -86,490 +86,745 @@ function RegistrarPaciente(){
 }
 
 function ChegarInputs(){
-     //PacienteRegistro
+    //  //PacienteRegistro
 
-     var Data = $('#data').val();
-     if (Data === "") {
-         Data = "nda";
-     }
+    //  var Data = $('#data').val();
+    //  if (Data === "") {
+    //      Data = "nda";
+    //  }
      
-     var NomeHospitalPaciente = $('#nome_hospital_paciente').val().trim();
-     if (NomeHospitalPaciente === "") {
-         NomeHospitalPaciente = "nda";
-     }
+    //  var NomeHospitalPaciente = $('#nome_hospital_paciente').val().trim();
+    //  if (NomeHospitalPaciente === "") {
+    //      NomeHospitalPaciente = "nda";
+    //  }
      
-     var NomePaciente = $('#nome_paciente').val().trim();
-     if (NomePaciente === "") {
-         NomePaciente = "nda";
-     }
+    //  var NomePaciente = $('#nome_paciente').val().trim();
+    //  if (NomePaciente === "") {
+    //      NomePaciente = "nda";
+    //  }
      
-     var IdadePaciente = $('#idade_paciente').val();
-     if (IdadePaciente === "") {
-         IdadePaciente = "nda";
-     }
+    //  var IdadePaciente = $('#idade_paciente').val();
+    //  if (IdadePaciente === "") {
+    //      IdadePaciente = "nda";
+    //  }
      
-     var RgCpfPaciente = $('#rg_cpf_paciente').val().trim();
-     if (RgCpfPaciente === "") {
-         RgCpfPaciente = "nda";
-     }
+    //  var RgCpfPaciente = $('#rg_cpf_paciente').val().trim();
+    //  if (RgCpfPaciente === "") {
+    //      RgCpfPaciente = "nda";
+    //  }
      
-     var FonePaciente = $('#fone_paciente').val().trim();
-     if (FonePaciente === "") {
-         FonePaciente = "nda";
-     }
+    //  var FonePaciente = $('#fone_paciente').val().trim();
+    //  if (FonePaciente === "") {
+    //      FonePaciente = "nda";
+    //  }
      
-     var AcompanhantePaciente = $('#acompanhante_paciente').val().trim();
-     if (AcompanhantePaciente === "") {
-         AcompanhantePaciente = "nda";
-     }
+    //  var AcompanhantePaciente = $('#acompanhante_paciente').val().trim();
+    //  if (AcompanhantePaciente === "") {
+    //      AcompanhantePaciente = "nda";
+    //  }
      
-     var IdadeAcompanhantePaciente = $('#idade_acompanhante_paciente').val();
-     if (IdadeAcompanhantePaciente === "") {
-         IdadeAcompanhantePaciente = "nda";
-     }
+    //  var IdadeAcompanhantePaciente = $('#idade_acompanhante_paciente').val();
+    //  if (IdadeAcompanhantePaciente === "") {
+    //      IdadeAcompanhantePaciente = "nda";
+    //  }
      
-     var LocalOcorrenciaPaciente = $('#local_ocorrencia_paciente').val().trim();
-     if (LocalOcorrenciaPaciente === "") {
-         LocalOcorrenciaPaciente = "nda";
-     }
+    //  var LocalOcorrenciaPaciente = $('#local_ocorrencia_paciente').val().trim();
+    //  if (LocalOcorrenciaPaciente === "") {
+    //      LocalOcorrenciaPaciente = "nda";
+    //  }
      
-     var NUsbPaciente = $('#n_usab_paciente').val().trim();
-     if (NUsbPaciente === "") {
-         NUsbPaciente = "nda";
-     }
+    //  var NUsbPaciente = $('#n_usab_paciente').val().trim();
+    //  if (NUsbPaciente === "") {
+    //      NUsbPaciente = "nda";
+    //  }
      
-     var NOcorrPaciente = $('#n_ocorr_paciente').val().trim();
-     if (NOcorrPaciente === "") {
-         NOcorrPaciente = "nda";
-     }
+    //  var NOcorrPaciente = $('#n_ocorr_paciente').val().trim();
+    //  if (NOcorrPaciente === "") {
+    //      NOcorrPaciente = "nda";
+    //  }
      
-     var DespPaciente = $('#desp_paciente').val().trim();
-     if (DespPaciente === "") {
-         DespPaciente = "nda";
-     }
+    //  var DespPaciente = $('#desp_paciente').val().trim();
+    //  if (DespPaciente === "") {
+    //      DespPaciente = "nda";
+    //  }
      
-     var HChPaciente = $('#h_ch_paciente').val().trim();
-     if (HChPaciente === "") {
-         HChPaciente = "nda";
-     }
+    //  var HChPaciente = $('#h_ch_paciente').val().trim();
+    //  if (HChPaciente === "") {
+    //      HChPaciente = "nda";
+    //  }
      
-     var KmFinalPaciente = $('#km_final_paciente').val().trim();
-     if (KmFinalPaciente === "") {
-         KmFinalPaciente = "nda";
-     }
+    //  var KmFinalPaciente = $('#km_final_paciente').val().trim();
+    //  if (KmFinalPaciente === "") {
+    //      KmFinalPaciente = "nda";
+    //  }
      
-     var CodSiaSusPaciente = $('#cod_sia_sus_paciente').val().trim();
-     if (CodSiaSusPaciente === "") {
-         CodSiaSusPaciente = "nda";
-     }
+    //  var CodSiaSusPaciente = $('#cod_sia_sus_paciente').val().trim();
+    //  if (CodSiaSusPaciente === "") {
+    //      CodSiaSusPaciente = "nda";
+    //  }
      
-     var SexoPaciente = "";
-     if (document.getElementById("sexo_paciente_m").checked) {
-         SexoPaciente = document.getElementById("sexo_paciente_m").value;
-     } else if (document.getElementById("sexo_paciente_f").checked) {
-         SexoPaciente = document.getElementById("sexo_paciente_f").value;
-     } else {
-         SexoPaciente = "nda";
-     }
+    //  var SexoPaciente = "";
+    //  if (document.getElementById("sexo_paciente_m").checked) {
+    //      SexoPaciente = document.getElementById("sexo_paciente_m").value;
+    //  } else if (document.getElementById("sexo_paciente_f").checked) {
+    //      SexoPaciente = document.getElementById("sexo_paciente_f").value;
+    //  } else {
+    //      SexoPaciente = "nda";
+    //  }
      
      
-     if (Data === "nda" || NomeHospitalPaciente === "nda" || NomePaciente === "nda" || IdadePaciente === "nda" || RgCpfPaciente === "nda" || FonePaciente === "nda" || AcompanhantePaciente === "nda" || IdadeAcompanhantePaciente === "nda" || LocalOcorrenciaPaciente === "nda" || NUsbPaciente === "nda" || NOcorrPaciente === "nda" || DespPaciente === "nda" || HChPaciente === "nda" || KmFinalPaciente === "nda" || CodSiaSusPaciente === "nda" || SexoPaciente === "nda") {
-         alert("Por favor, preencha todos os campos obrigatórios. Da página Paciente");
-     }
+    //  if (Data === "nda" || NomeHospitalPaciente === "nda" || NomePaciente === "nda" || IdadePaciente === "nda" || RgCpfPaciente === "nda" || FonePaciente === "nda" || AcompanhantePaciente === "nda" || IdadeAcompanhantePaciente === "nda" || LocalOcorrenciaPaciente === "nda" || NUsbPaciente === "nda" || NOcorrPaciente === "nda" || DespPaciente === "nda" || HChPaciente === "nda" || KmFinalPaciente === "nda" || CodSiaSusPaciente === "nda" || SexoPaciente === "nda") {
+    //      alert("Por favor, preencha todos os campos obrigatórios. Da página Paciente");
+    //  }
      
      
 
-    //EmergenciaRegistro
+//  //EmergenciaRegistro
     
-    if(EmergenciaRegistro1 === ""){alert("A página Emergencia Registro está vazia")}//radio/chekbox
+//     var EmergenciaMedicaEr, ComMeioTransporteEr, CausadoPorAnimaisEr, IncendioEr, AfogamentoEr, DeslizamentoDesmoronamentoEr, AgressaoEr, QuedaAltura2mEr, SuicidioEr, QuedaPropriaAlturaEr, AtropelamentoEr, ChoqueEletricoEr, DesabamentoEr, DomesticoEr, EsportivoEr, IntoxicacaoEr, QuedaBicicletaEr, QuedaMotoEr, QuedaEr, TrabalhoEr, TransferenciaEr, OutroEr;
 
-    //TermoDeRecusa 
-//arrumar página let AssImagem = '';
-var NomeTermoRecusa = $('#nome_Recusa').val().trim();
-var IdentidadeRecusa = $('#identidade_Recusa').val().trim();
-var CpfRescusa = $('#cpf_Recusa').val().trim();
-var TestemunhaRecusa = $('#testemunha_Recusa').val().trim();
-var DocRecusa = $('#doc_Recusa').val().trim();
-var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val().trim();
-var DocRecusa2 = $('#doc_Recusa_2').val().trim();
+// if (document.getElementById("emergencia_medica_er").checked) {
+//     EmergenciaMedicaEr = document.getElementById("emergencia_medica_er").value;
+// } else {
+//     EmergenciaMedicaEr = "";
+// }
 
-// Verifica se algum dos campos obrigatórios está vazio
+// if (document.getElementById("com_meio_de_transporte_er").checked) {
+//     ComMeioTransporteEr = document.getElementById("com_meio_de_transporte_er").value;
+// } else {
+//     ComMeioTransporteEr = "";
+// }
+
+// if (document.getElementById("causado_por_animais_er").checked) {
+//     CausadoPorAnimaisEr = document.getElementById("causado_por_animais_er").value;
+// } else {
+//     CausadoPorAnimaisEr = "";
+// }
+
+// if (document.getElementById("incendio_er").checked) {
+//     IncendioEr = document.getElementById("incendio_er").value;
+// } else {
+//     IncendioEr = "";
+// }
+
+// if (document.getElementById("afogamento_er").checked) {
+//     AfogamentoEr = document.getElementById("afogamento_er").value;
+// } else {
+//     AfogamentoEr = "";
+// }
+
+// if (document.getElementById("deslizamento_desmoronamento_er").checked) {
+//     DeslizamentoDesmoronamentoEr = document.getElementById("deslizamento_desmoronamento_er").value;
+// } else {
+//     DeslizamentoDesmoronamentoEr = "";
+// }
+
+// if (document.getElementById("agressao_er").checked) {
+//     AgressaoEr = document.getElementById("agressao_er").value;
+// } else {
+//     AgressaoEr = "";
+// }
+
+// if (document.getElementById("queda_aluta_2m_er").checked) {
+//     QuedaAltura2mEr = document.getElementById("queda_aluta_2m_er").value;
+// } else {
+//     QuedaAltura2mEr = "";
+// }
+
+// if (document.getElementById("tentativa_suicidio_er").checked) {
+//     SuicidioEr = document.getElementById("tentativa_suicidio_er").value;
+// } else {
+//     SuicidioEr = "";
+// }
+
+// if (document.getElementById("queda_propria_altura_er").checked) {
+//     QuedaPropriaAlturaEr = document.getElementById("queda_propria_altura_er").value;
+// } else {
+//     QuedaPropriaAlturaEr = "";
+// }
+
+// if (document.getElementById("Atropelamento_er").checked) {
+//     AtropelamentoEr = document.getElementById("Atropelamento_er").value;
+// } else {
+//     AtropelamentoEr = "";
+// }
+
+// if (document.getElementById("choque_eletrico_er").checked) {
+//     ChoqueEletricoEr = document.getElementById("choque_eletrico_er").value;
+// } else {
+//     ChoqueEletricoEr = "";
+// }
+
+// if (document.getElementById("desabamento_er").checked) {
+//     DesabamentoEr = document.getElementById("desabamento_er").value;
+// } else {
+//     DesabamentoEr = "";
+// }
+
+// if (document.getElementById("domestico_er").checked) {
+//     DomesticoEr = document.getElementById("domestico_er").value;
+// } else {
+//     DomesticoEr = "";
+// }
+
+// if (document.getElementById("esportivo_er").checked) {
+//     EsportivoEr = document.getElementById("esportivo_er").value;
+// } else {
+//     EsportivoEr = "";
+// }
+
+// if (document.getElementById("intoxicacao_er").checked) {
+//     IntoxicacaoEr = document.getElementById("intoxicacao_er").value;
+// } else {
+//     IntoxicacaoEr = "";
+// }
+
+// if (document.getElementById("queda_bicicleta_er").checked) {
+//     QuedaBicicletaEr = document.getElementById("queda_bicicleta_er").value;
+// } else {
+//     QuedaBicicletaEr = "";
+// }
+
+// if (document.getElementById("queda_moto_er").checked) {
+//     QuedaMotoEr = document.getElementById("queda_moto_er").value;
+// } else {
+//     QuedaMotoEr = "";
+// }
+
+// if (document.getElementById("queda_er").checked) {
+//     QuedaEr = document.getElementById("queda_er").value;
+// } else {
+//     QuedaEr = "";
+// }
+
+// if (document.getElementById("trabalho_er").checked) {
+//     TrabalhoEr = document.getElementById("trabalho_er").value;
+// } else {
+//     TrabalhoEr = "";
+// }
+
+// if (document.getElementById("transferencia_er").checked) {
+//     TransferenciaEr = document.getElementById("transferencia_er").value;
+// } else {
+//     TransferenciaEr = "";
+// }
+
+// if (document.getElementById("outro_er").checked) {
+//     OutroEr = document.getElementById("outro_er").value;
+// } else {
+//     OutroEr = "";
+// }
+
+// var EmergenciaRegistro1 = "";
+// if (EmergenciaMedicaEr !== "") { EmergenciaRegistro1 += EmergenciaMedicaEr + ", "; }
+// if (ComMeioTransporteEr !== "") { EmergenciaRegistro1 += ComMeioTransporteEr + ", "; }
+// if (CausadoPorAnimaisEr !== "") { EmergenciaRegistro1 += CausadoPorAnimaisEr + ", "; }
+// if (IncendioEr !== "") { EmergenciaRegistro1 += IncendioEr + ", "; }
+// if (AfogamentoEr !== "") { EmergenciaRegistro1 += AfogamentoEr + ", "; }
+// if (DeslizamentoDesmoronamentoEr !== "") { EmergenciaRegistro1 += DeslizamentoDesmoronamentoEr + ", "; }
+// if (AgressaoEr !== "") { EmergenciaRegistro1 += AgressaoEr + ", "; }
+// if (QuedaAltura2mEr !== "") { EmergenciaRegistro1 += QuedaAltura2mEr + ", "; }
+// if (SuicidioEr !== "") { EmergenciaRegistro1 += SuicidioEr + ", "; }
+// if (QuedaPropriaAlturaEr !== "") { EmergenciaRegistro1 += QuedaPropriaAlturaEr + ", "; }
+// if (AtropelamentoEr !== "") { EmergenciaRegistro1 += AtropelamentoEr + ", "; }
+// if (ChoqueEletricoEr !== "") { EmergenciaRegistro1 += ChoqueEletricoEr + ", "; }
+// if (DesabamentoEr !== "") { EmergenciaRegistro1 += DesabamentoEr + ", "; }
+// if (DomesticoEr !== "") { EmergenciaRegistro1 += DomesticoEr + ", "; }
+// if (EsportivoEr !== "") { EmergenciaRegistro1 += EsportivoEr + ", "; }
+// if (IntoxicacaoEr !== "") { EmergenciaRegistro1 += IntoxicacaoEr + ", "; }
+// if (QuedaBicicletaEr !== "") { EmergenciaRegistro1 += QuedaBicicletaEr + ", "; }
+// if (QuedaMotoEr !== "") { EmergenciaRegistro1 += QuedaMotoEr + ", "; }
+// if (QuedaEr !== "") { EmergenciaRegistro1 += QuedaEr + ", "; }
+// if (TrabalhoEr !== "") { EmergenciaRegistro1 += TrabalhoEr + ", "; }
+// if (TransferenciaEr !== "") { EmergenciaRegistro1 += TransferenciaEr + ", "; }
+// if (OutroEr !== "") { EmergenciaRegistro1 += OutroEr + ", "; }
+// if (EmergenciaRegistro1 === "") { EmergenciaRegistro1 = "nda"; alert("Por favor, preencha todos os campos obrigatórios. Da página Emergência"); }
+
+
+
+//     //TermoDeRecusa 
+// //arrumar página let AssImagem = '';
+// var NomeTermoRecusa = $('#nome_Recusa').val().trim();
+// var IdentidadeRecusa = $('#identidade_Recusa').val().trim();
+// var CpfRescusa = $('#cpf_Recusa').val().trim();
+// var TestemunhaRecusa = $('#testemunha_Recusa').val().trim();
+// var DocRecusa = $('#doc_Recusa').val().trim();
+// var TestemunhaRecusa2 = $('#testemunha_Recusa_2').val().trim();
+// var DocRecusa2 = $('#doc_Recusa_2').val().trim();
+
+// // Verifica se algum dos campos obrigatórios está vazio
+// if (
+//   NomeTermoRecusa === "" ||
+//   IdentidadeRecusa === "" ||
+//   CpfRescusa === "" ||
+//   TestemunhaRecusa === "" ||
+//   DocRecusa === "" ||
+//   TestemunhaRecusa2 === "" ||
+//   DocRecusa2 === ""
+// ) {
+//   alert("Por favor, preencha todos os campos obrigatórios na página Termo de Recusa.");
+// } else {
+//   // Verifica se o campo de arquivo tem pelo menos um arquivo selecionado
+//   var fileInput = $('#assinatura_Recusa')[0]; // Substitua 'fileInput' pelo id do seu input type="file"
+//   if (fileInput.files.length === 0) {
+//     alert("Por favor, selecione um arquivo. Na página Termo de Recusa");
+//   } else {
+//     // Constrói a mensagem de notificação
+//     var AssTxtRecusa =
+//       "EU " +
+//       NomeTermoRecusa +
+//       " PORTADOR DA CARTEIRA DE IDENTIDADE RG Nº " +
+//       IdentidadeRecusa +
+//       " INSCRITO NO CPF SOB Nº" +
+//       CpfRescusa +
+//       " NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS-VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUENCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.";
+
+//     // Faça o que for necessário com a mensagem de notificação
+//     console.log(AssTxtRecusa);
+//   }
+// }
+//    //FormaDeConducao
+var Conducao = ""; /* Input type radio */
+if (document.getElementById("deitada_conducao").checked) {
+    Conducao = document.getElementById("deitada_conducao").value;
+} else if (document.getElementById("semi_deitada_conducao").checked) {
+    Conducao = document.getElementById("semi_deitada_conducao").value;
+} else if (document.getElementById("sentada_conducao").checked) {
+    Conducao = document.getElementById("sentada_conducao").value; /* Input type radio */
+} else {
+    Conducao = "";
+}
+
+//// Segunda parte
+var FcCiclista = "";
+var FcCondutor = "";
+var FcGestante = "";
+var FcPassBanFrente = "";
+var FcPassMoto = "";
+var FcCondutorCarro = "";
+var FcClinico = "";
+var FcTrauma = "";
+var FcPassBanTras = "";
+var FcPedestre = "";
+
+if (document.getElementById("fc_ciclista").checked) {
+    FcCiclista = document.getElementById("fc_ciclista").value;
+}
+
+if (document.getElementById("fc_condutor_moto").checked) {
+    FcCondutor = document.getElementById("fc_condutor_moto").value;
+}
+
+if (document.getElementById("fc_gestante").checked) {
+    FcGestante = document.getElementById("fc_gestante").value;
+}
+
+if (document.getElementById("fc_pass_ban_frente").checked) {
+    FcPassBanFrente = document.getElementById("fc_pass_ban_frente").value;
+}
+
+if (document.getElementById("fc_pass_moto").checked) {
+    FcPassMoto = document.getElementById("fc_pass_moto").value;
+}
+
+if (document.getElementById("fc_condutor_carro").checked) {
+    FcCondutorCarro = document.getElementById("fc_condutor_carro").value;
+}
+
+if (document.getElementById("fc_clinico").checked) {
+    FcClinico = document.getElementById("fc_clinico").value;
+}
+
+if (document.getElementById("fc_trauma").checked) {
+    FcTrauma = document.getElementById("fc_trauma").value;
+}
+
+if (document.getElementById("fc_pass_ban_tras").checked) {
+    FcPassBanTras = document.getElementById("fc_pass_ban_tras").value;
+}
+
+if (document.getElementById("fc_pedestre").checked) {
+    FcPedestre = document.getElementById("fc_pedestre").value;
+}
+
+//// Notificação se apenas uma parte foi preenchida
 if (
-  NomeTermoRecusa === "" ||
-  IdentidadeRecusa === "" ||
-  CpfRescusa === "" ||
-  TestemunhaRecusa === "" ||
-  DocRecusa === "" ||
-  TestemunhaRecusa2 === "" ||
-  DocRecusa2 === ""
+    (Conducao.trim() !== "" && (
+        FcCiclista.trim() === "" &&
+        FcCondutor.trim() === "" &&
+        FcGestante.trim() === "" &&
+        FcPassBanFrente.trim() === "" &&
+        FcPassMoto.trim() === "" &&
+        FcCondutorCarro.trim() === "" &&
+        FcClinico.trim() === "" &&
+        FcTrauma.trim() === "" &&
+        FcPassBanTras.trim() === "" &&
+        FcPedestre.trim() === ""
+    )) ||
+    (Conducao.trim() === "" && (
+        FcCiclista.trim() !== "" ||
+        FcCondutor.trim() !== "" ||
+        FcGestante.trim() !== "" ||
+        FcPassBanFrente.trim() !== "" ||
+        FcPassMoto.trim() !== "" ||
+        FcCondutorCarro.trim() !== "" ||
+        FcClinico.trim() !== "" ||
+        FcTrauma.trim() !== "" ||
+        FcPassBanTras.trim() !== "" ||
+        FcPedestre.trim() !== ""
+    )) ||
+    (Conducao.trim() === "" && FcCiclista.trim() === "" && FcCondutor.trim() === "" && FcGestante.trim() === "" &&
+        FcPassBanFrente.trim() === "" && FcPassMoto.trim() === "" && FcCondutorCarro.trim() === "" &&
+        FcClinico.trim() === "" && FcTrauma.trim() === "" && FcPassBanTras.trim() === "" && FcPedestre.trim() === "")
 ) {
-  alert("Por favor, preencha todos os campos obrigatórios na página Termo de Recusa.");
-} else {
-  // Verifica se o campo de arquivo tem pelo menos um arquivo selecionado
-  var fileInput = $('#assinatura_Recusa')[0]; // Substitua 'fileInput' pelo id do seu input type="file"
-  if (fileInput.files.length === 0) {
-    alert("Por favor, selecione um arquivo. Na página Termo de Recusa");
-  } else {
-    // Constrói a mensagem de notificação
-    var AssTxtRecusa =
-      "EU " +
-      NomeTermoRecusa +
-      " PORTADOR DA CARTEIRA DE IDENTIDADE RG Nº " +
-      IdentidadeRecusa +
-      " INSCRITO NO CPF SOB Nº" +
-      CpfRescusa +
-      " NA QUALIDADE DE VÍTIMA/PACIENTE, USANDO DOS DIREITOS QUE A LEI ME GARANTE, ME RECUSO NESTE ATO O ATENDIMENTO E/OU TRANSPORTE OFERECIDO PELOS BOMBEIROS-VOLUNTÁRIOS DE GUARAMIRIM/SC, E ASSUMO, INDIVIDUALMENTE A RESPONSABILIDADE PELAS CONSEQUENCIAS QUE POSSAM OCORRER POR RAZÃO DA MINHA RECUSA. DECLARO QUE FUI DEVIDAMENTE INFORMADO SOBRE O PROCEDIMENTO PELO QUAL EU DEVERIA ME SUBMETER, E ALERTADO SOBRE OS RISCOS À SAÚDE DA SUA NÃO REALIZAÇÃO.";
-
-    // Faça o que for necessário com a mensagem de notificação
-    console.log(AssTxtRecusa);
-  }
-}
-   //FormaDeConducao
-    if(FormaConducao === ""){alert("A página Forma Condução está vazia")}//radio/chekbox
-
-    //AvaliacaoPaciente
-
-    //SinaisVitais 
-    var Psa1 = $('#pressao_arterial_sv').val();
-if (Psa1 === "") {
-    Psa1 = "0";
-}
-var Psa2 = $('#mmhg_sv').val();
-if (Psa2 === "") {
-    Psa2 = "0";
-}
-var PressaoArterial = Psa1 + " x " + Psa2 + " mmhg";
-
-var Pulso = $('#pulso_sv').val();
-if (Pulso === "") {
-    Pulso = "0";
-}
-var Respiracao = $('#respiracao_sv').val();
-if (Respiracao === "") {
-    Respiracao = "0";
-}
-var Temperatura = $('#temperatura_sv').val();
-if (Temperatura === "") {
-    Temperatura = "0";
+    alert("Por favor, preencha apenas uma das partes obrigatórias. Da página Forma De Condução");
 }
 
-var AnormalCheckbox = document.getElementById("anormal_sv");/*Input type Checkbox*/
-var AnormalCheck = AnormalCheckbox.checked;
-var Anormal = AnormalCheck ? 's' : 'n';
-
-var Maior2SegSv = "";/*Input type radio*/
-if (document.getElementById("menor_2_seg_sv").checked) {
-    Maior2SegSv = document.getElementById("menor_2_seg_sv").value;
-} else if (document.getElementById("normal_sv").checked) {
-    Maior2SegSv = document.getElementById("normal_sv").value;
-} else if (document.getElementById("maior_2_seg_sv").checked) {
-    Maior2SegSv = document.getElementById("maior_2_seg_sv").value;
-} else {
-    Maior2SegSv = "0";
-}
-
-if (Psa1 === "0" || Psa2 === "0" || Pulso === "0" || Respiracao === "0" || Temperatura === "0" || Maior2SegSv === "0") {
-    alert("Por favor, preencha todos os campos obrigatórios. Da página sinais vitais");}
 
 
-    //DecisaoDeTransporte
+//     //AvaliacaoPaciente
 
-    var MDT = $('#m_dt').val().trim(); 
-if (MDT === "") {
-    MDT = "nda";
-}
+//     //SinaisVitais 
+//     var Psa1 = $('#pressao_arterial_sv').val();
+// if (Psa1 === "") {
+//     Psa1 = "0";
+// }
+// var Psa2 = $('#mmhg_sv').val();
+// if (Psa2 === "") {
+//     Psa2 = "0";
+// }
+// var PressaoArterial = Psa1 + " x " + Psa2 + " mmhg";
 
-var S1DT = $('#s1_dt').val().trim(); 
-if (S1DT === "") {
-    S1DT = "nda";
-}
+// var Pulso = $('#pulso_sv').val();
+// if (Pulso === "") {
+//     Pulso = "0";
+// }
+// var Respiracao = $('#respiracao_sv').val();
+// if (Respiracao === "") {
+//     Respiracao = "0";
+// }
+// var Temperatura = $('#temperatura_sv').val();
+// if (Temperatura === "") {
+//     Temperatura = "0";
+// }
 
-var S2DT = $('#s2_dt').val().trim(); 
-if (S2DT === "") {
-    S2DT = "nda";
-}
+// var AnormalCheckbox = document.getElementById("anormal_sv");/*Input type Checkbox*/
+// var AnormalCheck = AnormalCheckbox.checked;
+// var Anormal = AnormalCheck ? 's' : 'n';
 
-var S3DT = $('#s3_dr').val().trim(); 
-if (S3DT === "") {
-    S3DT = "nda";
-}
+// var Maior2SegSv = "";/*Input type radio*/
+// if (document.getElementById("menor_2_seg_sv").checked) {
+//     Maior2SegSv = document.getElementById("menor_2_seg_sv").value;
+// } else if (document.getElementById("normal_sv").checked) {
+//     Maior2SegSv = document.getElementById("normal_sv").value;
+// } else if (document.getElementById("maior_2_seg_sv").checked) {
+//     Maior2SegSv = document.getElementById("maior_2_seg_sv").value;
+// } else {
+//     Maior2SegSv = "0";
+// }
 
-var DemanteDT = $('#demante_dt').val().trim(); 
-if (DemanteDT === "") {
-    DemanteDT = "nda";
-}
+// if (Psa1 === "0" || Psa2 === "0" || Pulso === "0" || Respiracao === "0" || Temperatura === "0" || Maior2SegSv === "0") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página sinais vitais");}
 
-var DecisaoDeTransporteDt = "";
-var criticoDtChecked = document.getElementById("critico_dt").checked;
-var instavelDtChecked = document.getElementById("instavel_dt").checked;
-var estavelDtChecked = document.getElementById("estavel_dt").checked;
-var potencialMenteInstavelDtChecked = document.getElementById("potencial_mente_instavel_dt").checked;
 
-if (criticoDtChecked) {
-    DecisaoDeTransporteDt = document.getElementById("critico_dt").value.trim();
-} else if (instavelDtChecked) {
-    DecisaoDeTransporteDt = document.getElementById("instavel_dt").value.trim();
-} else if (estavelDtChecked) {
-    DecisaoDeTransporteDt = document.getElementById("estavel_dt").value.trim();
-} else if (potencialMenteInstavelDtChecked) {
-    DecisaoDeTransporteDt = document.getElementById("potencial_mente_instavel_dt").value.trim();
-} else {
-    DecisaoDeTransporteDt = "nda";
-}
+//     //DecisaoDeTransporte
 
-if (MDT === "nda" || S1DT === "nda" || S2DT === "nda" || S3DT === "nda" || DemanteDT === "nda" || DecisaoDeTransporteDt === "nda") {
-    alert("Por favor, preencha todos os campos obrigatórios. Da página Decisão de Transporte");
-}
+//     var MDT = $('#m_dt').val().trim(); 
+// if (MDT === "") {
+//     MDT = "nda";
+// }
 
-    //AnamneseGestacional
-    var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val().trim();
-    if (PeriodoDeGestacao === "") {
-        PeriodoDeGestacao = "nda";
-    }
+// var S1DT = $('#s1_dt').val().trim(); 
+// if (S1DT === "") {
+//     S1DT = "nda";
+// }
+
+// var S2DT = $('#s2_dt').val().trim(); 
+// if (S2DT === "") {
+//     S2DT = "nda";
+// }
+
+// var S3DT = $('#s3_dr').val().trim(); 
+// if (S3DT === "") {
+//     S3DT = "nda";
+// }
+
+// var DemanteDT = $('#demante_dt').val().trim(); 
+// if (DemanteDT === "") {
+//     DemanteDT = "nda";
+// }
+
+// var DecisaoDeTransporteDt = "";
+// var criticoDtChecked = document.getElementById("critico_dt").checked;
+// var instavelDtChecked = document.getElementById("instavel_dt").checked;
+// var estavelDtChecked = document.getElementById("estavel_dt").checked;
+// var potencialMenteInstavelDtChecked = document.getElementById("potencial_mente_instavel_dt").checked;
+
+// if (criticoDtChecked) {
+//     DecisaoDeTransporteDt = document.getElementById("critico_dt").value.trim();
+// } else if (instavelDtChecked) {
+//     DecisaoDeTransporteDt = document.getElementById("instavel_dt").value.trim();
+// } else if (estavelDtChecked) {
+//     DecisaoDeTransporteDt = document.getElementById("estavel_dt").value.trim();
+// } else if (potencialMenteInstavelDtChecked) {
+//     DecisaoDeTransporteDt = document.getElementById("potencial_mente_instavel_dt").value.trim();
+// } else {
+//     DecisaoDeTransporteDt = "nda";
+// }
+
+// if (MDT === "nda" || S1DT === "nda" || S2DT === "nda" || S3DT === "nda" || DemanteDT === "nda" || DecisaoDeTransporteDt === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página Decisão de Transporte");
+// }
+
+//     //AnamneseGestacional
+//     var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val().trim();
+//     if (PeriodoDeGestacao === "") {
+//         PeriodoDeGestacao = "nda";
+//     }
     
-    var NomeDoMedico = $('#nm_anamnese_gestacional').val().trim();
-    if (NomeDoMedico === "") {
-        NomeDoMedico = "nda";
-    }
+//     var NomeDoMedico = $('#nm_anamnese_gestacional').val().trim();
+//     if (NomeDoMedico === "") {
+//         NomeDoMedico = "nda";
+//     }
     
-    var Duracao = $('#tc_anamnese_gestacional').val().trim();
-    if (Duracao === "") {
-        Duracao = "nda";
-    }
+//     var Duracao = $('#tc_anamnese_gestacional').val().trim();
+//     if (Duracao === "") {
+//         Duracao = "nda";
+//     }
     
-    var Intervalo = $('#io_anamnese_gestacional').val().trim();
-    if (Intervalo === "") {
-        Intervalo = "nda";
-    }
+//     var Intervalo = $('#io_anamnese_gestacional').val().trim();
+//     if (Intervalo === "") {
+//         Intervalo = "nda";
+//     }
     
-    var HoraDoNascimento = $('#hn_anamnese_gestacional').val().trim();
-    if (HoraDoNascimento === "") {
-        HoraDoNascimento = "nda";
-    }
+//     var HoraDoNascimento = $('#hn_anamnese_gestacional').val().trim();
+//     if (HoraDoNascimento === "") {
+//         HoraDoNascimento = "nda";
+//     }
     
-    var NomeDoBebe = $('#nb_anamnese_gestacional').val().trim();
-    if (NomeDoBebe === "") {
-        NomeDoBebe = "nda";
-    }
+//     var NomeDoBebe = $('#nb_anamnese_gestacional').val().trim();
+//     if (NomeDoBebe === "") {
+//         NomeDoBebe = "nda";
+//     }
     
-    var FpAnamneseGestacional = "";
-    if ($('#s_fp').prop('checked')) {
-        FpAnamneseGestacional = "s";
-    } else if ($('#n_fp').prop('checked')) {
-        FpAnamneseGestacional = "n";
-    } else {
-        FpAnamneseGestacional = "nda";
-    }
+//     var FpAnamneseGestacional = "";
+//     if ($('#s_fp').prop('checked')) {
+//         FpAnamneseGestacional = "s";
+//     } else if ($('#n_fp').prop('checked')) {
+//         FpAnamneseGestacional = "n";
+//     } else {
+//         FpAnamneseGestacional = "nda";
+//     }
     
-    var EcAnamneseGestacional = "";
-var s_ec_value = $('#s_ec').val().trim();
-if (s_ec_value !== "") {
-    EcAnamneseGestacional = s_ec_value;
-} else {
-    var n_ec_value = $('#n_ec').val().trim();
-    if (n_ec_value !== "") {
-        EcAnamneseGestacional = n_ec_value;
-    } else {
-        EcAnamneseGestacional = "nda";
-    }
-}
+//     var EcAnamneseGestacional = "";
+// var s_ec_value = $('#s_ec').val().trim();
+// if (s_ec_value !== "") {
+//     EcAnamneseGestacional = s_ec_value;
+// } else {
+//     var n_ec_value = $('#n_ec').val().trim();
+//     if (n_ec_value !== "") {
+//         EcAnamneseGestacional = n_ec_value;
+//     } else {
+//         EcAnamneseGestacional = "nda";
+//     }
+// }
 
-var QtdFilhos = "";
-var EfAnamneseGestacional = "";
-var s_ef_checked = $('#s_ef').prop('checked');
-if (s_ef_checked) {
-    EfAnamneseGestacional = "Primeiro filho";
-} else {
-    var n_ef_checked = $('#n_ef').prop('checked');
-    if (n_ef_checked) {
-        QtdFilhos = $('#qs_anamnese_gestacional').val().trim();
-        if (QtdFilhos === "") {
-            QtdFilhos = "1+";
-        }
-        EfAnamneseGestacional = QtdFilhos;
-    } else {
-        EfAnamneseGestacional = "nda";
-    }
-}
+// var QtdFilhos = "";
+// var EfAnamneseGestacional = "";
+// var s_ef_checked = $('#s_ef').prop('checked');
+// if (s_ef_checked) {
+//     EfAnamneseGestacional = "Primeiro filho";
+// } else {
+//     var n_ef_checked = $('#n_ef').prop('checked');
+//     if (n_ef_checked) {
+//         QtdFilhos = $('#qs_anamnese_gestacional').val().trim();
+//         if (QtdFilhos === "") {
+//             QtdFilhos = "1+";
+//         }
+//         EfAnamneseGestacional = QtdFilhos;
+//     } else {
+//         EfAnamneseGestacional = "nda";
+//     }
+// }
 
-var SqAnamneseGestacional = "";
-var s_sq_value = $('#s_sq').val().trim();
-if (s_sq_value !== "") {
-    SqAnamneseGestacional = s_sq_value;
-} else {
-    var n_sq_value = $('#n_sq').val().trim();
-    if (n_sq_value !== "") {
-        SqAnamneseGestacional = n_sq_value;
-    } else {
-        SqAnamneseGestacional = "nda";
-    }
-}
+// var SqAnamneseGestacional = "";
+// var s_sq_value = $('#s_sq').val().trim();
+// if (s_sq_value !== "") {
+//     SqAnamneseGestacional = s_sq_value;
+// } else {
+//     var n_sq_value = $('#n_sq').val().trim();
+//     if (n_sq_value !== "") {
+//         SqAnamneseGestacional = n_sq_value;
+//     } else {
+//         SqAnamneseGestacional = "nda";
+//     }
+// }
 
-var JbAnamneseGestacional = "";
-var s_jb_value = $('#s_jb').val().trim();
-if (s_jb_value !== "") {
-    JbAnamneseGestacional = s_jb_value;
-} else {
-    var n_jb_value = $('#n_jb').val().trim();
-    if (n_jb_value !== "") {
-        JbAnamneseGestacional = n_jb_value;
-    } else {
-        JbAnamneseGestacional = "nda";
-    }
-}
+// var JbAnamneseGestacional = "";
+// var s_jb_value = $('#s_jb').val().trim();
+// if (s_jb_value !== "") {
+//     JbAnamneseGestacional = s_jb_value;
+// } else {
+//     var n_jb_value = $('#n_jb').val().trim();
+//     if (n_jb_value !== "") {
+//         JbAnamneseGestacional = n_jb_value;
+//     } else {
+//         JbAnamneseGestacional = "nda";
+//     }
+// }
 
-var FvAnamneseGestacional = "";
-var s_fv_value = $('#s_fv').val().trim();
-if (s_fv_value !== "") {
-    FvAnamneseGestacional = s_fv_value;
-} else {
-    var n_fv_value = $('#n_fv').val().trim();
-    if (n_fv_value !== "") {
-        FvAnamneseGestacional = n_fv_value;
-    } else {
-        FvAnamneseGestacional = "nda";
-    }
-}
+// var FvAnamneseGestacional = "";
+// var s_fv_value = $('#s_fv').val().trim();
+// if (s_fv_value !== "") {
+//     FvAnamneseGestacional = s_fv_value;
+// } else {
+//     var n_fv_value = $('#n_fv').val().trim();
+//     if (n_fv_value !== "") {
+//         FvAnamneseGestacional = n_fv_value;
+//     } else {
+//         FvAnamneseGestacional = "nda";
+//     }
+// }
 
-var PrAnamneseGestacional = "";
-var s_pr_value = $('#s_pr').val().trim();
-if (s_pr_value !== "") {
-    PrAnamneseGestacional = s_pr_value;
-} else {
-    var n_pr_value = $('#n_pr').val().trim();
-    if (n_pr_value !== "") {
-        PrAnamneseGestacional = n_pr_value;
-    } else {
-        PrAnamneseGestacional = "nda";
-    }
-}
+// var PrAnamneseGestacional = "";
+// var s_pr_value = $('#s_pr').val().trim();
+// if (s_pr_value !== "") {
+//     PrAnamneseGestacional = s_pr_value;
+// } else {
+//     var n_pr_value = $('#n_pr').val().trim();
+//     if (n_pr_value !== "") {
+//         PrAnamneseGestacional = n_pr_value;
+//     } else {
+//         PrAnamneseGestacional = "nda";
+//     }
+// }
 
-var SexoAnamneseGestacional = "";
-var fem_checked = $('#fem').prop('checked');
-if (fem_checked) {
-    SexoAnamneseGestacional = $('#fem').val().trim();
-} else {
-    var mas_checked = $('#mas').prop('checked');
-    if (mas_checked) {
-        SexoAnamneseGestacional = $('#mas').val().trim();
-    } else {
-        SexoAnamneseGestacional = "nda";
-    }
-}
+// var SexoAnamneseGestacional = "";
+// var fem_checked = $('#fem').prop('checked');
+// if (fem_checked) {
+//     SexoAnamneseGestacional = $('#fem').val().trim();
+// } else {
+//     var mas_checked = $('#mas').prop('checked');
+//     if (mas_checked) {
+//         SexoAnamneseGestacional = $('#mas').val().trim();
+//     } else {
+//         SexoAnamneseGestacional = "nda";
+//     }
+// }
     
-if (PeriodoDeGestacao === "nda" || NomeDoMedico === "nda" || Duracao === "nda" || Intervalo === "nda" || HoraDoNascimento === "nda" || NomeDoBebe === "nda" || FpAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda") {
-    alert("Por favor, preencha todos os campos obrigatórios. Da página Anamnese Gestacional");
-}
+// if (PeriodoDeGestacao === "nda" || NomeDoMedico === "nda" || Duracao === "nda" || Intervalo === "nda" || HoraDoNascimento === "nda" || NomeDoBebe === "nda" || FpAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página Anamnese Gestacional");
+// }
 
 
 
-//AvaliacaoCinematica
+// //AvaliacaoCinematica
 
-var DisturbioDeComportamento = $('#avaliacao_cimetica_dc_s').prop('checked') ? 's' :
-                             $('#avaliacao_cimetica_dc_n').prop('checked') ? 'n' : 'nda';
-DisturbioDeComportamento = DisturbioDeComportamento.trim();
+// var DisturbioDeComportamento = $('#avaliacao_cimetica_dc_s').prop('checked') ? 's' :
+//                              $('#avaliacao_cimetica_dc_n').prop('checked') ? 'n' : 'nda';
+// DisturbioDeComportamento = DisturbioDeComportamento.trim();
 
-var EncontradoDeCapacete = $('#avaliacao_cimetica_ec_s').prop('checked') ? 's' :
-                           $('#avaliacao_cimetica_ec_n').prop('checked') ? 'n' : 'nda';
-EncontradoDeCapacete = EncontradoDeCapacete.trim();
+// var EncontradoDeCapacete = $('#avaliacao_cimetica_ec_s').prop('checked') ? 's' :
+//                            $('#avaliacao_cimetica_ec_n').prop('checked') ? 'n' : 'nda';
+// EncontradoDeCapacete = EncontradoDeCapacete.trim();
 
-var EncontradoDeCinto = $('#avaliacao_cimetica_eo_s').prop('checked') ? 's' :
-                        $('#avaliacao_cimetica_eo_n').prop('checked') ? 'n' : 'nda';
-EncontradoDeCinto = EncontradoDeCinto.trim();
+// var EncontradoDeCinto = $('#avaliacao_cimetica_eo_s').prop('checked') ? 's' :
+//                         $('#avaliacao_cimetica_eo_n').prop('checked') ? 'n' : 'nda';
+// EncontradoDeCinto = EncontradoDeCinto.trim();
 
-var ParaBrisasAvariado = $('#avaliacao_cimetica_pba_s').prop('checked') ? 's' :
-                         $('#avaliacao_cimetica_pba_n').prop('checked') ? 'n' : 'nda';
-ParaBrisasAvariado = ParaBrisasAvariado.trim();
+// var ParaBrisasAvariado = $('#avaliacao_cimetica_pba_s').prop('checked') ? 's' :
+//                          $('#avaliacao_cimetica_pba_n').prop('checked') ? 'n' : 'nda';
+// ParaBrisasAvariado = ParaBrisasAvariado.trim();
 
-var CaminhandoNaCena = $('#avaliacao_cimetica_cc_s').prop('checked') ? 's' :
-                       $('#avaliacao_cimetica_cc_n').prop('checked') ? 'n' : 'nda';
-CaminhandoNaCena = CaminhandoNaCena.trim();
+// var CaminhandoNaCena = $('#avaliacao_cimetica_cc_s').prop('checked') ? 's' :
+//                        $('#avaliacao_cimetica_cc_n').prop('checked') ? 'n' : 'nda';
+// CaminhandoNaCena = CaminhandoNaCena.trim();
 
-var PainelAvariado = $('#avaliacao_cimetica_pa_s').prop('checked') ? 's' :
-                     $('#avaliacao_cimetica_pa_n').prop('checked') ? 'n' : 'nda';
-PainelAvariado = PainelAvariado.trim();
+// var PainelAvariado = $('#avaliacao_cimetica_pa_s').prop('checked') ? 's' :
+//                      $('#avaliacao_cimetica_pa_n').prop('checked') ? 'n' : 'nda';
+// PainelAvariado = PainelAvariado.trim();
 
-var VolanteTorcido = $('#avaliacao_cimetica_vt_s').prop('checked') ? 's' :
-                     $('#avaliacao_cimetica_vt_n').prop('checked') ? 'n' : 'nda';
-VolanteTorcido = VolanteTorcido.trim();
+// var VolanteTorcido = $('#avaliacao_cimetica_vt_s').prop('checked') ? 's' :
+//                      $('#avaliacao_cimetica_vt_n').prop('checked') ? 'n' : 'nda';
+// VolanteTorcido = VolanteTorcido.trim();
 
-// Notificação
-if (DisturbioDeComportamento === "nda" || EncontradoDeCapacete === "nda" || EncontradoDeCinto === "nda" ||
-    ParaBrisasAvariado === "nda" || CaminhandoNaCena === "nda" || PainelAvariado === "nda" || VolanteTorcido === "nda") {
-    alert("Por favor, preencha todos os campos obrigatórios. Da página Avaliação Cinemática");
-}
-
-
-//Anamnese
-var PsAnamnese = "";
-var QsAnamnese = "";
-if ($('#anamnese_quais_ps').is(':visible')) {
-    if (document.getElementById("s_ps").checked) {
-        QsAnamnese = $('#qs_anamnese').val().trim() || "nda";
-    } else if (document.getElementById("n_ps").checked) {
-        QsAnamnese = "nda";
-    } else {
-        PsAnamnese = "nda";
-        QsAnamnese = "nda";
-    }
-}
-
-var HuAnamnese = "";
-var QisAnamnese = "";
-var FmAnamnese = "";
-if ($('#anamnese_hm_fm').is(':visible')) {
-    if (document.getElementById("s_fm").checked) {
-        HuAnamnese = $('#hu_anamnese').val().trim() || "nda";
-        QisAnamnese = $('#qis_anamnese').val().trim() || "nda";
-        FmAnamnese = QisAnamnese + "(" + HuAnamnese + ")";
-    } else if (document.getElementById("n_fm").checked) {
-        HuAnamnese = "nda";
-        QisAnamnese = "nda";
-        FmAnamnese = "nda";
-    } else {
-        HuAnamnese = "nda";
-        QisAnamnese = "nda";
-        FmAnamnese = "nda";
-    }
-}
-
-var EqAnamnese = "";
-if ($('#anamnese_ee_aa').is(':visible')) {
-    if (document.getElementById("s_al").checked) {
-        EqAnamnese = $('#eq_anamnese').val().trim() || "nda";
-    } else if (document.getElementById("n_al").checked) {
-        EqAnamnese = "nda";
-    } else {
-        EqAnamnese = "nda";
-    }
-}
-
-var IlAnamnese = "";
-var QrAnamnese = "";
-if ($('#anamnese_qh_il').is(':visible')) {
-    if (document.getElementById("s_il").checked) {
-        QrAnamnese = $('#qr_anamnese').val().trim() || "nda";
-    } else if (document.getElementById("n_il").checked) {
-        QrAnamnese = "nda";
-    } else {
-        IlAnamnese = "nda";
-        QrAnamnese = "nda";
-    }
-}
-
-// Notificação
-if (PsAnamnese === "nda" || FmAnamnese === "nda" || EqAnamnese === "nda" || IlAnamnese === "nda" || QrAnamnese === "nda") {
-    alert("Por favor, preencha todos os campos obrigatórios na página.");
-}
+// // Notificação
+// if (DisturbioDeComportamento === "nda" || EncontradoDeCapacete === "nda" || EncontradoDeCinto === "nda" ||
+//     ParaBrisasAvariado === "nda" || CaminhandoNaCena === "nda" || PainelAvariado === "nda" || VolanteTorcido === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página Avaliação Cinemática");
+// }
 
 
+// //Anamnese
+// var PsAnamnese = "";
+// var QsAnamnese = "";
+// if ($('#anamnese_quais_ps').is(':visible')) {
+//     if (document.getElementById("s_ps").checked) {
+//         QsAnamnese = $('#qs_anamnese').val().trim() || "nda";
+//     } else if (document.getElementById("n_ps").checked) {
+//         QsAnamnese = "nda";
+//     } else {
+//         PsAnamnese = "nda";
+//         QsAnamnese = "nda";
+//     }
+// }
 
-//ObservacoesImportantes
-var ObservacoesImportantesText = document.getElementById("obsdiv").textContent.trim();
+// var HuAnamnese = "";
+// var QisAnamnese = "";
+// var FmAnamnese = "";
+// if ($('#anamnese_hm_fm').is(':visible')) {
+//     if (document.getElementById("s_fm").checked) {
+//         HuAnamnese = $('#hu_anamnese').val().trim() || "nda";
+//         QisAnamnese = $('#qis_anamnese').val().trim() || "nda";
+//         FmAnamnese = QisAnamnese + "(" + HuAnamnese + ")";
+//     } else if (document.getElementById("n_fm").checked) {
+//         HuAnamnese = "nda";
+//         QisAnamnese = "nda";
+//         FmAnamnese = "nda";
+//     } else {
+//         HuAnamnese = "nda";
+//         QisAnamnese = "nda";
+//         FmAnamnese = "nda";
+//     }
+// }
 
-if (ObservacoesImportantesText === "") {
-    alert("A área de observações importantes está vazia.");
-}
+// var EqAnamnese = "";
+// if ($('#anamnese_ee_aa').is(':visible')) {
+//     if (document.getElementById("s_al").checked) {
+//         EqAnamnese = $('#eq_anamnese').val().trim() || "nda";
+//     } else if (document.getElementById("n_al").checked) {
+//         EqAnamnese = "nda";
+//     } else {
+//         EqAnamnese = "nda";
+//     }
+// }
+
+// var IlAnamnese = "";
+// var QrAnamnese = "";
+// if ($('#anamnese_qh_il').is(':visible')) {
+//     if (document.getElementById("s_il").checked) {
+//         QrAnamnese = $('#qr_anamnese').val().trim() || "nda";
+//     } else if (document.getElementById("n_il").checked) {
+//         QrAnamnese = "nda";
+//     } else {
+//         IlAnamnese = "nda";
+//         QrAnamnese = "nda";
+//     }
+// }
+
+// // Notificação
+// if (PsAnamnese === "nda" || FmAnamnese === "nda" || EqAnamnese === "nda" || IlAnamnese === "nda" || QrAnamnese === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios na página Anamnese.");
+// }
+
+
+
+// //ObservacoesImportantes
+// var ObservacoesImportantesText = document.getElementById("obsdiv").textContent.trim();
+
+// if (ObservacoesImportantesText === "") {
+//     alert("A área de observações importantes está vazia.");
+// }
     }
    
 
