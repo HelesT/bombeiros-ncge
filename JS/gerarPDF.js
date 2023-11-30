@@ -95,7 +95,13 @@ function DadosPDF(valor_id_ficha){
                            this.additionalInfo += "-------" + "\n";
                            this.additionalInfo += "Emergências" + "\n";
                            this.additionalInfo += "" + "\n";
-                             this.additionalInfo += "Emergencias: " + item.tipo_emergencia + "\n";
+                           texto = item.tipo_emergencia;
+                           var tamanhoParte = 40;
+                           // Divida o texto em partes
+                           var partes = dividirTexto(texto, tamanhoParte);
+                           // Concatene as partes usando uma quebra de linha
+                           var texto = partes.join('\n'); 
+                           this.additionalInfo += "Emergencias: " + texto + "\n";
                             //  this.additionalInfo += "" + item.exemplo + "\n";
                             $.ajax({
                                type: 'GET',
@@ -213,9 +219,13 @@ function DadosPDF(valor_id_ficha){
                                                                         this.additionalInfo += "-------" + "\n";
                                                                         this.additionalInfo += "Sinais e Sintomas" + "\n";
                                                                         this.additionalInfo += "" + "\n";
-                                                                         this.additionalInfo += "Sinais e Sintomas: " + item.TodosOsValoresSeS + "\n";
-                                                                         
-                                                                        //  this.additionalInfo += "" + item.exemplo + "\n";
+                                                                        texto = item.TodosOsValoresSeS;
+                                                                        var tamanhoParte = 40;
+                                                                        // Divida o texto em partes
+                                                                        var partes = dividirTexto(texto, tamanhoParte);
+                                                                        // Concatene as partes usando uma quebra de linha
+                                                                        var texto = partes.join('\n');                                                                       
+                                                                         this.additionalInfo += "Sinais e Sintomas: " + texto + "\n";
                                                                         $.ajax({
                                                                          type: 'GET',
                                                                          url: 'PHP-PDF/procedimentos_efetuados.php',
@@ -228,7 +238,13 @@ function DadosPDF(valor_id_ficha){
                                                                               this.additionalInfo += "-------" + "\n";
                                                                               this.additionalInfo += "Procedimentos Efetuados" + "\n";
                                                                               this.additionalInfo += "" + "\n";
-                                                                               this.additionalInfo += "Procedimentos Efetuados: " + item.TodosOsValoresPef + "\n";
+                                                                              texto = item.TodosOsValoresPef;
+                                                                              var tamanhoParte = 40;
+                                                                              // Divida o texto em partes
+                                                                              var partes = dividirTexto(texto, tamanhoParte);
+                                                                              // Concatene as partes usando uma quebra de linha
+                                                                              var texto = partes.join('\n'); 
+                                                                               this.additionalInfo += "Procedimentos Efetuados: " + texto + "\n";
                                                                                
                                                                               //  this.additionalInfo += "" + item.exemplo + "\n";
                                                                               $.ajax({
