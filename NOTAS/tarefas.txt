@@ -1,4 +1,4 @@
 1)Tirar Anamneses Gestacional quando paciente for homem
 2)Polimento do PDF e inserção de imagem
-3) resolver a quebra de texto em sinai e sintoma, Procedimentos Efetuados, objetos recolhidos e Observações Importantes
-4) adicionar o nome do responsavel pela ficha
+3)resolver a quebra de texto em sinai e sintoma, Procedimentos Efetuados, objetos recolhidos e Observações Importantes
+4)adicionar o nome do responsavel pela ficha
