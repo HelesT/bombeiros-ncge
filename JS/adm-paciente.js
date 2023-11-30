@@ -193,7 +193,7 @@ function executarSelect(){
     function editarNomeEspecifico(id){
         var nomeEspId = document.getElementById("nomeEspecifico" + id);
         var codeEspId = document.getElementById("codigoEspecifico" + id);
-        console.log(id);
+        console.log("Editando usuario: " + id);
         
         if (nomeEspId.readOnly === true) {
             nomeEspId.classList.toggle("input-text-usuario-active");
@@ -209,8 +209,8 @@ function executarSelect(){
                 url: 'PHP/adm-editar-paciente-especifico.php',
                 method: 'POST',
                 data: {
-                   acesso: codeEspId.value,
-                   nome: nomeEspId.value
+                   nome: nomeEspId.value,
+                   acesso: codeEspId.value
                 },
                 dataType: 'json'
             }).done(function(response){
