@@ -70,6 +70,7 @@ function DadosPDF(valor_id_ficha){
         
       }
       
+      console.log(imagem);
    }
 
    setTimeout(() => {//ESPERO 1 SEGUNDO PARA EXECUTAR O PDF
@@ -599,19 +600,29 @@ function DadosPDF(valor_id_ficha){
               }, 3000);
           },
           
-          generatePDF() {  
+          generatePDF() {
             const doc = new jsPDF({
               orientation: "portrait",
               unit: "in",
               format: "letter",
             });
-      
-            // Divide o conteúdo em partes para acomodar em várias páginas
+          
+            // Adiciona texto ao PDF
+            this.addTextToPDF(doc);
+          
+            // Adiciona imagens ao PDF
+            this.addImagesToPDF(doc);
+          
+            // Salva o arquivo PDF com o nome 'Ficha_de_Bombeiro.pdf'
+            doc.save("Ficha_de_Bombeiro.pdf");
+          },
+          
+          addTextToPDF(doc) {
             const lines = this.additionalInfo.split('\n');
             const lineHeight = 12 / 72; // Altura de linha em polegadas
             const pageHeight = 11; // Altura da página em polegadas
             let y = 1; // Posição Y inicial
-      
+          
             lines.forEach(line => {
               // Verifica se a próxima linha cabe na página atual
               if (y + lineHeight > pageHeight) {
@@ -619,24 +630,35 @@ function DadosPDF(valor_id_ficha){
                 doc.addPage();
                 y = 1;
               }
-      
+          
               // Adiciona a linha ao PDF
               doc.setFontSize(12);
               doc.text(line, 0.5, y);
               y += lineHeight;
             });
-            
-            y = y - 0.1;
-
+          },
+          
+          addImagesToPDF(doc) {
             // Define as coordenadas iniciais
             let xCoordinate = 0.5;
-            let imageYCoordinate = y; // Inicia abaixo do texto
+            let imageYCoordinate = 1; // Inicia na parte superior da página
           
             // Define a largura padrão para todas as imagens
             const imgWidth = 2;
-   
+          
+            doc.addPage();
+            imageYCoordinate = 1;
+            
             // Itera sobre as imagens no vetor
             for (const imagem of this.imagem) {
+
+              // Verifica se a próxima imagem cabe na página atual
+              if (imageYCoordinate + imgWidth > doc.internal.pageSize.height) {
+                // Adiciona uma nova página
+                doc.addPage();
+                imageYCoordinate = 1;
+              }
+          
               // Obtém as propriedades da imagem
               const imgProps = doc.getImageProperties(imagem);
           
@@ -646,19 +668,18 @@ function DadosPDF(valor_id_ficha){
               // Adiciona a imagem na mesma página
               doc.addImage(imagem, 'JPEG', xCoordinate, imageYCoordinate, imgWidth, imgHeight);
           
-              // Atualiza a coordenada X para a próxima imagem
-              xCoordinate += imgWidth + 0.2; // Adiciona um pequeno espaço entre as imagens
+              // Atualiza a coordenada Y para a próxima imagem
+              imageYCoordinate += imgHeight + 0.2; // Adiciona um pequeno espaço entre as imagens
           
               // Define um limite para mudar de linha (você pode ajustar conforme necessário)
-              if (xCoordinate > 7) {
-                xCoordinate = 0.5; // reinicia a coordenada X
-                imageYCoordinate += imgHeight + 0.2; // move para a próxima linha
+              if (imageYCoordinate + imgHeight > doc.internal.pageSize.height) {
+                xCoordinate += imgWidth + 0.2; // move para a próxima coluna
+                imageYCoordinate = 1; // reinicia a coordenada Y
               }
             }
-      
-            // Salva o arquivo PDF com o nome 'Ficha_de_Bombeiro.pdf'
-            doc.save("Ficha_de_Bombeiro.pdf");
-          },
+          }
+          
+          
         },
       });
     }

@@ -192,8 +192,7 @@ function executarSelect(){
 
     function editarNomeEspecifico(id){
         var nomeEspId = document.getElementById("nomeEspecifico" + id);
-        var codeEspId = document.getElementById("codigoEspecifico" + id);
-        console.log("Editando usuario: " + id);
+        var codeEspId = document.getElementById("codeEspecifico" + id);
         
         if (nomeEspId.readOnly === true) {
             nomeEspId.classList.toggle("input-text-usuario-active");

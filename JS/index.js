@@ -4207,6 +4207,7 @@ function SelecionarImagensObj() {
 var base64ImagesObj = [];
 
 function SalvarImagensObj() {
+
     // Limpe o console
     console.clear();
 
@@ -4228,21 +4229,29 @@ function SalvarImagensObj() {
         console.log(src);
     });
 
-    // Exibir os valores resumidos das imagens
-    console.log(base64ImagesObj);
-
-    for (var i = 0; i < base64ImagesObj.length; i++) {
-        var imagemBase64 = base64ImagesObj[i];
-        
-        $.ajax({
-            url: 'PHP/tabela-imagem-obj-recolhido.php',
-            method: 'POST',
-            data: {
-                imagens: imagemBase64,
-                Bombeiro: BombeiroAtual,
-                Paciente: CpfPaciente
-            },
-            dataType: 'json'
-        });
+    async function enviarImagens() {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        for (var i = 0; i < base64ImagesObj.length; i++) {
+            var imagemBase64 = base64ImagesObj[i];
+            console.log("Enviando imagem " + (i + 1) + " de " + base64ImagesObj.length);
+    
+            $.ajax({
+                url: 'PHP/tabela-imagem-obj-recolhido.php',
+                method: 'POST',
+                data: {
+                    imagens: imagemBase64,
+                    Bombeiro: BombeiroAtual,
+                    Paciente: CpfPaciente
+                },
+                dataType: 'json'
+            });
+        }
+            // Exibir os valores resumidos das imagens
+            console.log(base64ImagesObj);
     }
+    
+    // Chame a função async
+    enviarImagens();
+    
+    
 }
