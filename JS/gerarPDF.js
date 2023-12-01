@@ -5,11 +5,12 @@ function dividirTexto(str, chunkSize) {
    }
    return chunks;
  }
-function DadosPDF(valor_id_ficha){
+function DadosPDF(valor_id_ficha, valor_id_bombeiro){
    console.clear();
 
    {//VARIAVEIS GLOBAIS
       var id = valor_id_ficha;
+      var idBombeiro = valor_id_bombeiro;
       var imagem = [];
    }
 
@@ -27,13 +28,13 @@ function DadosPDF(valor_id_ficha){
          data.forEach((item) => {
             imagem.push(item.trauma_img);
           })
-
+          imagemDaAssinatura();
       }).fail(function(errorThrown) {
             console.log(errorThrown);
       });
       }
 
-      {//IMAGEM DA ASSINATURA
+      function imagemDaAssinatura(){
       $.ajax({
          url: 'PHP/pdf-imagem-assinatura.php',
          method: 'GET',
@@ -45,13 +46,13 @@ function DadosPDF(valor_id_ficha){
          data.forEach((item) => {
             imagem.push(item.assinatura_recusa);
           })
-
+          imagemDosObjetosRecolhidos();
       }).fail(function(errorThrown) {
             console.log(errorThrown);
       });
       }
 
-      {//IMAGENS DE OBJETOS RECOLHIDOS
+      function imagemDosObjetosRecolhidos(){
          $.ajax({
             url: 'PHP/pdf-imagem-objetos.php',
             method: 'GET',
@@ -98,12 +99,17 @@ function DadosPDF(valor_id_ficha){
                 url: 'PHP-PDF/obterDados.php',
                 dataType: 'json',
                 data: {
-                   id: id
+                   id: id,
+                   idBombeiro: idBombeiro
                 },
                 success: (data) => {
+                  console.log(data)
                    data.forEach((item) => {
-                     this.additionalInfo += "Paciente" + "\n";
-                     this.additionalInfo += "" + "\n";
+                      this.additionalInfo += "Bombeiro responsável: " + item.nome_cadastro + "\n";
+                      this.additionalInfo += "" + "\n";
+                      this.additionalInfo += "" + "\n";
+                      this.additionalInfo += "Paciente" + "\n";
+                      this.additionalInfo += "" + "\n";
                       this.additionalInfo += "Data: " + item.data_paciente + "\n";
                       this.additionalInfo += "RG/CPF: " + item.rg_cpf_paciente + "\n";
                       this.additionalInfo += "Idade: " + item.idade_paciente + "\n";
@@ -640,44 +646,77 @@ function DadosPDF(valor_id_ficha){
           
           addImagesToPDF(doc) {
             // Define as coordenadas iniciais
-            let xCoordinate = 0.5;
+            let xCoordinate = 1;
             let imageYCoordinate = 1; // Inicia na parte superior da página
-          
+            
             // Define a largura padrão para todas as imagens
             const imgWidth = 2;
-          
+            
             doc.addPage();
             imageYCoordinate = 1;
             
+            // Define uma variável para controlar o número de imagens processadas
+            let imagensProcessadas = 0;
+            
             // Itera sobre as imagens no vetor
             for (const imagem of this.imagem) {
-
+              // Obtém as propriedades da imagem
+              const imgProps = doc.getImageProperties(imagem);
+              
+              // Calcula a altura proporcional com base na largura padrão
+              const imgHeight = imgProps.height * imgWidth / imgProps.width;
+              
               // Verifica se a próxima imagem cabe na página atual
-              if (imageYCoordinate + imgWidth > doc.internal.pageSize.height) {
+              if (imageYCoordinate + imgHeight > doc.internal.pageSize.height) {
                 // Adiciona uma nova página
                 doc.addPage();
                 imageYCoordinate = 1;
               }
-          
-              // Obtém as propriedades da imagem
-              const imgProps = doc.getImageProperties(imagem);
-          
-              // Calcula a altura proporcional com base na largura padrão
-              const imgHeight = imgProps.height * imgWidth / imgProps.width;
-          
-              // Adiciona a imagem na mesma página
-              doc.addImage(imagem, 'JPEG', xCoordinate, imageYCoordinate, imgWidth, imgHeight);
-          
-              // Atualiza a coordenada Y para a próxima imagem
-              imageYCoordinate += imgHeight + 0.2; // Adiciona um pequeno espaço entre as imagens
-          
-              // Define um limite para mudar de linha (você pode ajustar conforme necessário)
-              if (imageYCoordinate + imgHeight > doc.internal.pageSize.height) {
-                xCoordinate += imgWidth + 0.2; // move para a próxima coluna
-                imageYCoordinate = 1; // reinicia a coordenada Y
+              if (xCoordinate + imgWidth > doc.internal.pageSize.width) {
+                // Adiciona uma nova página
+                doc.addPage();
+                xCoordinate = 1; // Volta para a margem esquerda
+                imageYCoordinate = 1;
+              }
+              
+              // Verifica se ainda não foram processadas as duas primeiras imagens
+              if (imagensProcessadas < 2) {
+                // Multiplica a largura e altura pelo fator de escala de 5 apenas para as duas primeiras imagens
+                const escala = 3.2;
+                const imgWidthScaled = imgWidth * escala;
+                const imgHeightScaled = imgHeight * escala;
+                
+                // Adiciona a imagem com as dimensões escaladas apenas para as duas primeiras imagens
+                doc.addImage(imagem, 'JPEG', xCoordinate, imageYCoordinate, imgWidthScaled, imgHeightScaled);
+                
+                // Atualiza a coordenada Y para a próxima imagem
+                imageYCoordinate += imgHeightScaled + 0.2; // Adiciona um pequeno espaço entre as imagens
+                
+                // Define um limite para mudar de linha (você pode ajustar conforme necessário)
+                if (imageYCoordinate + imgHeightScaled > doc.internal.pageSize.height) {
+                  xCoordinate += imgWidthScaled + 0.2; // move para a próxima coluna
+                  imageYCoordinate = 1; // reinicia a coordenada Y
+                }
+                
+                // Incrementa o número de imagens processadas
+                imagensProcessadas++;
+              } else {
+                // Adiciona as outras imagens sem aplicar a escala
+                doc.addImage(imagem, 'JPEG', xCoordinate, imageYCoordinate, imgWidth, imgHeight);
+                
+                // Atualiza a coordenada Y para a próxima imagem
+                imageYCoordinate += imgHeight + 0.2; // Adiciona um pequeno espaço entre as imagens
+                
+                // Define um limite para mudar de linha (você pode ajustar conforme necessário)
+                if (imageYCoordinate + imgHeight > doc.internal.pageSize.height) {
+                  xCoordinate += imgWidth + 0.2; // move para a próxima coluna
+                  imageYCoordinate = 1; // reinicia a coordenada Y
+                }
               }
             }
           }
+          
+          
           
           
         },

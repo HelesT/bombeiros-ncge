@@ -1,3 +1,1 @@
 1)Tirar Anamneses Gestacional quando paciente for homem
-2)Polimento do PDF e inserção de imagem
-3)adicionar o nome do responsavel pela ficha
