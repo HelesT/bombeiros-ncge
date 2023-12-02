@@ -27,21 +27,11 @@
     <div class="navigation justify" onclick="navigateToSlide(12)" style="height: 30px;">Materiais Utilizados(A)</div>
     <div class="navigation justify" onclick="navigateToSlide(13)" style="height: 30px;">Materiais Utilizados(B)</div>
     <div class="navigation justify" onclick="navigateToSlide(14)" style="height: 30px;">Anamnese</div>
-    <div class="navigation justify" onclick="navigateToSlide(15)" style="height: 30px;">Anamnese Gestacional</div>
+    <div class="navigation justify" id="slide15Nav" onclick="navigateToSlide(15)" style="height: 30px; display: none;">Anamnese Gestacional</div>
     <div class="navigation justify" onclick="navigateToSlide(16)" style="height: 30px;">Termo de Recusa de Ate...</div>
     <div class="navigation justify" onclick="navigateToSlide(17)" style="height: 30px;">Observações Importantes</div>
     <div class="navigation justify" onclick="navigateToSlide(18)" style="height: 30px;">Avaliação Cinemática</div>
     <div class="navigation justify" onclick="navigateToSlide(19)" style="height: 30px;">Verificação</div>
-    <div class="navigation justify" onclick="navigateToSlide(20)" style="height: 30px;">Responsável Preencimento</div>
-    <!-- <div class="navigation justify" onclick="navigateToSlide(21)" style="height: 30px;">Slide 22</div>
-    <div class="navigation justify" onclick="navigateToSlide(22)" style="height: 30px;">Slide 23</div>
-    <div class="navigation justify" onclick="navigateToSlide(23)" style="height: 30px;">Slide 24</div>
-    <div class="navigation justify" onclick="navigateToSlide(24)" style="height: 30px;">Slide 25</div>
-    <div class="navigation justify" onclick="navigateToSlide(25)" style="height: 30px;">Slide 26</div>
-    <div class="navigation justify" onclick="navigateToSlide(26)" style="height: 30px;">Slide 27</div>
-    <div class="navigation justify" onclick="navigateToSlide(27)" style="height: 30px;">Slide 28</div>
-    <div class="navigation justify" onclick="navigateToSlide(28)" style="height: 30px;">Slide 29</div>
-    <div class="navigation justify" onclick="navigateToSlide(29)" style="height: 30px;" style="padding-bottom: 50px;">Slide 30</div> -->
 </div>
   <div class="swiper-container">
     <div class="swiper-wrapper">
@@ -1450,7 +1440,7 @@
         </div><!--Fim do corpo da página de ""-->
 
       </div>
-      <div class="swiper-slide slide15"><!---------------------------------------------------------Inicio da página de Anamnese Gestacional --------------------------------------------------------->
+      <div class="swiper-slide slide15" id="slide15" style="display: none;"><!---------------------------------------------------------Inicio da página de Anamnese Gestacional --------------------------------------------------------->
 
         <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
           <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
@@ -1743,7 +1733,7 @@
 
       </div><!-- Fim da página de "" -->
 
-      <div class="swiper-slide slide19"><!---------------------------------------------------------Inicio da página de Responsável --------------------------------------------------------->
+      <div class="swiper-slide slide19"><!---------------------------------------------------------Inicio da página de verificação --------------------------------------------------------->
 
         <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
           <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
@@ -1765,6 +1755,7 @@
                 <span style="font-size: 20px;">Verificar</span> 
             </button>
             <div class="coluna " >
+              <span style="text-align:center; font-size: 20px; margin-top: 40px;">Pressione esse botão para concluir a ficha</span>
               <div class=" linha centro"> 
                 <button  onclick="RegistrarPaciente()" style="
                   margin-top: 25px; 
@@ -1784,46 +1775,10 @@
                     </div>
             </div>
         </div>
-      </div>
+      </div><!---------------------------------------------------------Inicio da página de Verificação --------------------------------------------------------->
+      <div class="swiper-slide slide20" id="slide20" style="height: 1600px; background-color: #0667E8; display: none;"><!---------------------------------------------------------Inicio da página de verificação --------------------------------------------------------->
 
-      <div class="swiper-slide slide20"><!---------------------------------------------------------Inicio da página de Responsável --------------------------------------------------------->
-        
-        <div class="cabecalho"><!-- Inicio do cabeçalho da pagina "" -->
-          <img class="menu-icon" src="IMAGENS/menu_icon.png" width="50px">
-          <div class="cabecalho-titulo">
-            Responsável
-          </div>
-          <img src="IMAGENS/logo_medicina.png" width="40px" height="40px">
-        </div><!-- Fim do cabeçalho da pagina "" -->
-
-        <div class="slide-body centro"><!--inicio do corpo da página de ""-->
-
-          <div class="coluna " >
-            <span style="font-size: 25px;" class="centro">Nome Bombeiro:</span>
-            <input type="text" class="quadrado" style="outline:none; width: 250px; height: 50px;" >
-            <div class=" linha centro"> 
-              <button  onclick="RegistrarPaciente()" style="
-                margin-top: 25px; 
-                background-color: greenyellow;
-                border-style: solid;border-radius: 10px;
-                border-color: green; 
-                width: 160px;
-                height: 60px;"> 
-                <font style="font-size: 20px;">CONCLUÍDO</font> </button>
-            </div>
-              <span class="centro">Divulgar para imprensa </span>
-                  <div class="linha centro"> 
-                    <span style="font-size: 20px; margin-left: 5px; "> sim</span> 
-                    <input type="radio" name="batata" style="width: 20px; height: 20px;"> 
-                    <input type="radio" name="batata" style="width: 20px; height: 20px;">
-                    <span style="font-size: 20px;">não</span>
-                  </div>
-                
-          </div>
-          
-        </div><!--Fim do corpo da página de ""-->
-
-      </div>
+      </div><!---------------------------------------------------------Inicio da página de Verificação --------------------------------------------------------->
 </body>
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="JS/index.js"></script>

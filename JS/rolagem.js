@@ -7,12 +7,24 @@ var swiper = new Swiper('.swiper-container', {
       slideChange: function () {
         document.documentElement.scrollTop = 0; // Para navegadores modernos
         document.body.scrollTop = 0; // Para navegadores antigos
+
+        if (swiper.activeIndex === 20) {
+          // Navega de volta para o slide 19
+          swiper.slideTo(19);
+        }
       }
     }
   });
 
 function navigateToSlide(slideNumber) {
- swiper.slideTo(slideNumber - 1, 0); // O índice dos slides começa em 0
+ var sexoPacienteF = document.getElementById("sexo_paciente_f");
+ if(!sexoPacienteF.checked && slideNumber >= 16){
+  slideNumber = slideNumber - 1;
+  swiper.slideTo(slideNumber - 1, 0);
+ }else{
+  swiper.slideTo(slideNumber - 1, 0);
+ }
+ console.log("Redirecionando para o slide: " + slideNumber)
 }
   
 var menuIcons = document.getElementsByClassName("menu-icon");//TRAZ BARRA LATERAL PARA A TELA E A RETIRA

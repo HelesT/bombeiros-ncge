@@ -21,6 +21,11 @@
 
 */
 
+$(document).ready(function(){
+    document.documentElement.scrollTop = 0; // Para navegadores modernos
+    document.body.scrollTop = 0; // Para navegadores antigos
+})
+
 var BombeiroAtual = "";
 var CpfPaciente = ""
 
@@ -576,145 +581,145 @@ if (MDT === "nda" || S1DT === "nda" || S2DT === "nda" || S3DT === "nda" || Deman
     alert("Por favor, preencha todos os campos obrigatórios. Da página Decisão de Transporte");
 }
 
-    //AnamneseGestacional
-    var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val().trim();
-    if (PeriodoDeGestacao === "") {
-        PeriodoDeGestacao = "nda";
-    }
+//     //AnamneseGestacional
+//     var PeriodoDeGestacao = $('#pg_anamnese_gestacional').val().trim();
+//     if (PeriodoDeGestacao === "") {
+//         PeriodoDeGestacao = "nda";
+//     }
     
-    var NomeDoMedico = $('#nm_anamnese_gestacional').val().trim();
-    if (NomeDoMedico === "") {
-        NomeDoMedico = "nda";
-    }
+//     var NomeDoMedico = $('#nm_anamnese_gestacional').val().trim();
+//     if (NomeDoMedico === "") {
+//         NomeDoMedico = "nda";
+//     }
     
-    var Duracao = $('#tc_anamnese_gestacional').val().trim();
-    if (Duracao === "") {
-        Duracao = "nda";
-    }
+//     var Duracao = $('#tc_anamnese_gestacional').val().trim();
+//     if (Duracao === "") {
+//         Duracao = "nda";
+//     }
     
-    var Intervalo = $('#io_anamnese_gestacional').val().trim();
-    if (Intervalo === "") {
-        Intervalo = "nda";
-    }
+//     var Intervalo = $('#io_anamnese_gestacional').val().trim();
+//     if (Intervalo === "") {
+//         Intervalo = "nda";
+//     }
     
-    var HoraDoNascimento = $('#hn_anamnese_gestacional').val().trim();
-    if (HoraDoNascimento === "") {
-        HoraDoNascimento = "nda";
-    }
+//     var HoraDoNascimento = $('#hn_anamnese_gestacional').val().trim();
+//     if (HoraDoNascimento === "") {
+//         HoraDoNascimento = "nda";
+//     }
     
-    var NomeDoBebe = $('#nb_anamnese_gestacional').val().trim();
-    if (NomeDoBebe === "") {
-        NomeDoBebe = "nda";
-    }
+//     var NomeDoBebe = $('#nb_anamnese_gestacional').val().trim();
+//     if (NomeDoBebe === "") {
+//         NomeDoBebe = "nda";
+//     }
     
-    var FpAnamneseGestacional = "";
-    if ($('#s_fp').prop('checked')) {
-        FpAnamneseGestacional = "s";
-    } else if ($('#n_fp').prop('checked')) {
-        FpAnamneseGestacional = "n";
-    } else {
-        FpAnamneseGestacional = "nda";
-    }
+//     var FpAnamneseGestacional = "";
+//     if ($('#s_fp').prop('checked')) {
+//         FpAnamneseGestacional = "s";
+//     } else if ($('#n_fp').prop('checked')) {
+//         FpAnamneseGestacional = "n";
+//     } else {
+//         FpAnamneseGestacional = "nda";
+//     }
     
-    var EcAnamneseGestacional = "";
-var s_ec_value = $('#s_ec').val().trim();
-if (s_ec_value !== "") {
-    EcAnamneseGestacional = s_ec_value;
-} else {
-    var n_ec_value = $('#n_ec').val().trim();
-    if (n_ec_value !== "") {
-        EcAnamneseGestacional = n_ec_value;
-    } else {
-        EcAnamneseGestacional = "nda";
-    }
-}
+//     var EcAnamneseGestacional = "";
+// var s_ec_value = $('#s_ec').val().trim();
+// if (s_ec_value !== "") {
+//     EcAnamneseGestacional = s_ec_value;
+// } else {
+//     var n_ec_value = $('#n_ec').val().trim();
+//     if (n_ec_value !== "") {
+//         EcAnamneseGestacional = n_ec_value;
+//     } else {
+//         EcAnamneseGestacional = "nda";
+//     }
+// }
 
-var QtdFilhos = "";
-var EfAnamneseGestacional = "";
-var s_ef_checked = $('#s_ef').prop('checked');
-if (s_ef_checked) {
-    EfAnamneseGestacional = "Primeiro filho";
-} else {
-    var n_ef_checked = $('#n_ef').prop('checked');
-    if (n_ef_checked) {
-        QtdFilhos = $('#qs_anamnese_gestacional').val().trim();
-        if (QtdFilhos === "") {
-            QtdFilhos = "1+";
-        }
-        EfAnamneseGestacional = QtdFilhos;
-    } else {
-        EfAnamneseGestacional = "nda";
-    }
-}
+// var QtdFilhos = "";
+// var EfAnamneseGestacional = "";
+// var s_ef_checked = $('#s_ef').prop('checked');
+// if (s_ef_checked) {
+//     EfAnamneseGestacional = "Primeiro filho";
+// } else {
+//     var n_ef_checked = $('#n_ef').prop('checked');
+//     if (n_ef_checked) {
+//         QtdFilhos = $('#qs_anamnese_gestacional').val().trim();
+//         if (QtdFilhos === "") {
+//             QtdFilhos = "1+";
+//         }
+//         EfAnamneseGestacional = QtdFilhos;
+//     } else {
+//         EfAnamneseGestacional = "nda";
+//     }
+// }
 
-var SqAnamneseGestacional = "";
-var s_sq_value = $('#s_sq').val().trim();
-if (s_sq_value !== "") {
-    SqAnamneseGestacional = s_sq_value;
-} else {
-    var n_sq_value = $('#n_sq').val().trim();
-    if (n_sq_value !== "") {
-        SqAnamneseGestacional = n_sq_value;
-    } else {
-        SqAnamneseGestacional = "nda";
-    }
-}
+// var SqAnamneseGestacional = "";
+// var s_sq_value = $('#s_sq').val().trim();
+// if (s_sq_value !== "") {
+//     SqAnamneseGestacional = s_sq_value;
+// } else {
+//     var n_sq_value = $('#n_sq').val().trim();
+//     if (n_sq_value !== "") {
+//         SqAnamneseGestacional = n_sq_value;
+//     } else {
+//         SqAnamneseGestacional = "nda";
+//     }
+// }
 
-var JbAnamneseGestacional = "";
-var s_jb_value = $('#s_jb').val().trim();
-if (s_jb_value !== "") {
-    JbAnamneseGestacional = s_jb_value;
-} else {
-    var n_jb_value = $('#n_jb').val().trim();
-    if (n_jb_value !== "") {
-        JbAnamneseGestacional = n_jb_value;
-    } else {
-        JbAnamneseGestacional = "nda";
-    }
-}
+// var JbAnamneseGestacional = "";
+// var s_jb_value = $('#s_jb').val().trim();
+// if (s_jb_value !== "") {
+//     JbAnamneseGestacional = s_jb_value;
+// } else {
+//     var n_jb_value = $('#n_jb').val().trim();
+//     if (n_jb_value !== "") {
+//         JbAnamneseGestacional = n_jb_value;
+//     } else {
+//         JbAnamneseGestacional = "nda";
+//     }
+// }
 
-var FvAnamneseGestacional = "";
-var s_fv_value = $('#s_fv').val().trim();
-if (s_fv_value !== "") {
-    FvAnamneseGestacional = s_fv_value;
-} else {
-    var n_fv_value = $('#n_fv').val().trim();
-    if (n_fv_value !== "") {
-        FvAnamneseGestacional = n_fv_value;
-    } else {
-        FvAnamneseGestacional = "nda";
-    }
-}
+// var FvAnamneseGestacional = "";
+// var s_fv_value = $('#s_fv').val().trim();
+// if (s_fv_value !== "") {
+//     FvAnamneseGestacional = s_fv_value;
+// } else {
+//     var n_fv_value = $('#n_fv').val().trim();
+//     if (n_fv_value !== "") {
+//         FvAnamneseGestacional = n_fv_value;
+//     } else {
+//         FvAnamneseGestacional = "nda";
+//     }
+// }
 
-var PrAnamneseGestacional = "";
-var s_pr_value = $('#s_pr').val().trim();
-if (s_pr_value !== "") {
-    PrAnamneseGestacional = s_pr_value;
-} else {
-    var n_pr_value = $('#n_pr').val().trim();
-    if (n_pr_value !== "") {
-        PrAnamneseGestacional = n_pr_value;
-    } else {
-        PrAnamneseGestacional = "nda";
-    }
-}
+// var PrAnamneseGestacional = "";
+// var s_pr_value = $('#s_pr').val().trim();
+// if (s_pr_value !== "") {
+//     PrAnamneseGestacional = s_pr_value;
+// } else {
+//     var n_pr_value = $('#n_pr').val().trim();
+//     if (n_pr_value !== "") {
+//         PrAnamneseGestacional = n_pr_value;
+//     } else {
+//         PrAnamneseGestacional = "nda";
+//     }
+// }
 
-var SexoAnamneseGestacional = "";
-var fem_checked = $('#fem').prop('checked');
-if (fem_checked) {
-    SexoAnamneseGestacional = $('#fem').val().trim();
-} else {
-    var mas_checked = $('#mas').prop('checked');
-    if (mas_checked) {
-        SexoAnamneseGestacional = $('#mas').val().trim();
-    } else {
-        SexoAnamneseGestacional = "nda";
-    }
-}
+// var SexoAnamneseGestacional = "";
+// var fem_checked = $('#fem').prop('checked');
+// if (fem_checked) {
+//     SexoAnamneseGestacional = $('#fem').val().trim();
+// } else {
+//     var mas_checked = $('#mas').prop('checked');
+//     if (mas_checked) {
+//         SexoAnamneseGestacional = $('#mas').val().trim();
+//     } else {
+//         SexoAnamneseGestacional = "nda";
+//     }
+// }
     
-if (PeriodoDeGestacao === "nda" || NomeDoMedico === "nda" || Duracao === "nda" || Intervalo === "nda" || HoraDoNascimento === "nda" || NomeDoBebe === "nda" || FpAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda") {
-    alert("Por favor, preencha todos os campos obrigatórios. Da página Anamnese Gestacional");
-}
+// if (PeriodoDeGestacao === "nda" || NomeDoMedico === "nda" || Duracao === "nda" || Intervalo === "nda" || HoraDoNascimento === "nda" || NomeDoBebe === "nda" || FpAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda" || EcAnamneseGestacional === "nda" || EfAnamneseGestacional === "nda" || SqAnamneseGestacional === "nda" || JbAnamneseGestacional === "nda" || FvAnamneseGestacional === "nda" || PrAnamneseGestacional === "nda" || SexoAnamneseGestacional === "nda") {
+//     alert("Por favor, preencha todos os campos obrigatórios. Da página Anamnese Gestacional");
+// }
 
 
 
@@ -925,12 +930,24 @@ function PacienteRegistro(){
     
 };
 function SexoMasculino() {/*Input type radio*/
-    var sexo_paciente_f = document.getElementById("sexo_paciente_f"); 
+    var sexo_paciente_f = document.getElementById("sexo_paciente_f");
+    var slideAnamneseGestacional = document.getElementById("slide15");
+    var navigateAnamneseGestacional = document.getElementById("slide15Nav");
+    var slide20 = document.getElementById("slide20");
     sexo_paciente_f.checked = false;
+    slideAnamneseGestacional.style.display = "none";
+    navigateAnamneseGestacional.style.display = "none";
+    slide20.style.display = "none";
 } 
 function SexoFeminino() {/*Input type radio*/
-    var sexo_paciente_m = document.getElementById("sexo_paciente_m"); 
+    var sexo_paciente_m = document.getElementById("sexo_paciente_m");
+    var slideAnamneseGestacional = document.getElementById("slide15");
+    var navigateAnamneseGestacional = document.getElementById("slide15Nav");
+    var slide20 = document.getElementById("slide20");
     sexo_paciente_m.checked = false;
+    slideAnamneseGestacional.style.display = "flex";
+    navigateAnamneseGestacional.style.display = "flex";
+    slide20.style.display = "flex";
 }
 function EmergenciaRegistro(){
 
